@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" fill="none">
+  <!-- Neural network constellation pattern -->
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e94560" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="2"/></filter>
+  </defs>
+  
+  <!-- Connection lines (neural network) -->
+  <g opacity="0.15" stroke="#e94560" stroke-width="1">
+    <!-- Lines from center brain to agents -->
+    <line x1="720" y1="450" x2="320" y2="200"/>
+    <line x1="720" y1="450" x2="1120" y2="200"/>
+    <line x1="720" y1="450" x2="720" y2="700"/>
+    <!-- Cross connections -->
+    <line x1="320" y1="200" x2="1120" y2="200"/>
+    <line x1="1120" y1="200" x2="720" y2="700"/>
+    <line x1="720" y1="700" x2="320" y2="200"/>
+    <!-- Data flow lines -->
+    <line x1="200" y1="350" x2="500" y2="300"/>
+    <line x1="940" y1="280" x2="1200" y2="400"/>
+    <line x1="600" y1="600" x2="400" y2="500"/>
+    <line x1="900" y1="550" x2="1100" y2="650"/>
+  </g>
+  
+  <!-- Glowing orbs at agent positions -->
+  <circle cx="320" cy="200" r="60" fill="url(#glow2)"/>  <!-- Hermes -->
+  <circle cx="1120" cy="200" r="60" fill="url(#glow3)"/> <!-- Atlas -->
+  <circle cx="720" cy="700" r="60" fill="url(#glow1)"/>  <!-- Prometheus -->
+  <circle cx="720" cy="450" r="80" fill="url(#glow1)"/>  <!-- Brain -->
+  
+  <!-- Data particles -->
+  <g fill="#ffd700" opacity="0.4">
+    <circle cx="500" cy="320" r="2"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="940" cy="350" r="2"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="650" cy="550" r="1.5"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.5s" repeatCount="indefinite"/></circle>
+    <circle cx="800" cy="300" r="2"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="420" cy="450" r="1.5"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1050" cy="500" r="2"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="4.5s" repeatCount="indefinite"/></circle>
+  </g>
+  <g fill="#00e676" opacity="0.3">
+    <circle cx="550" cy="250" r="1.5"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite"/></circle>
+    <circle cx="880" cy="420" r="2"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/></circle>
+    <circle cx="380" cy="550" r="1"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="6s" repeatCount="indefinite"/></circle>
+  </g>
+  <g fill="#e94560" opacity="0.3">
+    <circle cx="750" cy="600" r="1.5"><animate attributeName="opacity" values="0.2;0.8;0.2" dur="3.5s" repeatCount="indefinite"/></circle>
+    <circle cx="1100" cy="350" r="1"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="400" r="2"><animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/></circle>
+  </g>
+  
+  <!-- Node dots at intersections -->
+  <g fill="#fff" opacity="0.6" filter="url(#blur1)">
+    <circle cx="320" cy="200" r="4"/>
+    <circle cx="1120" cy="200" r="4"/>
+    <circle cx="720" cy="700" r="4"/>
+    <circle cx="720" cy="450" r="6"/>
+    <circle cx="200" cy="350" r="2"/>
+    <circle cx="1200" cy="400" r="2"/>
+    <circle cx="600" cy="600" r="2"/>
+    <circle cx="900" cy="550" r="2"/>
+    <circle cx="500" cy="300" r="2"/>
+    <circle cx="940" cy="280" r="2"/>
+  </g>
+</svg>

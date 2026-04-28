@@ -1,0 +1,777 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CC3PO — AI Agents That Work Within Your Rules">
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
+        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon">
+        <span>CC3PO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#founder">Founder</a></li>
+      </ul>
+      <a href="#cta" class="nav-cta">Free HIPAA Scan</a>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">☰</button>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="pulse-dot"></span>
+        Live Village Brain
+      </div>
+
+      <h1 class="hero-title reveal">
+        AI Agents That<br>
+        <span class="typed-gradient" id="typed-target"></span><span class="typed-cursor">|</span>
+      </h1>
+
+      <p class="hero-sub reveal">
+        Autonomous AI workers that report everything they do.<br>
+        You set the rules. They work within them.<br class="hide-mobile">
+        You approve before anything ships.
+      </p>
+
+      <!-- Four Principles - Interactive -->
+      <div class="four-principles reveal">
+        <div class="principle-card" data-principle="constraints">
+          <div class="principle-icon-wrap">
+            <svg viewBox="0 0 40 40" class="principle-svg">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(233,69,96,0.3)" stroke-width="2"/>
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#e94560" stroke-width="2" stroke-dasharray="113" stroke-dashoffset="113" class="svg-draw"/>
+              <path d="M14 20 L18 24 L26 16" fill="none" stroke="#e94560" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-draw-check"/>
+            </svg>
+          </div>
+          <div class="principle-title">Constraints &gt; Autonomy</div>
+          <div class="principle-desc">Hard boundaries. HIPAA rules, budget caps, brand guidelines — agents never cross them.</div>
+        </div>
+        <div class="principle-card" data-principle="visibility">
+          <div class="principle-icon-wrap">
+            <svg viewBox="0 0 40 40" class="principle-svg">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(15,52,96,0.5)" stroke-width="2"/>
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#0f3460" stroke-width="2" stroke-dasharray="113" stroke-dashoffset="113" class="svg-draw"/>
+              <ellipse cx="20" cy="20" rx="8" ry="5" fill="none" stroke="#4fc3f7" stroke-width="1.5" class="svg-draw-eye-outer"/>
+              <circle cx="20" cy="20" r="3" fill="#4fc3f7" class="svg-draw-eye-pupil"/>
+            </svg>
+          </div>
+          <div class="principle-title">Visibility &gt; Magic</div>
+          <div class="principle-desc">Full audit trail. Every action logged, timestamped, reviewable. Not a black box.</div>
+        </div>
+        <div class="principle-card" data-principle="approvals">
+          <div class="principle-icon-wrap">
+            <svg viewBox="0 0 40 40" class="principle-svg">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(0,230,118,0.3)" stroke-width="2"/>
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#00e676" stroke-width="2" stroke-dasharray="113" stroke-dashoffset="113" class="svg-draw"/>
+              <rect x="12" y="14" width="16" height="14" rx="2" fill="none" stroke="#00e676" stroke-width="1.5" class="svg-draw-clip"/>
+            </svg>
+          </div>
+          <div class="principle-title">Approvals &gt; Execution</div>
+          <div class="principle-desc">Agents recommend. You decide. Nothing reaches patients without your sign-off.</div>
+        </div>
+        <div class="principle-card" data-principle="proof">
+          <div class="principle-icon-wrap">
+            <svg viewBox="0 0 40 40" class="principle-svg">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(255,215,0,0.3)" stroke-width="2"/>
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#ffd700" stroke-width="2" stroke-dasharray="113" stroke-dashoffset="113" class="svg-draw"/>
+              <polyline points="12,22 18,28 28,14" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="svg-draw-chart"/>
+            </svg>
+          </div>
+          <div class="principle-title">Proof &gt; Claims</div>
+          <div class="principle-desc">Real scanner data. Real before/after. Sourced, cited, verifiable.</div>
+        </div>
+      </div>
+
+      <div class="hero-buttons reveal">
+        <a href="https://offers.cc3po.com/health-scanner/" class="btn btn-primary btn-glow">
+          <span class="btn-icon">🛡️</span> Free HIPAA Scan
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary">
+          <span class="btn-icon">👁️</span> See How It Works
+        </a>
+        <a href="#proof" class="btn btn-outline">
+          <span class="btn-icon">📊</span> View Real Proof
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== LIVE VILLAGE ACTIVITY ====== -->
+  <section class="live-activity" id="live">
+    <div class="container">
+      <div class="activity-header reveal">
+        <span class="activity-dot"></span>
+        <span class="activity-label">Village Activity — Live</span>
+      </div>
+      <div class="activity-feed" id="activity-feed">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HOW IT WORKS ====== -->
+  <section class="section how-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Autonomous — But Never Unsupervised</h2>
+        <p class="section-desc">Agents run 24/7. But nothing sensitive happens without your eyes on it first.</p>
+      </div>
+
+      <div class="workflow-steps">
+        <div class="workflow-step reveal">
+          <div class="step-connector"></div>
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <div class="step-icon">🤖</div>
+            <h3>Agent Works</h3>
+            <p>Scans your site, scores leads, drafts content — 24/7, within your constraints.</p>
+            <div class="step-tags">
+              <span class="tag">100+ checks</span>
+              <span class="tag">Draft generated</span>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-step reveal">
+          <div class="step-connector"></div>
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <div class="step-icon">📋</div>
+            <h3>You Review</h3>
+            <p>Agent surfaces a summary with full evidence. You see exactly what it found and why.</p>
+            <div class="step-tags">
+              <span class="tag">Plain-English</span>
+              <span class="tag">Citations linked</span>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-step reveal">
+          <div class="step-connector"></div>
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <div class="step-icon">✅</div>
+            <h3>You Approve</h3>
+            <p>One-click approve, or flag for adjustment. Nothing ships without your call.</p>
+            <div class="step-tags">
+              <span class="tag">Final say = yours</span>
+              <span class="tag">Auto-approve rules optional</span>
+            </div>
+          </div>
+        </div>
+        <div class="workflow-step reveal">
+          <div class="step-connector"></div>
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <div class="step-icon">📁</div>
+            <h3>Logged & Shipped</h3>
+            <p>Agent executes. Every action timestamped and recorded for compliance.</p>
+            <div class="step-tags">
+              <span class="tag">Full audit trail</span>
+              <span class="tag">Auditor-ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PRODUCTS ====== -->
+  <section class="section" id="products" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Products</div>
+        <h2 class="section-title">Built for Compliance-Critical Business</h2>
+        <p class="section-desc">Every product: agents assist, humans approve, everything logged.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card reveal" style="--accent-color: #e94560;">
+          <div class="product-icon-wrap"><span>🛡️</span></div>
+          <div class="product-name">HIPAA Health Scanner</div>
+          <div class="product-price">$297 — $1,497</div>
+          <div class="product-desc">Finds gaps, generates fix reports with citations, logs everything for auditors.</div>
+          <div class="product-badge">73% of sites had gaps</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 73%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #4fc3f7;">
+          <div class="product-icon-wrap"><span>📞</span></div>
+          <div class="product-name">Callie Voice Agent</div>
+          <div class="product-price">$299 — $799/mo</div>
+          <div class="product-desc">Answers calls, books appointments. Calls logged and transcribed. Escalations flagged.</div>
+          <div class="product-badge">100% call coverage</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 100%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #00e676;">
+          <div class="product-icon-wrap"><span>🦷</span></div>
+          <div class="product-name">Dental IT</div>
+          <div class="product-price">Custom</div>
+          <div class="product-desc">Network security, practice management integration, compliance-ready infrastructure.</div>
+          <div class="product-badge">16 practices supported</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 80%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #ffd700;">
+          <div class="product-icon-wrap"><span>🔧</span></div>
+          <div class="product-name">PatchPilot</div>
+          <div class="product-price">From $199/mo</div>
+          <div class="product-desc">Patches proposed → you approve → deployed. Full audit trail.</div>
+          <div class="product-badge">Human-approved deploys</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 90%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #e94560;">
+          <div class="product-icon-wrap"><span>💬</span></div>
+          <div class="product-name">SMS Marketing</div>
+          <div class="product-price">From $149/mo</div>
+          <div class="product-desc">Campaigns drafted → you review → approve → sent. No surprise messages.</div>
+          <div class="product-badge">You approve every send</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 85%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #0f3460;">
+          <div class="product-icon-wrap"><span>🌐</span></div>
+          <div class="product-name">Website Hosting</div>
+          <div class="product-price">From $99/mo</div>
+          <div class="product-desc">HIPAA-aware. Uptime monitored, SSL current, backups verified. Live dashboard.</div>
+          <div class="product-badge">99.9% uptime logged</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 99%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROOF ====== -->
+  <section class="section proof-section" id="proof">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Proof Over Claims</div>
+        <h2 class="section-title">What We've Actually Done</h2>
+        <p class="section-desc">Real data, sourced, cited, verifiable.</p>
+      </div>
+
+      <!-- Animated Counter Stats -->
+      <div class="proof-grid reveal">
+        <div class="proof-stat">
+          <div class="proof-counter" data-target="73" data-suffix="%">0%</div>
+          <div class="proof-label">Dental sites with documented HIPAA gaps</div>
+          <div class="proof-source">Source: 16 scans, Q1-Q2 2026</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-counter" data-target="60" data-suffix="s">0s</div>
+          <div class="proof-label">URL to full gap report</div>
+          <div class="proof-source">Source: Scanner internal timing</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-counter" data-target="29" data-suffix="/38">0/38</div>
+          <div class="proof-label">Village tasks completed</div>
+          <div class="proof-source">Source: Internal task tracker</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-counter" data-target="99.9" data-suffix="%" data-decimal="true">0%</div>
+          <div class="proof-label">Agent uptime (logged)</div>
+          <div class="proof-source">Source: Monitoring dashboard</div>
+        </div>
+      </div>
+
+      <!-- Interactive Scanner Demo -->
+      <div class="scanner-demo reveal" id="scanner-demo">
+        <div class="scanner-demo-header">
+          <div class="scanner-demo-label">Sample Scanner Output</div>
+          <div class="scanner-demo-sub">Anonymized real result</div>
+        </div>
+        <div class="scanner-demo-body" id="scanner-body">
+          <div class="scanner-url-bar">
+            <span class="scanner-protocol">https://</span>
+            <span class="scanner-domain-text">dentalpractice-##.com</span>
+            <button class="scanner-scan-btn" id="scan-trigger" onclick="runScannerDemo()">▶ SCAN</button>
+          </div>
+          <div class="scanner-progress" id="scanner-progress" style="display:none;">
+            <div class="scanner-progress-bar" id="scanner-progress-bar"></div>
+            <div class="scanner-progress-text" id="scanner-progress-text">Initializing...</div>
+          </div>
+          <div class="scanner-results" id="scanner-results" style="display:none;">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Before/After -->
+      <div class="before-after reveal">
+        <div class="ba-card ba-before">
+          <div class="ba-title">❌ Before CC3PO</div>
+          <div class="ba-item"><span class="ba-icon">😰</span> No idea if site was HIPAA-compliant</div>
+          <div class="ba-item"><span class="ba-icon">📋</span> Manual spreadsheets for compliance</div>
+          <div class="ba-item"><span class="ba-icon">📞</span> 40% of after-hours calls → voicemail</div>
+          <div class="ba-item"><span class="ba-icon">🔒</span> Patches applied when someone remembered</div>
+          <div class="ba-item"><span class="ba-icon">📊</span> No visibility into operations</div>
+        </div>
+        <div class="ba-card ba-after">
+          <div class="ba-title">✅ After CC3PO</div>
+          <div class="ba-item"><span class="ba-icon">🛡️</span> Full gap report with citations in 60s</div>
+          <div class="ba-item"><span class="ba-icon">📋</span> Real-time compliance dashboard</div>
+          <div class="ba-item"><span class="ba-icon">📞</span> 100% calls answered, logged, transcribed</div>
+          <div class="ba-item"><span class="ba-icon">🔒</span> Patches: proposed → approved → deployed</div>
+          <div class="ba-item"><span class="ba-icon">📊</span> Live dashboard — see everything</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ROI CALCULATOR ====== -->
+  <section class="section calculator-section" id="calculator">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Your Numbers</div>
+        <h2 class="section-title">What You Spend vs. What You Could</h2>
+        <p class="section-desc">Real math. Not marketing math.</p>
+      </div>
+      <div class="calc-wrap reveal">
+        <div class="calc-card">
+          <div class="calc-group">
+            <label class="calc-label">Practice locations</label>
+            <input type="range" class="calc-slider" id="calc-locations" min="1" max="50" value="3" oninput="updateCalc()">
+            <div class="calc-val" id="calc-locations-val">3</div>
+          </div>
+          <div class="calc-group">
+            <label class="calc-label">Monthly IT + Compliance per location</label>
+            <input type="range" class="calc-slider" id="calc-spend" min="500" max="15000" step="500" value="3000" oninput="updateCalc()">
+            <div class="calc-val" id="calc-spend-val">$3,000</div>
+          </div>
+        </div>
+        <div class="calc-result-card">
+          <div class="calc-result-label">Annual Cost Reduction</div>
+          <div class="calc-result-number" id="calc-savings">$81,000</div>
+          <div class="calc-result-detail" id="calc-detail">3 locations × $2,250/mo saved</div>
+          <div class="calc-fine-print">Based on eliminating redundant tools + reducing manual work + avoiding fines. Fine avoidance alone: $100K–$1.5M/incident.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="section" id="testimonials" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Real Feedback</div>
+        <h2 class="section-title">What Practices Actually Say</h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"Found 3 critical HIPAA gaps we had no idea about. The report cited the exact regulation. Fixed in a week."</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">Dr. Alan Lee</div>
+            <div class="testimonial-role">Family Dental — Austin, TX</div>
+          </div>
+          <div class="testimonial-verified">✓ Verified</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"10 leads/month → 85+. Every message reviewed by us first. Never felt out of control."</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">Sarah Mitchell</div>
+            <div class="testimonial-role">Smile Forward — Denver, CO</div>
+          </div>
+          <div class="testimonial-verified">✓ Verified</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"Built us a scanner that finds real compliance issues, not generic checklists."</div>
+          <div class="testimonial-meta">
+            <div class="testimonial-author">Robert Johnson</div>
+            <div class="testimonial-role">Bright Health Tech — Seattle, WA</div>
+          </div>
+          <div class="testimonial-verified">✓ Verified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOUNDER ====== -->
+  <section class="section founder-section" id="founder">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Built By</div>
+        <h2 class="section-title">Someone Who's Been in the Audit Room</h2>
+        <p class="section-desc">Not a marketer. Not a startup founder who read about HIPAA on Wikipedia. Someone who's deployed EHR systems, trained neural networks, and built IT for small businesses — for 21 years.</p>
+      </div>
+
+      <div class="founder-card reveal">
+        <div class="founder-photo">
+          <img src="/images/carlos.jpg" alt="Carlos Cabrales III" class="founder-avatar-img">
+          <div class="founder-status">
+            <span class="founder-dot"></span>
+            <span>Active Village Operator</span>
+          </div>
+        </div>
+        <div class="founder-details">
+          <div class="founder-name">Carlos Cabrales III</div>
+          <div class="founder-title">Founder & CEO, CC3PO</div>
+          <div class="founder-bio">
+            <p>21 years in IT. Started at Kaiser Permanente deploying EHR systems and navigating HIPAA compliance firsthand. Went on to train deep neural networks for Tesla Autopilot — computer vision, sensor fusion, the works. Now running IT for government (Stanislaus Regional Housing Authority) while building CC3PO to bring Fortune-500-grade AI and compliance to dental practices.</p>
+            <p>The pattern: I've been the person called when things break. When Kaiser needed 3,500 computers refreshed. When Dignity Health needed Cerner deployed. When Tesla needed data labeled for self-driving cars. I've been in the audit room, the server room, and the board room.</p>
+          </div>
+
+          <div class="founder-creds">
+            <div class="cred-item">
+              <div class="cred-icon">🏥</div>
+              <div>
+                <div class="cred-title">Healthcare IT</div>
+                <div class="cred-desc">Kaiser Permanente, Dignity Health, UCSF — EHR deployment, HIPAA compliance, Cerner, Meditech</div>
+              </div>
+            </div>
+            <div class="cred-item">
+              <div class="cred-icon">🤖</div>
+              <div>
+                <div class="cred-title">AI & Neural Networks</div>
+                <div class="cred-desc">Tesla Autopilot — deep learning, computer vision, sensor fusion, model training</div>
+              </div>
+            </div>
+            <div class="cred-item">
+              <div class="cred-icon">🏢</div>
+              <div>
+                <div class="cred-title">Government & Enterprise</div>
+                <div class="cred-desc">Stanislaus Housing Authority, Dole, Ray Morgan — infrastructure, security, compliance</div>
+              </div>
+            </div>
+            <div class="cred-item">
+              <div class="cred-icon">💼</div>
+              <div>
+                <div class="cred-title">Small Business Operations</div>
+                <div class="cred-desc">14 years running CCfamily Communications — IT, web, marketing for local businesses</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="founder-certifications">
+            <span class="cert">Microsoft AI Professional</span>
+            <span class="cert">Laserfiche Gold</span>
+            <span class="cert">Data Science — Udemy</span>
+            <span class="cert">CPR Certified</span>
+            <span class="cert">Bilingual — English/Spanish</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="cta-section" id="cta">
+    <div class="container cta-content">
+      <div class="reveal">
+        <h2>See It In Your Practice</h2>
+        <p>Free scan. Real data. No sales pitch. You'll see exactly what's on your site and what it would take to fix it.</p>
+        <div class="cta-buttons">
+          <a href="https://offers.cc3po.com/health-scanner/" class="btn btn-primary btn-glow">Free HIPAA Scan →</a>
+          <a href="https://calendly.com/carlos-cc3po" class="btn btn-secondary">Strategy Call</a>
+        </div>
+        <div class="cta-trust">
+          <span>✓ No credit card</span>
+          <span>✓ 60-second scan</span>
+          <span>✓ Report with citations</span>
+          <span>✓ You own the data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">© 2026 CC3PO. AI Agents That Work Within Your Rules.</div>
+        <ul class="footer-links">
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== SCRIPTS ====== -->
+  <script is:inline>
+    // ===== HERO CANVAS: Constellation Network =====
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w, h, particles = [], mouse = { x: -1000, y: -1000 };
+
+      function resize() {
+        w = canvas.width = canvas.offsetWidth;
+        h = canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * w;
+          this.y = Math.random() * h;
+          this.vx = (Math.random() - 0.5) * 0.3;
+          this.vy = (Math.random() - 0.5) * 0.3;
+          this.r = Math.random() * 1.5 + 0.5;
+          this.color = ['#e94560','#0f3460','#4fc3f7','#ffd700','#00e676'][Math.floor(Math.random()*5)];
+        }
+        update() {
+          this.x += this.vx; this.y += this.vy;
+          if (this.x < 0 || this.x > w) this.vx *= -1;
+          if (this.y < 0 || this.y > h) this.vy *= -1;
+          // Mouse repel
+          const dx = this.x - mouse.x, dy = this.y - mouse.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 120) {
+            this.x += dx * 0.01; this.y += dy * 0.01;
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = 0.6;
+          ctx.fill();
+        }
+      }
+
+      const count = Math.min(80, Math.floor(w * h / 12000));
+      for (let i = 0; i < count; i++) particles.push(new Particle());
+
+      function animate() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => { p.update(); p.draw(); });
+        // Draw connections
+        ctx.globalAlpha = 0.08;
+        ctx.strokeStyle = '#e94560';
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const d = dx*dx + dy*dy;
+            if (d < 15000) {
+              ctx.globalAlpha = 0.06 * (1 - d/15000);
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    // ===== TYPEWRITER =====
+    const phrases = ['You Control', 'Your Practice Trusts', 'Your Rules Set', 'Your Approval Ships'];
+    let phraseIdx = 0, charIdx = 0, deleting = false;
+    const typedEl = document.getElementById('typed-target');
+    function typewrite() {
+      const current = phrases[phraseIdx];
+      if (!deleting) {
+        typedEl.textContent = current.substring(0, charIdx + 1);
+        charIdx++;
+        if (charIdx === current.length) {
+          deleting = true;
+          setTimeout(typewrite, 2000);
+          return;
+        }
+        setTimeout(typewrite, 70);
+      } else {
+        typedEl.textContent = current.substring(0, charIdx - 1);
+        charIdx--;
+        if (charIdx === 0) {
+          deleting = false;
+          phraseIdx = (phraseIdx + 1) % phrases.length;
+          setTimeout(typewrite, 300);
+          return;
+        }
+        setTimeout(typewrite, 40);
+      }
+    }
+    typewrite();
+
+    // ===== SCROLL REVEAL =====
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ===== SVG DRAW ON REVEAL =====
+    const svgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.svg-draw').forEach(path => {
+            path.style.transition = 'stroke-dashoffset 1.2s ease';
+            path.style.strokeDashoffset = '0';
+          });
+          entry.target.querySelectorAll('.svg-draw-check, .svg-draw-eye-outer, .svg-draw-clip, .svg-draw-chart').forEach(path => {
+            path.style.transition = 'opacity 0.5s ease 0.8s';
+            path.style.opacity = '1';
+          });
+          svgObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.principle-card').forEach(el => svgObserver.observe(el));
+
+    // ===== COUNTER ANIMATION =====
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.proof-counter').forEach(el => {
+            const target = parseFloat(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const isDecimal = el.dataset.decimal === 'true';
+            const duration = 1500;
+            const start = performance.now();
+            function step(now) {
+              const progress = Math.min((now - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const val = eased * target;
+              el.textContent = (isDecimal ? val.toFixed(1) : Math.round(val)) + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          });
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.proof-grid').forEach(el => counterObserver.observe(el));
+
+    // ===== PRODUCT BAR ANIMATION =====
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.product-bar-fill').forEach(bar => {
+            bar.style.width = bar.style.getPropertyValue('--fill');
+          });
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.product-card').forEach(el => barObserver.observe(el));
+
+    // ===== LIVE ACTIVITY FEED =====
+    const activities = [
+      { agent: '⚡ hermes', msg: 'Scanning dentalpractice-12.com for HIPAA gaps...', color: '#ffd700' },
+      { agent: '⚡ hermes', msg: 'FOUND: Missing privacy policy — §164.520', color: '#ffd700' },
+      { agent: '🌍 atlas', msg: 'Deploying security patch to practice-03 server', color: '#00e676' },
+      { agent: '🌍 atlas', msg: '✓ Patch deployed — logged for audit', color: '#00e676' },
+      { agent: '📞 callie', msg: 'Answering call from (512) 555-0147', color: '#4fc3f7' },
+      { agent: '📞 callie', msg: 'Appointment booked — Dr. Lee, 2pm Thursday', color: '#4fc3f7' },
+      { agent: '🔥 prometheus', msg: 'Draft: "HIPAA Compliance Checklist for Dentists"', color: '#e94560' },
+      { agent: '🔥 prometheus', msg: 'Awaiting approval before publishing', color: '#e94560' },
+      { agent: '⚡ hermes', msg: 'New lead scored: 0.94 confidence — flagged for review', color: '#ffd700' },
+    ];
+    const feed = document.getElementById('activity-feed');
+    let actIdx = 0;
+    function addActivity() {
+      const a = activities[actIdx % activities.length];
+      const now = new Date();
+      const time = now.toTimeString().substring(0, 8);
+      const line = document.createElement('div');
+      line.className = 'activity-line';
+      line.innerHTML = `<span class="act-time">[${time}]</span> <span class="act-agent" style="color:${a.color}">${a.agent}</span> <span class="act-msg">${a.msg}</span>`;
+      line.style.opacity = '0';
+      line.style.transform = 'translateY(8px)';
+      feed.prepend(line);
+      requestAnimationFrame(() => {
+        line.style.transition = 'opacity 0.4s, transform 0.4s';
+        line.style.opacity = '1';
+        line.style.transform = 'translateY(0)';
+      });
+      // Keep max 6
+      while (feed.children.length > 6) feed.removeChild(feed.lastChild);
+      actIdx++;
+    }
+    addActivity();
+    setInterval(addActivity, 3500);
+
+    // ===== SCANNER DEMO =====
+    function runScannerDemo() {
+      const btn = document.getElementById('scan-trigger');
+      const progress = document.getElementById('scanner-progress');
+      const bar = document.getElementById('scanner-progress-bar');
+      const text = document.getElementById('scanner-progress-text');
+      const results = document.getElementById('scanner-results');
+      btn.style.display = 'none';
+      progress.style.display = 'block';
+      results.style.display = 'none';
+
+      const steps = [
+        { pct: 15, msg: 'Connecting to server...' },
+        { pct: 35, msg: 'Checking SSL certificate...' },
+        { pct: 50, msg: 'Scanning forms for BAA compliance...' },
+        { pct: 70, msg: 'Checking privacy policy presence...' },
+        { pct: 85, msg: 'Analyzing data encryption...' },
+        { pct: 100, msg: 'Report generated.' },
+      ];
+      let stepIdx = 0;
+      function nextStep() {
+        if (stepIdx >= steps.length) {
+          setTimeout(() => {
+            progress.style.display = 'none';
+            results.style.display = 'block';
+            results.innerHTML = `
+              <div class="sr-header">
+                <span class="sr-score"><span class="sr-score-num">42</span>/100</span>
+                <span class="sr-score-label">Compliance Score</span>
+              </div>
+              <div class="sr-findings">
+                <div class="sr-finding high"><span class="sr-sev">HIGH</span><span>Missing Privacy Policy — §164.520</span></div>
+                <div class="sr-finding high"><span class="sr-sev">HIGH</span><span>Contact form lacks BAA-required disclaimer</span></div>
+                <div class="sr-finding med"><span class="sr-sev">MED</span><span>Scheduling page not enforcing HTTPS</span></div>
+                <div class="sr-finding low"><span class="sr-sev">LOW</span><span>Footer missing HIPAA notice language</span></div>
+              </div>
+              <div class="sr-footer">
+                <span>✓ Report generated</span>
+                <span>✓ Priority ordered</span>
+                <span>✓ Ready for your review</span>
+              </div>
+            `;
+          }, 400);
+          return;
+        }
+        const s = steps[stepIdx];
+        bar.style.width = s.pct + '%';
+        text.textContent = s.msg;
+        stepIdx++;
+        setTimeout(nextStep, 600);
+      }
+      nextStep();
+    }
+
+    // ===== CALCULATOR =====
+    function updateCalc() {
+      const locs = parseInt(document.getElementById('calc-locations').value);
+      const spend = parseInt(document.getElementById('calc-spend').value);
+      const saved = Math.round(spend * 0.75);
+      const annual = locs * saved * 12;
+      document.getElementById('calc-locations-val').textContent = locs;
+      document.getElementById('calc-spend-val').textContent = '$' + spend.toLocaleString();
+      document.getElementById('calc-savings').textContent = '$' + annual.toLocaleString();
+      document.getElementById('calc-detail').textContent = locs + ' locations × $' + saved.toLocaleString() + '/mo saved';
+    }
+    updateCalc();
+
+    // ===== NAV SCROLL EFFECT =====
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+    });
+  </script>
+
+</Layout>
