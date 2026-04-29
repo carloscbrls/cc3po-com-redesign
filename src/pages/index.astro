@@ -19,7 +19,9 @@ import Layout from '../layouts/Layout.astro';
         <li><a href="#founder">Founder</a></li>
       </ul>
       <a href="#cta" class="nav-cta">Free HIPAA Scan</a>
-      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">☰</button>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </nav>
 
@@ -82,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
             <label for="lf-sms">I agree to receive text messages from CC3PO LLC. Reply STOP to cancel. Msg &amp; data rates may apply.</label>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary btn-glow">
+            <button type="submit" class="btn btn-primary btn-glow" style="position:relative">
               <span class="btn-icon">🚀</span> Send My Report
             </button>
             <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">
@@ -588,7 +590,7 @@ import Layout from '../layouts/Layout.astro';
               <label for="blf-sms">I agree to receive text messages from CC3PO LLC. Reply STOP to cancel. Msg &amp; data rates may apply.</label>
             </div>
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary btn-glow">
+              <button type="submit" class="btn btn-primary btn-glow" style="position:relative">
                 <span class="btn-icon">🚀</span> Send My Report
               </button>
               <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">
@@ -611,19 +613,94 @@ import Layout from '../layouts/Layout.astro';
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <div class="footer-copy">© 2026 CC3PO. AI Agents That Work Within Your Rules.</div>
-        <ul class="footer-links">
-          <li><a href="https://cc3po.com/privacy/">Privacy</a></li>
-          <li><a href="https://cc3po.com/terms/">Terms</a></li>
-          <li><a href="https://cc3po.io/strategy-call" target="_blank" rel="noopener">Contact</a></li>
-        </ul>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
+          <p>AI Agents That Work Within Your Rules. Autonomous — but never unsupervised.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Products</div>
+          <div class="footer-col-links">
+            <a href="#products">HIPAA Scanner</a>
+            <a href="#products">AI Phone Answering</a>
+            <a href="#products">Dental IT</a>
+            <a href="#products">PatchPilot</a>
+            <a href="https://offers.cc3po.com/pricing">All Products →</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <div class="footer-col-links">
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="https://cc3po.io/strategy-call" target="_blank" rel="noopener">Contact</a>
+            <a href="#founder">About</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 CC3PO LLC. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
 
   <!-- ====== SCRIPTS ====== -->
   <script is:inline>
+    // ===== MOBILE DRAWER =====
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    function openDrawer() {
+      drawer.classList.add('active');
+      overlay.style.display = 'block';
+      requestAnimationFrame(() => { overlay.classList.add('active'); });
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('active');
+      overlay.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setTimeout(() => { overlay.style.display = 'none'; }, 300);
+    }
+    if (menuBtn && drawer && overlay) {
+      menuBtn.addEventListener('click', () => {
+        if (drawer.classList.contains('active')) closeDrawer();
+        else openDrawer();
+      });
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+    }
+
+    // ===== SMOOTH SCROLL OFFSET =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 64;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ===== BUTTON LOADING STATE =====
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', () => {
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.classList.add('is-loading');
+          btn.style.position = 'relative';
+        }
+      });
+    });
+
     // ===== HERO CANVAS: Constellation Network =====
     const canvas = document.getElementById('hero-canvas');
     if (canvas) {

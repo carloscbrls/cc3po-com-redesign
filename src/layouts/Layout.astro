@@ -104,6 +104,18 @@ import '../styles/global.css';
     })} />
   </head>
   <body>
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <nav class="mobile-drawer-nav">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#products">Products</a>
+        <a href="#proof">Proof</a>
+        <a href="#founder">Founder</a>
+      </nav>
+      <a href="#cta" class="mobile-drawer-cta">Free HIPAA Scan</a>
+    </div>
     <slot />
     <!-- Talk to Hermes Chat Widget Placeholder -->
     <div id="hermes-chat-widget" aria-label="Talk to Hermes AI Agent">
