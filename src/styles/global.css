@@ -592,10 +592,11 @@ input, button { font-family: inherit; }
   .nav-inner { height: auto; padding: 12px 16px; }
   .nav-links { display: none; }
   .nav-links.nav-open { display: flex; flex-direction: column; position: absolute; inset: 0; background: var(--bg-primary); padding: 80px 28px 28px; border-bottom: 1px solid var(--border); gap: 20px; z-index: 999; }
-  .nav-cta { display: none; }
+  .nav-cta { padding: 8px 16px; font-size: 12px; }
   .mobile-toggle { display: flex; z-index: 1001; position: relative; }
   .hero { padding: 100px 16px 60px; min-height: auto; }
-  .hero-title { font-size: clamp(28px, 7vw, 42px); letter-spacing: -1px; margin-bottom: 16px; }
+  .hero-title { font-size: clamp(28px, 7vw, 42px); letter-spacing: -1px; margin-bottom: 16px; overflow-wrap: break-word; word-wrap: break-word; }
+  .typed-gradient { display: inline; word-break: break-word; overflow-wrap: break-word; }
   .hero-sub { font-size: 15px; padding: 0 8px; }
   .hero-badge { font-size: 11px; padding: 6px 14px; }
   .hero-content { max-width: 100%; overflow-x: hidden; }
@@ -784,6 +785,7 @@ input, button { font-family: inherit; }
   border-radius: var(--radius);
 }
 .bottom-cta-form .lead-form { text-align: left; }
+.nav-logo-img {
   width: 56px; height: 56px;
   border-radius: 8px;
   object-fit: contain;
