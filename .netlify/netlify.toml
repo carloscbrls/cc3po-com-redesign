@@ -1,6 +1,6 @@
-redirectsOrigin = "config"
 plugins = []
 headers = []
+redirects = []
 
 [functions]
 
@@ -10,7 +10,6 @@ headers = []
 publish = "/Users/cc3po/.openclaw/workspace/cc3po-com-redesign/dist"
 publishOrigin = "config"
 commandOrigin = "config"
-base = "/Users/cc3po/.openclaw/workspace/cc3po-com-redesign"
 command = "npm run build"
 
 [build.environment]
@@ -26,15 +25,3 @@ command = "npm run build"
 [build.processing.js]
 
 [build.services]
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200.0
-force = false
-
-[redirects.query]
-
-[redirects.conditions]
-
-[redirects.headers]

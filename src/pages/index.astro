@@ -34,7 +34,7 @@ import Layout from '../layouts/Layout.astro';
 
       <h1 class="hero-title reveal">
         AI Agents That<br>
-        <span class="typed-gradient" id="typed-target"></span><span class="typed-cursor">|</span>
+        <span class="typed-gradient" id="typed-target">You Control</span><span class="typed-cursor">|</span>
       </h1>
 
       <p class="hero-sub reveal">
@@ -42,6 +42,56 @@ import Layout from '../layouts/Layout.astro';
         You set the rules. They work within them.<br class="hide-mobile">
         You approve before anything ships.
       </p>
+
+      <!-- Lead Capture Form -->
+      <div class="lead-form-wrap reveal" id="lead-form">
+        <div class="lead-form-title">Get Your Free HIPAA Scan + Strategy Report</div>
+        <div class="lead-form-sub">No credit card. 60-second scan. You own the data.</div>
+        <form class="lead-form" id="hero-lead-form" novalidate>
+          <div class="form-group">
+            <label for="lf-name">Full Name</label>
+            <input type="text" id="lf-name" name="name" required placeholder="Dr. Jane Smith" />
+          </div>
+          <div class="form-group">
+            <label for="lf-email">Email</label>
+            <input type="email" id="lf-email" name="email" required placeholder="jane@practice.com" />
+          </div>
+          <div class="form-group">
+            <label for="lf-phone">Phone</label>
+            <input type="tel" id="lf-phone" name="phone" placeholder="(555) 123-4567" />
+          </div>
+          <div class="form-group">
+            <label for="lf-company">Company / Practice</label>
+            <input type="text" id="lf-company" name="company" placeholder="Smile Forward Dental" />
+          </div>
+          <div class="form-group full">
+            <label for="lf-need">What do you need help with?</label>
+            <select id="lf-need" name="need">
+              <option value="">Select an option…</option>
+              <option value="hipaa-scan">HIPAA Compliance Scan</option>
+              <option value="voice-agent">AI Voice Agent (Callie)</option>
+              <option value="dental-it">Dental IT & Infrastructure</option>
+              <option value="patch-management">Automated Patch Management</option>
+              <option value="sms-marketing">SMS Marketing</option>
+              <option value="website-hosting">Website Hosting</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="consent-group">
+            <input type="checkbox" id="lf-sms" name="sms_consent" />
+            <label for="lf-sms">I agree to receive text messages from CC3PO LLC. Reply STOP to cancel. Msg &amp; data rates may apply.</label>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-glow">
+              <span class="btn-icon">🚀</span> Send My Report
+            </button>
+            <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">
+              <span class="btn-icon">📞</span> Strategy Call
+            </a>
+          </div>
+          <div class="form-message" id="lf-message"></div>
+        </form>
+      </div>
 
       <!-- Four Principles - Interactive -->
       <div class="four-principles reveal">
@@ -241,6 +291,30 @@ import Layout from '../layouts/Layout.astro';
           <div class="product-desc">HIPAA-aware. Uptime monitored, SSL current, backups verified. Live dashboard.</div>
           <div class="product-badge">99.9% uptime logged</div>
           <div class="product-bar"><div class="product-bar-fill" style="--fill: 99%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #f5a623;">
+          <div class="product-icon-wrap"><span>💰</span></div>
+          <div class="product-name">SmartBill</div>
+          <div class="product-price">$749/mo</div>
+          <div class="product-desc">AI-powered billing and revenue cycle. Claims processed automatically, denials reduced by 40%.</div>
+          <div class="product-badge">$40K+ revenue recovered/yr</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 92%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #e94560;">
+          <div class="product-icon-wrap"><span>📞</span></div>
+          <div class="product-name">NoShow Guard</div>
+          <div class="product-price">$247/mo</div>
+          <div class="product-desc">Missed call recovery + no-show prevention. Turns missed calls into booked appointments.</div>
+          <div class="product-badge">85% recovery rate</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 85%;"></div></div>
+        </div>
+        <div class="product-card reveal" style="--accent-color: #00e676;">
+          <div class="product-icon-wrap"><span>🎯</span></div>
+          <div class="product-name">Sales Engine</div>
+          <div class="product-price">$499/mo</div>
+          <div class="product-desc">AI lead generation and follow-up. Captures, scores, and nurtures leads until they convert.</div>
+          <div class="product-badge">300% conversion lift</div>
+          <div class="product-bar"><div class="product-bar-fill" style="--fill: 90%;"></div></div>
         </div>
       </div>
     </div>
@@ -464,11 +538,54 @@ import Layout from '../layouts/Layout.astro';
       <div class="reveal">
         <h2>See It In Your Practice</h2>
         <p>Free scan. Real data. No sales pitch. You'll see exactly what's on your site and what it would take to fix it.</p>
-        <div class="cta-buttons">
-          <a href="https://offers.cc3po.com/health-scanner/" class="btn btn-primary btn-glow">Free HIPAA Scan →</a>
-          <a href="https://calendly.com/carlos-cc3po" class="btn btn-secondary">Strategy Call</a>
+        <!-- Bottom Lead Form -->
+        <div class="bottom-cta-form reveal" id="bottom-lead-form-wrap">
+          <form class="lead-form" id="bottom-lead-form" novalidate>
+            <div class="form-group">
+              <label for="blf-name">Full Name</label>
+              <input type="text" id="blf-name" name="name" required placeholder="Dr. Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label for="blf-email">Email</label>
+              <input type="email" id="blf-email" name="email" required placeholder="jane@practice.com" />
+            </div>
+            <div class="form-group">
+              <label for="blf-phone">Phone</label>
+              <input type="tel" id="blf-phone" name="phone" placeholder="(555) 123-4567" />
+            </div>
+            <div class="form-group">
+              <label for="blf-company">Company / Practice</label>
+              <input type="text" id="blf-company" name="company" placeholder="Smile Forward Dental" />
+            </div>
+            <div class="form-group full">
+              <label for="blf-need">What do you need help with?</label>
+              <select id="blf-need" name="need">
+                <option value="">Select an option…</option>
+                <option value="hipaa-scan">HIPAA Compliance Scan</option>
+                <option value="voice-agent">AI Voice Agent (Callie)</option>
+                <option value="dental-it">Dental IT & Infrastructure</option>
+                <option value="patch-management">Automated Patch Management</option>
+                <option value="sms-marketing">SMS Marketing</option>
+                <option value="website-hosting">Website Hosting</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="consent-group">
+              <input type="checkbox" id="blf-sms" name="sms_consent" />
+              <label for="blf-sms">I agree to receive text messages from CC3PO LLC. Reply STOP to cancel. Msg &amp; data rates may apply.</label>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-glow">
+                <span class="btn-icon">🚀</span> Send My Report
+              </button>
+              <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">
+                <span class="btn-icon">📞</span> Strategy Call
+              </a>
+            </div>
+            <div class="form-message" id="blf-message"></div>
+          </form>
         </div>
-        <div class="cta-trust">
+        <div class="cta-trust" style="margin-top:24px;">
           <span>✓ No credit card</span>
           <span>✓ 60-second scan</span>
           <span>✓ Report with citations</span>
@@ -771,6 +888,77 @@ import Layout from '../layouts/Layout.astro';
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+    });
+
+    // ===== SUPABASE LEAD FORM =====
+    const SUPABASE_URL = 'https://cdrcgmdvepxwsbqaifxv.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkcmNnbWR2ZXB4d3NicWFpZnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MDY4MDksImV4cCI6MjA4OTA4MjgwOX0.pKWLWvsSimTOMkpaXKKrLJESrQEMUayUU1c9ANzr1Dc';
+
+    async function submitLead(form, messageEl) {
+      messageEl.textContent = '';
+      messageEl.className = 'form-message';
+
+      const name = form.querySelector('[name="name"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      const phone = form.querySelector('[name="phone"]')?.value.trim() || '';
+      const company = form.querySelector('[name="company"]')?.value.trim() || '';
+      const need = form.querySelector('[name="need"]')?.value || '';
+      const smsConsent = form.querySelector('[name="sms_consent"]')?.checked || false;
+
+      if (!name || !email) {
+        messageEl.textContent = 'Please fill in your name and email.';
+        messageEl.classList.add('error');
+        return;
+      }
+
+      const body = {
+        name: name,
+        email: email,
+        phone: phone,
+        company: company,
+        need: need,
+        sms_consent: smsConsent,
+        source: 'cc3po.com-hero',
+        created_at: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(body)
+        });
+
+        if (res.ok) {
+          messageEl.textContent = "Thanks! We'll be in touch within 24 hours.";
+          messageEl.classList.add('success');
+          form.reset();
+        } else {
+          const err = await res.text().catch(() => 'Unknown error');
+          console.error('Supabase error:', res.status, err);
+          messageEl.textContent = 'Something went wrong. Please try again or email us directly.';
+          messageEl.classList.add('error');
+        }
+      } catch (e) {
+        console.error('Network error:', e);
+        messageEl.textContent = 'Network error. Please check your connection and try again.';
+        messageEl.classList.add('error');
+      }
+    }
+
+    document.getElementById('hero-lead-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitLead(this, document.getElementById('lf-message'));
+    });
+
+    document.getElementById('bottom-lead-form')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitLead(this, document.getElementById('blf-message'));
     });
   </script>
 

@@ -19,21 +19,38 @@ import '../styles/global.css';
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
     <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content="https://cc3po.com/images/og-image.jpg" />
+    <meta property="og:site_name" content="CC3PO" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://cc3po.com/images/og-image.jpg" />
+    <meta name="twitter:site" content="@cc3po" />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "CC3PO",
+      "name": "CC3PO LLC",
       "url": "https://cc3po.com",
+      "logo": "https://cc3po.com/images/cc3po-crypto-enhanced.png",
       "description": "The AI Village That Runs Your Business — automated lead generation, HIPAA compliance, and AI-powered operations.",
       "foundingDate": "2024",
       "founder": {
         "@type": "Person",
-        "name": "Carlos"
+        "name": "Carlos Cabrales III"
       },
       "sameAs": [],
       "hasOfferCatalog": {
@@ -58,6 +75,32 @@ import '../styles/global.css';
           }
         ]
       }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "CC3PO LLC",
+      "url": "https://cc3po.com",
+      "image": "https://cc3po.com/images/og-image.jpg",
+      "description": "AI Agents That Work Within Your Rules. HIPAA compliance scanning, automated IT, and voice agents with full human oversight.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "serviceType": [
+        "HIPAA Compliance Scanning",
+        "AI Voice Agents",
+        "Dental IT Services",
+        "Automated Patch Management",
+        "SMS Marketing",
+        "Website Hosting"
+      ],
+      "priceRange": "$" 
     })} />
   </head>
   <body>
