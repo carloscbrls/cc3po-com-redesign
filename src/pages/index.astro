@@ -1004,12 +1004,12 @@ import Layout from '../layouts/Layout.astro';
       const body = {
         name: name,
         email: email,
-        phone: phone,
-        company: company,
-        need: need,
-        sms_consent: smsConsent,
-        source: 'cc3po.com-hero',
-        created_at: new Date().toISOString()
+        phone: phone || null,
+        company: company || null,
+        service_interest: need || null,
+        message: null,
+        source: form.id === 'hero-lead-form' ? 'cc3po.com-hero' : 'cc3po.com-cta',
+        lead_type: 'contact'
       };
 
       try {
