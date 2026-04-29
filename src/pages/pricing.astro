@@ -1,0 +1,811 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Pricing — CC3PO AI Services"
+  description="Transparent pricing for CC3PO AI services. Bundles from $497/mo. Individual services from $97/mo. HIPAA compliance, AI voice agents, IT support, and more."
+>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
+        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon">
+        <span>CC3PO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#how-it-works">How It Works</a></li>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/#proof">Proof</a></li>
+        <li><a href="/#founder">Founder</a></li>
+      </ul>
+      <a href="https://offers.cc3po.com/health-scanner/" class="nav-cta">Free HIPAA Scan</a>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')">☰</button>
+    </div>
+  </nav>
+
+  <main class="pricing-main">
+
+    <!-- Hero -->
+    <section class="pricing-hero">
+      <h1>Pricing</h1>
+      <p>Transparent pricing for every business. Start with a bundle or mix individual services.</p>
+    </section>
+
+    <!-- OS Principles Banner -->
+    <div class="os-principles">
+      <div class="os-principle">⚖️ <strong>Constraints</strong> over autonomy</div>
+      <div class="os-principle">👁️ <strong>Visibility</strong> over magic</div>
+      <div class="os-principle">✅ <strong>Approvals</strong> over blind execution</div>
+      <div class="os-principle">📋 <strong>Proof</strong> over claims</div>
+    </div>
+
+    <!-- Bundle Section -->
+    <section class="pricing-section">
+      <h2>Bundle & Save</h2>
+      <p class="section-sub">Combine services for maximum value</p>
+
+      <div class="bundles-grid">
+
+        <div class="bundle-card">
+          <div class="bundle-tag">Starter</div>
+          <div class="bundle-savings">Save $194/mo</div>
+          <div class="bundle-price">$497<span>/mo</span></div>
+          <ul class="bundle-features">
+            <li>✅ Website Hosting (Essential)</li>
+            <li>✅ PatchPilot Security (Essential)</li>
+            <li>✅ Daily Content (Starter)</li>
+            <li>✅ Free HIPAA Scan</li>
+            <li>✅ Email support</li>
+          </ul>
+          <a href="https://offers.cc3po.com/get-started/" class="bundle-btn">Get Started</a>
+        </div>
+
+        <div class="bundle-card bundle-featured">
+          <div class="bundle-tag">Most Popular</div>
+          <div class="bundle-savings">Save $488/mo</div>
+          <div class="bundle-price">$997<span>/mo</span></div>
+          <ul class="bundle-features">
+            <li>✅ Everything in Starter</li>
+            <li>✅ AI Phone Answering (Professional)</li>
+            <li>✅ SMS Marketing (Growth)</li>
+            <li>✅ Priority support</li>
+            <li>✅ Monthly strategy call</li>
+          </ul>
+          <a href="https://offers.cc3po.com/get-started/" class="bundle-btn bundle-btn-featured">Get Started</a>
+        </div>
+
+        <div class="bundle-card">
+          <div class="bundle-tag">Enterprise</div>
+          <div class="bundle-savings">Save $1,000+/mo</div>
+          <div class="bundle-price">$1,997<span>/mo</span></div>
+          <ul class="bundle-features">
+            <li>✅ Everything in Growth</li>
+            <li>✅ Crew AI Multi-Agent System</li>
+            <li>✅ Dedicated support team</li>
+            <li>✅ Custom integrations</li>
+            <li>✅ Quarterly business reviews</li>
+            <li>✅ Priority everything</li>
+          </ul>
+          <a href="https://offers.cc3po.com/contact/" class="bundle-btn">Contact Us</a>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Individual Services -->
+    <section class="pricing-section">
+      <h2>Individual Services</h2>
+      <p class="section-sub">Mix and match — no long-term contracts required</p>
+
+      <!-- AI Phone Answering -->
+      <div class="service-block">
+        <h3>🤖 AI Phone Answering</h3>
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">$297<span>/mo</span></div>
+            <ul>
+              <li>1 AI phone number</li>
+              <li>200 minutes</li>
+              <li>Business hours</li>
+              <li>SMS confirmations</li>
+              <li>Monthly report</li>
+            </ul>
+            <a href="https://offers.cc3po.com/ai-phone-answering/" class="plan-btn">Details →</a>
+          </div>
+          <div class="service-card service-card-popular">
+            <div class="plan-badge">Popular</div>
+            <div class="plan-name">Professional</div>
+            <div class="plan-price">$399<span>/mo</span></div>
+            <ul>
+              <li>Callie Voice Agent</li>
+              <li>500 minutes</li>
+              <li>24/7 answering</li>
+              <li>Appointment booking</li>
+              <li>Smart routing</li>
+              <li>Weekly reports</li>
+            </ul>
+            <a href="https://offers.cc3po.com/ai-phone-answering/" class="plan-btn plan-btn-featured">Get Started →</a>
+          </div>
+          <div class="service-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">Custom</div>
+            <ul>
+              <li>Unlimited numbers</li>
+              <li>Unlimited minutes</li>
+              <li>CRM integration</li>
+              <li>Custom voice/scripts</li>
+              <li>Dedicated manager</li>
+            </ul>
+            <a href="https://offers.cc3po.com/contact/" class="plan-btn">Contact →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIPAA Health Scanner -->
+      <div class="service-block">
+        <h3>🔒 HIPAA Health Scanner</h3>
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="plan-name">Free Scan</div>
+            <div class="plan-price">Free</div>
+            <ul>
+              <li>Basic compliance check</li>
+              <li>Security scan</li>
+              <li>Privacy review</li>
+              <li>PDF report</li>
+              <li>Instant results</li>
+            </ul>
+            <a href="https://offers.cc3po.com/health-scanner/" class="plan-btn">Start Free →</a>
+          </div>
+          <div class="service-card service-card-popular">
+            <div class="plan-badge">Popular</div>
+            <div class="plan-name">Compliance</div>
+            <div class="plan-price">$397<span>/mo</span></div>
+            <ul>
+              <li>100+ checkpoints</li>
+              <li>Risk assessment</li>
+              <li>Remediation plan</li>
+              <li>Ongoing monitoring</li>
+              <li>Quarterly audits</li>
+            </ul>
+            <a href="https://offers.cc3po.com/health-scanner/" class="plan-btn plan-btn-featured">Get Started →</a>
+          </div>
+          <div class="service-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">Custom</div>
+            <ul>
+              <li>Multi-site analysis</li>
+              <li>Custom framework</li>
+              <li>Staff training</li>
+              <li>Implementation support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/contact/" class="plan-btn">Contact →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IT Consulting -->
+      <div class="service-block">
+        <h3>🖥️ IT Consulting</h3>
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">$499<span>/mo</span></div>
+            <ul>
+              <li>Network design</li>
+              <li>Security audit</li>
+              <li>5 hrs consulting/mo</li>
+              <li>Email support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/it-consulting/" class="plan-btn">Details →</a>
+          </div>
+          <div class="service-card service-card-popular">
+            <div class="plan-badge">Popular</div>
+            <div class="plan-name">Professional</div>
+            <div class="plan-price">$999<span>/mo</span></div>
+            <ul>
+              <li>Everything in Starter</li>
+              <li>10 hrs consulting/mo</li>
+              <li>Cloud migration</li>
+              <li>Priority support</li>
+              <li>Monthly review</li>
+            </ul>
+            <a href="https://offers.cc3po.com/it-consulting/" class="plan-btn plan-btn-featured">Get Started →</a>
+          </div>
+          <div class="service-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">Custom</div>
+            <ul>
+              <li>Unlimited consulting</li>
+              <li>Dedicated engineer</li>
+              <li>24/7 response</li>
+              <li>Custom SLA</li>
+            </ul>
+            <a href="https://offers.cc3po.com/contact/" class="plan-btn">Contact →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dental IT -->
+      <div class="service-block">
+        <h3>🦷 Dental IT</h3>
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="plan-name">Essential</div>
+            <div class="plan-price">$297<span>/mo</span></div>
+            <ul>
+              <li>Open Dental support</li>
+              <li>Weekly backups</li>
+              <li>Security monitoring</li>
+              <li>Email support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/dental-it/" class="plan-btn">Details →</a>
+          </div>
+          <div class="service-card service-card-popular">
+            <div class="plan-badge">Popular</div>
+            <div class="plan-name">Professional</div>
+            <div class="plan-price">$497<span>/mo</span></div>
+            <ul>
+              <li>Everything in Essential</li>
+              <li>Open Dental + Dexis</li>
+              <li>24/7 monitoring</li>
+              <li>Same-day support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/dental-it/" class="plan-btn plan-btn-featured">Get Started →</a>
+          </div>
+          <div class="service-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">$897<span>/mo</span></div>
+            <ul>
+              <li>Multi-location support</li>
+              <li>Custom integrations</li>
+              <li>Dedicated technician</li>
+              <li>Phone support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/contact/" class="plan-btn">Contact →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PatchPilot -->
+      <div class="service-block">
+        <h3>🛡️ PatchPilot Security</h3>
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="plan-name">Essential</div>
+            <div class="plan-price">$97<span>/mo</span></div>
+            <ul>
+              <li>Weekly scans</li>
+              <li>Security score</li>
+              <li>PDF report</li>
+              <li>SSL monitoring</li>
+              <li>Email support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/patchpilot/" class="plan-btn">Details →</a>
+          </div>
+          <div class="service-card service-card-popular">
+            <div class="plan-badge">Popular</div>
+            <div class="plan-name">Professional</div>
+            <div class="plan-price">$197<span>/mo</span></div>
+            <ul>
+              <li>Daily scans</li>
+              <li>One-click patches</li>
+              <li>Weekly reports</li>
+              <li>Instant alerts</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/patchpilot/" class="plan-btn plan-btn-featured">Get Started →</a>
+          </div>
+          <div class="service-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">$397<span>/mo</span></div>
+            <ul>
+              <li>Real-time scanning</li>
+              <li>Auto-fixes</li>
+              <li>Daily reports</li>
+              <li>HIPAA add-on</li>
+              <li>Dedicated support</li>
+            </ul>
+            <a href="https://offers.cc3po.com/contact/" class="plan-btn">Contact →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Products -->
+      <div class="service-block">
+        <h3>⚡ Additional Products</h3>
+        <div class="additional-grid">
+          <div class="additional-item">
+            <span class="additional-name">SmartBill (AI Billing)</span>
+            <span class="additional-price">$749/mo</span>
+          </div>
+          <div class="additional-item">
+            <span class="additional-name">NoShow Guard</span>
+            <span class="additional-price">$247/mo</span>
+          </div>
+          <div class="additional-item">
+            <span class="additional-name">Sales Engine (Lead Gen)</span>
+            <span class="additional-price">$499/mo</span>
+          </div>
+          <div class="additional-item">
+            <span class="additional-name">Scanner 2.0</span>
+            <span class="additional-price">$599 one-time / $97/mo</span>
+          </div>
+          <div class="additional-item">
+            <span class="additional-name">Care Plans (Website)</span>
+            <span class="additional-price">From $97/mo</span>
+          </div>
+          <div class="additional-item">
+            <span class="additional-name">SMS Marketing</span>
+            <span class="additional-price">From $297/mo</span>
+          </div>
+          <div class="additional-item">
+            <span class="additional-name">Daily Content</span>
+            <span class="additional-price">From $497/mo</span>
+          </div>
+          <div class="additional-item">
+            <span class="additional-name">Website Hosting</span>
+            <span class="additional-price">From $97/mo</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="divider" />
+
+    <!-- FAQ / CTA -->
+    <section class="pricing-section pricing-cta">
+      <h2>Not Sure What You Need?</h2>
+      <p>Book a free 30-minute consultation. We'll analyze your business and recommend the right mix.</p>
+      <a href="https://offers.cc3po.com/get-started/" class="cta-btn">Schedule Free Consultation →</a>
+    </section>
+
+  </main>
+
+</Layout>
+
+<style>
+  .pricing-main {
+    padding-top: 70px;
+  }
+
+  .pricing-hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .pricing-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pricing-hero p {
+    font-size: 1.2rem;
+    color: #9ca3af;
+  }
+
+  .os-principles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 0 20px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .os-principle {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #a5b4fc;
+  }
+
+  .os-principle strong {
+    color: #fff;
+  }
+
+  .pricing-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .pricing-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .section-sub {
+    color: #9ca3af;
+    margin-bottom: 40px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Bundles */
+  .bundles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    text-align: left;
+  }
+
+  .bundle-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+  }
+
+  .bundle-card.bundle-featured {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.08);
+  }
+
+  .bundle-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #667eea;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .bundle-savings {
+    font-size: 0.8rem;
+    color: #10b981;
+    margin-bottom: 12px;
+  }
+
+  .bundle-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  .bundle-price span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #9ca3af;
+  }
+
+  .bundle-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+  }
+
+  .bundle-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: #d1d5db;
+    font-size: 0.95rem;
+  }
+
+  .bundle-btn {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .bundle-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .bundle-btn-featured {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+
+  .bundle-btn-featured:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  /* Individual Services */
+  .service-block {
+    margin: 60px 0;
+    text-align: left;
+  }
+
+  .service-block h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #f3f4f6;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    text-align: left;
+  }
+
+  .service-card.service-card-popular {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.08);
+  }
+
+  .plan-badge {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .plan-name {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #9ca3af;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .plan-price {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #f3f4f6;
+  }
+
+  .plan-price span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #9ca3af;
+  }
+
+  .service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+  }
+
+  .service-card ul li {
+    padding: 6px 0;
+    color: #d1d5db;
+    font-size: 0.9rem;
+  }
+
+  .plan-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .plan-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+  }
+
+  .plan-btn-featured {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+  }
+
+  .plan-btn-featured:hover {
+    opacity: 0.9;
+  }
+
+  /* Additional Products */
+  .additional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    text-align: left;
+  }
+
+  .additional-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+  }
+
+  .additional-name {
+    font-size: 0.9rem;
+    color: #d1d5db;
+  }
+
+  .additional-price {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 0.9rem;
+  }
+
+  /* CTA */
+  .pricing-cta {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .pricing-cta p {
+    color: #9ca3af;
+    margin-bottom: 24px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .pricing-hero h1 {
+      font-size: 2rem;
+    }
+
+    .bundles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .os-principles {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  /* Nav */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(10, 10, 11, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    z-index: 1000;
+  }
+
+  .nav .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .nav-logo-img { height: 36px; }
+  .nav-logo-img.nav-logo-icon { display: none; }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+  }
+
+  .nav-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: #fff; }
+
+  .nav-cta {
+    background: #e94560;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.nav-open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 11, 0.98);
+      padding: 24px;
+      gap: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-toggle { display: block; }
+    .nav-cta { display: none; }
+  }
+</style>
