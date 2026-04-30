@@ -1,0 +1,254 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us" description="Get in touch with CC3PO. We help healthcare, dental, and small businesses with IT, automation, and compliance.">
+
+  <section class="hero">
+    <div class="container">
+      <h1>Let's Talk</h1>
+      <p class="hero-sub">Tell us about your business. We'll show you how AI can handle the work you don't have time for.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-form-wrapper">
+          <h2>Send Us a Message</h2>
+          <form id="contact-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" name="name" required placeholder="Jane Smith">
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email *</label>
+                <input type="email" id="contact-email" name="email" required placeholder="jane@practice.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-phone">Phone</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567">
+              </div>
+              <div class="form-group">
+                <label for="contact-company">Company</label>
+                <input type="text" id="contact-company" name="company" placeholder="Smith Dental Group">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-service">What do you need help with?</label>
+              <select id="contact-service" name="service_interest">
+                <option value="">Select a service</option>
+                <option value="website">Website Design & Development</option>
+                <option value="automation">AI Automation</option>
+                <option value="security">HIPAA Compliance & Security</option>
+                <option value="it-support">Managed IT Support</option>
+                <option value="audit">Free Website Audit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message *</label>
+              <textarea id="contact-message" name="message" rows="5" required placeholder="Tell us about your challenges..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="contact-submit">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loading" style="display:none">Sending...</span>
+            </button>
+          </form>
+          <div class="form-success" id="contact-success" style="display:none">
+            <div class="success-icon">✓</div>
+            <h3>Message Sent!</h3>
+            <p>We'll get back to you within 24 hours. Talk soon.</p>
+          </div>
+          <div class="form-error" id="contact-error" style="display:none">
+            <div class="error-icon">!</div>
+            <h3>Something went wrong</h3>
+            <p>Please try again or email us directly at <a href="mailto:hello@cc3po.com">hello@cc3po.com</a>.</p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">📧</div>
+            <h3>Email</h3>
+            <a href="mailto:hello@cc3po.com">hello@cc3po.com</a>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>Phone</h3>
+            <a href="tel:+12092100170">(209) 210-0170</a>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Location</h3>
+            <p>Serving California's Central Valley<br>and beyond</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">⚡</div>
+            <h3>Response Time</h3>
+            <p>Within 24 hours<br>(usually much faster)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Common Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>How much does it cost?</h3>
+          <p>Plans start at $297/month for our Daily Content plan. Our AI Village handles everything — writing, posting, monitoring — so you don't need to hire anyone.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you work with dental offices?</h3>
+          <p>Yes. Dental practices are our specialty. We handle HIPAA-compliant websites, AI phone answering, automated reviews, and billing automation.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What's included in the free audit?</h3>
+          <p>A full scan of your website covering speed, security, SEO, mobile experience, accessibility, and HIPAA compliance. You get a detailed report with specific fixes.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I cancel anytime?</h3>
+          <p>Yes. All our plans are month-to-month. No contracts, no cancellation fees. We earn your business every month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #050508 0%, #1a0a2e 50%, #050508 100%);
+    text-align: center;
+    padding: 120px 24px 60px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #a78bfa, #4fc3f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: #a1a1aa;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .contact-section { padding: 60px 0; background: #0a0a0b; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-form-wrapper h2 { color: #fff; font-size: 28px; margin-bottom: 24px; }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 14px; color: #a1a1aa; font-weight: 500; }
+  .form-group input, .form-group select, .form-group textarea {
+    background: #141418; border: 1px solid #2a2a3a; border-radius: 8px;
+    padding: 12px 16px; color: #fff; font-size: 15px; transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: #6b35ff;
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .btn-primary {
+    background: linear-gradient(135deg, #6b35ff, #4fc3f7); color: #fff;
+    padding: 14px 32px; border: none; border-radius: 8px; font-size: 16px;
+    font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(107,53,255,0.4); }
+  .success-icon, .error-icon {
+    width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 24px; margin: 0 auto 16px;
+  }
+  .success-icon { background: #2e7d32; color: #fff; }
+  .error-icon { background: #c62828; color: #fff; }
+  .form-success, .form-error { text-align: center; padding: 32px; }
+  .form-success h3, .form-error h3 { color: #fff; font-size: 22px; margin-bottom: 8px; }
+  .form-success p, .form-error p { color: #a1a1aa; }
+  .form-error a { color: #4fc3f7; }
+  .contact-info { display: flex; flex-direction: column; gap: 16px; }
+  .info-card {
+    background: #141418; border: 1px solid #2a2a3a; border-radius: 12px;
+    padding: 24px; text-align: center; transition: border-color 0.2s;
+  }
+  .info-card:hover { border-color: #6b35ff; }
+  .info-icon { font-size: 28px; margin-bottom: 8px; }
+  .info-card h3 { color: #fff; font-size: 16px; margin-bottom: 8px; }
+  .info-card a { color: #4fc3f7; text-decoration: none; font-size: 15px; }
+  .info-card a:hover { text-decoration: underline; }
+  .info-card p { color: #a1a1aa; font-size: 14px; line-height: 1.5; }
+  .faq-section { padding: 60px 0; background: #0d0d0f; }
+  .faq-section h2 { color: #fff; font-size: 32px; text-align: center; margin-bottom: 40px; }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
+  .faq-item { background: #141418; border: 1px solid #2a2a3a; border-radius: 12px; padding: 24px; }
+  .faq-item h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
+  .faq-item p { color: #a1a1aa; font-size: 15px; line-height: 1.6; }
+</style>
+
+<script>
+const form = document.getElementById('contact-form');
+const submitBtn = document.getElementById('contact-submit');
+const successMsg = document.getElementById('contact-success');
+const errorMsg = document.getElementById('contact-error');
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnLoading = submitBtn.querySelector('.btn-loading');
+  btnText.style.display = 'none';
+  btnLoading.style.display = 'inline';
+  submitBtn.disabled = true;
+
+  const formData = new FormData(form);
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone') || '',
+    company: formData.get('company') || '',
+    service_interest: formData.get('service_interest') || '',
+    message: formData.get('message'),
+    source: 'cc3po.com-contact',
+    lead_type: 'contact'
+  };
+
+  try {
+    const res = await fetch('https://cdrcgmdvepxwsbqaifxv.supabase.co/rest/v1/leads', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkcmNnbWR2ZXB4d3NicWFpZnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MDY4MDksImV4cCI6MjA4OTA4MjgwOX0.pKWLWvsSimTOMkpaXKKrLJESrQEMUayUU1c9ANzr1Dc',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (err) {
+    form.style.display = 'none';
+    errorMsg.style.display = 'block';
+  }
+});
+</script>
