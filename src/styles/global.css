@@ -772,6 +772,32 @@ a:focus-visible, button:focus-visible {
 .footer-legal a { font-size: var(--text-caption); color: var(--text-muted); transition: color var(--duration-fast); min-height: 44px; display: flex; align-items: center; }
 .footer-legal a:hover { color: var(--text-secondary); }
 
+.footer-social {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 20px 0;
+}
+.social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.social-link:hover {
+  background: rgba(233,69,96,0.1);
+  border-color: rgba(233,69,96,0.3);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
 /* Legacy footer-inner for backward compat */
 .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 
