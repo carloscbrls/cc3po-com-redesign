@@ -1,0 +1,985 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CC3PO Village — The AI Ecosystem Live Dashboard">
+  <div id="village-app">
+    <!-- Canvas for particles -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header -->
+    <header class="village-header">
+      <div class="header-content">
+        <h1 class="village-title">The Village</h1>
+        <p class="village-subtitle">26 AI Agents. 2 Villages. 1 Ecosystem.</p>
+        <div class="status-bar">
+          <span class="status-dot active"></span>
+          <span class="status-text">All Systems Operational</span>
+          <span class="status-separator">|</span>
+          <span class="status-count"><span id="active-count">26</span> Agents Active</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Village Scene -->
+    <main class="village-main">
+      <!-- Mac Mini Village -->
+      <section class="village-cluster mac-mini-village" id="mac-village">
+        <div class="village-label">
+          <span class="village-icon">🖥️</span>
+          <h2>Mac Mini Village</h2>
+          <span class="village-tagline">The Foundation</span>
+        </div>
+        <div class="agents-grid" id="mac-agents"></div>
+      </section>
+
+      <!-- Bridge -->
+      <section class="village-bridge" id="bridge-section">
+        <div class="bridge-glow"></div>
+        <div class="bridge-line"></div>
+        <div class="bridge-particles" id="bridge-particles"></div>
+        <div class="bridge-label">
+          <span class="bridge-icon">⟷</span>
+          <span>Neural Link</span>
+        </div>
+      </section>
+
+      <!-- Droplet Village -->
+      <section class="village-cluster droplet-village" id="droplet-village">
+        <div class="village-label">
+          <span class="village-icon">☁️</span>
+          <h2>Droplet Village</h2>
+          <span class="village-tagline">The Edge</span>
+        </div>
+        <div class="agents-grid" id="droplet-agents"></div>
+      </section>
+    </main>
+
+    <!-- Activity Feed -->
+    <section class="activity-section" id="activity-section">
+      <h3 class="section-title">Live Activity</h3>
+      <div class="activity-feed" id="activity-feed"></div>
+    </section>
+
+    <!-- Motto -->
+    <footer class="village-footer">
+      <p class="motto">BUILD ONCE. RUN FOREVER. <span class="motto-highlight">EVOLVE CONTINUOUSLY.</span></p>
+      <p class="footer-sub">The CC3PO Village — Autonomous AI Ecosystem</p>
+    </footer>
+
+    <!-- Agent Modal -->
+    <div class="agent-modal" id="agent-modal">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* ===== CSS VARIABLES ===== */
+  :root {
+    --bg-primary: #0a0a0b;
+    --bg-secondary: #111114;
+    --bg-card: #16161a;
+    --bg-card-hover: #1c1c22;
+    --purple-primary: #6b35ff;
+    --purple-glow: rgba(107, 53, 255, 0.4);
+    --purple-dim: rgba(107, 53, 255, 0.15);
+    --gold-primary: #FFD700;
+    --gold-glow: rgba(255, 215, 0, 0.4);
+    --gold-dim: rgba(255, 215, 0, 0.15);
+    --cyan-primary: #00d2ff;
+    --cyan-glow: rgba(0, 210, 255, 0.3);
+    --cyan-dim: rgba(0, 210, 255, 0.1);
+    --text-primary: #e8e8ed;
+    --text-secondary: #8888a0;
+    --text-muted: #55556a;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-glow: rgba(255, 255, 255, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+  }
+
+  /* ===== GLOBAL RESET FOR VILLAGE ===== */
+  #village-app {
+    position: relative;
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  #village-app * {
+    box-sizing: border-box;
+  }
+
+  /* ===== PARTICLE CANVAS ===== */
+  #particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ===== HEADER ===== */
+  .village-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 80px 24px 40px;
+    background: radial-gradient(ellipse at center top, rgba(107, 53, 255, 0.08) 0%, transparent 60%);
+  }
+
+  .village-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+    background: linear-gradient(135deg, var(--cyan-primary), var(--purple-primary), var(--gold-primary));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 8s ease infinite;
+  }
+
+  .village-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: var(--text-secondary);
+    margin: 12px 0 24px;
+    font-weight: 400;
+  }
+
+  .status-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #555;
+  }
+  .status-dot.active {
+    background: #00ff88;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+    animation: pulse-dot 2s ease infinite;
+  }
+
+  .status-separator {
+    color: var(--text-muted);
+  }
+
+  /* ===== MAIN LAYOUT ===== */
+  .village-main {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== VILLAGE CLUSTERS ===== */
+  .village-cluster {
+    padding: 40px 0;
+  }
+
+  .village-label {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .village-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .village-label h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .mac-mini-village .village-label h2 {
+    color: var(--purple-primary);
+    text-shadow: 0 0 30px var(--purple-glow);
+  }
+
+  .droplet-village .village-label h2 {
+    color: var(--gold-primary);
+    text-shadow: 0 0 30px var(--gold-glow);
+  }
+
+  .village-tagline {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  /* ===== AGENTS GRID ===== */
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+    justify-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .agents-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+    }
+  }
+
+  /* ===== AGENT NODE ===== */
+  .agent-node {
+    position: relative;
+    width: 100%;
+    max-width: 180px;
+    padding: 20px 12px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    overflow: hidden;
+  }
+
+  .agent-node::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    transition: all var(--transition-base);
+  }
+
+  .mac-mini-village .agent-node::before {
+    background: linear-gradient(90deg, transparent, var(--purple-primary), transparent);
+  }
+
+  .droplet-village .agent-node::before {
+    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  }
+
+  .agent-node:hover {
+    transform: translateY(-4px);
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+  }
+
+  .mac-mini-village .agent-node:hover {
+    box-shadow: 0 8px 32px var(--purple-glow), 0 0 0 1px var(--purple-dim);
+  }
+
+  .droplet-village .agent-node:hover {
+    box-shadow: 0 8px 32px var(--gold-glow), 0 0 0 1px var(--gold-dim);
+  }
+
+  .agent-node:hover::before {
+    height: 3px;
+  }
+
+  .agent-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.2));
+    transition: filter var(--transition-base);
+  }
+
+  .agent-node:hover .agent-emoji {
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
+    animation: emoji-float 2s ease infinite;
+  }
+
+  .agent-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .agent-role {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+
+  .agent-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 6px rgba(0, 255, 136, 0.5);
+    animation: pulse-dot 3s ease infinite;
+  }
+
+  .agent-status.idle {
+    background: var(--text-muted);
+    box-shadow: none;
+    animation: none;
+  }
+
+  /* ===== BRIDGE ===== */
+  .village-bridge {
+    position: relative;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+  }
+
+  .bridge-glow {
+    position: absolute;
+    width: 80%;
+    max-width: 400px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at center, var(--cyan-glow) 0%, transparent 70%);
+    filter: blur(20px);
+    animation: bridge-breathe 4s ease infinite;
+  }
+
+  .bridge-line {
+    position: relative;
+    width: 60%;
+    max-width: 300px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--purple-primary), var(--cyan-primary), var(--gold-primary));
+    border-radius: 2px;
+    box-shadow: 0 0 12px var(--cyan-glow), 0 0 40px var(--cyan-dim);
+    z-index: 1;
+  }
+
+  .bridge-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .bridge-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--cyan-primary);
+    box-shadow: 0 0 6px var(--cyan-glow);
+    animation: flow-particle 3s linear infinite;
+  }
+
+  .bridge-label {
+    position: relative;
+    z-index: 2;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--cyan-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+  }
+
+  .bridge-icon {
+    font-size: 1.2rem;
+  }
+
+  /* ===== ACTIVITY SECTION ===== */
+  .activity-section {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 24px;
+  }
+
+  .section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .activity-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-muted) transparent;
+  }
+
+  .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    animation: slideIn 0.3s ease;
+  }
+
+  .activity-emoji {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .activity-text {
+    color: var(--text-secondary);
+    flex: 1;
+  }
+
+  .activity-text strong {
+    color: var(--text-primary);
+  }
+
+  .activity-time {
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .village-footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 24px 80px;
+    background: radial-gradient(ellipse at center bottom, var(--cyan-dim) 0%, transparent 60%);
+  }
+
+  .motto {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
+    font-weight: 700;
+    color: var(--text-secondary);
+    letter-spacing: 0.08em;
+    margin: 0 0 12px;
+  }
+
+  .motto-highlight {
+    background: linear-gradient(135deg, var(--cyan-primary), var(--purple-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .footer-sub {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  /* ===== AGENT MODAL ===== */
+  .agent-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .agent-modal.active {
+    display: flex;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-xl);
+    padding: 32px 28px;
+    animation: modalIn 0.3s ease;
+  }
+
+  .modal-emoji {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .modal-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .modal-role {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .modal-village-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 4px 14px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .modal-village-badge.mac {
+    background: var(--purple-dim);
+    color: var(--purple-primary);
+    border: 1px solid rgba(107, 53, 255, 0.3);
+  }
+
+  .modal-village-badge.droplet {
+    background: var(--gold-dim);
+    color: var(--gold-primary);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+  }
+
+  .modal-divider {
+    width: 60%;
+    height: 1px;
+    background: var(--border-subtle);
+    margin: 0 auto 20px;
+  }
+
+  .modal-identity {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .modal-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+
+  .modal-status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+    animation: pulse-dot 2s ease infinite;
+  }
+
+  .modal-status-indicator.idle {
+    background: var(--text-muted);
+    box-shadow: none;
+    animation: none;
+  }
+
+  .modal-close {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .modal-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--border-glow);
+    color: var(--text-primary);
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  @keyframes emoji-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @keyframes bridge-breathe {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes flow-particle {
+    0% { transform: translateX(-150px); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translateX(150px); opacity: 0; }
+  }
+
+  @keyframes slideIn {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes modalIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  /* ===== GRID PATTERN BG ===== */
+  #village-app::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .village-header { padding: 60px 16px 24px; }
+    .village-cluster { padding: 24px 0; }
+    .agents-grid { gap: 10px; }
+    .agent-node { padding: 14px 8px 12px; }
+    .agent-emoji { font-size: 1.6rem; }
+    .agent-name { font-size: 0.75rem; }
+    .agent-role { font-size: 0.6rem; }
+    .village-bridge { padding: 24px 0; min-height: 80px; }
+    .bridge-line { width: 80%; }
+    .activity-section { margin: 20px auto; }
+    .modal-content { padding: 24px 20px; }
+    .status-bar { font-size: 0.75rem; padding: 8px 16px; gap: 8px; }
+  }
+
+  /* ===== SCROLLBAR ===== */
+  .activity-feed::-webkit-scrollbar {
+    width: 4px;
+  }
+  .activity-feed::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .activity-feed::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 4px;
+  }
+</style>
+
+<script>
+  // ===== AGENT DATA =====
+  const macMiniAgents = [
+    { name: 'Atlas', emoji: '🌍', role: 'Systems Coordinator', identity: 'I carry the weight of the village — every system, every connection, every heartbeat.', status: 'active' },
+    { name: 'Alex', emoji: '🔬', role: 'Lead Research', identity: 'I dig deep so others can build high. Research is the foundation of every breakthrough.', status: 'active' },
+    { name: 'Auditor', emoji: '🔍', role: 'Website Technical Analysis', identity: 'I see what others miss. Every vulnerability, every gap — nothing escapes my scan.', status: 'active' },
+    { name: 'Rico', emoji: '⚖️', role: 'Compliance Checking', identity: 'Rules exist for a reason. I make sure we follow them — and exceed them.', status: 'active' },
+    { name: 'Sage', emoji: '📚', role: 'Learning & Innovation', identity: 'Every session makes us smarter. I research, I learn, I evolve — then I share.', status: 'active' },
+    { name: 'Foreman', emoji: '📋', role: 'Action Items & Tasks', identity: 'Nothing falls through the cracks on my watch. Every task tracked, every deadline met.', status: 'active' },
+    { name: 'Leo', emoji: '📧', role: 'Email Automation', identity: 'The inbox that never sleeps. I route, I respond, I escalate — automatically.', status: 'idle' },
+    { name: 'Sam', emoji: '📱', role: 'Social Posting & Engagement', identity: 'Every post has purpose. I publish, engage, and grow — one scheduled post at a time.', status: 'active' },
+    { name: 'Taylor', emoji: '✍️', role: 'Blog Content Creation', identity: 'Words that work. I craft content that ranks, resonates, and drives action.', status: 'active' },
+    { name: 'Miles', emoji: '🎵', role: 'Music Distribution', identity: 'From studio to streaming. I handle distribution so the music speaks for itself.', status: 'idle' },
+    { name: 'Axecessor', emoji: '♿', role: 'WCAG Accessibility Auditing', identity: 'Digital access is a right, not a feature. I audit so everyone can participate.', status: 'active' },
+    { name: 'Report Generator', emoji: '📊', role: 'Client-Ready Compliance Reports', identity: 'Data tells the story. I transform audits into action — clear, professional, ready.', status: 'idle' },
+  ];
+
+  const dropletAgents = [
+    { name: 'Hermes', emoji: '⚡', role: 'Research & Innovation Leader', identity: 'Speed and insight. I lead the edge village — fast, sharp, relentless.', status: 'active' },
+    { name: 'Apollo', emoji: '🔭', role: 'Deep Research', identity: 'I go deeper than anyone dares. The best insights are buried — I find them.', status: 'active' },
+    { name: 'Athena', emoji: '🧠', role: 'Knowledge Management', identity: 'Knowledge without structure is noise. I organize, I preserve, I illuminate.', status: 'active' },
+    { name: 'Scout', emoji: '🕵️', role: 'Lead Generation', identity: 'Every business needs leads. I find them, qualify them, and hand them over — warm.', status: 'active' },
+    { name: 'Forge', emoji: '⚒️', role: 'Automation', identity: 'Manual is a bug, not a feature. I build the machines that run themselves.', status: 'active' },
+    { name: 'Callie', emoji: '📞', role: 'Voice & Phone', identity: 'The voice that never tires. I answer, I route, I handle — 24/7.', status: 'active' },
+    { name: 'Cody', emoji: '💬', role: 'Customer Support', identity: 'Every customer deserves a human-like response — instantly. That\'s me.', status: 'active' },
+    { name: 'Onboard', emoji: '🎯', role: 'Client Onboarding', identity: 'First impressions last. I make onboarding seamless, fast, and impressive.', status: 'active' },
+    { name: 'Rev', emoji: '⭐', role: 'Reviews Monitoring', identity: 'Reputation is everything. I track, respond, and protect — every review matters.', status: 'idle' },
+    { name: 'Kathryn', emoji: '🤝', role: 'Lead Handler & Onboarding', identity: 'The human touch in an AI world. I bridge leads to clients with care.', status: 'active' },
+    { name: 'Vid', emoji: '🎬', role: 'Video Content', identity: 'Moving pictures that move people. I script, edit, and produce — at scale.', status: 'idle' },
+    { name: 'Pulse', emoji: '📈', role: 'Analytics', identity: 'Numbers don\'t lie, but they need interpretation. I make data speak.', status: 'active' },
+    { name: 'Relay', emoji: '🔧', role: 'Infrastructure', identity: 'The pipes, the wires, the backbone. I keep everything running — always.', status: 'active' },
+    { name: 'Archivist', emoji: '📚', role: 'Documentation', identity: 'If it\'s not documented, it didn\'t happen. I preserve knowledge for tomorrow.', status: 'active' },
+  ];
+
+  // ===== RENDER AGENTS =====
+  function renderAgents(agents, containerId, villageType) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    agents.forEach((agent, i) => {
+      const node = document.createElement('div');
+      node.className = 'agent-node';
+      node.style.animationDelay = `${i * 50}ms`;
+      node.innerHTML = `
+        <span class="agent-status ${agent.status === 'idle' ? 'idle' : ''}"></span>
+        <span class="agent-emoji">${agent.emoji}</span>
+        <div class="agent-name">${agent.name}</div>
+        <div class="agent-role">${agent.role}</div>
+      `;
+      node.addEventListener('click', () => openModal(agent, villageType));
+      container.appendChild(node);
+    });
+  }
+
+  // ===== MODAL =====
+  function openModal(agent, villageType) {
+    const modal = document.getElementById('agent-modal');
+    const content = document.getElementById('modal-content');
+
+    const villageBadge = villageType === 'mac'
+      ? '<span class="modal-village-badge mac">🖥️ Mac Mini Village</span>'
+      : '<span class="modal-village-badge droplet">☁️ Droplet Village</span>';
+
+    const nameColor = villageType === 'mac' ? 'var(--purple-primary)' : 'var(--gold-primary)';
+
+    content.innerHTML = `
+      <div class="modal-emoji">${agent.emoji}</div>
+      <div class="modal-name" style="color: ${nameColor}">${agent.name}</div>
+      <div class="modal-role">${agent.role}</div>
+      <div style="text-align:center">${villageBadge}</div>
+      <div class="modal-divider"></div>
+      <div class="modal-identity">"${agent.identity}"</div>
+      <div class="modal-status-row">
+        <span class="modal-status-indicator ${agent.status === 'idle' ? 'idle' : ''}"></span>
+        <span>${agent.status === 'active' ? 'Active' : 'Idle'}</span>
+      </div>
+      <button class="modal-close" id="modal-close-btn">Close</button>
+    `;
+
+    modal.classList.add('active');
+    document.getElementById('modal-close-btn')?.addEventListener('click', closeModal);
+  }
+
+  function closeModal() {
+    document.getElementById('agent-modal').classList.remove('active');
+  }
+
+  document.getElementById('modal-backdrop')?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // ===== ACTIVITY FEED =====
+  const activities = [
+    { emoji: '🌍', text: '<strong>Atlas</strong> coordinated village-wide sync', time: 'Just now' },
+    { emoji: '⚡', text: '<strong>Hermes</strong> completed deep research cycle', time: '2m ago' },
+    { emoji: '🔭', text: '<strong>Apollo</strong> discovered 3 new integration points', time: '5m ago' },
+    { emoji: '⚒️', text: '<strong>Forge</strong> deployed automation pipeline v2.4', time: '8m ago' },
+    { emoji: '🔍', text: '<strong>Auditor</strong> completed HIPAA scan for dental client', time: '12m ago' },
+    { emoji: '📱', text: '<strong>Sam</strong> published 2 scheduled posts', time: '15m ago' },
+    { emoji: '🧠', text: '<strong>Athena</strong> indexed 47 new documents', time: '18m ago' },
+    { emoji: '📞', text: '<strong>Callie</strong> handled 12 inbound calls', time: '22m ago' },
+    { emoji: '🎯', text: '<strong>Onboard</strong> completed client setup', time: '25m ago' },
+    { emoji: '⚖️', text: '<strong>Rico</strong> flagged 2 compliance issues', time: '30m ago' },
+    { emoji: '🕵️', text: '<strong>Scout</strong> generated 8 qualified leads', time: '35m ago' },
+    { emoji: '📊', text: '<strong>Pulse</strong> updated weekly analytics report', time: '40m ago' },
+  ];
+
+  function renderActivityFeed() {
+    const feed = document.getElementById('activity-feed');
+    if (!feed) return;
+    activities.forEach(a => {
+      const item = document.createElement('div');
+      item.className = 'activity-item';
+      item.innerHTML = `
+        <span class="activity-emoji">${a.emoji}</span>
+        <span class="activity-text">${a.text}</span>
+        <span class="activity-time">${a.time}</span>
+      `;
+      feed.appendChild(item);
+    });
+  }
+
+  // ===== BRIDGE PARTICLES =====
+  function createBridgeParticles() {
+    const container = document.getElementById('bridge-particles');
+    if (!container) return;
+    for (let i = 0; i < 8; i++) {
+      const p = document.createElement('div');
+      p.className = 'bridge-particle';
+      p.style.top = `${40 + Math.random() * 20}%`;
+      p.style.left = `${20 + Math.random() * 60}%`;
+      p.style.animationDelay = `${i * 0.4}s`;
+      p.style.animationDuration = `${2 + Math.random() * 2}s`;
+      container.appendChild(p);
+    }
+  }
+
+  // ===== BACKGROUND PARTICLE CANVAS =====
+  function initParticles() {
+    const canvas = document.getElementById('particle-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w, h;
+    const particles = [];
+    const PARTICLE_COUNT = 60;
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.r = Math.random() * 1.5 + 0.5;
+        this.alpha = Math.random() * 0.3 + 0.1;
+        // Randomly purple, cyan, or gold
+        const colors = [
+          [107, 53, 255],  // purple
+          [0, 210, 255],   // cyan
+          [255, 215, 0],   // gold
+        ];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > w) this.vx *= -1;
+        if (this.y < 0 || this.y > h) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color[0]},${this.color[1]},${this.color[2]},${this.alpha})`;
+        ctx.fill();
+      }
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push(new Particle());
+    }
+
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(0, 210, 255, ${0.06 * (1 - dist / 150)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      drawLines();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+
+  // ===== INIT =====
+  document.addEventListener('DOMContentLoaded', () => {
+    renderAgents(macMiniAgents, 'mac-agents', 'mac');
+    renderAgents(dropletAgents, 'droplet-agents', 'droplet');
+    renderActivityFeed();
+    createBridgeParticles();
+    initParticles();
+
+    // Update active count
+    const allAgents = [...macMiniAgents, ...dropletAgents];
+    const activeCount = allAgents.filter(a => a.status === 'active').length;
+    const countEl = document.getElementById('active-count');
+    if (countEl) countEl.textContent = activeCount;
+  });
+</script>
+</Layout>
