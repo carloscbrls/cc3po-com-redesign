@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container nav-inner">
       <a href="/" class="nav-logo">
         <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
-        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon">
+        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon" width="56" height="56" loading="eager">
         <span>CC3PO</span>
       </a>
       <ul class="nav-links">
@@ -491,7 +491,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="founder-card reveal">
         <div class="founder-photo">
-          <img src="/images/carlos.jpg" alt="Carlos Cabrales III" class="founder-avatar-img">
+          <img src="/images/carlos.jpg" alt="Carlos Cabrales III" class="founder-avatar-img" width="114" height="114" loading="lazy">
           <div class="founder-status">
             <span class="founder-dot"></span>
             <span>Active Village Operator</span>
@@ -770,7 +770,15 @@ import Layout from '../layouts/Layout.astro';
       const count = Math.min(80, Math.floor(w * h / 12000));
       for (let i = 0; i < count; i++) particles.push(new Particle());
 
+      let animating = true;
+      const canvasObserver = new IntersectionObserver(([entry]) => {
+        animating = entry.isIntersecting;
+        if (animating) animate();
+      }, { threshold: 0 });
+      canvasObserver.observe(canvas);
+
       function animate() {
+        if (!animating) return;
         ctx.clearRect(0, 0, w, h);
         particles.forEach(p => { p.update(); p.draw(); });
         // Draw connections
@@ -996,10 +1004,17 @@ import Layout from '../layouts/Layout.astro';
     }
     updateCalc();
 
-    // ===== NAV SCROLL EFFECT =====
+    // ===== NAV SCROLL EFFECT (throttled) =====
     const nav = document.getElementById('nav');
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
     });
 
     // ===== SUPABASE LEAD FORM =====
