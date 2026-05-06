@@ -16,7 +16,9 @@ import Layout from '../layouts/Layout.astro';
         <li><a href="/services">Services</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#products">Products</a></li>
+<!-- B. Government link added to nav -->
         <li><a href="#proof">Proof</a></li>
+        <li><a href="/government">Government</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
       <a href="#cta" class="nav-cta">Free HIPAA Scan</a>
@@ -30,9 +32,10 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero" id="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-content">
+<!-- D. Updated hero badge with certification -->
       <div class="hero-badge reveal">
         <span class="pulse-dot"></span>
-        Live Village Brain
+        CA Certified Small Business — SB #2052063
       </div>
 
       <h1 class="hero-title reveal">
@@ -40,11 +43,13 @@ import Layout from '../layouts/Layout.astro';
         <span class="typed-gradient" id="typed-target">You Control</span><span class="typed-cursor">|</span>
       </h1>
 
+<!-- E. Updated hero sub with local signal -->
       <p class="hero-sub reveal">
         Autonomous AI workers that report everything they do.<br>
         You set the rules. They work within them.<br class="hide-mobile">
         You approve before anything ships.
       </p>
+      <p style="margin-top:8px;color:var(--text-muted);font-size:0.8rem;">Based in Lathrop, CA — Serving San Joaquin County &amp; All 58 California Counties</p>
 
       <!-- Lead Capture Form -->
       <div class="lead-form-wrap reveal" id="lead-form">
@@ -155,6 +160,29 @@ import Layout from '../layouts/Layout.astro';
         <a href="#proof" class="btn btn-outline">
           <span class="btn-icon">📊</span> View Real Proof
         </a>
+      </div>
+    </div>
+  </section>
+
+<!-- ====== TRUST BAR ====== -->
+  <section class="trust-bar" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; text-align: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #ffd700; font-size: 18px;">🏛️</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">CA Certified Small Business</span>
+        <span style="color: var(--text-muted); font-size: 12px;">SB #2052063</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #e94560; font-size: 18px;">🌎</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">Latino-Owned Business</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #4fc3f7; font-size: 18px;">🛡️</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">SB/DVBE Option Eligible</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #00e676; font-size: 18px;">🌐</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">Se habla español</span>
       </div>
     </div>
   </section>
@@ -619,6 +647,7 @@ import Layout from '../layouts/Layout.astro';
           <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
           <p>AI Agents That Work Within Your Rules. Autonomous — but never unsupervised.</p>
           <p class="footer-tagline" style="margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Build once. Run forever. Evolve continuously.</p>
+          <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.35);line-height:1.5;"><strong style="color:rgba(255,255,255,0.5);">Certifications:</strong> CA Small Business SB #2052063 · Latino-Owned · SB/DVBE Option · <a href="/certifications" style="color:var(--accent);">View All →</a></div>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Products</div>
@@ -637,6 +666,9 @@ import Layout from '../layouts/Layout.astro';
             <a href="/terms/">Terms of Service</a>
             <a href="https://cc3po.io/strategy-call" target="_blank" rel="noopener">Contact</a>
             <a href="#founder">About</a>
+            <a href="/government">Government</a>
+            <a href="/certifications">Certifications</a>
+            <a href="/accessibility">Accessibility</a>
           </div>
         </div>
       </div>
