@@ -278,14 +278,20 @@ a:focus-visible, button:focus-visible {
   position: relative; min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   text-align: center; padding: calc(var(--nav-height) + var(--space-4xl)) var(--space-lg) var(--space-3xl);
-  background: url('/images/hero-bg-mobile.webp') center center / cover no-repeat;
+  background: var(--bg-primary);
   overflow: hidden;
   contain: layout style;
 }
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.35;
+}
 @media (min-width: 769px) {
-  .hero {
-    background-image: url('/images/hero-bg.webp');
-  }
+  .hero-video { opacity: 0.4; }
 }
 .hero::before {
   content: '';
