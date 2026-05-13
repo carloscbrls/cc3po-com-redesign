@@ -1,0 +1,1145 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'LINC Test — Do Your Business Ideas Compound or Compete? | CC3PO';
+const description = 'Discover which of your business interests actually multiply each other — and which ones fight for your time. Take the free LINC test now.';
+---
+
+<style>
+  /* ===== LINC TEST PAGE ===== */
+
+  .linc-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--nav-height) + var(--space-4xl)) var(--space-lg) var(--space-3xl);
+    background: var(--bg-primary);
+    overflow: hidden;
+  }
+
+  .linc-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 20%, rgba(233,69,96,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(79,195,247,0.05) 0%, transparent 50%);
+    z-index: 0;
+  }
+
+  .linc-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    width: 100%;
+  }
+
+  .linc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: var(--space-xs) var(--space-md);
+    background: rgba(233,69,96,0.1);
+    border: 1px solid rgba(233,69,96,0.3);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-lg);
+  }
+
+  .linc-hero h1 {
+    font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .linc-hero h1 .highlight {
+    background: linear-gradient(135deg, var(--accent), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .linc-hero-sub {
+    font-size: clamp(var(--text-body), 1.8vw, var(--text-lg));
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ===== HOW IT WORKS ===== */
+  .how-section {
+    padding: var(--space-4xl) 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .linc-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+  }
+
+  .linc-step {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--duration-normal), transform var(--duration-normal) var(--ease-spring), box-shadow var(--duration-normal);
+    position: relative;
+  }
+
+  .linc-step:hover {
+    border-color: rgba(233,69,96,0.3);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .linc-step-letter {
+    font-size: 36px;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    background: linear-gradient(135deg, var(--accent), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: var(--space-sm);
+  }
+
+  .linc-step-name {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    color: var(--text-primary);
+  }
+
+  .linc-step-question {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+
+  .linc-step-example {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(0,230,118,0.05);
+    border: 1px solid rgba(0,230,118,0.12);
+    border-radius: var(--radius-sm);
+    line-height: 1.5;
+  }
+
+  .linc-step-example strong {
+    color: var(--success);
+    font-weight: 600;
+  }
+
+  /* ===== CALCULATOR ===== */
+  .calc-section {
+    padding: var(--space-4xl) 0;
+    background: var(--bg-primary);
+  }
+
+  .calc-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Interest inputs */
+  .interest-inputs {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-md);
+    align-items: end;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .interest-vs {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-muted);
+    padding-bottom: var(--space-md);
+    text-align: center;
+  }
+
+  .interest-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .interest-input {
+    width: 100%;
+    padding: 14px var(--space-md);
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    min-height: 56px;
+    transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+  }
+
+  .interest-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(233,69,96,0.12);
+  }
+
+  .interest-input::placeholder {
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  /* Questions */
+  .linc-questions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .linc-question {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--duration-normal), box-shadow var(--duration-normal);
+  }
+
+  .linc-question:hover {
+    border-color: rgba(255,255,255,0.1);
+  }
+
+  .linc-question.active {
+    border-color: rgba(233,69,96,0.3);
+    box-shadow: 0 0 30px rgba(233,69,96,0.08);
+  }
+
+  .linc-question.answered {
+    border-color: rgba(0,230,118,0.15);
+  }
+
+  .linc-question-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+
+  .linc-question-letter {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(233,69,96,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-lg);
+    font-weight: 800;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .linc-question-name {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .linc-question-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    padding-left: 52px;
+  }
+
+  .linc-question-text em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .linc-toggles {
+    display: flex;
+    gap: var(--space-sm);
+    padding-left: 52px;
+  }
+
+  .linc-toggle-btn {
+    padding: 10px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 44px;
+    transition: all var(--duration-fast);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .linc-toggle-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: var(--text-primary);
+  }
+
+  .linc-toggle-btn.yes {
+    background: rgba(0,230,118,0.08);
+    border-color: rgba(0,230,118,0.25);
+    color: var(--success);
+  }
+
+  .linc-toggle-btn.yes:hover {
+    background: rgba(0,230,118,0.15);
+  }
+
+  .linc-toggle-btn.yes.active {
+    background: rgba(0,230,118,0.15);
+    border-color: var(--success);
+    color: var(--success);
+    box-shadow: 0 0 16px rgba(0,230,118,0.15);
+  }
+
+  .linc-toggle-btn.no {
+    background: rgba(255,82,82,0.06);
+    border-color: rgba(255,82,82,0.2);
+    color: rgba(255,82,82,0.7);
+  }
+
+  .linc-toggle-btn.no:hover {
+    background: rgba(255,82,82,0.1);
+  }
+
+  .linc-toggle-btn.no.active {
+    background: rgba(255,82,82,0.12);
+    border-color: rgba(255,82,82,0.5);
+    color: var(--red);
+    box-shadow: 0 0 16px rgba(255,82,82,0.1);
+  }
+
+  /* Results */
+  .linc-results {
+    display: none;
+    animation: fadeInUp 0.5s ease forwards;
+  }
+
+  .linc-results.visible {
+    display: block;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .results-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--space-2xl) var(--space-xl);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .results-pair {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .results-pair .interest-a,
+  .results-pair .interest-b {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  .results-pair .vs {
+    color: var(--text-muted);
+    margin: 0 var(--space-xs);
+  }
+
+  /* Score meter */
+  .score-meter {
+    max-width: 400px;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .score-bar-bg {
+    height: 12px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+  }
+
+  .score-bar-fill.compounding {
+    background: linear-gradient(90deg, #00e676, #00c853);
+    box-shadow: 0 0 20px rgba(0,230,118,0.3);
+  }
+
+  .score-bar-fill.linked {
+    background: linear-gradient(90deg, #4fc3f7, #03a9f4);
+    box-shadow: 0 0 20px rgba(79,195,247,0.3);
+  }
+
+  .score-bar-fill.adjacent {
+    background: linear-gradient(90deg, #ffd700, #ffab00);
+    box-shadow: 0 0 20px rgba(255,215,0,0.2);
+  }
+
+  .score-bar-fill.competing {
+    background: linear-gradient(90deg, #ff5252, #d32f2f);
+    box-shadow: 0 0 20px rgba(255,82,82,0.3);
+  }
+
+  .score-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-xs);
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .score-number {
+    font-size: clamp(var(--text-4xl), 6vw, 64px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+  }
+
+  .score-number.compounding { color: var(--success); }
+  .score-number.linked { color: var(--blue); }
+  .score-number.adjacent { color: var(--warning); }
+  .score-number.competing { color: var(--red); }
+
+  .score-classification {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+
+  .score-classification.compounding { color: var(--success); }
+  .score-classification.linked { color: var(--blue); }
+  .score-classification.adjacent { color: var(--warning); }
+  .score-classification.competing { color: var(--red); }
+
+  .score-explanation {
+    font-size: var(--text-body);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 540px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .score-recommendation {
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .score-recommendation.compounding {
+    background: rgba(0,230,118,0.08);
+    border: 1px solid rgba(0,230,118,0.15);
+    color: var(--success);
+  }
+
+  .score-recommendation.linked {
+    background: rgba(79,195,247,0.08);
+    border: 1px solid rgba(79,195,247,0.15);
+    color: var(--blue);
+  }
+
+  .score-recommendation.adjacent {
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.15);
+    color: var(--warning);
+  }
+
+  .score-recommendation.competing {
+    background: rgba(255,82,82,0.08);
+    border: 1px solid rgba(255,82,82,0.15);
+    color: var(--red);
+  }
+
+  /* Breakdown */
+  .score-breakdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border);
+  }
+
+  .breakdown-item {
+    text-align: center;
+    padding: var(--space-md);
+    background: rgba(255,255,255,0.02);
+    border-radius: var(--radius-sm);
+  }
+
+  .breakdown-letter {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .breakdown-letter.yes { color: var(--success); }
+  .breakdown-letter.no { color: rgba(255,255,255,0.2); }
+
+  .breakdown-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .breakdown-value {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .breakdown-value.yes { color: var(--success); }
+  .breakdown-value.no { color: rgba(255,255,255,0.3); }
+
+  /* ===== CC3PO CONTEXT ===== */
+  .context-section {
+    padding: var(--space-4xl) 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+  }
+
+  .context-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .context-card {
+    padding: var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: border-color var(--duration-normal), transform var(--duration-normal) var(--ease-spring);
+  }
+
+  .context-card:hover {
+    border-color: rgba(233,69,96,0.2);
+    transform: translateY(-2px);
+  }
+
+  .context-pair {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+  }
+
+  .context-pair .plus {
+    color: var(--accent);
+    margin: 0 var(--space-xs);
+  }
+
+  .context-score {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .context-score.compounding {
+    background: rgba(0,230,118,0.1);
+    border: 1px solid rgba(0,230,118,0.2);
+    color: var(--success);
+  }
+
+  .context-score.linked {
+    background: rgba(79,195,247,0.1);
+    border: 1px solid rgba(79,195,247,0.2);
+    color: var(--blue);
+  }
+
+  .context-score.adjacent {
+    background: rgba(255,215,0,0.1);
+    border: 1px solid rgba(255,215,0,0.2);
+    color: var(--warning);
+  }
+
+  .context-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ===== CTA ===== */
+  .linc-cta {
+    padding: var(--space-4xl) 0;
+    background: var(--bg-primary);
+    text-align: center;
+  }
+
+  .linc-cta-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-xl);
+    background: var(--bg-card);
+    border: 1px solid rgba(233,69,96,0.2);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .linc-cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--blue));
+  }
+
+  .linc-cta h2 {
+    font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: var(--space-md);
+  }
+
+  .linc-cta p {
+    font-size: var(--text-body);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .linc-steps { grid-template-columns: repeat(2, 1fr); }
+    .context-grid { grid-template-columns: 1fr; }
+    .score-breakdown { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .linc-hero {
+      min-height: auto;
+      padding: calc(var(--nav-height) + var(--space-3xl)) var(--space-md) var(--space-2xl);
+    }
+
+    .linc-steps { grid-template-columns: 1fr; }
+
+    .interest-inputs {
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+    }
+
+    .interest-vs {
+      padding: 0;
+      text-align: center;
+    }
+
+    .linc-question-text,
+    .linc-toggles {
+      padding-left: 0;
+    }
+
+    .linc-toggle-btn {
+      flex: 1;
+      text-align: center;
+    }
+
+    .results-pair {
+      font-size: var(--text-base);
+    }
+
+    .context-grid { grid-template-columns: 1fr; }
+
+    .score-breakdown { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .linc-hero h1 {
+      letter-spacing: -0.5px;
+    }
+
+    .linc-cta-card {
+      padding: var(--space-xl) var(--space-md);
+    }
+  }
+</style>
+
+<Layout title={title} description={description}>
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="linc-hero">
+      <div class="linc-hero-content">
+        <div class="linc-badge">
+          <span class="pulse-dot"></span>
+          Free Business Diagnostic
+        </div>
+        <h1>Discover Which of Your Business Ideas Actually <span class="highlight">Compound</span></h1>
+        <p class="linc-hero-sub">
+          Most entrepreneurs juggle multiple interests — but not all of them work together.
+          The LINC test tells you which interests multiply each other, and which ones quietly compete for your time.
+        </p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+          <a href="#calculator" class="btn btn-primary btn-glow">Take the Test <span style="margin-left:6px;">→</span></a>
+          <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">4 Questions. 4 Letters. Clear Answers.</span>
+          <h2 class="section-title">How the LINC Test Works</h2>
+          <p class="section-desc">
+            LINC stands for <strong>Language, Improve, Need, Cut</strong> — four signals that tell you whether two business interests compound each other or quietly compete.
+          </p>
+        </div>
+
+        <div class="linc-steps">
+          <div class="linc-step">
+            <div class="linc-step-letter">L</div>
+            <div class="linc-step-name">Language</div>
+            <p class="linc-step-question">
+              Do you describe interest A using interest B's vocabulary?
+            </p>
+            <div class="linc-step-example">
+              <strong>✓ Yes:</strong> "My compliance work feeds into my automation pipeline."
+            </div>
+          </div>
+
+          <div class="linc-step">
+            <div class="linc-step-letter">I</div>
+            <div class="linc-step-name">Improve</div>
+            <p class="linc-step-question">
+              When you get better at A, does B automatically improve?
+            </p>
+            <div class="linc-step-example">
+              <strong>✓ Yes:</strong> "Better at SEO → better at content marketing."
+            </div>
+          </div>
+
+          <div class="linc-step">
+            <div class="linc-step-letter">N</div>
+            <div class="linc-step-name">Need</div>
+            <p class="linc-step-question">
+              Do you need A's tools or skills to solve B's problems?
+            </p>
+            <div class="linc-step-example">
+              <strong>✓ Yes:</strong> "I need design skills to deliver good websites."
+            </div>
+          </div>
+
+          <div class="linc-step">
+            <div class="linc-step-letter">C</div>
+            <div class="linc-step-name">Cut</div>
+            <p class="linc-step-question">
+              If you stopped doing A entirely, would B get worse?
+            </p>
+            <div class="linc-step-example">
+              <strong>✓ Yes:</strong> "Without compliance expertise, my automation services lose focus."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="calc-section" id="calculator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Interactive Tool</span>
+          <h2 class="section-title">Test Your Interests</h2>
+          <p class="section-desc">
+            Enter two business interests or services you're pursuing. Then answer four simple questions about how they connect.
+          </p>
+        </div>
+
+        <div class="calc-container">
+          <!-- Interest Inputs -->
+          <div class="interest-inputs">
+            <div class="interest-group">
+              <label for="interest-a">Interest A</label>
+              <input type="text" id="interest-a" class="interest-input" placeholder="e.g., Web Design" maxlength="60" autocomplete="off" />
+            </div>
+            <div class="interest-vs">vs</div>
+            <div class="interest-group">
+              <label for="interest-b">Interest B</label>
+              <input type="text" id="interest-b" class="interest-input" placeholder="e.g., SEO Consulting" maxlength="60" autocomplete="off" />
+            </div>
+          </div>
+
+          <!-- LINC Questions -->
+          <div class="linc-questions" id="linc-questions">
+            <div class="linc-question" data-key="L">
+              <div class="linc-question-header">
+                <div class="linc-question-letter">L</div>
+                <div class="linc-question-name">Language</div>
+              </div>
+              <p class="linc-question-text" id="question-L">
+                When you talk about <em id="qa-L">Interest A</em>, do you naturally use language, concepts, or vocabulary from <em id="qb-L">Interest B</em>?
+              </p>
+              <div class="linc-toggles">
+                <button class="linc-toggle-btn yes" data-key="L" data-value="yes" aria-label="Yes for Language">Yes ✓</button>
+                <button class="linc-toggle-btn no" data-key="L" data-value="no" aria-label="No for Language">No ✗</button>
+              </div>
+            </div>
+
+            <div class="linc-question" data-key="I">
+              <div class="linc-question-header">
+                <div class="linc-question-letter">I</div>
+                <div class="linc-question-name">Improve</div>
+              </div>
+              <p class="linc-question-text" id="question-I">
+                When you get better at <em id="qa-I">Interest A</em>, does <em id="qb-I">Interest B</em> automatically improve too?
+              </p>
+              <div class="linc-toggles">
+                <button class="linc-toggle-btn yes" data-key="I" data-value="yes" aria-label="Yes for Improve">Yes ✓</button>
+                <button class="linc-toggle-btn no" data-key="I" data-value="no" aria-label="No for Improve">No ✗</button>
+              </div>
+            </div>
+
+            <div class="linc-question" data-key="N">
+              <div class="linc-question-header">
+                <div class="linc-question-letter">N</div>
+                <div class="linc-question-name">Need</div>
+              </div>
+              <p class="linc-question-text" id="question-N">
+                Do you need <em id="qa-N">Interest A</em>'s tools, skills, or knowledge to solve problems in <em id="qb-N">Interest B</em>?
+              </p>
+              <div class="linc-toggles">
+                <button class="linc-toggle-btn yes" data-key="N" data-value="yes" aria-label="Yes for Need">Yes ✓</button>
+                <button class="linc-toggle-btn no" data-key="N" data-value="no" aria-label="No for Need">No ✗</button>
+              </div>
+            </div>
+
+            <div class="linc-question" data-key="C">
+              <div class="linc-question-header">
+                <div class="linc-question-letter">C</div>
+                <div class="linc-question-name">Cut</div>
+              </div>
+              <p class="linc-question-text" id="question-C">
+                If you stopped doing <em id="qa-C">Interest A</em> entirely, would <em id="qb-C">Interest B</em> get noticeably worse?
+              </p>
+              <div class="linc-toggles">
+                <button class="linc-toggle-btn yes" data-key="C" data-value="yes" aria-label="Yes for Cut">Yes ✓</button>
+                <button class="linc-toggle-btn no" data-key="C" data-value="no" aria-label="No for Cut">No ✗</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="linc-results" id="linc-results">
+            <div class="results-card">
+              <div class="results-pair" id="results-pair">
+                <span class="interest-a" id="result-a">Interest A</span>
+                <span class="vs">+</span>
+                <span class="interest-b" id="result-b">Interest B</span>
+              </div>
+
+              <div class="score-number" id="score-number">0/4</div>
+              <div class="score-meter">
+                <div class="score-bar-bg">
+                  <div class="score-bar-fill" id="score-bar-fill" style="width: 0%"></div>
+                </div>
+                <div class="score-labels">
+                  <span>Competing</span>
+                  <span>Adjacent</span>
+                  <span>Linked</span>
+                  <span>Compounding</span>
+                </div>
+              </div>
+              <div class="score-classification" id="score-classification">—</div>
+              <p class="score-explanation" id="score-explanation"></p>
+              <div class="score-recommendation" id="score-recommendation"></div>
+
+              <!-- Breakdown -->
+              <div class="score-breakdown" id="score-breakdown">
+                <div class="breakdown-item">
+                  <div class="breakdown-letter" id="bd-L">L</div>
+                  <div class="breakdown-label">Language</div>
+                  <div class="breakdown-value" id="bd-L-val">—</div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-letter" id="bd-I">I</div>
+                  <div class="breakdown-label">Improve</div>
+                  <div class="breakdown-value" id="bd-I-val">—</div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-letter" id="bd-N">N</div>
+                  <div class="breakdown-label">Need</div>
+                  <div class="breakdown-value" id="bd-N-val">—</div>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-letter" id="bd-C">C</div>
+                  <div class="breakdown-label">Cut</div>
+                  <div class="breakdown-value" id="bd-C-val">—</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CC3PO Context -->
+    <section class="context-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Real Examples</span>
+          <h2 class="section-title">How CC3PO's Stack Scores</h2>
+          <p class="section-desc">
+            We practice what we measure. Here's how our own service combinations score on the LINC test.
+          </p>
+        </div>
+
+        <div class="context-grid">
+          <div class="context-card">
+            <div class="context-pair">Compliance <span class="plus">+</span> Automation</div>
+            <div class="context-score compounding">4/4 · COMPOUNDING</div>
+            <p class="context-desc">
+              Our compliance expertise directly shapes our automation scripts. Better compliance knowledge means better automation. They share vocabulary, tools, and skills — cutting one would cripple the other.
+            </p>
+          </div>
+
+          <div class="context-card">
+            <div class="context-pair">Local Business <span class="plus">+</span> AI</div>
+            <div class="context-score compounding">4/4 · COMPOUNDING</div>
+            <p class="context-desc">
+              Local businesses need AI to compete. Our AI solutions solve local business problems. The language, improvement, need, and cut all run in both directions — they multiply each other.
+            </p>
+          </div>
+
+          <div class="context-card">
+            <div class="context-pair">Content <span class="plus">+</span> Research</div>
+            <div class="context-score linked">3/4 · LINKED</div>
+            <p class="context-desc">
+              Research directly feeds content creation (Language ✓, Improve ✓, Need ✓). But you could still create content without deep research — it just wouldn't be as sharp. A strong connection, but not fully compounding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="linc-cta">
+      <div class="container">
+        <div class="linc-cta-card">
+          <h2>Want a Full LINC Analysis for <span style="background:linear-gradient(135deg, var(--accent), var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Your</span> Business?</h2>
+          <p>
+            The free test gives you a quick read. A full Intelligence Architecture Audit maps every interest, scores every pair, and shows you exactly where to double down — and where to cut.
+          </p>
+          <a href="/intelligence-audit" class="btn btn-primary btn-glow" style="font-size:var(--text-base);padding:var(--space-md) var(--space-xl);">
+            Get Your Intelligence Architecture Audit →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // LINC Test Calculator
+    const answers = { L: null, I: null, N: null, C: null };
+    const inputA = document.getElementById('interest-a');
+    const inputB = document.getElementById('interest-b');
+    const questionsEl = document.getElementById('linc-questions');
+    const resultsEl = document.getElementById('linc-results');
+
+    // Update question text with interest names
+    function updateQuestionNames() {
+      const nameA = inputA.value.trim() || 'Interest A';
+      const nameB = inputB.value.trim() || 'Interest B';
+      document.getElementById('qa-L').textContent = nameA;
+      document.getElementById('qb-L').textContent = nameB;
+      document.getElementById('qa-I').textContent = nameA;
+      document.getElementById('qb-I').textContent = nameB;
+      document.getElementById('qa-N').textContent = nameA;
+      document.getElementById('qb-N').textContent = nameB;
+      document.getElementById('qa-C').textContent = nameA;
+      document.getElementById('qb-C').textContent = nameB;
+    }
+
+    inputA.addEventListener('input', updateQuestionNames);
+    inputB.addEventListener('input', updateQuestionNames);
+
+    // Toggle buttons
+    document.querySelectorAll('.linc-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.key;
+        const value = btn.dataset.value;
+
+        // Reset siblings
+        const siblings = btn.parentElement.querySelectorAll('.linc-toggle-btn');
+        siblings.forEach(s => s.classList.remove('active'));
+
+        // Activate this one
+        btn.classList.add('active');
+        answers[key] = value;
+
+        // Mark question
+        const question = btn.closest('.linc-question');
+        question.classList.add('answered');
+        question.classList.remove('active');
+
+        // Check if all answered
+        checkComplete();
+      });
+    });
+
+    // Highlight active question
+    document.querySelectorAll('.linc-question').forEach(q => {
+      q.addEventListener('mouseenter', () => {
+        if (!q.classList.contains('answered')) {
+          q.classList.add('active');
+        }
+      });
+      q.addEventListener('mouseleave', () => {
+        q.classList.remove('active');
+      });
+    });
+
+    function checkComplete() {
+      const allAnswered = Object.values(answers).every(a => a !== null);
+      if (allAnswered) {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      const score = Object.values(answers).filter(a => a === 'yes').length;
+      const nameA = inputA.value.trim() || 'Interest A';
+      const nameB = inputB.value.trim() || 'Interest B';
+
+      let classification, explanation, recommendation, cssClass;
+
+      if (score === 4) {
+        classification = 'COMPOUNDING';
+        cssClass = 'compounding';
+        explanation = `${nameA} and ${nameB} multiply each other. They share language, skills improve together, they need each other's tools, and cutting one would wound the other. This is the ideal — double down here.`;
+        recommendation = '🚀 Double down. These interests compound — every hour you invest in one pays dividends in the other. This is your unfair advantage.';
+      } else if (score === 3) {
+        classification = 'LINKED';
+        cssClass = 'linked';
+        explanation = `${nameA} and ${nameB} have a strong connection. Three of four LINC signals fire — they reinforce each other in most ways. This pair is worth investing in, but watch for the gap.`;
+        recommendation = '💡 Invest here. These interests are strongly linked — they reinforce each other. Find the missing link and see if you can close it.';
+      } else if (score === 2) {
+        classification = 'ADJACENT';
+        cssClass = 'adjacent';
+        explanation = `${nameA} and ${nameB} are neighbors, not partners. They share some surface-level overlap but don't deeply reinforce each other. They can coexist, but they won't multiply.`;
+        recommendation = '⚡ Keep but don\'t over-invest. These interests coexist fine, but they won\'t compound. Prioritize whichever one moves the needle more.';
+      } else {
+        classification = 'COMPETING';
+        cssClass = 'competing';
+        explanation = `${nameA} and ${nameB} are fighting for your time and attention. They don't share language, skills, tools, or dependency. Pursuing both is diluting your focus.`;
+        recommendation = '⚠️ Choose one or restructure. These interests compete — they pull you in different directions. Either commit to one, or find a way to merge them into a single focus.';
+      }
+
+      // Update results
+      document.getElementById('result-a').textContent = nameA;
+      document.getElementById('result-b').textContent = nameB;
+      document.getElementById('score-number').textContent = `${score}/4`;
+      document.getElementById('score-number').className = `score-number ${cssClass}`;
+      document.getElementById('score-classification').textContent = classification;
+      document.getElementById('score-classification').className = `score-classification ${cssClass}`;
+      document.getElementById('score-explanation').textContent = explanation;
+
+      const recEl = document.getElementById('score-recommendation');
+      recEl.textContent = recommendation;
+      recEl.className = `score-recommendation ${cssClass}`;
+
+      const bar = document.getElementById('score-bar-fill');
+      bar.style.width = `${(score / 4) * 100}%`;
+      bar.className = `score-bar-fill ${cssClass}`;
+
+      // Breakdown
+      const keys = ['L', 'I', 'N', 'C'];
+      const labels = { L: 'Language', I: 'Improve', N: 'Need', C: 'Cut' };
+      keys.forEach(k => {
+        const letterEl = document.getElementById(`bd-${k}`);
+        const valEl = document.getElementById(`bd-${k}-val`);
+        const isYes = answers[k] === 'yes';
+        letterEl.textContent = k;
+        letterEl.className = `breakdown-letter ${isYes ? 'yes' : 'no'}`;
+        valEl.textContent = isYes ? '✓ Yes' : '✗ No';
+        valEl.className = `breakdown-value ${isYes ? 'yes' : 'no'}`;
+      });
+
+      // Show results
+      resultsEl.classList.add('visible');
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Reset when inputs change
+    function resetTest() {
+      Object.keys(answers).forEach(k => answers[k] = null);
+      document.querySelectorAll('.linc-toggle-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.linc-question').forEach(q => {
+        q.classList.remove('answered', 'active');
+      });
+      resultsEl.classList.remove('visible');
+    }
+
+    // Add reset button behavior - clear inputs triggers reset
+    inputA.addEventListener('change', () => { if (Object.values(answers).some(a => a !== null)) resetTest(); });
+    inputB.addEventListener('change', () => { if (Object.values(answers).some(a => a !== null)) resetTest(); });
+
+    // Scroll reveal for sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.linc-step, .context-card, .linc-cta-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</Layout>
