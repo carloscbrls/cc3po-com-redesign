@@ -56,13 +56,36 @@ import Layout from '../layouts/Layout.astro';
 
     @media (max-width: 640px) {
       .btn-secondary { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
-      .stats { grid-template-columns: 1fr 1fr; }
-      .values-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 12px; padding: 40px 16px; }
+      .stat-card { padding: 20px 16px; }
+      .stat-number { font-size: 2rem; }
+      .values-grid { grid-template-columns: 1fr; gap: 16px; }
+      .value-card { padding: 24px 20px; }
       .timeline-step { flex-direction: column; gap: 16px; }
       .timeline-number { width: 48px; height: 48px; font-size: 1.2rem; }
       .story-section h2 { font-size: 1.3rem; }
       .features-grid { grid-template-columns: 1fr; }
       .faq-item { padding: 16px 0; }
+      .hero { padding: 100px 20px 40px; }
+      .hero h1 { font-size: 1.75rem; line-height: 1.2; margin-bottom: 16px; }
+      .hero p { font-size: 1rem; margin-bottom: 24px; }
+      .hero-badge { font-size: 0.7rem; padding: 4px 12px; margin-bottom: 16px; }
+      .story { padding: 40px 16px; }
+      .story-section { margin-bottom: 32px; }
+      .story-section p { font-size: 0.95rem; }
+      .values { padding: 40px 16px; }
+      .cta { padding: 48px 20px; }
+      .cta h2 { font-size: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 80px 16px 32px; }
+      .hero h1 { font-size: 1.5rem; }
+      .hero p { font-size: 0.9rem; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .stat-card { padding: 16px 12px; }
+      .stat-number { font-size: 1.75rem; }
+      .stat-label { font-size: 0.75rem; }
+      .btn-primary, .btn-secondary { padding: 14px 24px; font-size: 0.9rem; width: 100%; justify-content: center; }
     }
   </style>
 
