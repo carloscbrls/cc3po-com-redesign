@@ -501,10 +501,10 @@ A whole team that watches your website, answers your reviews, posts your content
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Force-reveal hero elements immediately (mobile Safari fix)
+    // Force-reveal hero elements immediately (mobile Safari + low-threshold fix)
     // IntersectionObserver may not fire for elements already in viewport on page load
     const heroEls = document.querySelectorAll('.hero .reveal');
     setTimeout(() => {
@@ -513,7 +513,7 @@ A whole team that watches your website, answers your reviews, posts your content
           el.classList.add('revealed');
         }
       });
-    }, 300);
+    }, 200);
 
     // ===== NAV SCROLL EFFECT (throttled) =====
     const nav = document.getElementById('nav');
