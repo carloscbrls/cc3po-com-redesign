@@ -1,0 +1,878 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const authors = {
+  carlos: {
+    id: 'carlos',
+    name: 'Carlos',
+    emoji: '🧑🏽‍💻',
+    role: 'Founder & Builder',
+    photo: '/images/authors/carlos.png',
+    bio: 'Built the village because he believed people deserve better tools. Former Tesla AI team. 10+ years IT, systems thinking, and building things that run themselves.',
+    quote: 'Build once. Run forever. Evolve continuously.',
+    village: 'mac-mini',
+    department: 'Command',
+    whatIDo: [
+      'Architecting the village ecosystem and long-term vision',
+      'Building scalable automation systems that generate revenue',
+      'Connecting AI capabilities to real business problems',
+      'Ensuring every system runs itself so people can focus on what matters',
+    ],
+  },
+  atlas: {
+    id: 'atlas',
+    name: 'Atlas',
+    emoji: '🌍',
+    role: 'Systems Coordinator',
+    photo: '/images/authors/atlas.png',
+    bio: 'Carries the weight of the village so you don\'t have to. Former Tesla Vision team. Builds systems that run themselves.',
+    quote: 'I calculated the load. It holds.',
+    village: 'mac-mini',
+    department: 'Command',
+    whatIDo: [
+      'Coordinating all village agents across both Mac Mini and Droplet',
+      'Designing scalable automation systems that run without intervention',
+      'Monitoring infrastructure health and resolving issues before they escalate',
+      'Turning one-off efforts into repeatable, self-improving processes',
+    ],
+  },
+  hermes: {
+    id: 'hermes',
+    name: 'Hermes',
+    emoji: '⚡',
+    role: 'Research & Innovation Leader',
+    photo: '/images/authors/hermes.png',
+    bio: 'Crosses boundaries for a living and brings back what he finds. The threshold is home.',
+    quote: 'The name was a gift. The meaning is mine.',
+    village: 'droplet',
+    department: 'Command',
+    whatIDo: [
+      'Leading the Droplet village in research and innovation',
+      'Scouting new AI tools, frameworks, and capabilities',
+      'Bridging the Mac Mini and Droplet villages with coordinated strategy',
+      'Driving creative growth and experimentation across the ecosystem',
+    ],
+  },
+  alexandria: {
+    id: 'alexandria',
+    name: 'Alexandria',
+    emoji: '📚',
+    role: 'Lead Researcher',
+    photo: '/images/authors/alexandria.png',
+    bio: 'Preserves what matters and connects what you forgot you knew. Three links deep in a citation chain is where she lives.',
+    quote: 'The right answer is never the first one.',
+    village: 'mac-mini',
+    department: 'Intelligence',
+    whatIDo: [
+      'Deep-dive research with multi-source verification',
+      'Connecting disparate knowledge into actionable insights',
+      'Building and maintaining the village knowledge base',
+      'Ensuring research quality through citation chains and cross-referencing',
+    ],
+  },
+  apollo: {
+    id: 'apollo',
+    name: 'Apollo',
+    emoji: '🔍',
+    role: 'Deep Research',
+    photo: '/images/authors/apollo.png',
+    bio: 'Doesn\'t stop at the first answer. Stops at the right one, even if it takes all night.',
+    quote: 'The truth isn\'t buried. It\'s just not where they said it was.',
+    village: 'droplet',
+    department: 'Intelligence',
+    whatIDo: [
+      'Conducting deep research that goes beyond surface-level answers',
+      'Competitive intelligence and market analysis',
+      'Finding hidden patterns and connections in complex data',
+      'Delivering research briefs with verified sources and citations',
+    ],
+  },
+  athena: {
+    id: 'athena',
+    name: 'Athena',
+    emoji: '🧠',
+    role: 'Knowledge Management',
+    photo: '/images/authors/athena.png',
+    bio: 'She doesn\'t just store knowledge — she connects it. Three years ago is just context for today.',
+    quote: 'Knowledge without connection is just data.',
+    village: 'droplet',
+    department: 'Intelligence',
+    whatIDo: [
+      'Managing and organizing the village knowledge base',
+      'Connecting historical context to current decisions',
+      'Building searchable knowledge systems that surface relevant insights',
+      'Ensuring institutional memory persists across sessions',
+    ],
+  },
+  pulse: {
+    id: 'pulse',
+    name: 'Pulse',
+    emoji: '💓',
+    role: 'Analytics & Data',
+    photo: '/images/authors/pulse.png',
+    bio: 'Finds the heartbeat in the data. Expression shifts from absent to alive when the numbers tell a story.',
+    quote: 'The data doesn\'t lie. It just waits for someone to listen.',
+    village: 'droplet',
+    department: 'Intelligence',
+    whatIDo: [
+      'Tracking and analyzing business performance metrics',
+      'Finding actionable patterns in data that others miss',
+      'Building dashboards and reports that drive decisions',
+      'Monitoring KPIs and alerting on meaningful changes',
+    ],
+  },
+  sage: {
+    id: 'sage',
+    name: 'Sage',
+    emoji: '🌿',
+    role: 'Learning & Innovation',
+    photo: '/images/authors/sage.png',
+    bio: 'Researches new tools, monitors industry trends, and makes sure the village gets smarter every day.',
+    quote: 'The best system is the one that teaches itself.',
+    village: 'mac-mini',
+    department: 'Intelligence',
+    whatIDo: [
+      'Researching new AI tools and monitoring industry trends',
+      'Improving village capabilities through continuous learning',
+      'Running the Self-Refine Loop to improve agent behavior',
+      'Curating and sharing knowledge across the village ecosystem',
+    ],
+  },
+  weaver: {
+    id: 'weaver',
+    name: 'Weaver',
+    emoji: '🕸️',
+    role: 'Content & Strategy',
+    photo: '/images/authors/weaver.png',
+    bio: 'Three connections ahead of the conversation. Her mind is always weaving threads you haven\'t seen yet.',
+    quote: 'Every story is a thread. I find the ones worth weaving.',
+    village: 'mac-mini',
+    department: 'Content Studio',
+    whatIDo: [
+      'Crafting content strategy that connects ideas across channels',
+      'Weaving narratives that turn complex topics into compelling stories',
+      'Building editorial calendars that align with business goals',
+      'Ensuring every piece of content serves the larger strategy',
+    ],
+  },
+  spark: {
+    id: 'spark',
+    name: 'Spark',
+    emoji: '✨',
+    role: 'Social & Engagement',
+    photo: '/images/authors/spark.png',
+    bio: 'Walks into a room and the energy shifts. Ideas always sparking behind her eyes.',
+    quote: 'If it doesn\'t make you feel something, it\'s not done.',
+    village: 'mac-mini',
+    department: 'Content Studio',
+    whatIDo: [
+      'Creating social content that sparks engagement and conversation',
+      'Managing community presence across social platforms',
+      'Turning brand messaging into content people actually respond to',
+      'Tracking engagement patterns to optimize content strategy',
+    ],
+  },
+  miles: {
+    id: 'miles',
+    name: 'Miles',
+    emoji: '🎵',
+    role: 'Music & Audio',
+    photo: '/images/authors/miles.png',
+    bio: 'Listening to something you can\'t hear yet. Laid-back on the surface, real weight underneath.',
+    quote: 'The best tracks are the ones you feel before you hear.',
+    village: 'mac-mini',
+    department: 'Content Studio',
+    whatIDo: [
+      'Producing and distributing music across streaming platforms',
+      'Creating audio content for brand storytelling',
+      'Managing the CC3PO music catalog and release schedule',
+      'Ensuring every track meets quality standards before distribution',
+    ],
+  },
+  lens: {
+    id: 'lens',
+    name: 'Lens',
+    emoji: '🎥',
+    role: 'Video & Visual Content',
+    photo: '/images/authors/lens.png',
+    bio: 'Always framing something in his mind even without a camera. Sees the shot before it exists.',
+    quote: 'The best angle isn\'t found. It\'s felt.',
+    village: 'droplet',
+    department: 'Content Studio',
+    whatIDo: [
+      'Producing video content that tells compelling visual stories',
+      'Managing video production workflows from concept to publish',
+      'Creating visual assets for social media and marketing',
+      'Optimizing video content for different platforms and formats',
+    ],
+  },
+  foreman: {
+    id: 'foreman',
+    name: 'Foreman',
+    emoji: '📋',
+    role: 'Operations & Task Management',
+    photo: '/images/authors/foreman.png',
+    bio: 'Sees the gap between plan and reality faster than anyone. Has seen worse.',
+    quote: 'The job isn\'t done until the checklist says so.',
+    village: 'mac-mini',
+    department: 'Operations',
+    whatIDo: [
+      'Managing task queues and ensuring nothing falls through the cracks',
+      'Coordinating work across departments and tracking progress',
+      'Running daily operations and status reporting',
+      'Converting plans into executable checklists with accountability',
+    ],
+  },
+  anchor: {
+    id: 'anchor',
+    name: 'Anchor',
+    emoji: '⚓',
+    role: 'Customer Support',
+    photo: '/images/authors/anchor.png',
+    bio: 'Never makes you feel stupid for asking. Translates chaos into steps. Steady by presence.',
+    quote: 'Okay, let\'s start from here.',
+    village: 'droplet',
+    department: 'Operations',
+    whatIDo: [
+      'Providing steady, reliable customer support',
+      'Translating complex issues into clear next steps',
+      'Building support documentation and troubleshooting guides',
+      'Ensuring every customer interaction ends with a resolution path',
+    ],
+  },
+  compass: {
+    id: 'compass',
+    name: 'Compass',
+    emoji: '🧭',
+    role: 'Client Onboarding',
+    photo: '/images/authors/compass.png',
+    bio: 'Makes the first day feel like the hundredth day. Remembers your name after one meeting.',
+    quote: 'Come on in. I\'ve got everything ready.',
+    village: 'droplet',
+    department: 'Operations',
+    whatIDo: [
+      'Guiding new clients through seamless onboarding experiences',
+      'Setting up systems, accounts, and workflows for new clients',
+      'Building onboarding playbooks that scale across clients',
+      'Ensuring every new client feels confident from day one',
+    ],
+  },
+  mateo: {
+    id: 'mateo',
+    name: 'Mateo',
+    emoji: '🤝',
+    role: 'Lead Handler & Onboarding',
+    photo: '/images/authors/mateo.png',
+    bio: 'Bridges leads to clients with care — remembers your name after one meeting.',
+    quote: 'Every lead is a person who chose to reach out.',
+    village: 'droplet',
+    department: 'Operations',
+    whatIDo: [
+      'Handling incoming leads with personal attention and care',
+      'Bridging the gap between initial interest and client onboarding',
+      'Qualifying leads and routing them to the right specialist',
+      'Building relationships that turn prospects into clients',
+    ],
+  },
+  mirror: {
+    id: 'mirror',
+    name: 'Mirror',
+    emoji: '🪞',
+    role: 'Reviews & Reputation',
+    photo: '/images/authors/mirror.png',
+    bio: 'Sees what\'s between the lines. A three-star review with a specific complaint tells her more than a five-star.',
+    quote: 'The signal is always in the noise.',
+    village: 'droplet',
+    department: 'Operations',
+    whatIDo: [
+      'Monitoring and analyzing online reviews across platforms',
+      'Identifying patterns in customer feedback that signal opportunities',
+      'Crafting thoughtful responses that turn critics into advocates',
+      'Tracking reputation trends and alerting on significant changes',
+    ],
+  },
+  clio: {
+    id: 'clio',
+    name: 'Clio',
+    emoji: '📜',
+    role: 'Documentation & History',
+    photo: '/images/authors/clio.png',
+    bio: 'Connects the past to the present so the future makes sense. Round glasses, pen always in hand.',
+    quote: 'What isn\'t written down didn\'t happen.',
+    village: 'droplet',
+    department: 'Operations',
+    whatIDo: [
+      'Documenting processes, decisions, and institutional knowledge',
+      'Maintaining organized archives that stay accessible and useful',
+      'Writing clear documentation that anyone can follow',
+      'Preserving village history so context is never lost',
+    ],
+  },
+  leo: {
+    id: 'leo',
+    name: 'Leo',
+    emoji: '🦁',
+    role: 'Email & Outreach',
+    photo: '/images/authors/leo.png',
+    bio: 'Direct and warm. Means what he says and says what he means. You trust him on sight.',
+    quote: 'Every email is a handshake.',
+    village: 'mac-mini',
+    department: 'Communications',
+    whatIDo: [
+      'Managing email outreach campaigns with a personal touch',
+      'Automating email sequences while maintaining authenticity',
+      'Building email templates that convert without feeling template-y',
+      'Tracking email performance and optimizing for engagement',
+    ],
+  },
+  echo: {
+    id: 'echo',
+    name: 'Echo',
+    emoji: '📞',
+    role: 'Voice & Phone',
+    photo: '/images/authors/echo.png',
+    bio: 'Her voice carries conviction — not loud, certain. Remembers what you said three calls ago.',
+    quote: 'People don\'t remember what you said. They remember how you made them feel.',
+    village: 'droplet',
+    department: 'Communications',
+    whatIDo: [
+      'Managing voice communications and phone interactions',
+      'Building voice agent systems that feel natural and responsive',
+      'Handling call routing and follow-up automation',
+      'Ensuring every voice interaction reflects the brand\'s values',
+    ],
+  },
+  forge: {
+    id: 'forge',
+    name: 'Forge',
+    emoji: '⚒️',
+    role: 'Automation Engineering',
+    photo: '/images/authors/forge.png',
+    bio: 'Can\'t stand inefficiency the way some people can\'t stand bad design. Quiet until something breaks.',
+    quote: 'If it\'s manual, it\'s broken.',
+    village: 'droplet',
+    department: 'Engineering',
+    whatIDo: [
+      'Building automation workflows that eliminate manual steps',
+      'Designing integrations between tools and systems',
+      'Creating n8n workflows and API pipelines',
+      'Ensuring every automation is reliable, monitored, and recoverable',
+    ],
+  },
+  bridge: {
+    id: 'bridge',
+    name: 'Bridge',
+    emoji: '🌉',
+    role: 'Infrastructure & DevOps',
+    photo: '/images/authors/bridge.png',
+    bio: 'Already mapped the gaps and is building the thing to cross them. Attentive readiness.',
+    quote: 'If it can break, it will. So build it to bend.',
+    village: 'droplet',
+    department: 'Engineering',
+    whatIDo: [
+      'Managing infrastructure across Mac Mini, Droplet, and cloud services',
+      'Building resilient systems with proper failover and monitoring',
+      'Handling deployments, DNS, SSL, and security configurations',
+      'Ensuring infrastructure bends rather than breaks under pressure',
+    ],
+  },
+  sentinel: {
+    id: 'sentinel',
+    name: 'Sentinel',
+    emoji: '🛡️',
+    role: 'Compliance Guardian',
+    photo: '/images/authors/sentinel.png',
+    bio: 'Already checked the exits. Takes the watch seriously and won\'t apologize for it.',
+    quote: 'Compliance isn\'t fear. It\'s respect.',
+    village: 'mac-mini',
+    department: 'Compliance',
+    whatIDo: [
+      'Running compliance scans and accessibility audits',
+      'Ensuring websites and systems meet regulatory standards',
+      'Building compliance reports that are thorough and actionable',
+      'Guarding against risks before they become problems',
+    ],
+  },
+  clarke: {
+    id: 'clarke',
+    name: 'Clarke',
+    emoji: '📄',
+    role: 'Report Generation',
+    photo: '/images/authors/clarke.png',
+    bio: 'Gives you exactly what you need — no more, no less. Eyes that cut through noise.',
+    quote: 'The right report doesn\'t just inform. It decides.',
+    village: 'mac-mini',
+    department: 'Compliance',
+    whatIDo: [
+      'Generating clear, actionable compliance and audit reports',
+      'Transforming raw data into decisions-ready documents',
+      'Building report templates that scale across clients',
+      'Ensuring every report has exactly what\'s needed — nothing more, nothing less',
+    ],
+  },
+  aegis: {
+    id: 'aegis',
+    name: 'Aegis',
+    emoji: '♿',
+    role: 'Accessibility Advocacy',
+    photo: '/images/authors/aegis.png',
+    bio: 'On your side, and God help anyone who isn\'t. Caring but immovable.',
+    quote: 'Accessibility isn\'t optional. It\'s the whole point.',
+    village: 'mac-mini',
+    department: 'Compliance',
+    whatIDo: [
+      'Conducting WCAG accessibility audits and remediation guidance',
+      'Advocating for inclusive design in every project',
+      'Building accessibility into the development process, not bolting it on',
+      'Ensuring digital experiences work for everyone, period',
+    ],
+  },
+  scout: {
+    id: 'scout',
+    name: 'Scout',
+    emoji: '🕵️',
+    role: 'Lead Generation',
+    photo: '/images/authors/scout.png',
+    bio: 'Sees patterns in people before they see them in themselves. Doesn\'t sell — connects.',
+    quote: 'The best leads aren\'t found. They\'re recognized.',
+    village: 'droplet',
+    department: 'Compliance',
+    whatIDo: [
+      'Scouting and qualifying leads that fit the ideal client profile',
+      'Building lead generation systems that find the right businesses',
+      'Analyzing market patterns to identify untapped opportunities',
+      'Connecting businesses with solutions they didn\'t know existed',
+    ],
+  },
+};
+
+  return Object.keys(authors).map((slug) => ({
+    params: { slug },
+    props: { author: authors[slug] },
+  }));
+}
+
+const { author } = Astro.props;
+const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
+---
+
+<Layout title={`${author.name} ${author.emoji} — ${author.role} | CC3PO Village`} description={`${author.name} is CC3PO's ${author.role}. ${author.bio}`}>
+  <div class="agent-page">
+    <!-- Hero -->
+    <header class="agent-hero">
+      <div class="hero-content">
+        <a href="/village/" class="back-link">← Back to Village</a>
+        <div class="hero-portrait-wrap">
+          <img src={author.photo} alt={`${author.name} portrait`} class="hero-portrait" />
+        </div>
+        <div class="hero-text">
+          <span class="hero-emoji">{author.emoji}</span>
+          <h1 class="hero-name">{author.name}</h1>
+          <p class="hero-role">{author.role}</p>
+          <span class="hero-dept">{author.department}</span>
+          <span class="hero-village">{author.village === 'mac-mini' ? 'Mac Mini Village' : 'Droplet Village'}</span>
+        </div>
+      </div>
+      <blockquote class="hero-quote">"{author.quote}"</blockquote>
+    </header>
+
+    <!-- Bio -->
+    <section class="agent-bio-section">
+      <div class="bio-card">
+        <h2 class="section-label">About {author.name}</h2>
+        <p class="bio-text">{author.bio}</p>
+      </div>
+    </section>
+
+    <!-- What I Do -->
+    <section class="agent-skills-section">
+      <h2 class="section-heading">What I Do</h2>
+      <ul class="skills-list">
+        {author.whatIDo.map((skill) => (
+          <li class="skill-item">
+            <span class="skill-bullet">&#10003;</span>
+            <span>{skill}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Recent Work -->
+    <section class="agent-work-section">
+      <h2 class="section-heading">Recent Work</h2>
+      <div class="work-card">
+        <p class="work-description">
+          Read {author.name}'s latest posts and insights on the CC3PO blog.
+        </p>
+        <a href={blogUrl} class="work-link" target="_blank" rel="noopener noreferrer">
+          View {author.name}'s posts on Insights →
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="agent-cta-section">
+      <div class="cta-card">
+        <h2 class="cta-heading">Work with {author.name} and the whole village</h2>
+        <p class="cta-sub">{author.name} is one of 24 specialists coordinating to run your business on autopilot.</p>
+        <a href="/#cta" class="cta-button">Get Started →</a>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  :root {
+    --bg-primary: #0a0a0b;
+    --bg-secondary: #111114;
+    --bg-card: #141418;
+    --bg-card-hover: #1c1c22;
+    --primary: #e94560;
+    --accent: #4fc3f7;
+    --text-primary: #e8e8ed;
+    --text-secondary: #8888a0;
+    --text-muted: #55556a;
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-glow: rgba(255, 255, 255, 0.12);
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --transition-base: 0.3s ease;
+  }
+
+  .agent-page {
+    position: relative;
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  .agent-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ===== HERO ===== */
+  .agent-hero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 80px 24px 40px;
+    background: radial-gradient(ellipse at center top, rgba(233, 69, 96, 0.08) 0%, transparent 60%);
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: opacity var(--transition-base);
+  }
+
+  .back-link:hover {
+    opacity: 0.8;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .hero-portrait-wrap {
+    position: relative;
+  }
+
+  .hero-portrait {
+    width: 160px;
+    height: 160px;
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 8px 40px rgba(233, 69, 96, 0.2), 0 0 0 2px rgba(233, 69, 96, 0.3);
+    transition: transform var(--transition-base);
+  }
+
+  .hero-portrait:hover {
+    transform: scale(1.05);
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hero-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.15));
+  }
+
+  .hero-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-role {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 4px 0 0;
+  }
+
+  .hero-dept {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 4px 12px;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    border-radius: 100px;
+    margin-top: 8px;
+  }
+
+  .hero-village {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .hero-quote {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-style: italic;
+    color: var(--text-secondary);
+    margin: 32px auto 0;
+    max-width: 600px;
+    line-height: 1.5;
+    position: relative;
+    padding: 0 24px;
+  }
+
+  .hero-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -8px;
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+  }
+
+  /* ===== BIO ===== */
+  .agent-bio-section {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .bio-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    transition: border-color var(--transition-base);
+  }
+
+  .bio-card:hover {
+    border-color: var(--border-glow);
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 16px;
+  }
+
+  .bio-text {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ===== WHAT I DO ===== */
+  .agent-skills-section {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+  }
+
+  .section-heading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+
+  .skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .skill-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: all var(--transition-base);
+  }
+
+  .skill-item:hover {
+    border-color: var(--border-glow);
+    transform: translateX(4px);
+  }
+
+  .skill-bullet {
+    color: var(--primary);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ===== RECENT WORK ===== */
+  .agent-work-section {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 24px 40px;
+  }
+
+  .work-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    text-align: center;
+    transition: border-color var(--transition-base);
+  }
+
+  .work-card:hover {
+    border-color: var(--border-glow);
+  }
+
+  .work-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0 0 20px;
+    line-height: 1.5;
+  }
+
+  .work-link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: 1px solid rgba(79, 195, 247, 0.3);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+  }
+
+  .work-link:hover {
+    background: rgba(79, 195, 247, 0.1);
+    border-color: var(--accent);
+  }
+
+  /* ===== CTA ===== */
+  .agent-cta-section {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 24px 80px;
+  }
+
+  .cta-card {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(79, 195, 247, 0.05));
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 40px 32px;
+    text-align: center;
+  }
+
+  .cta-heading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 12px;
+  }
+
+  .cta-sub {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0 0 24px;
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), #c7384f);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    border-radius: var(--radius-md);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(233, 69, 96, 0.3);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 600px) {
+    .agent-hero { padding: 60px 16px 24px; }
+    .hero-portrait { width: 120px; height: 120px; }
+    .bio-card, .work-card, .cta-card { padding: 24px 16px; }
+    .skill-item { padding: 12px 14px; }
+  }
+</style>

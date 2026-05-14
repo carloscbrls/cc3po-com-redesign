@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="How It Works — CC3PO AI Village">
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-secondary: #111114;
+      --bg-card: #141418;
+      --text: #fff;
+      --text-muted: #71717a;
+      --text-secondary: #a1a1aa;
+      --primary: #e94560;
+      --accent: #4fc3f7;
+      --green: #00e676;
+      --violet: #7c3aed;
+      --border: rgba(255,255,255,0.06);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    .hero { padding: 140px 24px 60px; text-align: center; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+    .hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+    .timeline { padding: 60px 24px; }
+    .timeline-step { display: flex; gap: 32px; margin-bottom: 48px; align-items: flex-start; }
+    .timeline-number { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; flex-shrink: 0; color: #fff; }
+    .step-1 .timeline-number { background: linear-gradient(135deg, var(--accent), #0288d1); }
+    .step-2 .timeline-number { background: linear-gradient(135deg, var(--violet), #5b21b6); }
+    .step-3 .timeline-number { background: linear-gradient(135deg, var(--green), #00c853); }
+    .step-4 .timeline-number { background: linear-gradient(135deg, var(--primary), #c7384f); }
+    .timeline-content h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .timeline-content p { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 8px; }
+    .timeline-content ul { list-style: none; padding: 0; }
+    .timeline-content li { color: var(--text-secondary); font-size: 0.95rem; padding: 4px 0; }
+    .timeline-content li::before { content: '✓ '; color: var(--green); font-weight: 700; }
+
+    .what-you-get { padding: 60px 24px; background: var(--bg-secondary); }
+    .what-you-get h2 { text-align: center; font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .feature-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: transform 0.2s; }
+    .feature-card:hover { transform: translateY(-4px); }
+    .feature-icon { font-size: 2rem; margin-bottom: 12px; }
+    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .feature-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+    .faq { padding: 60px 24px; }
+    .faq h2 { text-align: center; font-size: 1.8rem; font-weight: 700; margin-bottom: 40px; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+    .faq-item h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .faq-item p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+
+    .cta { text-align: center; padding: 80px 24px; background: var(--bg-secondary); }
+    .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta p { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: linear-gradient(135deg, var(--primary), #c7384f); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(233,69,96,0.3); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; margin-left: 16px; transition: all 0.2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+
+    @media (max-width: 640px) {
+      .timeline-step { flex-direction: column; gap: 16px; }
+      .timeline-number { width: 48px; height: 48px; font-size: 1.2rem; }
+      .btn-secondary { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+    }
+  </style>
+
+  <section class="hero">
+    <h1>From "hello" to a team that runs your business.<br><span style="background:linear-gradient(135deg,var(--accent),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Here's how it works.</span></h1>
+    <p>Four steps. One scan. Your whole business, running while you sleep.</p>
+  </section>
+
+  <section class="container timeline">
+    <div class="timeline-step step-1">
+      <div class="timeline-number">1</div>
+      <div class="timeline-content">
+        <h2>Tell us about your business.</h2>
+        <p>Fill out a 30-second form — your name, email, and website. That's it. No credit card, no commitment, no sales pitch.</p>
+        <ul>
+          <li>Takes 30 seconds</li>
+          <li>No credit card required</li>
+          <li>No obligation, no spam</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-step step-2">
+      <div class="timeline-number">2</div>
+      <div class="timeline-content">
+        <h2>We scan everything.</h2>
+        <p>Our village scans your website for compliance issues, speed problems, SEO gaps, accessibility violations, and security risks. You get a detailed report within 24 hours.</p>
+        <ul>
+          <li>ADA/WCAG compliance check</li>
+          <li>Page speed analysis</li>
+          <li>SEO audit</li>
+          <li>Security scan</li>
+          <li>Review presence check</li>
+          <li>Competitor comparison</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-step step-3">
+      <div class="timeline-number">3</div>
+      <div class="timeline-content">
+        <h2>Your team starts working.</h2>
+        <p>Within 48 hours, your village is active. Sentinel watches your compliance. Leo handles your email. Spark posts your social. Weaver writes your content. All coordinated by Atlas.</p>
+        <ul>
+          <li>24/7 monitoring and response</li>
+          <li>Human-in-the-loop approval for critical actions</li>
+          <li>Full audit log — you always know what happened</li>
+          <li>Morning report delivered every day</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-step step-4">
+      <div class="timeline-number">4</div>
+      <div class="timeline-content">
+        <h2>Wake up to a better business.</h2>
+        <p>Every morning, check your Business Health Score. It goes up every month. Reviews are answered. Content is posted. Compliance is handled. You focus on what you love — we handle the rest.</p>
+        <ul>
+          <li>Business Health Score tracked daily</li>
+          <li>Monthly progress reports</li>
+          <li>Proactive recommendations</li>
+          <li>Cancel anytime — no contracts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="what-you-get">
+    <div class="container">
+      <h2>What your village handles.</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Website</h3>
+          <p>Updates, speed, security, uptime monitoring. Never worry about your site again.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Social Media</h3>
+          <p>Scheduled posts, engagement, follower growth. Consistent and on-brand.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h3>Reviews</h3>
+          <p>Respond to every review within hours. Turn negatives into positives. 5-star growth.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Compliance</h3>
+          <p>ADA, HIPAA, WCAG scanning. Stay legal. Avoid $4,000/violation fines.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📧</div>
+          <h3>Email</h3>
+          <p>Incoming mail triaged. Outbound sequences. Follow-ups that never get forgotten.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <h3>SEO & Content</h3>
+          <p>Blog posts, local SEO, keyword optimization. Get found by the right people.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Lead Handling</h3>
+          <p>New leads responded to in minutes. Follow-up sequences. No lead falls through.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Morning Report</h3>
+          <p>Wake up to a summary of everything that happened. Business Health Score included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container faq">
+    <h2>Questions you're probably asking.</h2>
+    <div class="faq-item">
+      <h3>How quickly can I get started?</h3>
+      <p>Fill out the form, get your scan within 24 hours, and your village is active within 48 hours. No setup fees, no long onboarding.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do I have to approve everything?</h3>
+      <p>Critical actions — like responding to a negative review or posting public content — go through your approval. Routine monitoring runs automatically. You're always in control.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if I already have a web developer / social media person?</h3>
+      <p>Great — the village works alongside your existing team. Think of us as the team that never sleeps, catching what falls through the cracks.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I cancel anytime?</h3>
+      <p>Yes. No contracts, no cancellation fees. We earn your business every month.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is my data safe?</h3>
+      <p>Your data stays yours. We don't sell it, share it, or train on it. Full audit log of every action. CCPA compliant.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What's the Business Health Score?</h3>
+      <p>A daily score from 0-100 that measures your website health, compliance, reviews, social presence, and SEO. It goes up every month as the village improves your business.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does "Starting at $497/mo" actually include?</h3>
+      <p>All 24 agents. Website, social, reviews, compliance, email, content, lead handling, morning reports. One price, one team, 24/7. Check our <a href="https://offers.cc3po.com/pricing" style="color:var(--accent)">pricing page</a> for tiers.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to see your Business Health Score?</h2>
+    <p>30 seconds. No credit card. Real recommendations. You own the data.</p>
+    <div>
+      <a href="/#cta" class="btn-primary">🔍 Free Business Scan</a>
+      <a href="/morning-report/" class="btn-secondary">☀️ See Morning Report</a>
+    </div>
+  </section>
+
+</Layout>
