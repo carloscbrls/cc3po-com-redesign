@@ -559,9 +559,10 @@ a:focus-visible, button:focus-visible {
 .workflow-step {
   position: relative; padding: var(--space-xl) var(--space-lg);
   background: var(--bg-card); border: 1px solid var(--border);
-  opacity: 0; transform: translateY(24px);
+  opacity: 1; transform: translateY(0);
   transition: opacity var(--duration-slow) ease, transform var(--duration-slow) ease, border-color var(--duration-normal);
 }
+.workflow-step.reveal-out { opacity: 0; transform: translateY(24px); }
 .workflow-step.revealed { opacity: 1; transform: translateY(0); }
 .workflow-step:hover { border-color: var(--border-hover); }
 .workflow-step:not(:last-child) { border-right: none; }
@@ -594,7 +595,7 @@ a:focus-visible, button:focus-visible {
   padding: var(--space-xl) var(--space-lg); border-radius: var(--radius);
   background: var(--bg-card); border: 1px solid var(--border);
   transition: transform var(--duration-normal) var(--ease-spring), border-color var(--duration-normal), box-shadow var(--duration-normal);
-  opacity: 0; transform: translateY(20px);
+  opacity: 1; transform: translateY(0);
   display: flex; flex-direction: column;
   position: relative;
 }
@@ -633,7 +634,7 @@ a:focus-visible, button:focus-visible {
 .proof-stat {
   text-align: center; padding: var(--space-xl) var(--space-md);
   background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--radius); opacity: 0; transform: translateY(16px);
+  border-radius: var(--radius); opacity: 1; transform: translateY(0);
   transition: opacity var(--duration-slow) ease, transform var(--duration-slow) ease, border-color var(--duration-normal);
 }
 .proof-stat.revealed { opacity: 1; transform: translateY(0); }
@@ -720,7 +721,7 @@ a:focus-visible, button:focus-visible {
 .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
 .ba-card {
   padding: var(--space-xl); border-radius: var(--radius);
-  border: 1px solid; opacity: 0; transform: translateY(16px);
+  border: 1px solid; opacity: 1; transform: translateY(0);
   transition: opacity var(--duration-slow) ease, transform var(--duration-slow) ease;
 }
 .ba-card.revealed { opacity: 1; transform: translateY(0); }
@@ -742,7 +743,7 @@ a:focus-visible, button:focus-visible {
 .testimonial-card {
   padding: var(--space-xl); border-radius: var(--radius);
   background: var(--bg-card); border: 1px solid var(--border);
-  opacity: 0; transform: translateY(16px);
+  opacity: 1; transform: translateY(0);
   transition: opacity var(--duration-slow) ease, transform var(--duration-slow) ease, border-color var(--duration-normal), transform var(--duration-normal) var(--ease-spring), box-shadow var(--duration-normal);
   display: flex; flex-direction: column;
 }
@@ -768,7 +769,7 @@ a:focus-visible, button:focus-visible {
 .calc-card {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: var(--space-xl); margin-bottom: var(--space-md);
-  opacity: 0; transform: translateY(16px);
+  opacity: 1; transform: translateY(0);
   transition: opacity var(--duration-slow) ease, transform var(--duration-slow) ease;
 }
 .calc-card.revealed { opacity: 1; transform: translateY(0); }
@@ -801,7 +802,7 @@ a:focus-visible, button:focus-visible {
 .calc-result-card {
   background: rgba(233,69,96,0.05); border: 1px solid rgba(233,69,96,0.15);
   border-radius: var(--radius); padding: var(--space-xl); text-align: center;
-  opacity: 0; transform: translateY(16px);
+  opacity: 1; transform: translateY(0);
   transition: opacity var(--duration-slow) ease 0.1s, transform var(--duration-slow) ease 0.1s;
 }
 .calc-result-card.revealed { opacity: 1; transform: translateY(0); }
@@ -904,7 +905,7 @@ a:focus-visible, button:focus-visible {
   display: grid; grid-template-columns: 1fr; gap: var(--space-xl);
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--radius); padding: var(--space-xl) var(--space-md);
-  opacity: 0; transform: translateY(20px);
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .founder-card.revealed { opacity: 1; transform: translateY(0); }
@@ -1216,7 +1217,7 @@ a:focus-visible, button:focus-visible {
 
 /* ===== STAGGERED REVEAL ANIMATIONS ===== */
 .reveal-stagger > * {
-  opacity: 0; transform: translateY(20px);
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0s; }
