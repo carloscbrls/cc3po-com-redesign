@@ -331,6 +331,47 @@ import Layout from '../layouts/Layout.astro';
       font-size: 1.1rem;
     }
 
+    /* Share buttons */
+    .share-section {
+      text-align: center;
+      padding: 0 24px 40px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .share-section p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    .share-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .share-btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(107,53,255,0.3);
+    }
+    .share-btn.twitter { background: #1DA1F2; border-color: #1DA1F2; }
+    .share-btn.linkedin { background: #0A66C2; border-color: #0A66C2; }
+    .share-btn.copy { background: var(--bg-card); border-color: var(--border); }
+
     @media (max-width: 640px) {
       .input-wrapper { flex-direction: column; }
       .generate-btn { width: 100%; }
@@ -424,6 +465,15 @@ import Layout from '../layouts/Layout.astro';
       <div class="trust-badge"><span>🌎</span> Latino-Owned Business</div>
       <div class="trust-badge"><span>🛡️</span> SB/DVBE Option Eligible</div>
       <div class="trust-badge"><span>🤝</span> Se habla español</div>
+    </div>
+
+    <div class="share-section" id="share-section" style="display:none;">
+      <p>Share your morning report preview:</p>
+      <div class="share-buttons">
+        <a class="share-btn twitter" id="share-twitter" target="_blank" rel="noopener">🐦 Twitter</a>
+        <a class="share-btn linkedin" id="share-linkedin" target="_blank" rel="noopener">💼 LinkedIn</a>
+        <button class="share-btn copy" id="share-copy">📋 Copy Link</button>
+      </div>
     </div>
 
     <section class="cta-section">
@@ -520,5 +570,29 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('business-name').addEventListener('keypress', (e) => {
       if (e.key === 'Enter') generateReport();
     });
+
+    // Share buttons
+    function showShare(businessName, score) {
+      const section = document.getElementById('share-section');
+      section.style.display = 'block';
+      const text = encodeURIComponent(`My business "${businessName}" scored ${score}/100 on the CC3PO Business Health Check! See yours:`);
+      const url = encodeURIComponent('https://cc3po.com/morning-report/');
+      document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+      document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+      document.getElementById('share-copy').addEventListener('click', () => {
+        navigator.clipboard.writeText('https://cc3po.com/morning-report/');
+        document.getElementById('share-copy').textContent = '✓ Copied!';
+        setTimeout(() => { document.getElementById('share-copy').textContent = '📋 Copy Link'; }, 2000);
+      });
+    }
+
+    // Override generateReport to also show share buttons
+    const origGenerate = generateReport;
+    generateReport = function() {
+      origGenerate();
+      const name = document.getElementById('business-name').value.trim() || 'Your Business';
+      const score = document.getElementById('report-score').textContent;
+      showShare(name, score);
+    };
   </script>
 </Layout>

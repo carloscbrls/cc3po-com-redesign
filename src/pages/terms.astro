@@ -2,34 +2,172 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Terms of Service — CC3PO">
-  <section class="section legal-page" style="padding-top:120px;">
+<Layout title="Terms of Service — CC3PO" description="CC3PO LLC Terms of Service. Governing the use of our AI agent platform for business automation and compliance.">
+
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
+        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon" width="56" height="56" loading="eager">
+        <span>CC3PO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/services">Services</a></li>
+        <li><a href="/government">Government</a></li>
+        <li><a href="/accessibility">Accessibility</a></li>
+        <li><a href="/ai-compliance">AI Compliance</a></li>
+        <li><a href="/certifications">Certifications</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <a href="/contact" class="nav-cta">Get Started</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <section class="section legal-page" id="main-content" style="padding-top:120px;">
     <div class="container" style="max-width:800px;">
       <h1>Terms of Service</h1>
-      <p class="legal-updated">Last updated: April 2026</p>
+      <p class="legal-updated">Last updated: May 14, 2026</p>
 
-      <h2>1. Services</h2>
-      <p>CC3PO LLC provides AI-powered compliance scanning, IT management, voice agents, and related services. Our AI agents operate within constraints you define — nothing executes without your approval.</p>
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using any service provided by CC3PO LLC ("CC3PO," "we," "our," or "us"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, you may not use our services. These Terms constitute a legally binding agreement between you and CC3PO LLC.</p>
 
-      <h2>2. Human Oversight</h2>
+      <h2>2. Service Description</h2>
+      <p>CC3PO provides an AI agent platform for business automation, including but not limited to:</p>
+      <ul>
+        <li>HIPAA compliance scanning and reporting</li>
+        <li>WCAG/ADA accessibility auditing</li>
+        <li>AI-powered voice agents and call handling</li>
+        <li>IT management and automation services</li>
+        <li>Website hosting, monitoring, and maintenance</li>
+        <li>SMS marketing and communication services</li>
+      </ul>
+      <p>Our AI agents operate within constraints you define. Nothing executes without your explicit approval.</p>
+
+      <h2>3. Human Oversight</h2>
       <p>All AI-generated recommendations require human approval before execution. CC3PO agents surface findings and propose actions — you make the final decision. You are responsible for reviewing and approving all actions that affect your systems, patients, or compliance posture.</p>
 
-      <h2>3. HIPAA Compliance</h2>
-      <p>Our scanner identifies potential gaps based on publicly available information. Scanner results are informational only and do not constitute legal or compliance advice. You should consult a qualified compliance professional before acting on scan results.</p>
+      <h2>4. User Responsibilities</h2>
+      <p>By using our services, you agree to:</p>
+      <ul>
+        <li>Provide accurate and complete information when requested</li>
+        <li>Review and approve all AI-generated actions before execution</li>
+        <li>Comply with all applicable laws, regulations, and industry standards</li>
+        <li>Maintain the security of your account credentials</li>
+        <li>Not use our services for any unlawful purpose</li>
+        <li>Not attempt to reverse-engineer, decompile, or disrupt our platform</li>
+        <li>Notify us promptly of any unauthorized use of your account</li>
+      </ul>
 
-      <h2>4. Service Availability</h2>
-      <p>We strive for 99.9% uptime but do not guarantee uninterrupted service. Scheduled maintenance will be communicated in advance. We are not liable for temporary outages beyond our control.</p>
+      <h2>5. Intellectual Property</h2>
+      <p><strong>Your Content:</strong> You retain all rights to content you provide to us, including data submitted for scanning, business information, and any materials you upload. We do not claim ownership of your content.</p>
+      <p><strong>Our Platform:</strong> CC3PO retains all rights to our platform, including our AI models, scanning technology, agent architecture, branding, and all proprietary technology. You may not copy, modify, or distribute any part of our platform without written consent.</p>
+      <p><strong>Reports & Deliverables:</strong> You own the data and findings in any reports generated for you. We retain the right to use anonymized, aggregated data for improving our services.</p>
 
-      <h2>5. Payment Terms</h2>
-      <p>Subscription services are billed monthly. Cancellation takes effect at the end of the current billing period. No refunds for partial months. One-time purchases (e.g., Scanner 2.0) include ongoing updates for 12 months.</p>
+      <h2>6. HIPAA Compliance</h2>
+      <p>Our scanner identifies potential compliance gaps based on publicly available information. Scanner results are informational only and do not constitute legal or compliance advice. You should consult a qualified compliance professional before acting on scan results.</p>
 
-      <h2>6. Limitation of Liability</h2>
-      <p>CC3PO LLC's total liability shall not exceed the amount paid by you in the 12 months preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
+      <h2>7. Service Availability</h2>
+      <p>We strive for 99.9% uptime but do not guarantee uninterrupted service. Scheduled maintenance will be communicated in advance. We are not liable for temporary outages beyond our reasonable control.</p>
 
-      <h2>7. Contact</h2>
-      <p>CC3PO LLC<br />For legal inquiries, contact us via our <a href="https://cc3po.io/strategy-call">contact page</a>.</p>
+      <h2>8. Payment Terms</h2>
+      <ul>
+        <li>Subscription services are billed monthly in advance</li>
+        <li>Cancellation takes effect at the end of the current billing period</li>
+        <li>No refunds for partial months</li>
+        <li>One-time purchases include ongoing updates for 12 months from date of purchase</li>
+        <li>All prices are in USD unless otherwise stated</li>
+        <li>Late payments may result in service suspension after 15 days</li>
+      </ul>
+
+      <h2>9. Limitation of Liability</h2>
+      <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+      <ul>
+        <li>CC3PO LLC's total liability shall not exceed the amount paid by you in the 12 months preceding the claim</li>
+        <li>We are not liable for indirect, incidental, special, consequential, or punitive damages</li>
+        <li>We are not liable for loss of profits, data, or business opportunities</li>
+        <li>We are not liable for any failure or delay resulting from causes beyond our reasonable control</li>
+      </ul>
+
+      <h2>10. Termination</h2>
+      <p>Either party may terminate these Terms at any time:</p>
+      <ul>
+        <li><strong>You may terminate</strong> by canceling your subscription through your account settings or by contacting us</li>
+        <li><strong>We may terminate</strong> for cause if you breach these Terms, with 30 days' notice to cure</li>
+        <li><strong>Upon termination</strong>, we will delete your data within 30 days, except where retention is required by law</li>
+        <li>Sections relating to intellectual property, liability, and general provisions survive termination</li>
+      </ul>
+
+      <h2>11. Governing Law</h2>
+      <p>These Terms are governed by the laws of the State of California, United States, without regard to conflict of law principles. Any disputes shall be resolved in the courts of San Joaquin County, California.</p>
+
+      <h2>12. Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of material changes via email or a notice on our website at least 30 days before they take effect. Continued use of our services after changes take effect constitutes acceptance of the updated Terms.</p>
+
+      <h2>13. Contact</h2>
+      <div style="background:var(--bg-card);border-radius:var(--radius);padding:24px;margin-top:16px;">
+        <p style="margin-bottom:8px;"><strong>CC3PO LLC</strong></p>
+        <p style="margin-bottom:8px;">16299 Adobe Way, Lathrop, CA 95330</p>
+        <p style="margin-bottom:8px;">📧 <a href="mailto:legal@cc3po.com">legal@cc3po.com</a></p>
+        <p>📞 <a href="tel:+12094236633">209-423-6633</a></p>
+      </div>
+
+      <div style="margin-top:48px;text-align:center;">
+        <a href="/" class="btn btn-secondary">← Back to Home</a>
+      </div>
     </div>
   </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
+          <p>AI Agents That Work Within Your Rules.</p>
+          <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.35);">
+            <strong style="color:rgba(255,255,255,0.5);">Certifications:</strong> CA Small Business SB #2052063 · Latino-Owned · SB/DVBE Option
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <div class="footer-col-links">
+            <a href="/services">All Services</a>
+            <a href="/accessibility">Accessibility</a>
+            <a href="/government">Government</a>
+            <a href="/ai-compliance">AI Compliance</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <div class="footer-col-links">
+            <a href="/#founder">About</a>
+            <a href="/certifications">Certifications</a>
+            <a href="/village">The Village</a>
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <div class="footer-col-links">
+            <a href="/accessibility-statement">Accessibility Statement</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 CC3PO LLC. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/accessibility-statement">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </Layout>
 
 <style>
@@ -56,6 +194,17 @@ import Layout from '../layouts/Layout.astro';
     color: var(--text-muted);
     line-height: 1.8;
   }
+  .legal-page ul {
+    list-style: disc;
+    padding-left: 24px;
+    margin-bottom: var(--space-md);
+  }
+  .legal-page li {
+    color: var(--text-muted);
+    font-size: var(--text-base);
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
   .legal-page a {
     color: var(--accent);
     transition: color var(--duration-fast);
@@ -64,3 +213,15 @@ import Layout from '../layouts/Layout.astro';
     color: var(--accent-hover);
   }
 </style>
+
+<script is:inline>
+  const nav = document.getElementById('nav');
+  let t=false;
+  window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{nav.classList.toggle('nav-scrolled',window.scrollY>50);t=false});t=true}});
+  const ro=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('revealed');ro.unobserve(en.target)}})},{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+  const mb=document.getElementById('mobile-menu-btn'),dr=document.getElementById('mobile-drawer'),ov=document.getElementById('drawer-overlay');
+  function od(){dr.classList.add('active');ov.style.display='block';requestAnimationFrame(()=>ov.classList.add('active'));mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+  function cd(){dr.classList.remove('active');ov.classList.remove('active');mb.setAttribute('aria-expanded','false');document.body.style.overflow='';setTimeout(()=>ov.style.display='none',300)}
+  if(mb&&dr&&ov){mb.addEventListener('click',()=>dr.classList.contains('active')?cd():od());ov.addEventListener('click',cd);dr.querySelectorAll('a').forEach(a=>a.addEventListener('click',cd))}
+</script>

@@ -15,6 +15,7 @@ import Layout from '../layouts/Layout.astro';
       <ul class="nav-links">
         <li><a href="/morning-report/">Morning Report</a></li>
         <li><a href="#morning-report">How It Works</a></li>
+        <li><a href="#proof">Proof</a></li>
         <li><a href="#team">Your Team</a></li>
         <li><a href="#comparison">Pricing</a></li>
         <li><a href="/contact">Contact</a></li>
@@ -413,6 +414,59 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Proof</div>
+        <h2 class="section-title">Real businesses. Real results.</h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I used to spend 3 hours a day managing reviews and social media. Now I wake up and it's all done. My Business Health Score went from 52 to 87 in two months."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Dr. Alan Lee</div>
+            <div class="testimonial-role">Sunrise Dental, Stockton CA</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The compliance scanning alone is worth it. We had 14 ADA violations we didn't know about. Sentinel found them, fixed them, and now we're clean. That would've been a $4,000 fine per violation."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Matt Safdari</div>
+            <div class="testimonial-role">Top Class Fitness, Modesto CA</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I was skeptical about AI running my business. Then I got my first morning report and realized — they actually did everything while I slept. My Google reviews went from 3.2 to 4.7 stars."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Julius Jones</div>
+            <div class="testimonial-role">Central Valley Auto, Lathrop CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== NEWSLETTER ====== -->
+  <section class="section" id="newsletter" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+        <div class="section-label">Stay in the loop</div>
+        <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Get the Signal. Free business insights, every week.</h2>
+        <p style="color:var(--text-muted);margin-bottom:24px;">AI automation strategies, compliance updates, and tips for growing your business. No spam. Unsubscribe anytime.</p>
+        <form class="newsletter-form" id="newsletter-form" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+          <input type="email" name="email" placeholder="Your email address" required style="flex:1;min-width:240px;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:#fff;font-size:1rem;font-family:var(--font);">
+          <button type="submit" class="btn btn-primary btn-glow">Get the Signal →</button>
+        </form>
+        <p id="newsletter-message" style="margin-top:12px;font-size:0.85rem;color:var(--accent);display:none;"></p>
+        <p style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">Join 1,000+ business owners. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== CTA ====== -->
   <section class="cta-section" id="cta">
     <div class="container cta-content">
@@ -540,6 +594,55 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- ====== STYLES (inline for new sections) ====== -->
   <style is:inline>
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(107,53,255,0.3);
+    }
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .testimonial-role {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .newsletter-form {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
     /* Morning Report Card */
     .morning-report-card {
       background: linear-gradient(135deg, var(--bg-primary) 0%, #0a1628 100%);
@@ -1027,9 +1130,38 @@ import Layout from '../layouts/Layout.astro';
         });
 
         if (res.ok) {
-          messageEl.textContent = "Thanks! We'll be in touch within 24 hours.";
           messageEl.classList.add('success');
           form.reset();
+
+          // Show confirmation animation
+          const formWrap = form.closest('.lead-form-wrap, .bottom-cta-form-wrap, #bottom-lead-form-wrap') || form.parentElement;
+          if (formWrap) {
+            const origHTML = formWrap.innerHTML;
+            formWrap.innerHTML = `
+              <div style="text-align:center;padding:40px 20px;">
+                <div style="font-size:48px;margin-bottom:16px;">✅</div>
+                <h3 style="color:#fff;margin-bottom:8px;">We're scanning now.</h3>
+                <p style="color:var(--text-muted);font-size:0.95rem;">Here's what happens next:</p>
+                <div style="text-align:left;max-width:360px;margin:16px auto;">
+                  <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;color:var(--text-secondary);">
+                    <span style="font-size:1.2rem;">1️⃣</span>
+                    <span>We scan your website for compliance, speed, SEO, and security issues.</span>
+                  </div>
+                  <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;color:var(--text-secondary);">
+                    <span style="font-size:1.2rem;">2️⃣</span>
+                    <span>You get a detailed report with real recommendations within 24 hours.</span>
+                  </div>
+                  <div style="display:flex;align-items:flex-start;gap:12px;color:var(--text-secondary);">
+                    <span style="font-size:1.2rem;">3️⃣</span>
+                    <span>No obligation. No sales pitch. Just actionable insights.</span>
+                  </div>
+                </div>
+                <a href="https://cc3po.io/strategy-call" target="_blank" rel="noopener" class="btn btn-primary btn-glow" style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                  📞 Book a Strategy Call Instead
+                </a>
+              </div>
+            `;
+          }
         } else {
           const err = await res.text().catch(() => 'Unknown error');
           console.error('Supabase error:', res.status, err);
@@ -1051,6 +1183,51 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('bottom-lead-form')?.addEventListener('submit', function(e) {
       e.preventDefault();
       submitLead(this, document.getElementById('blf-message'));
+    });
+
+    // ===== NEWSLETTER FORM =====
+    document.getElementById('newsletter-form')?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = this.querySelector('[name="email"]').value.trim();
+      const msg = document.getElementById('newsletter-message');
+      if (!email) return;
+
+      try {
+        const res = await fetch(SUPABASE_URL + '/rest/v1/leads', {
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            name: 'Newsletter',
+            email: email,
+            phone: null,
+            company: null,
+            service_interest: 'newsletter',
+            message: 'Subscribed to newsletter from homepage',
+            source: 'cc3po.com-newsletter',
+            lead_type: 'newsletter'
+          })
+        });
+
+        if (res.ok) {
+          msg.textContent = '✓ You're in! Check your inbox for the Signal.';
+          msg.style.display = 'block';
+          msg.style.color = 'var(--green)';
+          this.reset();
+        } else {
+          msg.textContent = 'Something went wrong. Please try again.';
+          msg.style.display = 'block';
+          msg.style.color = 'var(--primary)';
+        }
+      } catch (e) {
+        msg.textContent = 'Network error. Please try again.';
+        msg.style.display = 'block';
+        msg.style.color = 'var(--primary)';
+      }
     });
   </script>
 
