@@ -1,0 +1,801 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="AI for Dental Practices — HIPAA Compliance, Reviews & Website Management | CC3PO" description="AI agents that manage your dental practice's website, reviews, HIPAA compliance, and content — 24/7. Starting at $497/mo. Based in Lathrop, CA.">
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
+        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon" width="56" height="56" loading="eager">
+        <span>CC3PO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/morning-report/">Morning Report</a></li>
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li><a href="/#proof">Proof</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/village/">Your Team</a></li>
+        <li><a href="/#comparison">Pricing</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <a href="/#cta" class="nav-cta">Free Dental Scan</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <nav class="mobile-drawer-nav">
+      <a href="/morning-report/">Morning Report</a>
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/#proof">Proof</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a href="/#cta" class="mobile-drawer-cta">Free Dental Scan</a>
+  </div>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero dental-hero" id="main-content">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <a href="/" class="back-link reveal">← Back to Services</a>
+      <div class="hero-badge reveal">
+        <span class="pulse-dot"></span>
+        Built for dental practices
+      </div>
+
+      <h1 class="hero-title reveal">
+        AI That Manages Your Dental Practice's Website, Reviews, Compliance & Content
+      </h1>
+
+      <p class="hero-sub reveal">
+        HIPAA violations cost <strong>$4,000 each</strong>. <strong>72% of patients</strong> check reviews before booking. Your dental website loads in <strong>3.2 seconds</strong> — that's costing you patients. We handle it all. 24/7. One price.
+      </p>
+
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <span class="stat-number">$4K</span>
+          <span class="stat-label">HIPAA violation cost</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">72%</span>
+          <span class="stat-label">Check reviews first</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3.2s</span>
+          <span class="stat-label">Avg dental site load</span>
+        </div>
+      </div>
+
+      <div class="hero-ctas reveal">
+        <a href="/#cta" class="btn btn-primary btn-glow">Free Dental Practice Health Score →</a>
+        <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">📞 Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TRUST BAR ====== -->
+  <section class="trust-bar" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; text-align: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #ffd700; font-size: 18px;">🏛️</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">CA Certified Small Business</span>
+        <span style="color: var(--text-muted); font-size: 12px;">SB #2052063</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #e94560; font-size: 18px;">🌎</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">Latino-Owned Business</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #4fc3f7; font-size: 18px;">🛡️</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">SB/DVBE Option Eligible</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #00e676; font-size: 18px;">🌐</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">Se habla español</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHAT WE HANDLE ====== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">What Your Village Handles</div>
+        <h2 class="section-title">Everything your dental practice needs. Running 24/7.</h2>
+        <p class="section-desc">While you're focused on patients, our AI team is managing your online presence, protecting your compliance, and growing your practice.</p>
+      </div>
+
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon">🏥</div>
+          <h3>HIPAA-Compliant Website Management</h3>
+          <p>Your dental website, monitored and maintained to HIPAA standards. Forms, patient portals, privacy policies — all compliant, all the time.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⭐</div>
+          <h3>Review Response (Google & Yelp)</h3>
+          <p>Every review answered within 30 minutes — professionally, personally, and in a way that protects your reputation and attracts new patients.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">♿</div>
+          <h3>ADA & WCAG Accessibility</h3>
+          <p>ADA lawsuits targeting dental websites are rising. We scan, fix, and monitor your site so you stay compliant and avoid $4,000+ fines.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Content</h3>
+          <p>Consistent dental content that educates patients and builds your practice's authority. Posted automatically, every week.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Compliance Monitoring</h3>
+          <p>HIPAA, CCPA, California Dental Board regulations — we watch for changes and update your practice before violations happen.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📅</div>
+          <h3>Appointment Follow-Ups</h3>
+          <p>Automated reminders, recare scheduling, and follow-ups that keep your chairs full and patients coming back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CALIFORNIA COMPLIANCE ====== -->
+  <section class="section" style="background: var(--bg-secondary);" id="compliance">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">California Compliance</div>
+        <h2 class="section-title">Dental practices in California face 5 major compliance areas.</h2>
+        <p class="section-desc">We monitor and manage all of them. Automatically.</p>
+      </div>
+
+      <div class="compliance-grid reveal">
+        <div class="compliance-item">
+          <div class="compliance-icon">🔒</div>
+          <h3>HIPAA</h3>
+          <p>Health Insurance Portability and Accountability Act — website forms, patient data handling, BAA requirements, and breach notification protocols.</p>
+          <div class="compliance-risk">Risk: <strong>$4,000+ per violation</strong></div>
+        </div>
+        <div class="compliance-item">
+          <div class="compliance-icon">📋</div>
+          <h3>CCPA</h3>
+          <p>California Consumer Privacy Act — patient data rights, privacy policy requirements, opt-out mechanisms, and data handling disclosures.</p>
+          <div class="compliance-risk">Risk: <strong>$7,500 per intentional violation</strong></div>
+        </div>
+        <div class="compliance-item">
+          <div class="compliance-icon">🦷</div>
+          <h3>Dental Board Regulations</h3>
+          <p>California Dental Practice Act — advertising rules, license display requirements, scope of practice disclosures on your website.</p>
+          <div class="compliance-risk">Risk: <strong>License action possible</strong></div>
+        </div>
+        <div class="compliance-item">
+          <div class="compliance-icon">⚖️</div>
+          <h3>Unruh Act</h3>
+          <p>California Civil Code §51 — website accessibility requirements for places of public accommodation. $4,000+ statutory damages per violation.</p>
+          <div class="compliance-risk">Risk: <strong>$4,000+ per violation</strong></div>
+        </div>
+        <div class="compliance-item">
+          <div class="compliance-icon">♿</div>
+          <h3>ADA / WCAG</h3>
+          <p>Americans with Disabilities Act — WCAG 2.1 AA compliance for your dental website. Screen readers, contrast, navigation, alt text.</p>
+          <div class="compliance-risk">Risk: <strong>Lawsuit + settlement costs</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COMPARISON TABLE ====== -->
+  <section class="section" id="comparison">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">The Math for Dental Practices</div>
+        <h2 class="section-title">What it costs to hire separately vs. CC3PO.</h2>
+      </div>
+
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Hire Separately</th>
+              <th>Cost/mo</th>
+              <th>CC3PO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Web developer (dental experience)</td>
+              <td class="cost-cell">$5,000</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>Social media manager</td>
+              <td class="cost-cell">$3,000</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>HIPAA compliance consultant</td>
+              <td class="cost-cell">$2,000</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>Review management service</td>
+              <td class="cost-cell">$1,500</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>SEO specialist</td>
+              <td class="cost-cell">$2,500</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>Total</strong></td>
+              <td class="cost-cell"><strong>$14,000/mo</strong></td>
+              <td class="included-cell"><strong>Starting at $497/mo</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Proof</div>
+        <h2 class="section-title">Real businesses. Real results.</h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I used to spend 3 hours a day managing reviews and social media. Now I wake up and it's all done. My Business Health Score went from 52 to 87 in two months."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Dr. Alan Lee</div>
+            <div class="testimonial-role">Sunrise Dental, Stockton CA</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The compliance scanning alone is worth it. We had 14 ADA violations we didn't know about. Sentinel found them, fixed them, and now we're clean. That would've been a $4,000 fine per violation."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Matt Safdari</div>
+            <div class="testimonial-role">Top Class Fitness, Modesto CA</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I was skeptical about AI running my business. Then I got my first morning report and realized — they actually did everything while I slept. My Google reviews went from 3.2 to 4.7 stars."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Julius Jones</div>
+            <div class="testimonial-role">Central Valley Auto, Lathrop CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section class="section" style="background: var(--bg-secondary);" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-title">Questions dental practices ask us.</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>How do you ensure my dental website is HIPAA compliant?</summary>
+          <div class="faq-answer">
+            <p>We continuously scan your website for HIPAA violations — unsecured patient forms, missing privacy policies, non-compliant contact forms, and improper data handling. Our AI agents monitor for regulation changes and update your site before violations occur. We also ensure all Business Associate Agreements (BAAs) are in place with any third-party services handling patient data.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Can an AI receptionist handle dental appointment scheduling?</summary>
+          <div class="faq-answer">
+            <p>Yes. Our AI voice agent (Callie) answers calls 24/7, schedules appointments directly into your practice management software, handles insurance inquiries, and sends automated reminders. She never takes a day off, never puts a patient on hold, and follows your exact protocols for scheduling and emergencies.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What dental practice automation tools do you offer for California practices?</summary>
+          <div class="faq-answer">
+            <p>Our dental practice automation covers five critical areas for California practices: HIPAA compliance monitoring and remediation, review management across Google and Yelp, social media content creation and scheduling, website speed and accessibility optimization, and California Dental Board regulation compliance. All running 24/7, all included in one monthly price.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>How do you handle patient reviews for dental offices?</summary>
+          <div class="faq-answer">
+            <p>Our AI reviews every new Google and Yelp review within 30 minutes. Positive reviews get personalized thank-you responses that reinforce patient loyalty. Negative reviews get professional, empathetic responses that protect your reputation and demonstrate your commitment to patient care. You approve responses before they're posted — or let our AI handle it automatically based on your guidelines.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>What makes CC3PO different from other dental marketing agencies?</summary>
+          <div class="faq-answer">
+            <p>We're not a marketing agency — we're an AI village that runs your entire digital operation. Agencies charge $3,000–$5,000/month for just one service. We give you a full team (website, reviews, social, compliance, SEO, voice agent) for $497/month. Plus, we're a CA Certified Small Business (SB #2052063), which means our services may qualify for your small business procurement programs.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Do you help with California Dental Board advertising compliance?</summary>
+          <div class="faq-answer">
+            <p>Absolutely. The California Dental Practice Act has specific advertising requirements — license display, scope of practice disclosures, "false or misleading" language prohibitions, and more. We audit your website and marketing materials against current Dental Board regulations and fix violations before they become problems.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>How quickly can you improve my dental practice's online presence?</summary>
+          <div class="faq-answer">
+            <p>Most dental practices see measurable improvement within the first month: reviews responded to within 30 minutes, website compliance issues fixed, social media posting on schedule. By month three, practices typically see their Business Health Score climb 20–30 points, with better review ratings, faster website speed, and full compliance documentation.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="cta-section" id="cta">
+    <div class="container cta-content">
+      <div class="reveal">
+        <h2>Your dental practice health score is waiting.</h2>
+        <p>Find out where your website, reviews, compliance, and online presence stand — free, in 30 seconds.</p>
+        <div class="cta-trust" style="margin-top:24px;">
+          <span>✓ No credit card</span>
+          <span>✓ HIPAA compliance check</span>
+          <span>✓ ADA/WCAG scan</span>
+          <span>✓ Real recommendations</span>
+        </div>
+        <div class="hero-ctas" style="margin-top:32px;">
+          <a href="/#cta" class="btn btn-primary btn-glow">Free Dental Practice Health Score →</a>
+          <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">📞 Strategy Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
+          <p>Your whole business team. One price. 24/7.</p>
+          <p class="footer-tagline" style="margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Build once. Run forever. Evolve continuously.</p>
+          <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.35);line-height:1.5;"><strong style="color:rgba(255,255,255,0.5);">Certifications:</strong> CA Certified Small Business — SB #2052063 · Latino-Owned Business · Se habla español · SB/DVBE Option · <a href="/certifications" style="color:var(--accent);">View All →</a></div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <div class="footer-col-links">
+            <a href="/dental">Dental Practices</a>
+            <a href="/hvac">HVAC Companies</a>
+            <a href="/gym">Gyms & Fitness</a>
+            <a href="/nonprofit">Nonprofits</a>
+            <a href="/#comparison">Pricing →</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <div class="footer-col-links">
+            <a href="/about/">About</a>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="/certifications">Certifications</a>
+            <a href="/accessibility">Accessibility</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Our Sites</div>
+          <div class="footer-col-links">
+            <a href="https://offers.cc3po.com">Services & Pricing</a>
+            <a href="https://insights.cc3po.com">Blog & Insights</a>
+            <a href="https://audit.cc3po.com">Free Website Audit</a>
+            <a href="/morning-report/">Morning Report</a>
+            <a href="/village/">The Village</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 CC3PO LLC. All rights reserved. · 16299 Adobe Way, Lathrop, CA 95330</div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style is:inline>
+    /* Vertical-specific hero */
+    .dental-hero {
+      background: linear-gradient(135deg, #0a0a12 0%, #0a1628 50%, #1a0a14 100%);
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: var(--accent);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Compliance Grid */
+    .compliance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .compliance-item {
+      background: rgba(233, 69, 96, 0.06);
+      border: 1px solid rgba(233, 69, 96, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .compliance-item:hover {
+      border-color: var(--accent);
+    }
+    .compliance-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .compliance-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .compliance-item p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .compliance-risk {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 20px 24px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+    .faq-answer {
+      padding: 0 24px 20px;
+    }
+    .faq-answer p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Testimonials reuse */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(107,53,255,0.3);
+    }
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testimonial-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    .testimonial-role {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* Comparison Table */
+    .comparison-table-wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .comparison-table thead th {
+      background: var(--bg-secondary);
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      text-align: left;
+      font-weight: 600;
+    }
+    .comparison-table tbody td {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .cost-cell {
+      color: #e94560;
+      font-weight: 600;
+      text-align: center;
+    }
+    .included-cell {
+      color: #00e676;
+      font-weight: 600;
+      text-align: center;
+    }
+    .total-row td {
+      background: var(--bg-secondary);
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-stats {
+        gap: 16px;
+      }
+      .stat-number {
+        font-size: 1.5rem;
+      }
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    // ===== MOBILE DRAWER =====
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    function openDrawer() {
+      drawer?.classList.add('active');
+      if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => { overlay.classList.add('active'); }); }
+      menuBtn?.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer?.classList.remove('active');
+      overlay?.classList.remove('active');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (overlay) setTimeout(() => { overlay.style.display = 'none'; }, 300);
+    }
+    if (menuBtn && drawer && overlay) {
+      menuBtn.addEventListener('click', () => {
+        if (drawer.classList.contains('active')) closeDrawer();
+        else openDrawer();
+      });
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+    }
+
+    // ===== HERO CANVAS =====
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w, h, particles = [];
+      function resize() {
+        w = canvas.width = canvas.offsetWidth;
+        h = canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * w;
+          this.y = Math.random() * h;
+          this.vx = (Math.random() - 0.5) * 0.3;
+          this.vy = (Math.random() - 0.5) * 0.3;
+          this.r = Math.random() * 1.5 + 0.5;
+          this.color = ['#e94560','#0f3460','#4fc3f7','#ffd700','#00e676'][Math.floor(Math.random()*5)];
+        }
+        update() {
+          this.x += this.vx; this.y += this.vy;
+          if (this.x < 0 || this.x > w) this.vx *= -1;
+          if (this.y < 0 || this.y > h) this.vy *= -1;
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = 0.6;
+          ctx.fill();
+        }
+      }
+      const count = Math.min(80, Math.floor(w * h / 12000));
+      for (let i = 0; i < count; i++) particles.push(new Particle());
+      let animating = true;
+      const canvasObserver = new IntersectionObserver(([entry]) => {
+        animating = entry.isIntersecting;
+        if (animating) animate();
+      }, { threshold: 0 });
+      canvasObserver.observe(canvas);
+      function animate() {
+        if (!animating) return;
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => { p.update(); p.draw(); });
+        ctx.globalAlpha = 0.08;
+        ctx.strokeStyle = '#e94560';
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const d = dx*dx + dy*dy;
+            if (d < 15000) {
+              ctx.globalAlpha = 0.06 * (1 - d/15000);
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    // ===== SCROLL REVEAL =====
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ===== NAV SCROLL =====
+    const nav = document.getElementById('nav');
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          nav?.classList.toggle('nav-scrolled', window.scrollY > 50);
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    });
+  </script>
+
+</Layout>

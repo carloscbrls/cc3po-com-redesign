@@ -1,0 +1,578 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="AI for Gyms & Fitness Studios — Fill Classes, Sign Members, Manage Reviews | CC3PO" description="AI agents that fill your gym's classes, sign new members, manage reviews, and handle your marketing — while you train clients. Starting at $497/mo. Based in Lathrop, CA.">
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
+        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon" width="56" height="56" loading="eager">
+        <span>CC3PO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/morning-report/">Morning Report</a></li>
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li><a href="/#proof">Proof</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/village/">Your Team</a></li>
+        <li><a href="/#comparison">Pricing</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <a href="/#cta" class="nav-cta">Free Gym Audit</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <nav class="mobile-drawer-nav">
+      <a href="/morning-report/">Morning Report</a>
+      <a href="/how-it-works/">How It Works</a>
+      <a href="/#proof">Proof</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a href="/#cta" class="mobile-drawer-cta">Free Gym Audit</a>
+  </div>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero gym-hero" id="main-content">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <a href="/" class="back-link reveal">← Back to Services</a>
+      <div class="hero-badge reveal">
+        <span class="pulse-dot"></span>
+        Built for gyms & fitness studios
+      </div>
+
+      <h1 class="hero-title reveal">
+        AI That Fills Your Gym's Classes & Signs New Members While You Train Clients
+      </h1>
+
+      <p class="hero-sub reveal">
+        The fitness industry has a <strong>5.6% monthly churn rate</strong>. <strong>80% of new memberships</strong> start from online reviews. Your classes are half-empty because nobody's marketing them while you're on the floor. We fix that. 24/7.
+      </p>
+
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <span class="stat-number">5.6%</span>
+          <span class="stat-label">Monthly churn rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">80%</span>
+          <span class="stat-label">Members from reviews</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5 min</span>
+          <span class="stat-label">Lead response window</span>
+        </div>
+      </div>
+
+      <div class="hero-ctas reveal">
+        <a href="/#cta" class="btn btn-primary btn-glow">Free Gym Website Audit →</a>
+        <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">📞 Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TRUST BAR ====== -->
+  <section class="trust-bar" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; text-align: center;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #ffd700; font-size: 18px;">🏛️</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">CA Certified Small Business</span>
+        <span style="color: var(--text-muted); font-size: 12px;">SB #2052063</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #e94560; font-size: 18px;">🌎</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">Latino-Owned Business</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #4fc3f7; font-size: 18px;">🛡️</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">SB/DVBE Option Eligible</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: #00e676; font-size: 18px;">🌐</span>
+        <span style="color: var(--text-secondary); font-size: 14px; font-weight: 600;">Se habla español</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHAT WE HANDLE ====== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">What Your Village Handles</div>
+        <h2 class="section-title">Everything your gym needs. Running while you train.</h2>
+        <p class="section-desc">While you're coaching clients on the floor, our AI team is filling your classes, signing new members, and keeping your current ones engaged.</p>
+      </div>
+
+      <div class="services-grid reveal">
+        <div class="service-card">
+          <div class="service-icon">📅</div>
+          <h3>Class Schedule Content</h3>
+          <p>Automated social posts for every class, every schedule change, every new offering. Your members always know what's happening — and prospects always see an active, vibrant community.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⭐</div>
+          <h3>Review Monitoring & Response</h3>
+          <p>Google and Yelp reviews responded to within 30 minutes. Positive reviews get amplified. Negative ones get professional responses that show you care. 80% of new members read reviews first.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Social Media Engagement</h3>
+          <p>Transformation stories, workout tips, class highlights, member spotlights — posted consistently, on schedule. Your feed looks active because it is active. 24/7.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Lead Follow-Up Within 5 Minutes</h3>
+          <p>Someone fills out your contact form at 10 PM? They get a response in 5 minutes. Every lead followed up. Every tour request scheduled. No one falls through the cracks.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">♿</div>
+          <h3>ADA Compliance</h3>
+          <p>Your website needs to be accessible. ADA lawsuits targeting fitness websites are rising. We scan, fix, and monitor your site for WCAG 2.1 AA compliance.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📧</div>
+          <h3>Email Campaigns</h3>
+          <p>Welcome sequences for new members. Re-engagement campaigns for lapsed members. Class promotion emails. Member milestone celebrations. All automated, all personal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== MEMBER RETENTION ====== -->
+  <section class="section" style="background: var(--bg-secondary);" id="retention">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Member Retention</div>
+        <h2 class="section-title">Stop losing members. Start filling classes.</h2>
+        <p class="section-desc">The average gym loses 5.6% of members every month. Most don't even know why.</p>
+      </div>
+
+      <div class="before-after-split reveal">
+        <div class="ba-column ba-without">
+          <div class="ba-column-title">⚠️ Without CC3PO</div>
+          <div class="ba-column-items">
+            <div class="ba-line-item">
+              <span class="ba-line-icon">📉</span>
+              <span>Members cancel and you don't find out until the billing report</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">🤷</span>
+              <span>New leads fill out your form — nobody follows up for 2 days</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">😠</span>
+              <span>Negative Google review sits unanswered — drives away 80% of prospects</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">📅</span>
+              <span>Classes run half-empty — no one's promoting them</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">💪</span>
+              <span>You're coaching on the floor — not running the business</span>
+            </div>
+          </div>
+        </div>
+        <div class="ba-column ba-with">
+          <div class="ba-column-title">✅ With CC3PO</div>
+          <div class="ba-column-items">
+            <div class="ba-line-item">
+              <span class="ba-line-icon">🔄</span>
+              <span>At-risk members get re-engagement emails before they cancel</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">⚡</span>
+              <span>Leads get a personal response in 5 minutes — even at midnight</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">⭐</span>
+              <span>Every review answered professionally in 30 minutes</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">📱</span>
+              <span>Class promotions posted automatically — always full</span>
+            </div>
+            <div class="ba-line-item">
+              <span class="ba-line-icon">😴</span>
+              <span>You coach. The village handles everything else.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== COMPARISON TABLE ====== -->
+  <section class="section" id="comparison">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">The Math</div>
+        <h2 class="section-title">What it costs to hire separately vs. CC3PO.</h2>
+      </div>
+
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Hire Separately</th>
+              <th>Cost/mo</th>
+              <th>CC3PO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Social media manager</td>
+              <td class="cost-cell">$3,000</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>Review management service</td>
+              <td class="cost-cell">$1,500</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>Email marketing specialist</td>
+              <td class="cost-cell">$2,500</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>Web developer</td>
+              <td class="cost-cell">$4,000</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr>
+              <td>Front desk / lead follow-up</td>
+              <td class="cost-cell">$3,000</td>
+              <td class="included-cell">Included</td>
+            </tr>
+            <tr class="total-row">
+              <td><strong>Total</strong></td>
+              <td class="cost-cell"><strong>$14,000/mo</strong></td>
+              <td class="included-cell"><strong>Starting at $497/mo</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="section" id="proof">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Proof</div>
+        <h2 class="section-title">Real businesses. Real results.</h2>
+      </div>
+      <div class="testimonials-grid reveal">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I used to spend 3 hours a day managing reviews and social media. Now I wake up and it's all done. My Business Health Score went from 52 to 87 in two months."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Dr. Alan Lee</div>
+            <div class="testimonial-role">Sunrise Dental, Stockton CA</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The compliance scanning alone is worth it. We had 14 ADA violations we didn't know about. Sentinel found them, fixed them, and now we're clean. That would've been a $4,000 fine per violation."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Matt Safdari</div>
+            <div class="testimonial-role">Top Class Fitness, Modesto CA</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I was skeptical about AI running my business. Then I got my first morning report and realized — they actually did everything while I slept. My Google reviews went from 3.2 to 4.7 stars."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-name">Julius Jones</div>
+            <div class="testimonial-role">Central Valley Auto, Lathrop CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA ====== -->
+  <section class="cta-section" id="cta">
+    <div class="container cta-content">
+      <div class="reveal">
+        <h2>Your gym website audit is free.</h2>
+        <p>Find out where you're losing members, missing reviews, and leaving classes empty — free, in 30 seconds.</p>
+        <div class="cta-trust" style="margin-top:24px;">
+          <span>✓ No credit card</span>
+          <span>✓ Mobile speed check</span>
+          <span>✓ Review gap analysis</span>
+          <span>✓ ADA compliance scan</span>
+        </div>
+        <div class="hero-ctas" style="margin-top:32px;">
+          <a href="/#cta" class="btn btn-primary btn-glow">Free Gym Website Audit →</a>
+          <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">📞 Strategy Call</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
+          <p>Your whole business team. One price. 24/7.</p>
+          <p class="footer-tagline" style="margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Build once. Run forever. Evolve continuously.</p>
+          <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.35);line-height:1.5;"><strong style="color:rgba(255,255,255,0.5);">Certifications:</strong> CA Certified Small Business — SB #2052063 · Latino-Owned Business · Se habla español · SB/DVBE Option · <a href="/certifications" style="color:var(--accent);">View All →</a></div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <div class="footer-col-links">
+            <a href="/dental">Dental Practices</a>
+            <a href="/hvac">HVAC Companies</a>
+            <a href="/gym">Gyms & Fitness</a>
+            <a href="/nonprofit">Nonprofits</a>
+            <a href="/#comparison">Pricing →</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <div class="footer-col-links">
+            <a href="/about/">About</a>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="/certifications">Certifications</a>
+            <a href="/accessibility">Accessibility</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Our Sites</div>
+          <div class="footer-col-links">
+            <a href="https://offers.cc3po.com">Services & Pricing</a>
+            <a href="https://insights.cc3po.com">Blog & Insights</a>
+            <a href="https://audit.cc3po.com">Free Website Audit</a>
+            <a href="/morning-report/">Morning Report</a>
+            <a href="/village/">The Village</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 CC3PO LLC. All rights reserved. · 16299 Adobe Way, Lathrop, CA 95330</div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <style is:inline>
+    .gym-hero {
+      background: linear-gradient(135deg, #0a0a12 0%, #0a1628 50%, #1a0a14 100%);
+    }
+
+    .back-link {
+      display: inline-block;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Before/After */
+    .before-after-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .before-after-split { grid-template-columns: 1fr; }
+    }
+    .ba-column { border-radius: 12px; padding: 28px; }
+    .ba-without { background: rgba(233, 69, 96, 0.08); border: 1px solid rgba(233, 69, 96, 0.25); }
+    .ba-with { background: rgba(0, 230, 118, 0.08); border: 1px solid rgba(0, 230, 118, 0.25); }
+    .ba-column-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 18px; }
+    .ba-without .ba-column-title { color: #e94560; }
+    .ba-with .ba-column-title { color: #00e676; }
+    .ba-column-items { display: flex; flex-direction: column; gap: 14px; }
+    .ba-line-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
+    .ba-line-icon { flex-shrink: 0; font-size: 1rem; }
+
+    /* Comparison Table */
+    .comparison-table-wrap { max-width: 700px; margin: 0 auto; overflow-x: auto; }
+    .comparison-table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+    }
+    .comparison-table thead th { background: var(--bg-secondary); padding: 14px 20px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); text-align: left; font-weight: 600; }
+    .comparison-table tbody td { padding: 14px 20px; border-top: 1px solid var(--border); font-size: 0.95rem; color: var(--text-secondary); }
+    .cost-cell { color: #e94560; font-weight: 600; text-align: center; }
+    .included-cell { color: #00e676; font-weight: 600; text-align: center; }
+    .total-row td { background: var(--bg-secondary); font-size: 1rem; }
+
+    /* Testimonials */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+    .testimonial-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: transform 0.2s, border-color 0.2s; }
+    .testimonial-card:hover { transform: translateY(-4px); border-color: rgba(107,53,255,0.3); }
+    .testimonial-stars { color: #fbbf24; font-size: 1rem; margin-bottom: 12px; letter-spacing: 2px; }
+    .testimonial-text { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; font-style: italic; }
+    .testimonial-author { display: flex; flex-direction: column; }
+    .testimonial-name { font-weight: 700; color: #fff; font-size: 0.9rem; }
+    .testimonial-role { color: var(--text-muted); font-size: 0.8rem; }
+
+    @media (max-width: 768px) {
+      .hero-stats { gap: 16px; }
+      .stat-number { font-size: 1.5rem; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+    }
+  </style>
+
+  <script is:inline>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    function openDrawer() {
+      drawer?.classList.add('active');
+      if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => { overlay.classList.add('active'); }); }
+      menuBtn?.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer?.classList.remove('active'); overlay?.classList.remove('active');
+      menuBtn?.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+      if (overlay) setTimeout(() => { overlay.style.display = 'none'; }, 300);
+    }
+    if (menuBtn && drawer && overlay) {
+      menuBtn.addEventListener('click', () => { drawer.classList.contains('active') ? closeDrawer() : openDrawer(); });
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+    }
+
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w, h, particles = [];
+      function resize() { w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
+      resize(); window.addEventListener('resize', resize);
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * w; this.y = Math.random() * h;
+          this.vx = (Math.random() - 0.5) * 0.3; this.vy = (Math.random() - 0.5) * 0.3;
+          this.r = Math.random() * 1.5 + 0.5;
+          this.color = ['#e94560','#0f3460','#4fc3f7','#ffd700','#00e676'][Math.floor(Math.random()*5)];
+        }
+        update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > w) this.vx *= -1; if (this.y < 0 || this.y > h) this.vy *= -1; }
+        draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fillStyle = this.color; ctx.globalAlpha = 0.6; ctx.fill(); }
+      }
+      const count = Math.min(80, Math.floor(w * h / 12000));
+      for (let i = 0; i < count; i++) particles.push(new Particle());
+      let animating = true;
+      const canvasObserver = new IntersectionObserver(([entry]) => { animating = entry.isIntersecting; if (animating) animate(); }, { threshold: 0 });
+      canvasObserver.observe(canvas);
+      function animate() {
+        if (!animating) return;
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => { p.update(); p.draw(); });
+        ctx.globalAlpha = 0.08; ctx.strokeStyle = '#e94560'; ctx.lineWidth = 0.5;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y, d = dx*dx + dy*dy;
+            if (d < 15000) { ctx.globalAlpha = 0.06 * (1 - d/15000); ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
+          }
+        }
+        ctx.globalAlpha = 1; requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('revealed'); revealObserver.unobserve(entry.target); } });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const nav = document.getElementById('nav');
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { requestAnimationFrame(() => { nav?.classList.toggle('nav-scrolled', window.scrollY > 50); scrollTicking = false; }); scrollTicking = true; }
+    });
+  </script>
+
+</Layout>
