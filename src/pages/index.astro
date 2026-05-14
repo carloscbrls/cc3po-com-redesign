@@ -46,12 +46,23 @@ import Layout from '../layouts/Layout.astro';
       </h1>
 
       <p class="hero-sub reveal">
-        A whole team that watches your website, answers your reviews, posts your content, keeps you legal, and finds you customers. 24/7. One price.
+        Your website, reviews, social, compliance — handled. 24/7, one price.
       </p>
-      <p style="margin-top:8px;color:var(--text-muted);font-size:0.8rem;">Based in Lathrop, CA — Serving San Joaquin County &amp; All 58 California Counties</p>
+      <p class="hero-location hide-mobile">Based in Lathrop, CA — Serving San Joaquin County &amp; All 58 California Counties</p>
 
-      <!-- Simplified Lead Capture Form -->
-      <div class="lead-form-wrap reveal" id="lead-form">
+      <!-- Mobile: Single CTA button (form is below the fold) -->
+      <div class="hero-cta-mobile show-mobile-only reveal">
+        <a href="#cta" class="btn btn-primary btn-glow" style="width:100%;max-width:320px;justify-content:center;font-size:16px;">
+          🔍 Scan My Business — Free
+        </a>
+        <p style="margin-top:8px;color:var(--text-muted);font-size:0.75rem;text-align:center;">30 seconds · No credit card</p>
+        <a href="#morning-report" class="scroll-hint" style="display:block;text-align:center;margin-top:16px;color:var(--text-muted);font-size:0.8rem;text-decoration:none;">
+          ▼ See how it works
+        </a>
+      </div>
+
+      <!-- Desktop: Full lead capture form -->
+      <div class="lead-form-wrap reveal hide-mobile-form" id="lead-form">
         <div class="lead-form-title">Get Your Free Business Scan</div>
         <div class="lead-form-sub">No credit card. 30 seconds. See where you stand.</div>
         <form class="lead-form" id="hero-lead-form" novalidate>

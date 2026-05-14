@@ -431,14 +431,20 @@ a:focus-visible, button:focus-visible {
 .hero-sub.reveal-out { opacity: 0; transform: translateY(16px); }
 .hero-sub.revealed { opacity: 1; transform: translateY(0); }
 .hide-mobile { display: inline; }
+.show-mobile-only { display: none; }
+.hero-location { margin-top: 8px; color: var(--text-muted); font-size: 0.8rem; }
+.hero-cta-mobile { margin-top: var(--space-lg); text-align: center; }
+.scroll-hint { display: block; text-align: center; margin-top: 16px; color: var(--text-muted); font-size: 0.8rem; text-decoration: none; animation: bounce 2s ease infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
 /* ===== FOUR PRINCIPLES ===== */
 .four-principles {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md);
   margin-bottom: var(--space-2xl); text-align: left;
-  opacity: 0; transform: translateY(20px);
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
 }
+.four-principles.reveal-out { opacity: 0; transform: translateY(20px); }
 .four-principles.revealed { opacity: 1; transform: translateY(0); }
 .principle-card {
   padding: var(--space-lg) var(--space-md);
@@ -463,9 +469,10 @@ a:focus-visible, button:focus-visible {
 /* ===== HERO BUTTONS ===== */
 .hero-buttons {
   display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-  opacity: 0; transform: translateY(16px);
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
 }
+.hero-buttons.reveal-out { opacity: 0; transform: translateY(16px); }
 .hero-buttons.revealed { opacity: 1; transform: translateY(0); }
 
 /* ===== BUTTONS ===== */
@@ -976,9 +983,11 @@ a:focus-visible, button:focus-visible {
   max-width: 560px;
   margin-left: auto;
   margin-right: auto;
-  opacity: 0; transform: translateY(16px);
+  /* Visible by default — progressive enhancement */
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s;
 }
+.lead-form-wrap.reveal-out { opacity: 0; transform: translateY(16px); }
 .lead-form-wrap.revealed { opacity: 1; transform: translateY(0); }
 .lead-form-title {
   font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-2xs); text-align: center;
@@ -1130,9 +1139,13 @@ a:focus-visible, button:focus-visible {
     word-wrap: break-word;
     word-break: break-word;
   }
-  .hero-sub { font-size: var(--text-body); padding: 0 var(--space-xs); }
+  .hero-badge { margin-bottom: var(--space-sm); }
+  .hero-sub { font-size: var(--text-body); padding: 0 var(--space-xs); margin-bottom: var(--space-md); }
   .hero-badge { font-size: 11px; padding: 6px var(--space-sm); }
   .hero-content { max-width: 100%; overflow-x: hidden; }
+  .hide-mobile { display: none !important; }
+  .show-mobile-only { display: block; }
+  .hide-mobile-form { display: none; }
 
   .four-principles { grid-template-columns: 1fr; }
 
