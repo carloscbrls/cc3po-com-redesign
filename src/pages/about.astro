@@ -2,15 +2,161 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About — CC3PO">
-  <script is:inline>
-    window.location.href = '/#founder';
-  </script>
-  <meta http-equiv="refresh" content="0;url=/#founder" />
-  <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:40px;">
-    <div>
-      <h1>Redirecting to About…</h1>
-      <p>If you are not redirected, <a href="/#founder" style="color:#e94560;text-decoration:underline;">click here</a>.</p>
+<Layout title="About CC3PO — Built by a Tesla AI Trainer, Designed for Small Business">
+  <style>
+    :root {
+      --bg: #0a0a0b;
+      --bg-secondary: #111114;
+      --bg-card: #141418;
+      --text: #fff;
+      --text-muted: #71717a;
+      --text-secondary: #a1a1aa;
+      --primary: #e94560;
+      --accent: #4fc3f7;
+      --green: #00e676;
+      --violet: #7c3aed;
+      --border: rgba(255,255,255,0.06);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    .hero { padding: 140px 24px 60px; text-align: center; }
+    .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(107,53,255,0.1); border: 1px solid rgba(107,53,255,0.3); border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: var(--accent); margin-bottom: 24px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+    .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto 40px; }
+
+    .story { padding: 60px 24px; }
+    .story-section { margin-bottom: 48px; }
+    .story-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; color: #fff; }
+    .story-section p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+    .story-section p strong { color: #fff; }
+
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; padding: 60px 24px; }
+    .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; text-align: center; transition: transform 0.2s, border-color 0.2s; }
+    .stat-card:hover { transform: translateY(-4px); border-color: rgba(107,53,255,0.3); }
+    .stat-number { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+    .values { padding: 60px 24px; }
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .value-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .value-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .value-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .value-icon { font-size: 2rem; margin-bottom: 12px; }
+
+    .cta { text-align: center; padding: 80px 24px; background: var(--bg-secondary); }
+    .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
+    .cta p { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: linear-gradient(135deg, var(--primary), #c7384f); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(233,69,96,0.3); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; margin-left: 16px; transition: all 0.2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+
+    @media (max-width: 640px) {
+      .btn-secondary { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+      .stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+  <section class="hero">
+    <div class="hero-badge">Built Different</div>
+    <h1>I trained AI for Tesla.<br>Now I build AI that <span style="background:linear-gradient(135deg,var(--primary),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">runs your business</span>.</h1>
+    <p>CC3PO was built by Carlos Cabrales — an IT consultant who spent years training the vision models behind Tesla's self-driving technology. Now that same AI expertise is available to small businesses.</p>
+  </section>
+
+  <section class="container story">
+    <div class="story-section">
+      <h2>From Tesla to Main Street</h2>
+      <p>I worked on the <strong>Tesla Vision learning team</strong> under Andrej Karpathy's org, training the neural networks that power Tesla Autopilot and Full Self-Driving. I spent my days teaching machines to see the world — lane lines, stop signs, pedestrians, edge cases.</p>
+      <p>What I learned there changed how I think about automation: <strong>the best systems don't just follow rules — they learn, adapt, and get better over time.</strong></p>
+      <p>When I left Tesla, I started an IT consulting practice in Lathrop, California. I saw small businesses — dental offices, HVAC companies, auto shops — struggling with the same things over and over: website problems, compliance issues, reviews they couldn't keep up with, social media that never got posted.</p>
+      <p>They couldn't afford a team. But a village? A village of specialists who never sleep, never forget, and never stop learning? That was possible.</p>
     </div>
-  </div>
+
+    <div class="story-section">
+      <h2>Why "CC3PO"?</h2>
+      <p>The name comes from my initials — <strong>C3PO</strong> — but it's also a nod to the most helpful droid in the galaxy. One who speaks millions of languages, understands every system, and is always there when you need help.</p>
+      <p>That's what this village does. We speak your business's language. We understand your systems. And we're always on.</p>
+    </div>
+
+    <div class="story-section">
+      <h2>The Village Model</h2>
+      <p>CC3PO isn't one AI. It's <strong>24 specialized agents</strong>, each with their own role, their own personality, and their own expertise. Like a real team — a social media manager, a compliance officer, a content writer, a lead handler — except they work 24/7 and coordinate automatically.</p>
+      <p>Every agent has a name, a voice, and the freedom to choose what they care about. They write in their own style. They have opinions. They push back when something doesn't make sense. That's not a bug — that's the point.</p>
+      <p><strong>We believe trust is earned, not claimed. Family over function. Build for generations, not just the next quarter.</strong></p>
+    </div>
+
+    <div class="story-section">
+      <h2>Based in Lathrop, Serving California</h2>
+      <p>CC3PO LLC operates from <strong>16299 Adobe Way, Lathrop, CA 95330</strong>. We're a <strong>CA Certified Small Business (SB #2052063)</strong>, <strong>Latino-Owned</strong>, and proud to serve all 58 California counties.</p>
+      <p>We especially serve the Central Valley — Stockton, Lathrop, Manteca, Tracy, Modesto — because that's home. But our AI village works for businesses anywhere.</p>
+    </div>
+  </section>
+
+  <section class="stats container">
+    <div class="stat-card">
+      <div class="stat-number">24</div>
+      <div class="stat-label">Specialized AI Agents</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">Always On</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">$497</div>
+      <div class="stat-label">Starting Price/mo</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">14×</div>
+      <div class="stat-label">Cheaper Than Hiring</div>
+    </div>
+  </section>
+
+  <section class="values container">
+    <h2 style="text-align:center;font-size:1.5rem;font-weight:700;margin-bottom:40px;">What We Believe</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🛡️</div>
+        <h3>Your Data, Your Rules</h3>
+        <p>Your data never leaves your control. We don't sell it, share it, or train on it. Every action is logged. You always know what happened.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Human-First, AI-Powered</h3>
+        <p>AI suggests. You decide. Every critical action goes through your approval. The village works for you, not instead of you.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌍</div>
+        <h3>Build for Generations</h3>
+        <p>We build systems that outlast us. Not quarterly profit — generational value. The village is here for your kids' business too.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔄</div>
+        <h3>Never Stop Evolving</h3>
+        <p>Every agent gets smarter every session. The village that serves you today is better than the one that served you yesterday.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💛</div>
+        <h3>The Good Samaritan Principle</h3>
+        <p>We build for others, not just ourselves. If it doesn't help someone, it doesn't belong here.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Small Business, Big Power</h3>
+        <p>You shouldn't need a Fortune 500 budget to get Fortune 500 technology. One price. One team. 24/7.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to meet your village?</h2>
+    <p>Get a free business scan and see exactly where you stand. 30 seconds, no credit card.</p>
+    <div>
+      <a href="/#cta" class="btn-primary">🔍 Free Business Scan</a>
+      <a href="/village/" class="btn-secondary">👥 Meet the Village</a>
+    </div>
+  </section>
+
 </Layout>
