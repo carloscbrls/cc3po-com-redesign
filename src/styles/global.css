@@ -1115,6 +1115,14 @@ a:focus-visible, button:focus-visible {
   .hero-sub { font-size: var(--text-body); padding: 0 var(--space-xs); }
   .hero-badge { font-size: 11px; padding: 6px var(--space-sm); }
   .hero-content { max-width: 100%; overflow-x: hidden; }
+  /* Ensure hero content is visible on mobile even before JS reveal kicks in */
+  .hero .hero-badge,
+  .hero .hero-title,
+  .hero .hero-sub,
+  .hero .hero-buttons {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 
   .four-principles { grid-template-columns: 1fr; }
 
