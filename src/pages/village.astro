@@ -123,7 +123,90 @@ import Layout from '../layouts/Layout.astro';
 
     </main>
 
-    <!-- Proof & Safety Section -->
+    <!-- Workday Animation -->
+    <section class="workday-section" id="workday">
+      <h2 class="section-heading">Watch a Lead Flow Through the Village</h2>
+      <p class="section-subtitle">This is what coordination looks like. One lead. Every specialist. Zero manual effort.</p>
+      <div class="workday-container">
+        <button class="workday-btn" id="workday-btn" onclick="startWorkday()">
+          <span class="workday-btn-icon">▶</span>
+          Play Workday
+        </button>
+        <div class="workday-flow" id="workday-flow">
+          <div class="workday-step" id="step-1">
+            <div class="step-avatar">🤝</div>
+            <div class="step-connector"></div>
+            <div class="step-content">
+              <div class="step-time">11:02 AM</div>
+              <div class="step-agent">Mateo</div>
+              <div class="step-role">Lead Handler</div>
+              <div class="step-desc">New lead from website form. Business name: "Sunrise Dental." Added to pipeline.</div>
+            </div>
+          </div>
+          <div class="workday-step" id="step-2">
+            <div class="step-avatar">🔍</div>
+            <div class="step-connector"></div>
+            <div class="step-content">
+              <div class="step-time">11:03 AM</div>
+              <div class="step-agent">Apollo</div>
+              <div class="step-role">Deep Research</div>
+              <div class="step-desc">Researching Sunrise Dental. Found 2 competitors in area, outdated website, no social presence.</div>
+            </div>
+          </div>
+          <div class="workday-step" id="step-3">
+            <div class="step-avatar">🕸️</div>
+            <div class="step-connector"></div>
+            <div class="step-content">
+              <div class="step-time">11:15 AM</div>
+              <div class="step-agent">Weaver</div>
+              <div class="step-role">Content Strategy</div>
+              <div class="step-desc">Drafted personalized email based on Apollo's research. Highlighted 3 specific gaps.</div>
+            </div>
+          </div>
+          <div class="workday-step" id="step-4">
+            <div class="step-avatar">🦁</div>
+            <div class="step-connector"></div>
+            <div class="step-content">
+              <div class="step-time">11:20 AM</div>
+              <div class="step-agent">Leo</div>
+              <div class="step-role">Email Outreach</div>
+              <div class="step-desc">Email sent to lead. Warmed up, personal, 3 specific talking points. Awaiting response.</div>
+            </div>
+          </div>
+          <div class="workday-step" id="step-5">
+            <div class="step-avatar">🛡️</div>
+            <div class="step-connector"></div>
+            <div class="step-content">
+              <div class="step-time">2:34 PM</div>
+              <div class="step-agent">Sentinel</div>
+              <div class="step-role">Compliance</div>
+              <div class="step-desc">Ran ADA compliance scan on lead's current website. 14 violations found. Report queued for follow-up.</div>
+            </div>
+          </div>
+          <div class="workday-step" id="step-6">
+            <div class="step-avatar">✨</div>
+            <div class="step-connector"></div>
+            <div class="step-content">
+              <div class="step-time">3:15 PM</div>
+              <div class="step-agent">Spark</div>
+              <div class="step-role">Social Engagement</div>
+              <div class="step-desc">Lead responded to email! Scheduled a call for tomorrow. Social profiles added to CRM.</div>
+            </div>
+          </div>
+          <div class="workday-step" id="step-7">
+            <div class="step-avatar">🌍</div>
+            <div class="step-connector"></div>
+            <div class="step-content">
+              <div class="step-time">6:00 AM</div>
+              <div class="step-agent">Atlas</div>
+              <div class="step-role">Systems Coordinator</div>
+              <div class="step-desc">Morning report delivered. Lead converted. Appointment confirmed. 6 specialists coordinated. You slept through all of it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="workday-note">This happens every day. For every lead. For every task. <a href="/morning-report/">See your own morning report →</a></p>
+    </section>
     <section class="proof-section">
       <h2 class="section-heading">You're Always in Control</h2>
       <div class="proof-grid">
@@ -523,6 +606,124 @@ import Layout from '../layouts/Layout.astro';
     opacity: 1;
   }
 
+  /* ===== WORKDAY ANIMATION ===== */
+  .workday-section {
+    padding: 80px 24px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .workday-section .section-heading {
+    margin-bottom: 12px;
+  }
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  .workday-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--primary), #c7384f);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 40px;
+  }
+  .workday-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(233,69,96,0.3);
+  }
+  .workday-btn-icon {
+    font-size: 1.2rem;
+  }
+  .workday-flow {
+    display: none;
+  }
+  .workday-flow.active {
+    display: block;
+  }
+  .workday-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+  }
+  .workday-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .step-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid rgba(107,53,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .step-connector {
+    width: 2px;
+    height: 32px;
+    background: linear-gradient(180deg, rgba(107,53,255,0.3), rgba(0,210,255,0.1));
+    margin: 4px 0 4px 21px;
+  }
+  .step-content {
+    flex: 1;
+    text-align: left;
+    padding-bottom: 24px;
+  }
+  .step-time {
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    margin-bottom: 2px;
+  }
+  .step-agent {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+  }
+  .step-role {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .step-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    background: rgba(255,255,255,0.02);
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 3px solid rgba(107,53,255,0.3);
+  }
+  .workday-note {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  .workday-note a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .workday-note a:hover {
+    text-decoration: underline;
+  }
+
   /* ===== PROOF SECTION ===== */
   .proof-section {
     position: relative;
@@ -807,6 +1008,23 @@ import Layout from '../layouts/Layout.astro';
       requestAnimationFrame(animate);
     }
     animate();
+  }
+
+  // ===== WORKDAY ANIMATION =====
+  function startWorkday() {
+    const btn = document.getElementById('workday-btn');
+    const flow = document.getElementById('workday-flow');
+    const steps = flow.querySelectorAll('.workday-step');
+    
+    btn.style.display = 'none';
+    flow.classList.add('active');
+    
+    // Animate each step with a delay
+    steps.forEach((step, i) => {
+      setTimeout(() => {
+        step.classList.add('visible');
+      }, i * 1200);
+    });
   }
 
   // ===== INIT =====
