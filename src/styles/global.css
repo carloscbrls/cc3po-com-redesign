@@ -353,9 +353,11 @@ a:focus-visible, button:focus-visible {
   font-size: 12px; font-weight: 700; color: var(--accent);
   letter-spacing: 0.5px;
   margin-bottom: var(--space-lg);
-  opacity: 0; transform: translateY(16px);
+  /* Visible by default — animation is progressive enhancement */
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+.hero-badge.reveal-out { opacity: 0; transform: translateY(16px); }
 .hero-badge.revealed { opacity: 1; transform: translateY(0); }
 .pulse-dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -379,9 +381,11 @@ a:focus-visible, button:focus-visible {
   font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
   font-weight: 800; line-height: 1.05;
   letter-spacing: -3px; margin-bottom: var(--space-lg);
-  opacity: 0; transform: translateY(20px);
+  /* Visible by default — animation is progressive enhancement */
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s;
 }
+.hero-title.reveal-out { opacity: 0; transform: translateY(20px); }
 .hero-title.revealed { opacity: 1; transform: translateY(0); }
 .typed-gradient {
   background: linear-gradient(135deg, #ffffff 0%, var(--accent) 40%, var(--blue) 100%);
@@ -411,9 +415,11 @@ a:focus-visible, button:focus-visible {
   font-size: clamp(var(--text-body), 1.8vw, var(--text-lg));
   color: var(--text-secondary); line-height: 1.7;
   margin-bottom: var(--space-2xl);
-  opacity: 0; transform: translateY(16px);
+  /* Visible by default — animation is progressive enhancement */
+  opacity: 1; transform: translateY(0);
   transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
 }
+.hero-sub.reveal-out { opacity: 0; transform: translateY(16px); }
 .hero-sub.revealed { opacity: 1; transform: translateY(0); }
 .hide-mobile { display: inline; }
 
@@ -871,7 +877,9 @@ a:focus-visible, button:focus-visible {
 .footer-inner { display: flex; justify-content: space-between; align-items: center; }
 
 /* ===== SCROLL REVEAL ===== */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+/* Elements are VISIBLE by default. JS adds 'reveal-out' to hide them, then 'revealed' to animate in. */
+/* If JS fails or doesn't load, content remains visible — no blank page. */
+.reveal-out { opacity: 0; transform: translateY(20px); }
 .revealed { opacity: 1; transform: translateY(0); }
 
 /* ===== FOUNDER ===== */
@@ -1115,14 +1123,6 @@ a:focus-visible, button:focus-visible {
   .hero-sub { font-size: var(--text-body); padding: 0 var(--space-xs); }
   .hero-badge { font-size: 11px; padding: 6px var(--space-sm); }
   .hero-content { max-width: 100%; overflow-x: hidden; }
-  /* Ensure hero content is visible on mobile even before JS reveal kicks in */
-  .hero .hero-badge,
-  .hero .hero-title,
-  .hero .hero-sub,
-  .hero .hero-buttons {
-    opacity: 1 !important;
-    transform: none !important;
-  }
 
   .four-principles { grid-template-columns: 1fr; }
 
