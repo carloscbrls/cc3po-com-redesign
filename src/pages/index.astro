@@ -646,6 +646,23 @@ import Layout from '../layouts/Layout.astro';
       margin: 0 auto;
     }
 
+    /* Mobile responsive for new sections */
+    @media (max-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .newsletter-form input {
+        min-width: 100% !important;
+      }
+      .workday-btn {
+        width: 100%;
+      }
+    }
+
     /* Morning Report Card */
     .morning-report-card {
       background: linear-gradient(135deg, var(--bg-primary) 0%, #0a1628 100%);
@@ -874,9 +891,11 @@ import Layout from '../layouts/Layout.astro';
       max-width: 700px;
       margin: 0 auto;
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
     .comparison-table {
       width: 100%;
+      min-width: 500px;
       border-collapse: separate;
       border-spacing: 0;
       border-radius: 12px;
