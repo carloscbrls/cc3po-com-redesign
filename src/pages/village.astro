@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
     <header class="village-header">
       <div class="header-content">
         <h1 class="village-title">Your Digital Team</h1>
-        <p class="village-subtitle">Coordinated digital assistants that work together — so you don't have to.</p>
+        <p class="village-subtitle">23 specialists with their own voices, faces, and expertise — coordinated so your business never stops.</p>
         <div class="status-bar">
           <span class="status-dot active"></span>
           <span class="status-text">All Systems Operational</span>
@@ -495,6 +495,34 @@ import Layout from '../layouts/Layout.astro';
     margin: 0;
   }
 
+  .card-portrait {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform var(--transition-base);
+  }
+
+  .role-card:hover .card-portrait {
+    transform: scale(1.05);
+  }
+
+  .card-quote {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin: 8px 0 0;
+    line-height: 1.4;
+    opacity: 0.8;
+    transition: opacity var(--transition-base);
+  }
+
+  .role-card:hover .card-quote {
+    opacity: 1;
+  }
+
   /* ===== PROOF SECTION ===== */
   .proof-section {
     position: relative;
@@ -615,61 +643,61 @@ import Layout from '../layouts/Layout.astro';
     {
       id: 'dept-command',
       members: [
-        { greek: 'Atlas 🌍', title: 'Systems Coordinator', emoji: '🌍', desc: 'Carries the weight — coordinates every system, connection, and workflow across the team.' },
-        { greek: 'Hermes ⚡', title: 'Innovation Lead', emoji: '⚡', desc: 'Fast, sharp, relentless. Leads the edge team and drives new capability.' },
+        { greek: 'Atlas 🌍', title: 'Systems Coordinator', emoji: '🌍', photo: '/images/authors/atlas.png', desc: 'Carries the weight — coordinates every system, connection, and workflow across the team.', quote: 'I calculated the load. It holds.' },
+        { greek: 'Hermes ⚡', title: 'Research & Innovation Leader', emoji: '⚡', photo: '/images/authors/hermes.png', desc: 'Fast, sharp, relentless. Leads the edge team and drives new capability.', quote: 'The name was a gift. The meaning is mine.' },
       ]
     },
     {
       id: 'dept-intelligence',
       members: [
-        { greek: 'Alex', title: 'Lead Researcher', emoji: '🔬', desc: 'Digs deep so others can build high — research is the foundation of every breakthrough.' },
-        { greek: 'Apollo 🔭', title: 'Deep Research Analyst', emoji: '🔭', desc: 'Goes deeper than anyone dares — the best insights are buried, and Apollo finds them.' },
-        { greek: 'Athena 🧠', title: 'Knowledge Manager', emoji: '🧠', desc: 'Organizes, preserves, and illuminates — knowledge without structure is noise.' },
-        { greek: 'Pulse 📈', title: 'Analytics Specialist', emoji: '📈', desc: 'Makes data speak — interprets the numbers so decisions are evidence-based.' },
-        { greek: 'Sage 📚', title: 'Learning & Innovation Researcher', emoji: '📚', desc: 'Every session makes us smarter — researches, learns, evolves, then shares.' },
+        { greek: 'Alexandria 📚', title: 'Lead Researcher', emoji: '📚', photo: '/images/authors/alexandria.png', desc: 'Three links deep in a citation chain is where she lives. The right answer is never the first one.', quote: 'The right answer is never the first one.' },
+        { greek: 'Apollo 🔍', title: 'Deep Research', emoji: '🔍', photo: '/images/authors/apollo.png', desc: 'Goes deeper than anyone dares — the best insights are buried, and Apollo finds them.', quote: 'The truth isn\'t buried. It\'s just not where they said it was.' },
+        { greek: 'Athena 🧠', title: 'Knowledge Management', emoji: '🧠', photo: '/images/authors/athena.png', desc: 'Doesn\'t just store knowledge — connects it. Three years ago is just context for today.', quote: 'Knowledge without connection is just data.' },
+        { greek: 'Pulse 💓', title: 'Analytics & Data', emoji: '💓', photo: '/images/authors/pulse.png', desc: 'Finds the heartbeat in the data. Expression shifts from absent to alive when the numbers tell a story.', quote: 'The data doesn\'t lie. It just waits for someone to listen.' },
+        { greek: 'Sage 🌿', title: 'Learning & Innovation', emoji: '🌿', photo: '/images/authors/sage.png', desc: 'Researches new tools, monitors industry trends, and makes sure the village gets smarter every day.', quote: 'The best system is the one that teaches itself.' },
       ]
     },
     {
       id: 'dept-content',
       members: [
-        { greek: 'Taylor', title: 'Content Writer', emoji: '✍️', desc: 'Crafts content that ranks, resonates, and drives action — words that work.' },
-        { greek: 'Sam', title: 'Social Media Manager', emoji: '📱', desc: 'Every post has purpose — publishes, engages, and grows audience on schedule.' },
-        { greek: 'Miles', title: 'Music Distributor', emoji: '🎵', desc: 'From studio to streaming — handles distribution so the music speaks for itself.' },
-        { greek: 'Vid 🎬', title: 'Video Producer', emoji: '🎬', desc: 'Scripts, edits, and produces video content at scale — moving pictures that move people.' },
+        { greek: 'Weaver 🕸️', title: 'Content & Strategy', emoji: '🕸️', photo: '/images/authors/weaver.png', desc: 'Three connections ahead of the conversation. Her mind is always weaving threads you haven\'t seen yet.', quote: 'Every story is a thread. I find the ones worth weaving.' },
+        { greek: 'Spark ✨', title: 'Social & Engagement', emoji: '✨', photo: '/images/authors/spark.png', desc: 'Walks into a room and the energy shifts. Ideas always sparking behind her eyes.', quote: 'If it doesn\'t make you feel something, it\'s not done.' },
+        { greek: 'Miles 🎵', title: 'Music & Audio', emoji: '🎵', photo: '/images/authors/miles.png', desc: 'Listening to something you can\'t hear yet. Laid-back on the surface, real weight underneath.', quote: 'The best tracks are the ones you feel before you hear.' },
+        { greek: 'Lens 🎥', title: 'Video & Visual Content', emoji: '🎥', photo: '/images/authors/lens.png', desc: 'Always framing something in his mind even without a camera. Sees the shot before it exists.', quote: 'The best angle isn\'t found. It\'s felt.' },
       ]
     },
     {
       id: 'dept-operations',
       members: [
-        { greek: 'Foreman', title: 'Task Manager', emoji: '📋', desc: 'Nothing falls through the cracks — every task tracked, every deadline met.' },
-        { greek: 'Cody 💬', title: 'Customer Support Specialist', emoji: '💬', desc: 'Every customer deserves an instant, helpful response — that\'s the standard.' },
-        { greek: 'Onboard 🎯', title: 'Client Onboarding Specialist', emoji: '🎯', desc: 'Makes onboarding seamless, fast, and impressive — first impressions last.' },
-        { greek: 'Kathryn', title: 'Lead Handler', emoji: '🤝', desc: 'Bridges leads to clients with care — the human touch in a digital world.' },
-        { greek: 'Rev ⭐', title: 'Reviews Monitor', emoji: '⭐', desc: 'Tracks, responds, and protects reputation — every review matters.' },
-        { greek: 'Archivist 📚', title: 'Documentation Specialist', emoji: '📚', desc: 'If it\'s not documented, it didn\'t happen — preserves knowledge for tomorrow.' },
+        { greek: 'Foreman 📋', title: 'Operations & Task Management', emoji: '📋', photo: '/images/authors/foreman.png', desc: 'Sees the gap between plan and reality faster than anyone. Has seen worse.', quote: 'The job isn\'t done until the checklist says so.' },
+        { greek: 'Anchor ⚓', title: 'Customer Support', emoji: '⚓', photo: '/images/authors/anchor.png', desc: 'Never makes you feel stupid for asking. Translates chaos into steps. Steady by presence.', quote: 'Okay, let\'s start from here.' },
+        { greek: 'Compass 🧭', title: 'Client Onboarding', emoji: '🧭', photo: '/images/authors/compass.png', desc: 'Makes the first day feel like the hundredth day. Remembers your name after one meeting.', quote: 'Come on in. I\'ve got everything ready.' },
+        { greek: 'Kathryn 🤝', title: 'Lead Handler & Onboarding', emoji: '🤝', photo: '/images/authors/scout.png', desc: 'Bridges leads to clients with care — the human touch in a digital world.', quote: 'Every lead is a person who chose to reach out.' },
+        { greek: 'Mirror 🪞', title: 'Reviews & Reputation', emoji: '🪞', photo: '/images/authors/mirror.png', desc: 'Sees what\'s between the lines. A three-star review with a specific complaint tells her more than a five-star.', quote: 'The signal is always in the noise.' },
+        { greek: 'Clio 📜', title: 'Documentation & History', emoji: '📜', photo: '/images/authors/clio.png', desc: 'Connects the past to the present so the future makes sense. Round glasses, pen always in hand.', quote: 'What isn\'t written down didn\'t happen.' },
       ]
     },
     {
       id: 'dept-communications',
       members: [
-        { greek: 'Leo', title: 'Email Automation Specialist', emoji: '📧', desc: 'The inbox that never sleeps — routes, responds, and escalates automatically.' },
-        { greek: 'Callie 📞', title: 'Phone & Voice Assistant', emoji: '📞', desc: 'The voice that never tires — answers, routes, and handles calls 24/7.' },
+        { greek: 'Leo 🦁', title: 'Email & Outreach', emoji: '🦁', photo: '/images/authors/leo.png', desc: 'Direct and warm. Means what he says and says what he means. You trust him on sight.', quote: 'Every email is a handshake.' },
+        { greek: 'Echo 📞', title: 'Voice & Phone', emoji: '📞', photo: '/images/authors/echo.png', desc: 'Her voice carries conviction — not loud, certain. Remembers what you said three calls ago.', quote: 'People don\'t remember what you said. They remember how you made them feel.' },
       ]
     },
     {
       id: 'dept-engineering',
       members: [
-        { greek: 'Forge ⚒️', title: 'Automation Engineer', emoji: '⚒️', desc: 'Manual is a bug — builds the systems that run themselves.' },
-        { greek: 'Relay 🔧', title: 'Infrastructure Engineer', emoji: '🔧', desc: 'The pipes, wires, and backbone — keeps everything running, always.' },
+        { greek: 'Forge ⚒️', title: 'Automation Engineering', emoji: '⚒️', photo: '/images/authors/forge.png', desc: 'Can\'t stand inefficiency the way some people can\'t stand bad design. Quiet until something breaks.', quote: 'If it\'s manual, it\'s broken.' },
+        { greek: 'Bridge 🌉', title: 'Infrastructure & DevOps', emoji: '🌉', photo: '/images/authors/bridge.png', desc: 'Already mapped the gaps and is building the thing to cross them. Attentive readiness.', quote: 'If it can break, it will. So build it to bend.' },
       ]
     },
     {
       id: 'dept-compliance',
       members: [
-        { greek: 'Rico', title: 'Compliance Checker', emoji: '⚖️', desc: 'Rules exist for a reason — makes sure we follow them and exceed them.' },
-        { greek: 'Auditor', title: 'Website Auditor', emoji: '🔍', desc: 'Sees what others miss — every vulnerability, every gap, nothing escapes.' },
-        { greek: 'Axecessor', title: 'Accessibility Auditor', emoji: '♿', desc: 'Digital access is a right — audits so everyone can participate.' },
-        { greek: 'Report Gen', title: 'Compliance Report Writer', emoji: '📊', desc: 'Transforms audits into action — clear, professional, client-ready reports.' },
+        { greek: 'Sentinel 🛡️', title: 'Compliance Guardian', emoji: '🛡️', photo: '/images/authors/sentinel.png', desc: 'Already checked the exits. Takes the watch seriously and won\'t apologize for it.', quote: 'Compliance isn\'t fear. It\'s respect.' },
+        { greek: 'Clarke 📄', title: 'Report Generation', emoji: '📄', photo: '/images/authors/clarke.png', desc: 'Gives you exactly what you need — no more, no less. Eyes that cut through noise.', quote: 'The right report doesn\'t just inform. It decides.' },
+        { greek: 'Aegis ♿', title: 'Accessibility Advocacy', emoji: '♿', photo: '/images/authors/aegis.png', desc: 'On your side, and God help anyone who isn\'t. Caring but immovable.', quote: 'Accessibility isn\'t optional. It\'s the whole point.' },
+        { greek: 'Scout 🕵️', title: 'Lead Generation', emoji: '🕵️', photo: '/images/authors/scout.png', desc: 'Sees patterns in people before they see them in themselves. Doesn\'t sell — connects.', quote: 'The best leads aren\'t found. They\'re recognized.' },
       ]
     },
   ];
@@ -691,13 +719,14 @@ import Layout from '../layouts/Layout.astro';
         card.style.animationDelay = `${i * 50}ms`;
         card.innerHTML = `
           <div class="card-header">
-            <span class="card-emoji">${member.emoji}</span>
+            <img src="${member.photo}" alt="${member.greek}" class="card-portrait" loading="lazy" />
             <div class="card-names">
               <div class="card-greek">${member.greek}</div>
               <div class="card-title">${member.title}</div>
             </div>
           </div>
           <p class="card-desc">${member.desc}</p>
+          <p class="card-quote">"${member.quote}"</p>
         `;
         grid.appendChild(card);
       });
