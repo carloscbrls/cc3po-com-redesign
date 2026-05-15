@@ -3,31 +3,6 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="CC3PO — While You Sleep, Your Business Doesn't">
-
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
-        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon" width="56" height="56" loading="eager">
-        <span>CC3PO</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="/morning-report/">Morning Report</a></li>
-        <li><a href="/how-it-works/">How It Works</a></li>
-        <li><a href="#proof">Proof</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/village/">Your Team</a></li>
-        <li><a href="#comparison">Pricing</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <a href="https://audit.cc3po.com" class="nav-cta">Free Business Scan</a>
-      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
-  </nav>
-
   <!-- ====== HERO ====== -->
   <section class="hero" id="main-content" id="hero">
     <video class="hero-video" autoplay loop muted playsinline>
@@ -1105,18 +1080,7 @@ import Layout from '../layouts/Layout.astro';
       });
     }, 200);
 
-    // ===== NAV SCROLL EFFECT (throttled) =====
-    const nav = document.getElementById('nav');
-    let scrollTicking = false;
-    window.addEventListener('scroll', () => {
-      if (!scrollTicking) {
-        requestAnimationFrame(() => {
-          nav?.classList.toggle('nav-scrolled', window.scrollY > 50);
-          scrollTicking = false;
-        });
-        scrollTicking = true;
-      }
-    });
+    // Nav scroll handled by SiteNav component
 
     // ===== SUPABASE LEAD FORM =====
     const SUPABASE_URL = 'https://cdrcgmdvepxwsbqaifxv.supabase.co';

@@ -5,6 +5,7 @@ export interface Props {
 }
 
 import SiteFooter from '../components/SiteFooter.astro';
+import SiteNav from '../components/SiteNav.astro';
 
 const { title, description = 'CC3PO — AI Agents That Work Within Your Rules. HIPAA compliance scanning, automated IT, and voice agents with full human oversight.' } = Astro.props;
 
@@ -127,14 +128,13 @@ import '../styles/global.css';
       <nav class="mobile-drawer-nav">
         <a href="/morning-report/">Morning Report</a>
         <a href="/how-it-works/">How It Works</a>
-        <a href="#proof">Proof</a>
         <a href="/about/">About</a>
         <a href="/village/">Your Team</a>
-        <a href="#comparison">Pricing</a>
         <a href="/contact">Contact</a>
       </nav>
       <a href="https://audit.cc3po.com" class="mobile-drawer-cta">Free Business Scan</a>
     </div>
+    <SiteNav />
     <slot />
     <SiteFooter />
     <script>

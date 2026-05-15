@@ -4,42 +4,6 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="AI for Dental Practices — HIPAA Compliance, Reviews & Website Management | CC3PO" description="AI agents that manage your dental practice's website, reviews, HIPAA compliance, and content — 24/7. Starting at $497/mo. Based in Lathrop, CA.">
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
-        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon" width="56" height="56" loading="eager">
-        <span>CC3PO</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="/morning-report/">Morning Report</a></li>
-        <li><a href="/how-it-works/">How It Works</a></li>
-        <li><a href="/#proof">Proof</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/village/">Your Team</a></li>
-        <li><a href="/#comparison">Pricing</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-      <a href="/#cta" class="nav-cta">Free Dental Scan</a>
-      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Drawer Overlay -->
-  <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
-  <div class="mobile-drawer" id="mobile-drawer">
-    <nav class="mobile-drawer-nav">
-      <a href="/morning-report/">Morning Report</a>
-      <a href="/how-it-works/">How It Works</a>
-      <a href="/#proof">Proof</a>
-      <a href="/about/">About</a>
-    </nav>
-    <a href="/#cta" class="mobile-drawer-cta">Free Dental Scan</a>
-  </div>
-
   <!-- ====== HERO ====== -->
   <section class="hero dental-hero" id="main-content">
     <canvas id="hero-canvas"></canvas>
@@ -760,18 +724,7 @@ import Layout from '../layouts/Layout.astro';
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // ===== NAV SCROLL =====
-    const nav = document.getElementById('nav');
-    let scrollTicking = false;
-    window.addEventListener('scroll', () => {
-      if (!scrollTicking) {
-        requestAnimationFrame(() => {
-          nav?.classList.toggle('nav-scrolled', window.scrollY > 50);
-          scrollTicking = false;
-        });
-        scrollTicking = true;
-      }
-    });
+    // Nav scroll handled by SiteNav component
   </script>
 
 </Layout>
