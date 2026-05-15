@@ -138,32 +138,34 @@ import '../styles/global.css';
         const drawer = document.getElementById('mobile-drawer');
         const overlay = document.getElementById('drawer-overlay');
 
+        if (!menuBtn || !drawer || !overlay) return;
+
+        // Remove existing listener to prevent duplicates on view transitions
+        const newBtn = menuBtn.cloneNode(true);
+        menuBtn.parentNode.replaceChild(newBtn, menuBtn);
+
         function openDrawer() {
-          drawer?.classList.add('active');
-          if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => { overlay.classList.add('active'); }); }
-          menuBtn?.setAttribute('aria-expanded', 'true');
+          drawer.classList.add('active');
+          overlay.style.display = 'block';
+          requestAnimationFrame(() => { overlay.classList.add('active'); });
+          newBtn.setAttribute('aria-expanded', 'true');
           document.body.style.overflow = 'hidden';
         }
 
         function closeDrawer() {
-          drawer?.classList.remove('active');
-          overlay?.classList.remove('active');
-          menuBtn?.setAttribute('aria-expanded', 'false');
+          drawer.classList.remove('active');
+          overlay.classList.remove('active');
+          newBtn.setAttribute('aria-expanded', 'false');
           document.body.style.overflow = '';
-          if (overlay) setTimeout(() => { overlay.style.display = 'none'; }, 300);
+          setTimeout(() => { overlay.style.display = 'none'; }, 300);
         }
 
-        if (menuBtn && drawer && overlay) {
-          // Remove existing listener to prevent duplicates on view transitions
-          menuBtn.replaceWith(menuBtn.cloneNode(true));
-          const newBtn = document.getElementById('mobile-menu-btn');
-          newBtn.addEventListener('click', () => {
-            if (drawer.classList.contains('active')) closeDrawer();
-            else openDrawer();
-          });
-          overlay.addEventListener('click', closeDrawer);
-          drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
-        }
+        newBtn.addEventListener('click', () => {
+          if (drawer.classList.contains('active')) closeDrawer();
+          else openDrawer();
+        });
+        overlay.addEventListener('click', closeDrawer);
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
       }
 
       // Run on initial page load
