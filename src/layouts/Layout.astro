@@ -4,6 +4,8 @@ export interface Props {
   description?: string;
 }
 
+import SiteFooter from '../components/SiteFooter.astro';
+
 const { title, description = 'CC3PO — AI Agents That Work Within Your Rules. HIPAA compliance scanning, automated IT, and voice agents with full human oversight.' } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -134,6 +136,7 @@ import '../styles/global.css';
       <a href="https://audit.cc3po.com" class="mobile-drawer-cta">Free Business Scan</a>
     </div>
     <slot />
+    <SiteFooter />
     <script>
       // Mobile drawer toggle (works on both initial load and Astro view transitions)
       function initMobileDrawer() {
