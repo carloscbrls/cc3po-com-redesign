@@ -132,8 +132,8 @@ import '../styles/global.css';
     </div>
     <slot />
     <script>
-      // Mobile drawer toggle
-      document.addEventListener('astro:page-load', () => {
+      // Mobile drawer toggle (works on both initial load and Astro view transitions)
+      function initMobileDrawer() {
         const menuBtn = document.getElementById('mobile-menu-btn');
         const drawer = document.getElementById('mobile-drawer');
         const overlay = document.getElementById('drawer-overlay');
@@ -154,14 +154,26 @@ import '../styles/global.css';
         }
 
         if (menuBtn && drawer && overlay) {
-          menuBtn.addEventListener('click', () => {
+          // Remove existing listener to prevent duplicates on view transitions
+          menuBtn.replaceWith(menuBtn.cloneNode(true));
+          const newBtn = document.getElementById('mobile-menu-btn');
+          newBtn.addEventListener('click', () => {
             if (drawer.classList.contains('active')) closeDrawer();
             else openDrawer();
           });
           overlay.addEventListener('click', closeDrawer);
           drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
         }
-      });
+      }
+
+      // Run on initial page load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileDrawer);
+      } else {
+        initMobileDrawer();
+      }
+      // Also run on Astro view transitions
+      document.addEventListener('astro:page-load', initMobileDrawer);
     </script>
   </body>
 </html>

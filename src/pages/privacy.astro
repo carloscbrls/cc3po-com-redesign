@@ -209,8 +209,5 @@ import Layout from '../layouts/Layout.astro';
   window.addEventListener('scroll',()=>{if(!t){requestAnimationFrame(()=>{nav.classList.toggle('nav-scrolled',window.scrollY>50);t=false});t=true}});
   const ro=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('revealed');ro.unobserve(en.target)}})},{threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-  const mb=document.getElementById('mobile-menu-btn'),dr=document.getElementById('mobile-drawer'),ov=document.getElementById('drawer-overlay');
-  function od(){dr.classList.add('active');ov.style.display='block';requestAnimationFrame(()=>ov.classList.add('active'));mb.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
-  function cd(){dr.classList.remove('active');ov.classList.remove('active');mb.setAttribute('aria-expanded','false');document.body.style.overflow='';setTimeout(()=>ov.style.display='none',300)}
-  if(mb&&dr&&ov){mb.addEventListener('click',()=>dr.classList.contains('active')?cd():od());ov.addEventListener('click',cd);dr.querySelectorAll('a').forEach(a=>a.addEventListener('click',cd))}
+  // Mobile drawer handled by Layout.astro
 </script>
