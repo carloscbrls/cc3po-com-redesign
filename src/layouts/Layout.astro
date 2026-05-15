@@ -131,5 +131,37 @@ import '../styles/global.css';
       <a href="#cta" class="mobile-drawer-cta">Free HIPAA Scan</a>
     </div>
     <slot />
+    <script>
+      // Mobile drawer toggle
+      document.addEventListener('astro:page-load', () => {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const drawer = document.getElementById('mobile-drawer');
+        const overlay = document.getElementById('drawer-overlay');
+
+        function openDrawer() {
+          drawer?.classList.add('active');
+          if (overlay) { overlay.style.display = 'block'; requestAnimationFrame(() => { overlay.classList.add('active'); }); }
+          menuBtn?.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+          drawer?.classList.remove('active');
+          overlay?.classList.remove('active');
+          menuBtn?.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          if (overlay) setTimeout(() => { overlay.style.display = 'none'; }, 300);
+        }
+
+        if (menuBtn && drawer && overlay) {
+          menuBtn.addEventListener('click', () => {
+            if (drawer.classList.contains('active')) closeDrawer();
+            else openDrawer();
+          });
+          overlay.addEventListener('click', closeDrawer);
+          drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+        }
+      });
+    </script>
   </body>
 </html>
