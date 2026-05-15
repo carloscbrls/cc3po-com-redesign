@@ -921,7 +921,7 @@ import Layout from '../layouts/Layout.astro';
         card.style.animationDelay = `${i * 50}ms`;
         card.innerHTML = `
           <div class="card-header">
-            <img src="${member.photo}" alt="${member.greek}" class="card-portrait" loading="lazy" />
+            <img src="${member.photo}" alt="${member.greek}" class="card-portrait" width="80" height="80" loading="lazy" />
             <div class="card-names">
               <div class="card-greek">${member.greek}</div>
               <div class="card-title">${member.title}</div>

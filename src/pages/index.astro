@@ -172,7 +172,7 @@ import Layout from '../layouts/Layout.astro';
 
       <div class="team-grid reveal">
         <a href="/village/carlos/" class="team-card team-card-portrait">
-          <img src="/images/authors/carlos.png" alt="Carlos" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/carlos.png" alt="Carlos" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Carlos 🧑🏽‍💻</div>
             <div class="team-role">Founder & Builder</div>
@@ -180,7 +180,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/atlas/" class="team-card team-card-portrait">
-          <img src="/images/authors/atlas.png" alt="Atlas" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/atlas.png" alt="Atlas" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Atlas 🌍</div>
             <div class="team-role">Systems Coordinator</div>
@@ -188,7 +188,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/sentinel/" class="team-card team-card-portrait">
-          <img src="/images/authors/sentinel.png" alt="Sentinel" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/sentinel.png" alt="Sentinel" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Sentinel 🛡️</div>
             <div class="team-role">Compliance Guardian</div>
@@ -196,7 +196,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/forge/" class="team-card team-card-portrait">
-          <img src="/images/authors/forge.png" alt="Forge" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/forge.png" alt="Forge" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Forge ⚒️</div>
             <div class="team-role">Automation Engineering</div>
@@ -204,7 +204,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/weaver/" class="team-card team-card-portrait">
-          <img src="/images/authors/weaver.png" alt="Weaver" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/weaver.png" alt="Weaver" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Weaver 🕸️</div>
             <div class="team-role">Content & Strategy</div>
@@ -212,7 +212,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/spark/" class="team-card team-card-portrait">
-          <img src="/images/authors/spark.png" alt="Spark" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/spark.png" alt="Spark" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Spark ✨</div>
             <div class="team-role">Social & Engagement</div>
@@ -220,7 +220,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/leo/" class="team-card team-card-portrait">
-          <img src="/images/authors/leo.png" alt="Leo" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/leo.png" alt="Leo" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Leo 🦁</div>
             <div class="team-role">Email & Outreach</div>
@@ -228,7 +228,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/mirror/" class="team-card team-card-portrait">
-          <img src="/images/authors/mirror.png" alt="Mirror" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/mirror.png" alt="Mirror" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Mirror 🪞</div>
             <div class="team-role">Reviews & Reputation</div>
@@ -236,7 +236,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
         <a href="/village/apollo/" class="team-card team-card-portrait">
-          <img src="/images/authors/apollo.png" alt="Apollo" class="team-portrait" loading="lazy" />
+          <img src="/images/authors/apollo.png" alt="Apollo" class="team-portrait" width="80" height="80" loading="lazy" />
           <div class="team-card-body">
             <div class="team-name">Apollo 🔍</div>
             <div class="team-role">Deep Research</div>
@@ -445,7 +445,8 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Get the Signal. Free business insights, every week.</h2>
         <p style="color:var(--text-muted);margin-bottom:24px;">AI automation strategies, compliance updates, and tips for growing your business. No spam. Unsubscribe anytime.</p>
         <form class="newsletter-form" id="newsletter-form" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
-          <input type="email" name="email" placeholder="Your email address" required style="flex:1;min-width:240px;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:#fff;font-size:1rem;font-family:var(--font);">
+          <label for="newsletter-email" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex:1;min-width:240px;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:#fff;font-size:1rem;font-family:var(--font);">
           <button type="submit" class="btn btn-primary btn-glow">Get the Signal →</button>
         </form>
         <p id="newsletter-message" style="margin-top:12px;font-size:0.85rem;color:var(--accent);display:none;"></p>
