@@ -5,10 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="CC3PO — While You Sleep, Your Business Doesn't">
   <!-- ====== HERO ====== -->
   <section class="hero" id="main-content" id="hero">
-    <video class="hero-video" autoplay loop muted playsinline>
+    <video class="hero-video" autoplay loop muted playsinline aria-label="Animated network visualization background">
       <source src="/videos/hero-network.webm" type="video/webm">
       <source src="/videos/hero-network.mp4" type="video/mp4">
     </video>
+    <button class="video-pause-btn" id="video-pause-btn" aria-label="Pause background video" title="Pause video" style="position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.5);color:#fff;border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;z-index:10;font-size:14px;opacity:0.6;transition:opacity 0.2s;">⏸</button>
     <canvas id="hero-canvas"></canvas>
     <div class="hero-content">
       <div class="hero-badge reveal">
@@ -1225,6 +1226,27 @@ import Layout from '../layouts/Layout.astro';
         msg.style.color = 'var(--primary)';
       }
     });
+
+      // Video pause button for accessibility
+      const videoPauseBtn = document.getElementById('video-pause-btn');
+      const heroVideo = document.querySelector('.hero-video');
+      if (videoPauseBtn && heroVideo) {
+        videoPauseBtn.addEventListener('click', () => {
+          if (heroVideo.paused) {
+            heroVideo.play();
+            videoPauseBtn.textContent = '⏸';
+            videoPauseBtn.setAttribute('aria-label', 'Play background video');
+            videoPauseBtn.title = 'Play video';
+          } else {
+            heroVideo.pause();
+            videoPauseBtn.textContent = '▶';
+            videoPauseBtn.setAttribute('aria-label', 'Pause background video');
+            videoPauseBtn.title = 'Pause video';
+          }
+        });
+        videoPauseBtn.addEventListener('mouseenter', () => { videoPauseBtn.style.opacity = '1'; });
+        videoPauseBtn.addEventListener('mouseleave', () => { videoPauseBtn.style.opacity = '0.6'; });
+      }
   </script>
 
 </Layout>
