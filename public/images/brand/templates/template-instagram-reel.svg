@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920">
+  <defs>
+    <linearGradient id="dept-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6b35ff;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#00d2ff;stop-opacity:0.08" />
+    </linearGradient>
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6b35ff;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#6b35ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6b35ff;stop-opacity:0" />
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+    </pattern>
+    <clipPath id="portrait-clip">
+      <circle cx="540" cy="600" r="200"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1080" height="1920" fill="#0a0a0b"/>
+  <rect width="1080" height="1920" fill="url(#grid)"/>
+  
+  <!-- Department radial glow -->
+  <circle cx="540" cy="600" r="500" fill="url(#dept-grad)"/>
+  
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1080" height="3" fill="url(#border-grad)"/>
+  
+  <!-- Portrait circle (placeholder) -->
+  <circle cx="540" cy="600" r="204" fill="none" stroke="#6b35ff" stroke-width="2" opacity="0.4"/>
+  <circle cx="540" cy="600" r="200" fill="#16161a"/>
+  <!-- Replace the circle above with: <image href="/images/authors/AGENTNAME.png" x="340" y="400" width="400" height="400" clip-path="url(#portrait-clip)"/> -->
+  
+  <!-- Agent emoji placeholder -->
+  <text x="540" y="620" text-anchor="middle" font-size="80" opacity="0.3">🌍</text>
+  
+  <!-- Department label -->
+  <rect x="430" y="840" width="220" height="28" rx="14" fill="rgba(107,53,255,0.15)"/>
+  <text x="540" y="860" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="600" fill="#6b35ff" letter-spacing="3" text-transform="uppercase">COMMAND</text>
+  
+  <!-- Agent name -->
+  <text x="540" y="940" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', monospace" font-size="56" font-weight="800" fill="#e8e8ed" letter-spacing="2">ATLAS 🌍</text>
+  
+  <!-- Role -->
+  <text x="540" y="990" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="24" font-weight="400" fill="#8888a0">Systems Coordinator</text>
+  
+  <!-- Divider -->
+  <rect x="490" y="1040" width="100" height="2" rx="1" fill="#6b35ff" opacity="0.4"/>
+  
+  <!-- Description -->
+  <text x="540" y="1100" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="400" fill="#8888a0">
+    <tspan x="540" dy="0">Carries the weight of the village</tspan>
+    <tspan x="540" dy="28">so your systems never break.</tspan>
+  </text>
+  
+  <!-- Quote -->
+  <text x="540" y="1220" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="16" font-style="italic" fill="#55556a">"I calculated the load. It holds."</text>
+  
+  <!-- CC3PO branding bottom -->
+  <text x="540" y="1800" text-anchor="middle" font-family="'JetBrains Mono', 'SF Mono', monospace" font-size="14" font-weight="700" fill="#55556a" letter-spacing="6">CC3PO</text>
+  <text x="540" y="1830" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-size="10" fill="#55556a" letter-spacing="3">BUILD ONCE · RUN FOREVER · EVOLVE CONTINUOUSLY</text>
+  
+  <!-- Particle decorations -->
+  <circle cx="120" cy="300" r="2" fill="#00d2ff" opacity="0.3"/>
+  <circle cx="960" cy="450" r="1.5" fill="#6b35ff" opacity="0.4"/>
+  <circle cx="80" cy="1200" r="1" fill="#FFD700" opacity="0.3"/>
+  <circle cx="1000" cy="1500" r="2" fill="#00d2ff" opacity="0.2"/>
+  <circle cx="200" cy="1700" r="1.5" fill="#6b35ff" opacity="0.3"/>
+  
+  <!-- Connection lines between particles -->
+  <line x1="120" y1="300" x2="960" y2="450" stroke="#00d2ff" stroke-width="0.5" opacity="0.08"/>
+  <line x1="960" y1="450" x2="1000" y2="1500" stroke="#6b35ff" stroke-width="0.5" opacity="0.06"/>
+</svg>
