@@ -1,0 +1,577 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Get Started — CC3PO" description="Start your compliance and automation journey with CC3PO. Tell us about your business and we'll match you to the right plan.">
+
+  <!-- Hero -->
+  <section class="gs-hero" id="main-content">
+    <div class="container">
+      <span class="section-label">Get Started</span>
+      <h1>Let's Protect &amp; Grow Your Business</h1>
+      <p class="gs-hero-sub">Tell us about your business. We'll show you exactly how CC3PO can handle the work you don't have time for — compliance, automation, and IT, all on autopilot.</p>
+      <div class="gs-trust-row">
+        <div class="gs-trust-badge">
+          <span class="gs-trust-icon">🛡️</span>
+          <span>Trusted by Dr. Alan Lee, DDS</span>
+        </div>
+        <div class="gs-trust-badge">
+          <span class="gs-trust-icon">✓</span>
+          <span>Free compliance scan with every plan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intake Form -->
+  <section class="gs-form-section" id="intake-form">
+    <div class="container">
+      <div class="gs-form-card">
+        <h2>Tell Us About Your Business</h2>
+        <p class="gs-form-sub">Fill out the form below and we'll reach out within 24 hours with a personalized recommendation.</p>
+
+        <form id="gs-form" class="gs-form" action="https://formspree.io/f/mvzdljpq" method="POST">
+          <div class="gs-form-row">
+            <div class="gs-form-group">
+              <label for="gs-name">Full Name <span class="gs-required">*</span></label>
+              <input type="text" id="gs-name" name="name" required placeholder="Jane Smith" autocomplete="name">
+            </div>
+            <div class="gs-form-group">
+              <label for="gs-email">Email <span class="gs-required">*</span></label>
+              <input type="email" id="gs-email" name="email" required placeholder="jane@practice.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="gs-form-row">
+            <div class="gs-form-group">
+              <label for="gs-phone">Phone</label>
+              <input type="tel" id="gs-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
+            </div>
+            <div class="gs-form-group">
+              <label for="gs-company">Company</label>
+              <input type="text" id="gs-company" name="company" placeholder="Smith Dental Group" autocomplete="organization">
+            </div>
+          </div>
+          <div class="gs-form-row">
+            <div class="gs-form-group">
+              <label for="gs-website">Website URL</label>
+              <input type="url" id="gs-website" name="website" placeholder="https://smithdental.com" autocomplete="url">
+            </div>
+            <div class="gs-form-group">
+              <label for="gs-service">Service Interest <span class="gs-required">*</span></label>
+              <select id="gs-service" name="service_interest" required>
+                <option value="">Select a service</option>
+                <option value="compliance-monitoring">Compliance Monitoring</option>
+                <option value="website-audit">Website Audit</option>
+                <option value="hipaa-setup">HIPAA Setup</option>
+                <option value="automation">Automation</option>
+                <option value="full-service">Full Service</option>
+              </select>
+            </div>
+          </div>
+          <input type="hidden" name="source" value="cc3po.com-get-started">
+          <input type="hidden" name="lead_type" value="intake">
+          <button type="submit" class="gs-submit-btn" id="gs-submit">
+            <span class="gs-btn-text">Get My Free Scan</span>
+            <span class="gs-btn-loading" style="display:none">Submitting…</span>
+          </button>
+        </form>
+
+        <div class="gs-form-success" id="gs-success" style="display:none">
+          <div class="gs-success-icon">✓</div>
+          <h3>You're In!</h3>
+          <p>We'll review your info and reach out within 24 hours. In the meantime, pick your plan below to get started immediately.</p>
+        </div>
+        <div class="gs-form-error" id="gs-error" style="display:none">
+          <div class="gs-error-icon">!</div>
+          <h3>Something went wrong</h3>
+          <p>Please try again or email us at <a href="mailto:hello@cc3po.com">hello@cc3po.com</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing CTA Cards -->
+  <section class="gs-plans-section" id="plans">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Plans</span>
+        <h2 class="section-title">Choose Your Plan</h2>
+        <p class="section-desc">Every plan includes a free compliance scan. No contracts, cancel anytime.</p>
+      </div>
+
+      <div class="gs-plans-grid">
+        <!-- Essential -->
+        <div class="gs-plan-card">
+          <div class="gs-plan-badge">Starter</div>
+          <h3 class="gs-plan-name">Essential</h3>
+          <div class="gs-plan-price">
+            <span class="gs-plan-amount">$99</span>
+            <span class="gs-plan-period">/month</span>
+          </div>
+          <p class="gs-plan-tagline">Compliance basics for small practices</p>
+          <ul class="gs-plan-features">
+            <li>✓ HIPAA compliance scanning</li>
+            <li>✓ Monthly audit reports</li>
+            <li>✓ Email alerts &amp; monitoring</li>
+            <li>✓ Free compliance scan included</li>
+          </ul>
+          <a href="https://buy.stripe.com/6oUcN4gUCdfx91y7Kc1B60m" class="gs-plan-btn gs-plan-btn-essential" target="_blank" rel="noopener noreferrer">Start Essential</a>
+        </div>
+
+        <!-- Professional -->
+        <div class="gs-plan-card gs-plan-featured">
+          <div class="gs-plan-badge gs-plan-badge-featured">Most Popular</div>
+          <h3 class="gs-plan-name">Professional</h3>
+          <div class="gs-plan-price">
+            <span class="gs-plan-amount">$299</span>
+            <span class="gs-plan-period">/month</span>
+          </div>
+          <p class="gs-plan-tagline">Full compliance + automation for growing practices</p>
+          <ul class="gs-plan-features">
+            <li>✓ Everything in Essential</li>
+            <li>✓ Continuous compliance monitoring</li>
+            <li>✓ AI-powered automation</li>
+            <li>✓ Phone &amp; email support</li>
+            <li>✓ Free compliance scan included</li>
+          </ul>
+          <a href="https://buy.stripe.com/6oU28qgUC3EX4LiaWo1B60h" class="gs-plan-btn gs-plan-btn-pro" target="_blank" rel="noopener noreferrer">Start Professional</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="gs-plan-card">
+          <div class="gs-plan-badge">Enterprise</div>
+          <h3 class="gs-plan-name">Enterprise</h3>
+          <div class="gs-plan-price">
+            <span class="gs-plan-amount">$499</span>
+            <span class="gs-plan-period">/month</span>
+          </div>
+          <p class="gs-plan-tagline">White-glove IT, compliance, and automation</p>
+          <ul class="gs-plan-features">
+            <li>✓ Everything in Professional</li>
+            <li>✓ Dedicated account manager</li>
+            <li>✓ Custom integrations</li>
+            <li>✓ Priority SLA &amp; same-day support</li>
+            <li>✓ Free compliance scan included</li>
+          </ul>
+          <a href="https://buy.stripe.com/dRm28q9sab7p0v2c0s1B60o" class="gs-plan-btn gs-plan-btn-enterprise" target="_blank" rel="noopener noreferrer">Start Enterprise</a>
+        </div>
+      </div>
+
+      <div class="gs-plans-trust">
+        <div class="gs-trust-badge">
+          <span class="gs-trust-icon">🛡️</span>
+          <span>Trusted by Dr. Alan Lee, DDS</span>
+        </div>
+        <div class="gs-trust-badge">
+          <span class="gs-trust-icon">✓</span>
+          <span>Free compliance scan with every plan</span>
+        </div>
+        <div class="gs-trust-badge">
+          <span class="gs-trust-icon">🔒</span>
+          <span>No contracts — cancel anytime</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="gs-faq-section">
+    <div class="container">
+      <h2>Common Questions</h2>
+      <div class="gs-faq-grid">
+        <div class="gs-faq-item">
+          <h3>What happens after I submit the form?</h3>
+          <p>We review your info and reach out within 24 hours with a personalized recommendation. You can also start a plan immediately using the links above.</p>
+        </div>
+        <div class="gs-faq-item">
+          <h3>Is the compliance scan really free?</h3>
+          <p>Yes. Every plan — even before you commit — includes a free scan of your website for HIPAA compliance, security, speed, and accessibility issues.</p>
+        </div>
+        <div class="gs-faq-item">
+          <h3>Can I cancel anytime?</h3>
+          <p>Absolutely. All plans are month-to-month with no contracts and no cancellation fees. We earn your business every month.</p>
+        </div>
+        <div class="gs-faq-item">
+          <h3>Do you work with dental and medical offices?</h3>
+          <p>Yes — healthcare compliance is our specialty. We handle HIPAA-compliant websites, AI phone answering, automated reviews, and billing automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ===== Hero ===== */
+  .gs-hero {
+    background: linear-gradient(135deg, #050508 0%, #1a0a2e 50%, #050508 100%);
+    text-align: center;
+    padding: 140px 24px 60px;
+  }
+  .gs-hero h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #a78bfa, #4fc3f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+  .gs-hero-sub {
+    font-size: 18px;
+    color: #a1a1aa;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .gs-trust-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+  .gs-trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #a1a1aa;
+    font-weight: 500;
+  }
+  .gs-trust-icon {
+    font-size: 16px;
+    color: #00e676;
+  }
+
+  /* ===== Form Section ===== */
+  .gs-form-section {
+    padding: 60px 0;
+    background: #0a0a0b;
+  }
+  .gs-form-card {
+    max-width: 640px;
+    margin: 0 auto;
+    background: #141418;
+    border: 1px solid #2a2a3a;
+    border-radius: 16px;
+    padding: 40px;
+  }
+  .gs-form-card h2 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .gs-form-sub {
+    color: #a1a1aa;
+    font-size: 15px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+  .gs-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .gs-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 600px) {
+    .gs-form-row { grid-template-columns: 1fr; }
+    .gs-form-card { padding: 24px; }
+  }
+  .gs-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .gs-form-group label {
+    font-size: 14px;
+    color: #a1a1aa;
+    font-weight: 500;
+  }
+  .gs-required { color: #e94560; }
+  .gs-form-group input,
+  .gs-form-group select {
+    background: #0a0a12;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 15px;
+    transition: border-color 0.2s;
+  }
+  .gs-form-group input:focus,
+  .gs-form-group select:focus {
+    outline: none;
+    border-color: #6b35ff;
+  }
+  .gs-form-group input::placeholder {
+    color: #555;
+  }
+  .gs-submit-btn {
+    background: linear-gradient(135deg, #6b35ff, #4fc3f7);
+    color: #fff;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 8px;
+  }
+  .gs-submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(107,53,255,0.4);
+  }
+  .gs-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Success / Error */
+  .gs-form-success, .gs-form-error {
+    text-align: center;
+    padding: 32px;
+  }
+  .gs-success-icon, .gs-error-icon {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin: 0 auto 16px;
+    font-weight: 700;
+  }
+  .gs-success-icon { background: #2e7d32; color: #fff; }
+  .gs-error-icon { background: #c62828; color: #fff; }
+  .gs-form-success h3, .gs-form-error h3 {
+    color: #fff; font-size: 22px; margin-bottom: 8px;
+  }
+  .gs-form-success p, .gs-form-error p {
+    color: #a1a1aa; line-height: 1.6;
+  }
+  .gs-form-error a { color: #4fc3f7; }
+
+  /* ===== Plans Section ===== */
+  .gs-plans-section {
+    padding: 80px 0;
+    background: #0d0d0f;
+  }
+  .gs-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  @media (max-width: 900px) {
+    .gs-plans-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+  }
+
+  .gs-plan-card {
+    background: #141418;
+    border: 1px solid #2a2a3a;
+    border-radius: 16px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .gs-plan-card:hover {
+    border-color: rgba(107,53,255,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  .gs-plan-featured {
+    border-color: #6b35ff;
+    box-shadow: 0 0 40px rgba(107,53,255,0.15);
+  }
+  .gs-plan-featured:hover {
+    border-color: #8b5cf6;
+  }
+  .gs-plan-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a1a1aa;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 4px 14px;
+    margin-bottom: 16px;
+    width: fit-content;
+  }
+  .gs-plan-badge-featured {
+    color: #6b35ff;
+    background: rgba(107,53,255,0.1);
+    border-color: rgba(107,53,255,0.3);
+  }
+  .gs-plan-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .gs-plan-price {
+    margin-bottom: 12px;
+  }
+  .gs-plan-amount {
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .gs-plan-period {
+    font-size: 16px;
+    color: #a1a1aa;
+  }
+  .gs-plan-tagline {
+    color: #a1a1aa;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .gs-plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .gs-plan-features li {
+    font-size: 14px;
+    color: #d1d5db;
+    line-height: 1.5;
+  }
+  .gs-plan-btn {
+    display: block;
+    text-align: center;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: auto;
+  }
+  .gs-plan-btn:hover {
+    transform: translateY(-1px);
+  }
+  .gs-plan-btn-essential {
+    background: linear-gradient(135deg, #1e3a5f, #082f49);
+    color: #fff;
+    border: 1px solid rgba(8,47,73,0.5);
+  }
+  .gs-plan-btn-essential:hover {
+    box-shadow: 0 4px 20px rgba(8,47,73,0.5);
+  }
+  .gs-plan-btn-pro {
+    background: linear-gradient(135deg, #6b35ff, #4fc3f7);
+    color: #fff;
+  }
+  .gs-plan-btn-pro:hover {
+    box-shadow: 0 4px 20px rgba(107,53,255,0.4);
+  }
+  .gs-plan-btn-enterprise {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    color: #000;
+  }
+  .gs-plan-btn-enterprise:hover {
+    box-shadow: 0 4px 20px rgba(217,119,6,0.4);
+  }
+
+  /* Plans trust row */
+  .gs-plans-trust {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  /* ===== FAQ ===== */
+  .gs-faq-section {
+    padding: 60px 0;
+    background: #0a0a0b;
+  }
+  .gs-faq-section h2 {
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 800;
+  }
+  .gs-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 768px) {
+    .gs-faq-grid { grid-template-columns: 1fr; }
+  }
+  .gs-faq-item {
+    background: #141418;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .gs-faq-item h3 {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .gs-faq-item p {
+    color: #a1a1aa;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+</style>
+
+<script>
+const form = document.getElementById('gs-form');
+const submitBtn = document.getElementById('gs-submit');
+const successMsg = document.getElementById('gs-success');
+const errorMsg = document.getElementById('gs-error');
+
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const btnText = submitBtn.querySelector('.gs-btn-text');
+  const btnLoading = submitBtn.querySelector('.gs-btn-loading');
+  btnText.style.display = 'none';
+  btnLoading.style.display = 'inline';
+  submitBtn.disabled = true;
+
+  try {
+    const formData = new FormData(form);
+    const res = await fetch('https://formspree.io/f/mvzdljpq', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (err) {
+    form.style.display = 'none';
+    errorMsg.style.display = 'block';
+  }
+});
+</script>
