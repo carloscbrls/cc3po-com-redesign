@@ -1,8 +1,31 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "CC3PO Fortress — Full Compliance Suite",
+  "description": "Complete ADA/WCAG compliance protection: daily scans, remediation guidance, priority support, and legal documentation for growing businesses.",
+  "brand": { "@type": "Brand", "name": "CC3PO" },
+  "offers": {
+    "@type": "Offer",
+    "price": "247",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "https://cc3po.com/products/fortress/"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "31"
+  }
+};
 ---
 
 <Layout title="Fortress — Full Compliance Protection | CC3PO" description="Complete ADA/WCAG compliance suite: continuous monitoring, remediation guidance, priority support, and legal documentation. Starting at $247/mo.">
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
   <!-- Hero -->
   <section style="padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;">
@@ -15,8 +38,8 @@ import Layout from '../../layouts/Layout.astro';
       <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">Fortress</h1>
       <p style="font-size:1.15rem;color:var(--text-secondary);max-width:560px;margin:0 auto 36px;line-height:1.6;">Complete compliance protection: monitoring, remediation guidance, priority support, and legal documentation — starting at <strong style="color:#fff;">$247/mo</strong>.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://buy.stripe.com/eVq7sKcEmgrJ1z60hK1B60Y" style="background:#8b5cf6;color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(139,92,246,0.3);">Start Free Trial</a>
-        <a href="/audit/" style="background:transparent;color:#8b5cf6;padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(139,92,246,0.3);">Get Free Scan</a>
+        <a href="https://buy.stripe.com/eVq7sKcEmgrJ1z60hK1B60Y" class="cta-fortress-trial" style="background:#8b5cf6;color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(139,92,246,0.3);transition:all 0.2s;">Start Free Trial</a>
+        <a href="/audit/" class="cta-fortress-scan" style="background:transparent;color:#8b5cf6;padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(139,92,246,0.3);">Get Free Scan</a>
       </div>
     </div>
   </section>
@@ -67,7 +90,7 @@ import Layout from '../../layouts/Layout.astro';
           <p style="color:var(--text-secondary);font-size:0.95rem;margin-bottom:8px;">✓ Legal documentation (VPATs)</p>
           <p style="color:var(--text-secondary);font-size:0.95rem;">✓ Priority same-day support</p>
         </div>
-        <a href="https://buy.stripe.com/eVq7sKcEmgrJ1z60hK1B60Y" style="display:block;background:#8b5cf6;color:#fff;padding:14px;border-radius:10px;font-weight:700;text-decoration:none;text-align:center;box-shadow:0 4px 20px rgba(139,92,246,0.3);">Start Free Trial</a>
+        <a href="https://buy.stripe.com/eVq7sKcEmgrJ1z60hK1B60Y" class="cta-fortress-checkout" style="display:block;background:#8b5cf6;color:#fff;padding:14px;border-radius:10px;font-weight:700;text-decoration:none;text-align:center;box-shadow:0 4px 20px rgba(139,92,246,0.3);">Start Free Trial</a>
       </div>
     </div>
   </section>
@@ -83,5 +106,15 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Plausible event tracking -->
+  <script is:inline>
+    document.querySelectorAll('.cta-fortress-trial, .cta-fortress-checkout').forEach(function(el) {
+      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'fortress', type: 'checkout' } }); });
+    });
+    document.querySelectorAll('.cta-fortress-scan').forEach(function(el) {
+      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'fortress', type: 'free_scan' } }); });
+    });
+  </script>
 
 </Layout>

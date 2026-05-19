@@ -53,4 +53,9 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Plausible event tracking -->
+  <script is:inline>
+    document.querySelector('form[action*="audit.cc3po.com"]')?.addEventListener('submit', function() { plausible('cta_click', { props: { page: 'audit', type: 'free_scan' } }); });
+  </script>
+
 </Layout>
