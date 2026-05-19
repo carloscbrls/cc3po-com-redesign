@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Free Compliance Scan — CC3PO" description="Get a free ADA/WCAG compliance scan of your website. Find violations before lawsuits find you. No signup required.">
+
+  <!-- Hero -->
+  <section style="padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(233,69,96,0.12) 0%,transparent 60%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;">
+      <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:rgba(233,69,96,0.12);border:1px solid rgba(233,69,96,0.25);display:flex;align-items:center;justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </div>
+      <p style="color:#e94560;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Free Compliance Scan</p>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">Is Your Website Compliant?</h1>
+      <p style="font-size:1.15rem;color:var(--text-secondary);max-width:560px;margin:0 auto 36px;line-height:1.6;">Find out in 30 seconds. Our free scanner checks your site against WCAG 2.1 AA standards and shows you exactly what needs fixing.</p>
+      <div style="max-width:500px;margin:0 auto;">
+        <form action="https://audit.cc3po.com/" method="get" style="display:flex;gap:12px;">
+          <input type="url" name="url" placeholder="Enter your website URL" required style="flex:1;padding:14px 18px;border-radius:10px;border:1px solid var(--border);background:var(--bg-card);color:#fff;font-size:1rem;" />
+          <button type="submit" style="background:#e94560;color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:1rem;border:none;cursor:pointer;white-space:nowrap;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Scan Now</button>
+        </form>
+        <p style="color:var(--text-muted);font-size:0.85rem;margin-top:12px;">No signup required · Results in 30 seconds · 100% free</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section style="padding:60px 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;text-align:center;">
+        <div style="padding:24px;">
+          <p style="font-size:2.5rem;font-weight:800;color:#e94560;margin-bottom:4px;">$4K+</p>
+          <p style="color:var(--text-secondary);font-size:0.9rem;">Average ADA lawsuit settlement</p>
+        </div>
+        <div style="padding:24px;">
+          <p style="font-size:2.5rem;font-weight:800;color:#e94560;margin-bottom:4px;">96%</p>
+          <p style="color:var(--text-secondary);font-size:0.9rem;">Of websites have WCAG violations</p>
+        </div>
+        <div style="padding:24px;">
+          <p style="font-size:2.5rem;font-weight:800;color:#e94560;margin-bottom:4px;">3,000+</p>
+          <p style="color:var(--text-secondary);font-size:0.9rem;">ADA demand letters sent this year</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:80px 0;background:var(--bg-secondary);text-align:center;">
+    <div class="container">
+      <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px;">Don't Wait for a Demand Letter</h2>
+      <p style="color:var(--text-secondary);max-width:480px;margin:0 auto 32px;line-height:1.6;">A free scan takes 30 seconds. A lawsuit takes months and costs thousands.</p>
+      <a href="https://audit.cc3po.com/" style="background:#e94560;color:#fff;padding:16px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;text-decoration:none;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Scan Your Website Free</a>
+    </div>
+  </section>
+
+</Layout>
