@@ -124,15 +124,15 @@ import '../styles/global.css';
     <!-- Mobile Drawer Overlay -->
     <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
     <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer">
-      <nav class="mobile-drawer-nav">
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
+      <nav class="mobile-drawer-nav" aria-label="Mobile menu">
         <a href="/morning-report/">Morning Report</a>
         <a href="/how-it-works/">How It Works</a>
         <a href="/about/">About</a>
         <a href="/village/">Your Team</a>
         <a href="/contact">Contact</a>
+        <a href="/audit/" class="mobile-drawer-cta">Free Business Scan</a>
       </nav>
-      <a href="/audit/" class="mobile-drawer-cta">Free Business Scan</a>
     </div>
     <SiteNav />
     <main id="main-content">
