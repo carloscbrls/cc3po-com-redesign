@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Support — CC3PO" description="Get help with CC3PO compliance and automation products. Search help articles, browse guides, or contact our support team.">
+
+  <!-- Hero -->
+  <section style="padding:120px 0 60px;text-align:center;">
+    <div class="container">
+      <h1 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px;">How can we help you?</h1>
+      <p style="font-size:1.1rem;color:var(--text-secondary);max-width:520px;margin:0 auto 40px;line-height:1.6;">Find answers to common questions or get in touch with our support team.</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section style="padding:0 0 80px;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
+        <a href="https://docs.cc3po.com" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:1.5rem;margin-bottom:12px;">📚</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Documentation</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Technical docs, API references, and integration guides.</p>
+        </a>
+        <a href="/pricing/" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:1.5rem;margin-bottom:12px;">💳</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Billing & Plans</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Pricing details, plan comparisons, and billing questions.</p>
+        </a>
+        <a href="/products/shield/" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:1.5rem;margin-bottom:12px;">🛡️</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Compliance Help</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">ADA/WCAG compliance questions, scan results, and remediation guidance.</p>
+        </a>
+        <a href="/contact/" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:1.5rem;margin-bottom:12px;">💬</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Contact Us</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Can't find what you need? Reach out directly.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:60px 0;background:var(--bg-secondary);text-align:center;">
+    <div class="container">
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:12px;">Still need help?</h2>
+      <p style="color:var(--text-secondary);margin-bottom:24px;">Our team typically responds within 2 hours during business hours.</p>
+      <a href="/contact/" style="background:var(--accent);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px var(--accent-glow);">Contact Support</a>
+    </div>
+  </section>
+
+</Layout>
