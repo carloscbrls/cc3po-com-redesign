@@ -11,6 +11,6 @@ fortress.cc3po.com/* /products/fortress/:splat 301!
 citadel.cc3po.com/* /products/citadel/:splat 301!
 offers.cc3po.com/* /services/:splat 301!
 pricing.cc3po.com/* /pricing/:splat 301!
-login.cc3po.com/* /login/:splat 301!
+login.cc3po.com/* /get-started/:splat 301!
 support.cc3po.com/* /support/:splat 301!
 podcast.cc3po.com/* /podcast/:splat 301!
