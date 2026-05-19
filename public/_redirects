@@ -1,11 +1,22 @@
 /sitemap.xml /sitemap-index.xml 301
 
 # Tool subdomain redirects to Bolt Cloud
+# Tool subdomain redirects (audit, contract, video are separate apps)
 /audit/* https://cc3po-ai-website-ana-6s4v.bolt.host/:splat 301!
 /contract/* https://cc3po-ai-contract-an-o9vh.bolt.host/:splat 301!
 /video/* https://cc3po-ai-video-studi-xi3s.bolt.host/:splat 301!
 
-# Domain-level redirects for .com subdomains (handled by Netlify domain aliases)
+# Domain-level redirects for tool subdomains
 audit.cc3po.com/* https://cc3po-ai-website-ana-6s4v.bolt.host/:splat 301!
 contract.cc3po.com/* https://cc3po-ai-contract-an-o9vh.bolt.host/:splat 301!
 video.cc3po.com/* https://cc3po-ai-video-studi-xi3s.bolt.host/:splat 301!
+
+# Product subdomains → path-based (consolidated architecture)
+shield.cc3po.com/* /products/shield/:splat 301!
+fortress.cc3po.com/* /products/fortress/:splat 301!
+citadel.cc3po.com/* /products/citadel/:splat 301!
+offers.cc3po.com/* /services/:splat 301!
+pricing.cc3po.com/* /pricing/:splat 301!
+login.cc3po.com/* /login/:splat 301!
+support.cc3po.com/* /support/:splat 301!
+podcast.cc3po.com/* /podcast/:splat 301!
