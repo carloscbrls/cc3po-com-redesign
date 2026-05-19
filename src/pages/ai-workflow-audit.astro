@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CC3PO AI Workflow Audit",
+  "description": "Expert audit of your business workflows to identify automation opportunities, reduce manual work, and deliver an actionable implementation roadmap.",
+  "provider": {
+    "@type": "Organization",
+    "name": "CC3PO",
+    "url": "https://cc3po.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "2000",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://cc3po.com/ai-workflow-audit/"
+  }
+};
+---
+
+<Layout title="AI Workflow Audit — Find Your Automation Gold | CC3PO" description="Expert audit of your business workflows: identify automation opportunities, reduce manual work, and get an actionable implementation roadmap. Starting at $2,000.">
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section style="padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(16,185,129,0.15) 0%,transparent 60%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;">
+      <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.25);display:flex;align-items:center;justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <p style="color:#10b981;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">AI Workflow Audit</p>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">Find your automation gold.</h1>
+      <p style="font-size:1.15rem;color:var(--text-secondary);max-width:600px;margin:0 auto 36px;line-height:1.6;">We audit your workflows, identify where AI can save you the most time and money, and deliver a step-by-step implementation roadmap — <strong style="color:#fff;">fixed price, real results</strong>.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://cc3po.io/strategy-call" class="cta-audit-call" style="background:#10b981;color:#0a0a0a;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(16,185,129,0.3);transition:all 0.2s;">Book Your Audit</a>
+        <a href="/audit/" class="cta-audit-scan" style="background:transparent;color:#10b981;padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(16,185,129,0.3);">Free Scan First</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section style="padding:80px 0;" id="deliverables">
+    <div class="container">
+      <p style="color:#10b981;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">What You Get</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">A Complete Automation Roadmap</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">🔍</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Workflow Discovery</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We map every manual process in your business — from intake to invoicing, scheduling to follow-ups.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">💡</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Automation Opportunities</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">Every task ranked by impact × feasibility. Know exactly what to automate first for the biggest ROI.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">🗺️</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Implementation Roadmap</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">Step-by-step plan with timelines, tools, and cost estimates. You can build it yourself or we can build it for you.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">💰</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">ROI Projections</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">Hours saved per week, cost reduction estimates, and revenue impact — quantified for each automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section style="padding:80px 0;background:var(--bg-secondary);" id="who">
+    <div class="container">
+      <p style="color:#10b981;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Who It's For</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Businesses drowning in manual work.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:800px;margin:0 auto;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">🦷</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">Dental Practices</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">Patient intake, scheduling, insurance verification</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">🔧</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">HVAC & Trades</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">Dispatch, invoicing, customer follow-ups</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">⚖️</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">Law Firms</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">Intake, document review, client communication</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">🏋️</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;">Fitness & Wellness</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;">Booking, member management, marketing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section style="padding:80px 0;" id="pricing">
+    <div class="container" style="text-align:center;">
+      <p style="color:#10b981;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Pricing</p>
+      <h2 style="font-size:2rem;font-weight:800;margin-bottom:12px;">Fixed Price. Real Deliverables.</h2>
+      <p style="color:var(--text-secondary);margin-bottom:40px;">No hourly billing. No scope creep. You get a complete audit and roadmap.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:800px;margin:0 auto;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:left;">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#10b981;">Essential Audit</h3>
+          <p style="font-size:2.5rem;font-weight:800;margin-bottom:4px;">$2,000</p>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">One-time · 2-week delivery</p>
+          <div style="margin-bottom:24px;">
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Workflow discovery & mapping</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Top 10 automation opportunities</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Implementation roadmap</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;">✓ ROI projections</p>
+          </div>
+          <a href="https://cc3po.io/strategy-call" style="display:block;background:#10b981;color:#0a0a0a;padding:12px;border-radius:8px;font-weight:700;text-decoration:none;text-align:center;">Book Essential Audit</a>
+        </div>
+        <div style="background:var(--bg-card);border:2px solid rgba(16,185,129,0.4);border-radius:var(--radius);padding:32px;text-align:left;position:relative;">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#10b981;color:#0a0a0a;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px;">Most Popular</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#10b981;">Deep Audit + Implementation</h3>
+          <p style="font-size:2.5rem;font-weight:800;margin-bottom:4px;">$5,000</p>
+          <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">One-time · 4-week delivery</p>
+          <div style="margin-bottom:24px;">
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Everything in Essential</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Full process documentation</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Top 3 automations BUILT for you</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ 30-day post-launch support</p>
+            <p style="color:var(--text-secondary);font-size:0.9rem;">✓ Staff training included</p>
+          </div>
+          <a href="https://cc3po.io/strategy-call" style="display:block;background:#10b981;color:#0a0a0a;padding:12px;border-radius:8px;font-weight:700;text-decoration:none;text-align:center;box-shadow:0 4px 20px rgba(16,185,129,0.3);">Book Deep Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section style="padding:80px 0;background:var(--bg-secondary);" id="process">
+    <div class="container">
+      <p style="color:#10b981;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">How It Works</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Four steps. Big results.</h2>
+      <div style="max-width:600px;margin:0 auto;">
+        <div style="display:flex;gap:16px;margin-bottom:32px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#10b981;font-size:1.2rem;">01</div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Discovery Call</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We learn your business — operations, pain points, goals. 30 minutes.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;margin-bottom:32px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#10b981;font-size:1.2rem;">02</div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Deep Audit</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We map every workflow, identify bottlenecks, and find your automation gold.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;margin-bottom:32px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#10b981;font-size:1.2rem;">03</div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Roadmap Delivery</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">You get a prioritized plan with ROI projections, timelines, and cost estimates.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:48px;height:48px;border-radius:12px;background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);display:flex;align-items:center;justify-content:center;font-weight:800;color:#10b981;font-size:1.2rem;">04</div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Build (Optional)</h3>
+            <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We can build the automations for you — or your team can use the roadmap to do it themselves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:80px 0;text-align:center;">
+    <div class="container">
+      <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px;">Stop doing work a machine can do.</h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:0 auto 32px;">Book an AI Workflow Audit and find out how many hours you're wasting every week.</p>
+      <a href="https://cc3po.io/strategy-call" style="background:#10b981;color:#0a0a0a;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(16,185,129,0.3);">Book Your Audit →</a>
+    </div>
+  </section>
+
+  <!-- Plausible event tracking -->
+  <script is:inline>
+    document.querySelectorAll('.cta-audit-call, .cta-audit-scan').forEach(function(el) {
+      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'ai-workflow-audit', type: 'strategy_call' } }); });
+    });
+  </script>
+
+</Layout>
