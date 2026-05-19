@@ -78,8 +78,9 @@
   --text-6xl: 72px;
 
   /* Colors */
-  --accent: #c8324d;
-  --accent-hover: #d9445f;
+  --accent: #e8506b;
+  --accent-hover: #f0617a;
+  --accent-dark: #b82d45;
   --accent-2: #0f3460;
   --accent-glow: rgba(233,69,96,0.35);
   --bg-primary: #0a0a12;
@@ -232,7 +233,7 @@ a:focus-visible, button:focus-visible {
 .nav-links a:hover { color: var(--text-primary); }
 .nav-links a:hover::after { transform: scaleX(1); }
 .nav-cta {
-  padding: 10px 24px; background: var(--accent);
+  padding: 10px 24px; background: var(--accent-dark);
   color: #fff; border-radius: var(--radius-sm);
   font-size: 14px; font-weight: 600;
   min-height: 44px; /* accessibility */
@@ -240,7 +241,7 @@ a:focus-visible, button:focus-visible {
   transition: transform var(--duration-fast), box-shadow var(--duration-fast), background var(--duration-fast);
   box-shadow: 0 2px 12px rgba(233,69,96,0.25);
 }
-.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(233,69,96,0.4); background: var(--accent-hover); color: #fff; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(233,69,96,0.4); background: var(--accent); color: #fff; }
 
 /* Mobile hamburger */
 .mobile-toggle {
@@ -312,7 +313,7 @@ a:focus-visible, button:focus-visible {
 .mobile-drawer-cta {
   margin-top: auto;
   padding: var(--space-md) var(--space-lg);
-  background: var(--accent);
+  background: var(--accent-dark);
   color: #fff; border-radius: var(--radius-sm);
   font-size: var(--text-base); font-weight: 600;
   text-align: center;
@@ -320,7 +321,7 @@ a:focus-visible, button:focus-visible {
   display: flex; align-items: center; justify-content: center;
   transition: background var(--duration-fast);
 }
-.mobile-drawer-cta:hover { background: var(--accent-hover); color: #fff; }
+.mobile-drawer-cta:hover { background: var(--accent); color: #fff; }
 
 /* ===== HERO ===== */
 .hero {
@@ -500,10 +501,10 @@ a:focus-visible, button:focus-visible {
 }
 .btn:hover { transform: translateY(-2px) scale(1.02); }
 .btn-primary {
-  background: var(--accent); color: #fff;
+  background: var(--accent-dark); color: #fff;
   box-shadow: 0 4px 20px rgba(233,69,96,0.3);
 }
-.btn-primary:hover { box-shadow: 0 6px 30px rgba(233,69,96,0.45); color: #fff; background: var(--accent-hover); }
+.btn-primary:hover { box-shadow: 0 6px 30px rgba(233,69,96,0.45); color: #fff; background: var(--accent); }
 .btn-glow { animation: btnPulse 3s ease-in-out infinite; }
 @keyframes btnPulse {
   0%, 100% { box-shadow: 0 4px 20px rgba(233,69,96,0.3); }
