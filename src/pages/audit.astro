@@ -61,6 +61,7 @@ import Layout from '../layouts/Layout.astro';
   document.getElementById('scan-form')?.addEventListener('submit', async function(e) {
     e.preventDefault();
     plausible('cta_click', { props: { page: 'audit', type: 'free_scan' } });
+    plausible('scan_submit', { props: { page: 'audit', url: document.getElementById('scan-url').value } });
 
     const url = document.getElementById('scan-url').value.trim();
     if (!url) return;
@@ -85,6 +86,9 @@ import Layout from '../layouts/Layout.astro';
         resultsDiv.innerHTML = '<p style="color:#e94560;text-align:center;">Error: ' + data.error + '</p>';
         return;
       }
+
+      // Store scan data for lead capture
+      window._cc3poScanData = { url: url, score: data.overallScore || 0, compliance: (data.compliance || {}).score || 0, performance: (data.performance || {}).score || 0, security: (data.security || {}).score || 0, issues: (data.issues || []).length, criticals: (data.issues || []).filter(function(i) { return i.severity === 'critical'; }).length };
 
       const score = data.overallScore || 0;
       const comp = data.compliance || {};
@@ -130,6 +134,18 @@ import Layout from '../layouts/Layout.astro';
         ` : ''}
         <div style="text-align:center;padding-top:16px;border-top:1px solid var(--border);">
           <p style="font-size:0.95rem;color:var(--text-secondary);margin-bottom:16px;">${criticals > 0 ? 'You have <strong>' + criticals + ' critical issue' + (criticals > 1 ? 's' : '') + '</strong> that could result in a lawsuit.' : 'Your site has room for improvement.'} Shield fixes these for <strong>$97/mo</strong>.</p>
+
+          <!-- Email capture: Get your full report -->
+          <div id="email-capture" style="background:rgba(233,69,96,0.06);border:1px solid rgba(233,69,96,0.15);border-radius:12px;padding:20px;margin-bottom:20px;">
+            <p style="font-weight:700;margin-bottom:8px;">Get Your Full Compliance Report</p>
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">We'll email you a detailed breakdown with specific fixes for each issue.</p>
+            <form id="report-form" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+              <input type="email" id="report-email" placeholder="Your email address" required style="flex:1;min-width:200px;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:#fff;font-size:0.95rem;" />
+              <button type="submit" style="background:#e94560;color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;">Send Report →</button>
+            </form>
+            <p id="report-status" style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;display:none;"></p>
+          </div>
+
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
             <a href="/products/shield/" style="background:#e94560;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Fix These Issues →</a>
             <a href="/pricing/" style="background:transparent;color:var(--text-secondary);padding:12px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--border);">See All Plans</a>
@@ -141,6 +157,50 @@ import Layout from '../layouts/Layout.astro';
     } finally {
       submitBtn.textContent = origBtnText;
       submitBtn.disabled = false;
+    }
+  });
+
+  // Lead capture: email for full report
+  document.getElementById('report-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const email = document.getElementById('report-email').value.trim();
+    if (!email || !window._cc3poScanData) return;
+
+    const statusEl = document.getElementById('report-status');
+    statusEl.style.display = 'block';
+    statusEl.textContent = 'Sending...';
+    statusEl.style.color = 'var(--text-secondary)';
+
+    try {
+      // Save as lead in Supabase + subscriber in scanner D1
+      const [supaRes, scannerRes] = await Promise.allSettled([
+        fetch('https://cdrcgmdvepxwsbqaifxv.supabase.co/rest/v1/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkcmNnbWR2ZXB4d3NicWFpZnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MDY4MDksImV4cCI6MjA4OTA4MjgwOX0.pKWLWvsSimTOMkpaXKKrLJESrQEMUayUU1c9ANzr1Dc' },
+          body: JSON.stringify({
+            name: 'Scanner Lead',
+            email: email,
+            website: window._cc3poScanData.url,
+            source: 'cc3po-scanner',
+            lead_type: 'audit',
+            pipeline_stage: 'new',
+            message: 'Compliance scan: ' + window._cc3poScanData.score + '/100 score, ' + window._cc3poScanData.criticals + ' critical issues, ' + window._cc3poScanData.issues + ' total issues'
+          })
+        }),
+        fetch('https://scanner.cc3po.com/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, url: window._cc3poScanData.url, score: window._cc3poScanData.score })
+        })
+      ]);
+
+      plausible('lead_capture', { props: { page: 'audit', source: 'scanner', score: String(window._cc3poScanData.score) } });
+      statusEl.textContent = '✓ Report is on its way!';
+      statusEl.style.color = '#10b981';
+      document.getElementById('report-form').style.display = 'none';
+    } catch (err) {
+      statusEl.textContent = 'Something went wrong. Please try again.';
+      statusEl.style.color = '#e94560';
     }
   });
   </script>
