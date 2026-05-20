@@ -6,6 +6,7 @@ export interface Props {
 
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteNav from '../components/SiteNav.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 
 const { title, description = 'CC3PO — AI Agents That Work Within Your Rules. HIPAA compliance scanning, automated IT, and voice agents with full human oversight.' } = Astro.props;
 
@@ -139,6 +140,7 @@ import '../styles/global.css';
     <slot />
     </main>
     <SiteFooter />
+    <CookieConsent />
     <script>
       // Mobile drawer toggle (works on both initial load and Astro view transitions)
       function initMobileDrawer() {
