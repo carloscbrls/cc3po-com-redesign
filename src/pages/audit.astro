@@ -9,15 +9,15 @@ import Layout from '../layouts/Layout.astro';
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(233,69,96,0.12) 0%,transparent 60%);pointer-events:none;"></div>
     <div class="container" style="position:relative;">
       <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:rgba(233,69,96,0.12);border:1px solid rgba(233,69,96,0.25);display:flex;align-items:center;justify-content:center;">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#e94560" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
       </div>
-      <p style="color:#e94560;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Free Compliance Scan</p>
+      <p style="color:var(--accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Free Compliance Scan</p>
       <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">Is Your Website Compliant?</h1>
       <p style="font-size:1.15rem;color:var(--text-secondary);max-width:560px;margin:0 auto 36px;line-height:1.6;">Find out in 30 seconds. Our free scanner checks your site against WCAG 2.1 AA standards and shows you exactly what needs fixing.</p>
       <div style="max-width:500px;margin:0 auto;">
         <form id="scan-form" style="display:flex;gap:12px;">
           <input type="url" id="scan-url" placeholder="Enter your website URL" required style="flex:1;padding:14px 18px;border-radius:10px;border:1px solid var(--border);background:var(--bg-card);color:#fff;font-size:1rem;" />
-          <button type="submit" style="background:#e94560;color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:1rem;border:none;cursor:pointer;white-space:nowrap;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Scan Now</button>
+          <button type="submit" style="background:var(--accent-dark);color:#fff;padding:14px 28px;border-radius:10px;font-weight:700;font-size:1rem;border:none;cursor:pointer;white-space:nowrap;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Scan Now</button>
         </form>
         <p style="color:var(--text-muted);font-size:0.85rem;margin-top:12px;">No signup required · Results in 30 seconds · 100% free</p>
       </div>
@@ -32,15 +32,15 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;text-align:center;">
         <div style="padding:24px;">
-          <p style="font-size:2.5rem;font-weight:800;color:#e94560;margin-bottom:4px;">$4K+</p>
+          <p style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:4px;">$4K+</p>
           <p style="color:var(--text-secondary);font-size:0.9rem;">Average ADA lawsuit settlement</p>
         </div>
         <div style="padding:24px;">
-          <p style="font-size:2.5rem;font-weight:800;color:#e94560;margin-bottom:4px;">96%</p>
+          <p style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:4px;">96%</p>
           <p style="color:var(--text-secondary);font-size:0.9rem;">Of websites have WCAG violations</p>
         </div>
         <div style="padding:24px;">
-          <p style="font-size:2.5rem;font-weight:800;color:#e94560;margin-bottom:4px;">3,000+</p>
+          <p style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:4px;">3,000+</p>
           <p style="color:var(--text-secondary);font-size:0.9rem;">ADA demand letters sent this year</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:16px;">Don't Wait for a Demand Letter</h2>
       <p style="color:var(--text-secondary);max-width:480px;margin:0 auto 32px;line-height:1.6;">A free scan takes 30 seconds. A lawsuit takes months and costs thousands.</p>
-      <a href="#scan-form" style="background:#e94560;color:#fff;padding:16px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;text-decoration:none;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Scan Your Website Free</a>
+      <a href="#scan-form" style="background:var(--accent-dark);color:#fff;padding:16px 40px;border-radius:10px;font-weight:700;font-size:1.1rem;text-decoration:none;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Scan Your Website Free</a>
     </div>
   </section>
 
@@ -83,7 +83,7 @@ import Layout from '../layouts/Layout.astro';
       const data = await resp.json();
 
       if (data.error) {
-        resultsDiv.innerHTML = '<p style="color:#e94560;text-align:center;">Error: ' + data.error + '</p>';
+        resultsDiv.innerHTML = '<p style="color:var(--accent);text-align:center;">Error: ' + data.error + '</p>';
         return;
       }
 
@@ -141,19 +141,19 @@ import Layout from '../layouts/Layout.astro';
             <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:12px;">We'll email you a detailed breakdown with specific fixes for each issue.</p>
             <form id="report-form" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;">
               <input type="email" id="report-email" placeholder="Your email address" required style="flex:1;min-width:200px;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:#fff;font-size:0.95rem;" />
-              <button type="submit" style="background:#e94560;color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;">Send Report →</button>
+              <button type="submit" style="background:var(--accent-dark);color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;">Send Report →</button>
             </form>
             <p id="report-status" style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;display:none;"></p>
           </div>
 
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-            <a href="/products/shield/" style="background:#e94560;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Fix These Issues →</a>
+            <a href="/products/shield/" style="background:var(--accent-dark);color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(233,69,96,0.3);">Fix These Issues →</a>
             <a href="/pricing/" style="background:transparent;color:var(--text-secondary);padding:12px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--border);">See All Plans</a>
           </div>
         </div>
       `;
     } catch (err) {
-      resultsDiv.innerHTML = '<p style="color:#e94560;text-align:center;">Scan failed. Please try again or <a href="/contact/" style="color:#e94560;">contact us</a>.</p>';
+      resultsDiv.innerHTML = '<p style="color:var(--accent);text-align:center;">Scan failed. Please try again or <a href="/contact/" style="color:var(--accent);">contact us</a>.</p>';
     } finally {
       submitBtn.textContent = origBtnText;
       submitBtn.disabled = false;
@@ -200,7 +200,7 @@ import Layout from '../layouts/Layout.astro';
       document.getElementById('report-form').style.display = 'none';
     } catch (err) {
       statusEl.textContent = 'Something went wrong. Please try again.';
-      statusEl.style.color = '#e94560';
+      statusEl.style.color = 'var(--accent)';
     }
   });
   </script>
