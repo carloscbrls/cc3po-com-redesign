@@ -728,10 +728,12 @@ import Layout from '../layouts/Layout.astro';
   }
   .workday-note a {
     color: var(--accent);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(255,255,255,0.3);
   }
   .workday-note a:hover {
-    text-decoration: underline;
+    text-decoration-color: var(--accent);
   }
 
   /* ===== PROOF SECTION ===== */
