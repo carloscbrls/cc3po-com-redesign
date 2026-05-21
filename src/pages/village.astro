@@ -243,12 +243,6 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="village-footer">
-      <p class="motto">BUILD ONCE. RUN FOREVER. <span class="motto-highlight">EVOLVE CONTINUOUSLY.</span></p>
-      <p class="footer-sub">The CC3PO Digital Team — Coordinated assistants that work together.</p>
-    </footer>
-
   </div>
 </Layout>
 
@@ -856,35 +850,6 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ===== FOOTER ===== */
-  .village-footer {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 60px 24px 80px;
-    background: radial-gradient(ellipse at center bottom, var(--cyan-dim) 0%, transparent 60%);
-  }
-
-  .motto {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: clamp(0.9rem, 2vw, 1.3rem);
-    font-weight: 700;
-    color: var(--text-secondary);
-    letter-spacing: 0.08em;
-    margin: 0 0 12px;
-  }
-
-  .motto-highlight {
-    background: linear-gradient(135deg, var(--cyan-primary), var(--purple-primary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .footer-sub {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin: 0;
-  }
 
   /* ===== ANIMATIONS ===== */
   @keyframes gradientShift {
