@@ -136,8 +136,10 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 /* WCAG: Links within text blocks must be visually distinguishable */
-p a, li a, td a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.3); }
-p a:hover, li a:hover, td a:hover { text-decoration-color: var(--accent); }
+p a, li a, td a, div a, span a, footer a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,0.3); }
+p a:hover, li a:hover, td a:hover, div a:hover, span a:hover, footer a:hover { text-decoration-color: var(--accent); }
+/* Exclude navigation, buttons, and card links from underline */
+nav a, button a, .nav a, .nav-links a, .nav-cta, .mobile-drawer a, .footer-col-links a, .footer-legal a, .card a, .social-link, .cta-shield-trial, .cta-shield-checkout, .cta-shield-scan, .cta-fortress-trial, .cta-fortress-checkout, .cta-citadel-trial, .cta-citadel-checkout, .cta-voice-scan, .cta-voice-call, [class*="cta-"], a[class*="btn"] { text-decoration: none; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; touch-action: manipulation; }
