@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
         <a href="#cta" class="btn btn-primary btn-glow" style="width:100%;max-width:320px;justify-content:center;font-size:16px;">
           🔍 Scan My Business — Free
         </a>
-        <p style="margin-top:8px;color:var(--text-muted);font-size:0.75rem;text-align:center;">30 seconds · No credit card</p>
+        <p style="margin-top:8px;color:var(--text-secondary);font-size:0.8rem;text-align:center;">30 seconds · No credit card</p>
         <a href="#morning-report" class="scroll-hint" style="display:block;text-align:center;margin-top:16px;color:var(--text-muted);font-size:0.8rem;text-decoration:none;">
           ▼ See how it works
         </a>
@@ -44,11 +44,11 @@ import Layout from '../layouts/Layout.astro';
         <form class="lead-form" id="hero-lead-form" novalidate>
           <div class="form-group">
             <label for="lf-name">Name</label>
-            <input type="text" id="lf-name" name="name" required placeholder="Your name" />
+            <input type="text" id="lf-name" name="name" required aria-required="true" placeholder="Your name" />
           </div>
           <div class="form-group">
             <label for="lf-email">Email</label>
-            <input type="email" id="lf-email" name="email" required placeholder="you@yourbusiness.com" />
+            <input type="email" id="lf-email" name="email" required aria-required="true" placeholder="you@yourbusiness.com" />
           </div>
           <div class="form-group">
             <label for="lf-website">Website URL</label>
@@ -463,14 +463,14 @@ import Layout from '../layouts/Layout.astro';
       <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
         <div class="section-label">Stay in the loop</div>
         <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Get the Signal. Free business insights, every week.</h2>
-        <p style="color:var(--text-muted);margin-bottom:24px;">AI automation strategies, compliance updates, and tips for growing your business. No spam. Unsubscribe anytime.</p>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">AI automation strategies, compliance updates, and tips for growing your business. No spam. Unsubscribe anytime.</p>
         <form class="newsletter-form" id="newsletter-form" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
           <label for="newsletter-email" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</label>
           <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required style="flex:1;min-width:240px;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:#fff;font-size:1rem;font-family:var(--font);">
           <button type="submit" class="btn btn-primary btn-glow">Get the Signal →</button>
         </form>
         <p id="newsletter-message" style="margin-top:12px;font-size:0.85rem;color:var(--accent);display:none;"></p>
-        <p style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">Join 1,000+ business owners. Unsubscribe anytime.</p>
+        <p style="margin-top:8px;font-size:0.8rem;color:var(--text-secondary);">Join 1,000+ business owners. Unsubscribe anytime.</p>
       </div>
     </div>
   </section>
@@ -486,11 +486,11 @@ import Layout from '../layouts/Layout.astro';
           <form class="lead-form" id="bottom-lead-form" novalidate>
             <div class="form-group">
               <label for="blf-name">Name</label>
-              <input type="text" id="blf-name" name="name" required placeholder="Your name" />
+              <input type="text" id="blf-name" name="name" required aria-required="true" placeholder="Your name" />
             </div>
             <div class="form-group">
               <label for="blf-email">Email</label>
-              <input type="email" id="blf-email" name="email" required placeholder="you@yourbusiness.com" />
+              <input type="email" id="blf-email" name="email" required aria-required="true" placeholder="you@yourbusiness.com" />
             </div>
             <div class="form-group">
               <label for="blf-website">Website URL</label>
@@ -536,9 +536,9 @@ import Layout from '../layouts/Layout.astro';
         <div class="footer-brand">
           <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
           <p>Compliance. Web. IT. AI. Your whole business — fully protected. 24/7.</p>
-          <p class="footer-tagline" style="margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.65);">Compliance · Web · IT · AI — Fully Protected.</p>
-          <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.55);line-height:1.5;"><strong style="color:rgba(255,255,255,0.65);">Certifications:</strong> CA Certified Small Business — SB #2052063 · Latino-Owned Business · Se habla español · SB/DVBE Option · <a href="/certifications" style="color:#e8506b;text-decoration:underline;text-underline-offset:3px;">View All →</a></div>
-          <div style="margin-top:8px;font-size:0.8rem;color:rgba(255,255,255,0.7);">📞 <a href="tel:+12097011137" style="color:rgba(255,255,255,0.85);text-decoration:none;">(209) 701-1137</a> · <a href="mailto:legal@cc3po.com" style="color:rgba(255,255,255,0.85);text-decoration:none;">legal@cc3po.com</a></div>
+          <p class="footer-tagline" style="margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.85);">Compliance · Web · IT · AI — Fully Protected.</p>
+          <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.78);line-height:1.5;"><strong style="color:rgba(255,255,255,0.85);">Certifications:</strong> CA Certified Small Business — SB #2052063 · Latino-Owned Business · Se habla español · SB/DVBE Option · <a href="/certifications" style="color:#e8506b;text-decoration:underline;text-underline-offset:3px;">View All →</a></div>
+          <div style="margin-top:8px;font-size:0.85rem;color:rgba(255,255,255,0.85);">📞 <a href="tel:+12097011137" style="color:#fff;text-decoration:none;">(209) 701-1137</a> · <a href="mailto:legal@cc3po.com" style="color:#fff;text-decoration:none;">legal@cc3po.com</a></div>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Services</div>
@@ -1161,7 +1161,7 @@ import Layout from '../layouts/Layout.astro';
               <div style="text-align:center;padding:40px 20px;">
                 <div style="font-size:48px;margin-bottom:16px;">✅</div>
                 <h3 style="color:#fff;margin-bottom:8px;">We're scanning now.</h3>
-                <p style="color:var(--text-muted);font-size:0.95rem;">Here's what happens next:</p>
+                <p style="color:var(--text-secondary);font-size:0.95rem;">Here's what happens next:</p>
                 <div style="text-align:left;max-width:360px;margin:16px auto;">
                   <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;color:var(--text-secondary);">
                     <span style="font-size:1.2rem;">1️⃣</span>
