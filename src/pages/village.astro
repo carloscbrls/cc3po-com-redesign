@@ -128,7 +128,7 @@ import Layout from '../layouts/Layout.astro';
       <h2 class="section-heading">Watch a Lead Flow Through the Village</h2>
       <p class="section-subtitle">This is what coordination looks like. One lead. Every specialist. Zero manual effort.</p>
       <div class="workday-container">
-        <button class="workday-btn" id="workday-btn" onclick="startWorkday()">
+        <button class="workday-btn" id="workday-btn">
           <span class="workday-btn-icon">▶</span>
           Play Workday
         </button>
@@ -1031,6 +1031,11 @@ import Layout from '../layouts/Layout.astro';
   document.addEventListener('DOMContentLoaded', () => {
     renderDepartments();
     initParticles();
+    // Attach workday button listener (Astro scopes scripts, so onclick won't work)
+    const workdayBtn = document.getElementById('workday-btn');
+    if (workdayBtn) {
+      workdayBtn.addEventListener('click', startWorkday);
+    }
   });
 </script>
 </Layout>
