@@ -1,0 +1,299 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="How We Score Compliance — CC3PO Methodology" description="Full transparency on how CC3PO measures compliance. Every score traces to a specific legal standard with citations you can verify. WCAG 2.1 AA, HIPAA, DOJ Final Rule, and more.">
+  <section class="section legal-page" id="main-content" style="padding-top:120px;">
+    <div class="container" style="max-width:860px;">
+
+      <h1>How We Score Compliance</h1>
+      <p class="legal-updated">Last updated: May 21, 2026</p>
+
+      <div style="background:rgba(233,80,107,0.08);border:1px solid rgba(233,80,107,0.25);border-radius:var(--radius);padding:20px 24px;margin:24px 0;">
+        <p style="color:var(--text-primary);font-size:15px;margin:0;"><strong>We don't inflate scores. We don't hide methodology.</strong> Every number we give you traces back to a specific legal standard with a citation you can verify. If a regulation changes, we track it and proactively notify you before it affects your compliance status.</p>
+      </div>
+
+      <h2>Our Scoring Framework</h2>
+      <p>Every CC3PO compliance score is a weighted combination of five categories, each mapped to specific legal standards and industry benchmarks:</p>
+
+      <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">Category</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">Weight</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">Legal Standard</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">Why</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px 12px;color:var(--text-primary);"><strong>Accessibility</strong></td>
+            <td style="padding:10px 12px;color:var(--text-muted);">40%</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">WCAG 2.1 AA + DOJ Final Rule</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">Highest litigation risk, clearest legal standard</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px 12px;color:var(--text-primary);"><strong>HIPAA</strong><span style="font-size:12px;color:var(--text-muted);"> *</span></td>
+            <td style="padding:10px 12px;color:var(--text-muted);">30%</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">45 CFR Part 164 Subpart C</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">Federal law, OCR enforcement, $100K+ penalties</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px 12px;color:var(--text-primary);"><strong>Security</strong></td>
+            <td style="padding:10px 12px;color:var(--text-muted);">15%</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">OWASP + Mozilla Observatory</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">Prevents data breaches, supports HIPAA</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px 12px;color:var(--text-primary);"><strong>Performance</strong></td>
+            <td style="padding:10px 12px;color:var(--text-muted);">10%</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">Google Core Web Vitals</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">UX impact, SEO ranking</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:10px 12px;color:var(--text-primary);"><strong>Mobile</strong></td>
+            <td style="padding:10px 12px;color:var(--text-muted);">5%</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">Responsive design standards</td>
+            <td style="padding:10px 12px;color:var(--text-muted);">Accessibility baseline</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:-8px;">* HIPAA scoring only applies to websites and portals that handle electronic Protected Health Information (ePHI). A general business website is not subject to HIPAA.</p>
+
+      <h2>1. Accessibility — WCAG 2.1 AA</h2>
+      <h3>What We Score</h3>
+      <p>Accessibility of web pages for people with disabilities — visual, auditory, motor, and cognitive.</p>
+
+      <h3>Legal Authority</h3>
+      <ul>
+        <li><strong>ADA Title II</strong> (State &amp; Local Governments): DOJ Final Rule (April 24, 2024) <em>requires</em> WCAG 2.1 AA. <a href="https://www.federalregister.gov/documents/2024/04/24/2024-07758/" style="color:var(--accent);text-decoration:underline;">89 FR 31298</a></li>
+        <li><strong>2026 IFR Extension</strong>: Compliance dates extended — entities with 50K+ population: <strong>April 26, 2027</strong>; under 50K: <strong>April 26, 2028</strong>. <a href="https://www.federalregister.gov/documents/2026/04/20/2026-07663/" style="color:var(--accent);text-decoration:underline;">91 FR 30143</a></li>
+        <li><strong>ADA Title III</strong> (Private Businesses): No specific federal technical standard yet, but courts consistently use WCAG 2.1 AA as the benchmark</li>
+        <li><strong>California Unruh Civil Rights Act</strong> (Cal. Civ. Code § 51): Statutory damages of <strong>$4,000+ per violation</strong>. Applies to websites associated with businesses that have physical locations. <a href="https://calcivilrights.ca.gov/wp-content/uploads/sites/32/2024/12/Unruh-FAQ.pdf" style="color:var(--accent);text-decoration:underline;">CA Civil Rights Dept. FAQ</a></li>
+      </ul>
+
+      <h3>How We Test</h3>
+      <p>We use <strong>Google Lighthouse</strong> (open-source, maintained by the Chrome team) which runs automated audits against WCAG 2.1 AA success criteria through the <strong>Axe-core</strong> accessibility engine.</p>
+
+      <h3>What Lighthouse Checks</h3>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Lighthouse Check</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">WCAG Criterion</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">What It Tests</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Image alt text</td><td style="padding:8px 10px;color:var(--text-muted);">1.1.1</td><td style="padding:8px 10px;color:var(--text-muted);">Non-text content has text alternatives</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Link name</td><td style="padding:8px 10px;color:var(--text-muted);">2.4.4, 4.1.2</td><td style="padding:8px 10px;color:var(--text-muted);">Links have discernible text</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Heading order</td><td style="padding:8px 10px;color:var(--text-muted);">1.3.1, 2.4.6</td><td style="padding:8px 10px;color:var(--text-muted);">Headings follow logical hierarchy</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Color contrast</td><td style="padding:8px 10px;color:var(--text-muted);">1.4.3, 1.4.6</td><td style="padding:8px 10px;color:var(--text-muted);">4.5:1 (normal) / 3:1 (large) ratio</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Form labels</td><td style="padding:8px 10px;color:var(--text-muted);">1.3.1, 4.1.2</td><td style="padding:8px 10px;color:var(--text-muted);">Form elements have associated labels</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">ARIA attributes</td><td style="padding:8px 10px;color:var(--text-muted);">4.1.2</td><td style="padding:8px 10px;color:var(--text-muted);">ARIA roles and states are valid</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Skip links</td><td style="padding:8px 10px;color:var(--text-muted);">2.4.1</td><td style="padding:8px 10px;color:var(--text-muted);">Bypass blocks available</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Landmarks</td><td style="padding:8px 10px;color:var(--text-muted);">1.3.1, 2.4.1</td><td style="padding:8px 10px;color:var(--text-muted);">Main/navigation landmarks present</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Document title</td><td style="padding:8px 10px;color:var(--text-muted);">2.4.2</td><td style="padding:8px 10px;color:var(--text-muted);">Pages have descriptive titles</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-muted);">Touch target size</td><td style="padding:8px 10px;color:var(--text-muted);">2.5.5</td><td style="padding:8px 10px;color:var(--text-muted);">Interactive elements meet minimum size</td></tr>
+        </tbody>
+      </table>
+
+      <h3>What Automated Testing Does NOT Cover</h3>
+      <p>Lighthouse covers most WCAG success criteria detectable by automation. These require <strong>manual testing</strong>:</p>
+      <ul>
+        <li>Screen reader compatibility (JAWS, NVDA, VoiceOver)</li>
+        <li>Keyboard-only navigation completeness</li>
+        <li>Cognitive accessibility (plain language, consistent navigation)</li>
+        <li>Video/audio content accessibility</li>
+        <li>Content readability level</li>
+        <li>Focus management in dynamic content (modals, dialogs)</li>
+      </ul>
+      <p>We offer manual testing as an add-on for clients who need comprehensive coverage.</p>
+
+      <h3>Score Interpretation</h3>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Score</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Status</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:#4fc3f7;"><strong>95–100</strong></td><td style="padding:8px 10px;color:var(--text-primary);">✅ Compliant</td><td style="padding:8px 10px;color:var(--text-muted);">Passes all automated checks. Strong baseline accessibility.</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:#ffd700;"><strong>90–94</strong></td><td style="padding:8px 10px;color:var(--text-primary);">⚠️ Minor Issues</td><td style="padding:8px 10px;color:var(--text-muted);">Likely still defensible, but should be addressed.</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:#ff9800;"><strong>80–89</strong></td><td style="padding:8px 10px;color:var(--text-primary);">🔶 Noticeable Gaps</td><td style="padding:8px 10px;color:var(--text-muted);">Risk of ADA/Unruh claims increases. Fix within 30 days.</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--accent);"><strong>Below 80</strong></td><td style="padding:8px 10px;color:var(--text-primary);">🔴 High Risk</td><td style="padding:8px 10px;color:var(--text-muted);">Significant accessibility issues. Immediate remediation needed.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>2. HIPAA — Healthcare Data Protection</h2>
+      <h3>What We Score</h3>
+      <p>Security and privacy controls for websites that handle electronic Protected Health Information (ePHI).</p>
+
+      <h3>Legal Authority</h3>
+      <ul>
+        <li><strong>HIPAA Security Rule</strong> — 45 CFR § 164.302–318 (administrative, physical, and technical safeguards)</li>
+        <li><strong>HIPAA Privacy Rule</strong> — 45 CFR § 164.502–534 (use and disclosure of PHI)</li>
+        <li><strong>HIPAA Breach Notification Rule</strong> — 45 CFR § 164.400–414</li>
+        <li><strong>HHS NPRM (January 2025)</strong> — Proposed updates requiring encryption at rest, MFA, vulnerability scanning every 6 months, penetration testing annually, and 72-hour recovery objective. <a href="https://www.federalregister.gov/documents/2025/01/06/2024-30983/" style="color:var(--accent);text-decoration:underline;">80 FR 904</a></li>
+      </ul>
+
+      <h3>What We Check</h3>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">HIPAA Control</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">CFR Citation</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">What We Verify</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">Access controls</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.312(a)(1)</td><td style="padding:8px 10px;color:var(--text-muted);">Unique user IDs, role-based access, emergency access</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">Authentication</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.312(d)</td><td style="padding:8px 10px;color:var(--text-muted);">MFA for admin, strong passwords, session timeout</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">Encryption (transit)</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.312(e)(1)</td><td style="padding:8px 10px;color:var(--text-muted);">TLS 1.2+ on all pages with ePHI</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">Encryption (at rest)</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.312(a)(2)(iv)</td><td style="padding:8px 10px;color:var(--text-muted);">Database and storage encryption</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">Audit controls</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.312(b)</td><td style="padding:8px 10px;color:var(--text-muted);">Login logs, access logs, change logs</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">Integrity controls</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.312(c)(1)</td><td style="padding:8px 10px;color:var(--text-muted);">ePHI not improperly altered or destroyed</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">Business associate agreements</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.314(a)</td><td style="padding:8px 10px;color:var(--text-muted);">BAAs with all vendors handling ePHI</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-primary);">Security management</td><td style="padding:8px 10px;color:var(--text-muted);">§ 164.308(a)(1)</td><td style="padding:8px 10px;color:var(--text-muted);">Risk analysis, risk management plan</td></tr>
+        </tbody>
+      </table>
+
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:16px 20px;margin:20px 0;">
+        <p style="color:var(--text-muted);font-size:14px;margin:0;"><strong style="color:var(--text-primary);">Important:</strong> HIPAA only applies to websites that handle ePHI. A general business website that doesn't collect patient data is <em>not</em> subject to HIPAA. Our HIPAA scoring only applies to healthcare clients whose websites or portals process protected health information.</p>
+      </div>
+
+      <h2>3. Security Headers &amp; HTTPS</h2>
+      <h3>Legal Authority</h3>
+      <p><strong>OWASP Secure Headers Project</strong> · <a href="https://owasp.org/www-project-secure-headers/" style="color:var(--accent);text-decoration:underline;">owasp.org/www-project-secure-headers</a></p>
+      <p><strong>Mozilla Observatory</strong> · <a href="https://observatory.mozilla.org/" style="color:var(--accent);text-decoration:underline;">observatory.mozilla.org</a></p>
+      <p><strong>RFC 6797</strong> (HSTS) · <strong>RFC 7034</strong> (X-Frame-Options)</p>
+
+      <h3>What We Check</h3>
+      <ul>
+        <li><strong>Strict-Transport-Security</strong> — Forces HTTPS (RFC 6797)</li>
+        <li><strong>Content-Security-Policy</strong> — Prevents XSS, clickjacking (OWASP)</li>
+        <li><strong>X-Frame-Options</strong> — Prevents clickjacking (RFC 7034)</li>
+        <li><strong>X-Content-Type-Options</strong> — Prevents MIME sniffing (OWASP)</li>
+        <li><strong>Referrer-Policy</strong> — Controls referrer data (W3C)</li>
+        <li><strong>Permissions-Policy</strong> — Limits browser features (W3C)</li>
+      </ul>
+
+      <h2>4. Performance &amp; Core Web Vitals</h2>
+      <h3>Legal Authority</h3>
+      <p><strong>Google Core Web Vitals</strong> — <a href="https://web.dev/vitals/" style="color:var(--accent);text-decoration:underline;">web.dev/vitals</a></p>
+      <p>While not a legal requirement, Core Web Vitals directly impact user experience, SEO rankings, and accessibility for users on slow connections.</p>
+
+      <h3>What We Check</h3>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Metric</th>
+            <th style="text-align:center;padding:8px 10px;color:#4fc3f7;">Good</th>
+            <th style="text-align:center;padding:8px 10px;color:#ffd700;">Needs Work</th>
+            <th style="text-align:center;padding:8px 10px;color:var(--accent);">Poor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">LCP (Largest Content Paint)</td><td style="text-align:center;padding:8px 10px;color:#4fc3f7;">≤2.5s</td><td style="text-align:center;padding:8px 10px;color:#ffd700;">2.5–4s</td><td style="text-align:center;padding:8px 10px;color:var(--accent);">&gt;4s</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-primary);">INP (Interaction to Next Paint)</td><td style="text-align:center;padding:8px 10px;color:#4fc3f7;">≤200ms</td><td style="text-align:center;padding:8px 10px;color:#ffd700;">200–500ms</td><td style="text-align:center;padding:8px 10px;color:var(--accent);">&gt;500ms</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-primary);">CLS (Cumulative Layout Shift)</td><td style="text-align:center;padding:8px 10px;color:#4fc3f7;">≤0.1</td><td style="text-align:center;padding:8px 10px;color:#ffd700;">0.1–0.25</td><td style="text-align:center;padding:8px 10px;color:var(--accent);">&gt;0.25</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. State-Level Risk Assessment</h2>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">State</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">Risk Level</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">Key Law</th>
+            <th style="text-align:left;padding:10px 12px;color:var(--text-primary);">Exposure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:10px 12px;color:var(--text-primary);">California</td><td style="padding:10px 12px;">🔴 Highest</td><td style="padding:10px 12px;color:var(--text-muted);">Unruh Civil Rights Act (Cal. Civ. Code § 51)</td><td style="padding:10px 12px;color:var(--text-muted);">$4,000+ per violation</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:10px 12px;color:var(--text-primary);">New York</td><td style="padding:10px 12px;">🟠 High</td><td style="padding:10px 12px;color:var(--text-muted);">NY Human Rights Law + ADA Title III</td><td style="padding:10px 12px;color:var(--text-muted);">Major filing jurisdiction</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:10px 12px;color:var(--text-primary);">Florida</td><td style="padding:10px 12px;">🟠 High</td><td style="padding:10px 12px;color:var(--text-muted);">ADA Title III (federal)</td><td style="padding:10px 12px;color:var(--text-muted);">2nd most active state for web suits</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:10px 12px;color:var(--text-primary);">Illinois</td><td style="padding:10px 12px;">🟡 Moderate</td><td style="padding:10px 12px;color:var(--text-muted);">ADA Title III (federal)</td><td style="padding:10px 12px;color:var(--text-muted);">No Unruh-equivalent statutory damages</td></tr>
+          <tr><td style="padding:10px 12px;color:var(--text-primary);">Colorado</td><td style="padding:10px 12px;">🟡 Moderate</td><td style="padding:10px 12px;color:var(--text-muted);">ADA Title III (federal)</td><td style="padding:10px 12px;color:var(--text-muted);">Lower litigation volume</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Regulatory Changelog</h2>
+      <p>We track every regulatory change that affects your compliance status. When the rules change, we notify you before it affects your score.</p>
+
+      <h3>2026</h3>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Date</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Change</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Apr 20, 2026</td><td style="padding:8px 10px;color:var(--text-primary);">DOJ extended ADA Title II compliance dates by 1 year</td><td style="padding:8px 10px;color:var(--text-muted);">Large entities (&gt;50K): April 26, 2027. Small: April 26, 2028</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-muted);">Jan 2025</td><td style="padding:8px 10px;color:var(--text-primary);">HHS published HIPAA Security Rule NPRM</td><td style="padding:8px 10px;color:var(--text-muted);">Proposed: mandatory encryption at rest, MFA, vuln scanning every 6 months, 72-hour recovery</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2024</h3>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Date</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Change</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:8px 10px;color:var(--text-muted);">Apr 24, 2024</td><td style="padding:8px 10px;color:var(--text-primary);">DOJ published ADA Title II Final Rule</td><td style="padding:8px 10px;color:var(--text-muted);">WCAG 2.1 AA now required for state/local government websites and mobile apps</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Upcoming (Watching)</h3>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid rgba(255,255,255,0.15);">
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Expected</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Change</th>
+            <th style="text-align:left;padding:8px 10px;color:var(--text-primary);">Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">2026</td><td style="padding:8px 10px;color:var(--text-primary);">HIPAA Security Rule final rule expected</td><td style="padding:8px 10px;color:var(--text-muted);">Mandatory encryption at rest, MFA, 72-hour recovery</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Apr 26, 2027</td><td style="padding:8px 10px;color:var(--text-primary);">ADA Title II compliance deadline (large entities)</td><td style="padding:8px 10px;color:var(--text-muted);">State/local governments &gt;50K must be WCAG 2.1 AA compliant</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.06);"><td style="padding:8px 10px;color:var(--text-muted);">Apr 26, 2028</td><td style="padding:8px 10px;color:var(--text-primary);">ADA Title II compliance deadline (small entities)</td><td style="padding:8px 10px;color:var(--text-muted);">State/local governments &lt;50K must be WCAG 2.1 AA compliant</td></tr>
+          <tr><td style="padding:8px 10px;color:var(--text-muted);">TBD</td><td style="padding:8px 10px;color:var(--text-primary);">ADA Title III web accessibility rule</td><td style="padding:8px 10px;color:var(--text-muted);">No federal standard for private businesses yet; DOJ may issue rule</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Our Commitment</h2>
+      <p style="font-size:16px;color:var(--text-primary);margin-top:32px;">We sell compliance services. If we're not transparent about how we score, we're doing the exact thing we help clients avoid — operating in a black box.</p>
+      <p style="font-size:16px;color:var(--text-primary);">Every number we give you traces back to a law, a regulation, or an industry standard. You can verify every citation. And when the rules change, we track it and proactively notify you before it affects your compliance status.</p>
+      <p style="font-size:16px;color:var(--text-primary);"><strong>This is what trust looks like in compliance.</strong></p>
+
+      <div style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">Source links:</p>
+        <ul style="font-size:12px;color:var(--text-muted);list-style:disc;padding-left:20px;line-height:1.8;">
+          <li>WCAG 2.1: <a href="https://www.w3.org/TR/WCAG21/" style="color:var(--accent);text-decoration:underline;">w3.org/TR/WCAG21</a></li>
+          <li>DOJ Final Rule: <a href="https://www.ada.gov/resources/2024-03-08-web-rule/" style="color:var(--accent);text-decoration:underline;">ada.gov/resources/2024-03-08-web-rule</a></li>
+          <li>2026 IFR Extension: <a href="https://www.federalregister.gov/documents/2026/04/20/2026-07663/" style="color:var(--accent);text-decoration:underline;">federalregister.gov/2026-07663</a></li>
+          <li>HIPAA Security Rule: <a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164" style="color:var(--accent);text-decoration:underline;">ecfr.gov/title-45/part-164</a></li>
+          <li>HHS HIPAA NPRM (2025): <a href="https://www.federalregister.gov/documents/2025/01/06/2024-30983/" style="color:var(--accent);text-decoration:underline;">federalregister.gov/2024-30983</a></li>
+          <li>CA Unruh Act FAQ: <a href="https://calcivilrights.ca.gov/wp-content/uploads/sites/32/2024/12/Unruh-FAQ.pdf" style="color:var(--accent);text-decoration:underline;">calcivilrights.ca.gov/Unruh-FAQ.pdf</a></li>
+          <li>OWASP Secure Headers: <a href="https://owasp.org/www-project-secure-headers/" style="color:var(--accent);text-decoration:underline;">owasp.org/www-project-secure-headers</a></li>
+          <li>Core Web Vitals: <a href="https://web.dev/vitals/" style="color:var(--accent);text-decoration:underline;">web.dev/vitals</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <script is:inline>
+    const ro=new IntersectionObserver((e)=>{e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('revealed');ro.unobserve(en.target)}})},{threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+  </script>
+</Layout>
