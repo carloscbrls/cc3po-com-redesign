@@ -390,7 +390,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="input-wrapper">
         <label for="business-name" class="sr-only">Business name</label>
         <input type="text" class="business-input" id="business-name" placeholder="Your business name..." maxlength="50" aria-label="Business name">
-        <button class="generate-btn" id="generate-btn" onclick="generateReport()">See Report</button>
+        <button class="generate-btn" id="generate-btn">See Report</button>
       </div>
     </div>
 
@@ -565,12 +565,10 @@ import Layout from '../layouts/Layout.astro';
         btn.disabled = false;
         btn.textContent = 'Try Another Name';
       }, 2000);
-    }
 
-    // Allow Enter key
-    document.getElementById('business-name').addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') generateReport();
-    });
+      // Show share buttons
+      showShare(name, score);
+    }
 
     // Share buttons
     function showShare(businessName, score) {
@@ -587,13 +585,10 @@ import Layout from '../layouts/Layout.astro';
       });
     }
 
-    // Override generateReport to also show share buttons
-    const origGenerate = generateReport;
-    generateReport = function() {
-      origGenerate();
-      const name = document.getElementById('business-name').value.trim() || 'Your Business';
-      const score = document.getElementById('report-score').textContent;
-      showShare(name, score);
-    };
+    // Allow Enter key and button click
+    document.getElementById('business-name').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') generateReport();
+    });
+    document.getElementById('generate-btn').addEventListener('click', generateReport);
   </script>
 </Layout>
