@@ -237,6 +237,21 @@ a:focus-visible, button:focus-visible {
 }
 .nav-links a:hover { color: var(--text-primary); }
 .nav-links a:hover::after { transform: scaleX(1); }
+.nav-phone {
+  padding: 10px 16px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: color var(--duration-fast);
+}
+.nav-phone:hover { color: var(--accent); }
+
 .nav-cta {
   padding: 10px 24px; background: var(--accent-dark);
   color: #fff; border-radius: var(--radius-sm);
@@ -1148,6 +1163,7 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-cta { display: none; }
+  .nav-phone { font-size: 13px; padding: 8px 12px; }
   .mobile-toggle { display: flex; }
 
   .hero {

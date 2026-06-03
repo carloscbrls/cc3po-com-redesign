@@ -1,7 +1,6 @@
 /sitemap.xml /sitemap-index.xml 301
 
-# Tool subdomain redirects (audit, contract, video are separate apps)
-audit.cc3po.com/* https://cc3po-ai-website-ana-6s4v.bolt.host/:splat 301!
+# Tool subdomain redirects (audit is now on Netlify audit-cc3po-2026, contract/video still on bolt)
 contract.cc3po.com/* https://cc3po-ai-contract-an-o9vh.bolt.host/:splat 301!
 video.cc3po.com/* https://cc3po-ai-video-studi-xi3s.bolt.host/:splat 301!
 

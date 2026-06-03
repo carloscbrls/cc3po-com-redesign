@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
         <h2>Tell Us About Your Business</h2>
         <p class="gs-form-sub">Fill out the form below and we'll reach out within 24 hours with a personalized recommendation.</p>
 
-        <form id="gs-form" class="gs-form" action="https://formspree.io/f/mvzdljpq" method="POST">
+        <form id="gs-form" class="gs-form">
           <div class="gs-form-row">
             <div class="gs-form-group">
               <label for="gs-name">Full Name <span class="gs-required">*</span></label>
@@ -557,11 +557,28 @@ form?.addEventListener('submit', async (e) => {
 
   try {
     const formData = new FormData(form);
-    const res = await fetch('https://formspree.io/f/mvzdljpq', {
+    const email = formData.get('email');
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const company = formData.get('company');
+    const website = formData.get('website');
+    const service = formData.get('service_interest');
+
+    // Store as lead in CC3PO system
+    const res = await fetch('https://scanner.cc3po.com/api/newsletter-subscribe', {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, name: name || undefined, source: 'get-started' })
     });
+
+    // Also scan the website if provided
+    if (website) {
+      fetch('https://scanner.cc3po.com/api/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: website, email })
+      }).catch(() => {}); // fire and forget
+    }
 
     if (res.ok) {
       form.style.display = 'none';
@@ -574,4 +591,23 @@ form?.addEventListener('submit', async (e) => {
     errorMsg.style.display = 'block';
   }
 });
+
+// Handle Stripe checkout success redirect
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('checkout') === 'success') {
+    const plan = params.get('plan') || 'essential';
+    const form = document.getElementById('gs-form');
+    const successMsg = document.getElementById('gs-success');
+    if (form && successMsg) {
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+      successMsg.innerHTML = `
+        <div class=\"gs-success-icon\">✓</div>
+        <h3>Welcome to ${plan.charAt(0).toUpperCase() + plan.slice(1)}!</h3>
+        <p>Your subscription is active. Check your email for your compliance scan link and onboarding details. Your dashboard is at <a href=\"https://comply.cc3po.com\" style=\"color:#00d4aa;text-decoration:underline;\">comply.cc3po.com</a>.</p>
+      `;
+    }
+  }
+})();
 </script>

@@ -1150,24 +1150,11 @@ import Layout from '../layouts/Layout.astro';
       if (!email) return;
 
       try {
-        const res = await fetch(SUPABASE_URL + '/rest/v1/leads', {
+        // Post to CC3PO newsletter API (triggers welcome email + stores in D1 + Supabase)
+        const res = await fetch('https://scanner.cc3po.com/api/newsletter-subscribe', {
           method: 'POST',
-          headers: {
-            'apikey': SUPABASE_ANON_KEY,
-            'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify({
-            name: 'Newsletter',
-            email: email,
-            phone: null,
-            company: null,
-            service_interest: 'newsletter',
-            message: 'Subscribed to newsletter from homepage',
-            source: 'cc3po.com-newsletter',
-            lead_type: 'newsletter'
-          })
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: 'homepage' })
         });
 
         if (res.ok) {
