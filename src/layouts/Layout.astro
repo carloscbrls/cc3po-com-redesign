@@ -34,6 +34,22 @@ import '../styles/global.css';
       plausible.init()
     </script>
 
+    <!-- Google Tag (Google Ads + Conversion Tracking) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1685937480"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-1685937480');
+      
+      // Track form submissions
+      window.trackConversion = function(conversionName) {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-1685937480/' + conversionName
+        });
+      };
+    </script>
+
     <title>{title}</title>
 
     <!-- Open Graph -->

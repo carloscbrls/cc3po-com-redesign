@@ -30,6 +30,11 @@ import Layout from '../layouts/Layout.astro';
 
   <script is:inline>
     if (typeof plausible !== 'undefined') { plausible('purchase_complete'); }
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-1685937480/subscription_complete'
+      });
+    }
   </script>
 
 </Layout>

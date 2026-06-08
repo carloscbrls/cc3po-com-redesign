@@ -243,6 +243,12 @@ form?.addEventListener('submit', async (e) => {
     });
 
     if (res.ok) {
+      // Track conversion
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-1685937480/contact_form_submit'
+        });
+      }
       form.style.display = 'none';
       successMsg.style.display = 'block';
     } else {
