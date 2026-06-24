@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CC3PO Central Valley Business Directory — Find trusted local HVAC, plumbing, dental, and electrical service providers vetted for quality and compliance.">
+  <link rel="canonical" href="https://directory.cc3po.com/">
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/_astro/directory-base.css">
+  <title>Central Valley Business Directory — CC3PO</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Central Valley Business Directory — CC3PO">
+  <meta property="og:description" content="Find trusted local service providers vetted for quality and compliance. Browse HVAC, plumbing, dental, and more across the Central Valley.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://directory.cc3po.com/">
+  <meta property="og:image" content="https://cc3po.com/images/og-image.jpg">
+  <meta property="og:site_name" content="CC3PO Central Valley Business Directory">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Central Valley Business Directory — CC3PO">
+  <meta name="twitter:description" content="Find trusted local service providers vetted for quality and compliance across the Central Valley.">
+  <meta name="twitter:image" content="https://cc3po.com/images/og-image.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CC3PO Central Valley Business Directory","url":"https://directory.cc3po.com","description":"Find trusted local service providers vetted for quality and compliance.","publisher":{"@type":"Organization","name":"CC3PO LLC","url":"https://cc3po.com"}}</script>
+  <style>
+    /* ── Directory-specific styles ── */
+    :root {
+      --dir-accent: #e94560;
+      --dir-accent-glow: rgba(233, 69, 96, 0.25);
+      --dir-blue: #4fc3f7;
+      --dir-blue-glow: rgba(79, 195, 247, 0.15);
+      --dir-success: #00e676;
+      --dir-warning: #ffd740;
+      --dir-card-bg: rgba(255,255,255,0.03);
+      --dir-card-border: rgba(255,255,255,0.08);
+      --dir-card-hover: rgba(255,255,255,0.06);
+    }
+    .dir-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-height) + var(--space-4xl)) var(--space-lg) var(--space-2xl);
+      background:
+        radial-gradient(ellipse 120% 80% at 50% -10%, #1a1a35 0%, transparent 60%),
+        linear-gradient(180deg, var(--bg-primary) 0%, #0f0f22 100%);
+      overflow: hidden;
+    }
+    .dir-hero .hero-content {
+      max-width: 820px;
+    }
+    .dir-hero .hero-title {
+      font-size: clamp(var(--text-4xl), 5vw, 56px);
+      line-height: 1.08;
+    }
+    .dir-hero .hero-sub {
+      font-size: clamp(15px, 1.6vw, var(--text-lg));
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .dir-nerd-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: var(--space-xs) var(--space-md);
+      background: rgba(79, 195, 247, 0.12);
+      border: 1px solid rgba(79, 195, 247, 0.25);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #4fc3f7;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--space-lg);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .dir-nerd-badge.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dir-hero .hero-search {
+      max-width: 560px;
+      margin: var(--space-lg) auto var(--space-xl);
+      display: flex;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease 0.25s, transform 0.6s ease 0.25s;
+    }
+    .dir-hero .hero-search.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dir-hero .hero-search input {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-size: 15px;
+      min-height: 52px;
+      transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+    }
+    .dir-hero .hero-search input:focus {
+      outline: none;
+      border-color: #4fc3f7;
+      box-shadow: 0 0 0 3px rgba(79, 195, 247, 0.15);
+    }
+    .dir-hero .hero-search input::placeholder {
+      color: var(--text-muted);
+    }
+    .dir-hero .hero-stats {
+      display: flex;
+      gap: var(--space-2xl);
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+    }
+    .dir-hero .hero-stats.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dir-hero .hero-stat-item {
+      text-align: center;
+    }
+    .dir-hero .hero-stat-item .num {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+    .dir-hero .hero-stat-item .label {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Category Filter Bar ── */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: var(--space-xl) auto;
+      max-width: 900px;
+      padding: 0 var(--space-md);
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 100px;
+      border: 1px solid var(--dir-card-border);
+      background: var(--dir-card-bg);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .filter-btn:hover {
+      border-color: rgba(255,255,255,0.2);
+      background: var(--dir-card-hover);
+      color: var(--text-primary);
+    }
+    .filter-btn.active {
+      background: rgba(233, 69, 96, 0.12);
+      border-color: rgba(233, 69, 96, 0.35);
+      color: var(--dir-accent);
+    }
+    .filter-btn .count {
+      font-size: 11px;
+      opacity: 0.6;
+    }
+
+    /* ── Business Listings Grid ── */
+    .listings-section {
+      padding: var(--space-xl) 0 var(--space-3xl);
+      min-height: 400px;
+    }
+    .listings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: var(--space-lg);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    .biz-card {
+      background: var(--dir-card-bg);
+      border: 1px solid var(--dir-card-border);
+      border-radius: var(--radius);
+      padding: var(--space-xl) var(--space-lg);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .biz-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--dir-accent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .biz-card:hover {
+      border-color: rgba(233, 69, 96, 0.3);
+      background: var(--dir-card-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(233, 69, 96, 0.08);
+    }
+    .biz-card:hover::before {
+      opacity: 1;
+    }
+    .biz-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-xs);
+    }
+    .biz-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(79, 195, 247, 0.08);
+      border-radius: 10px;
+      border: 1px solid rgba(79, 195, 247, 0.12);
+    }
+    .biz-card-title {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin: 0;
+    }
+    .biz-card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .biz-card-title a:hover {
+      color: var(--dir-accent);
+    }
+    .biz-vertical {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      background: rgba(79, 195, 247, 0.1);
+      color: var(--dir-blue);
+      border: 1px solid rgba(79, 195, 247, 0.15);
+    }
+    .biz-vertical.hvac { background: rgba(33,150,243,0.1); color: #64b5f6; border-color: rgba(33,150,243,0.2); }
+    .biz-vertical.plumbing { background: rgba(0,191,165,0.1); color: #4db6ac; border-color: rgba(0,191,165,0.2); }
+    .biz-vertical.dental { background: rgba(156,39,176,0.1); color: #ce93d8; border-color: rgba(156,39,176,0.2); }
+    .biz-vertical.electrical { background: rgba(255,193,7,0.1); color: #ffd54f; border-color: rgba(255,193,7,0.2); }
+    .biz-vertical.restaurants { background: rgba(255,112,67,0.1); color: #ff8a65; border-color: rgba(255,112,67,0.2); }
+    .biz-vertical.retail { background: rgba(76,175,80,0.1); color: #81c784; border-color: rgba(76,175,80,0.2); }
+    .biz-vertical.roofing { background: rgba(121,85,72,0.15); color: #bcaaa4; border-color: rgba(121,85,72,0.25); }
+    .biz-vertical.legal { background: rgba(244,67,54,0.1); color: #ef9a9a; border-color: rgba(244,67,54,0.2); }
+    .biz-location {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .biz-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: var(--space-xs);
+    }
+    .biz-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .biz-contact-item:hover {
+      color: var(--dir-accent);
+    }
+    .biz-contact-item .icon {
+      width: 16px;
+      flex-shrink: 0;
+      text-align: center;
+      opacity: 0.6;
+    }
+    .biz-card-footer {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: auto;
+      padding-top: var(--space-sm);
+    }
+    .biz-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .biz-btn-primary {
+      background: var(--dir-accent);
+      color: #fff;
+      border: none;
+    }
+    .biz-btn-primary:hover {
+      background: #d63050;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(233,69,96,0.3);
+    }
+    .biz-btn-secondary {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--dir-card-border);
+    }
+    .biz-btn-secondary:hover {
+      border-color: rgba(255,255,255,0.2);
+      color: var(--text-primary);
+    }
+
+    /* ── No Results ── */
+    .no-results {
+      text-align: center;
+      padding: var(--space-3xl) var(--space-md);
+      color: var(--text-muted);
+    }
+    .no-results .emoji {
+      font-size: 48px;
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+
+    /* ── Results Count ── */
+    .results-count {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: var(--space-lg);
+      padding: 0 var(--space-md);
+    }
+    .results-count strong {
+      color: var(--text-primary);
+    }
+
+    /* ── Value Props ── */
+    .value-props {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .value-card {
+      padding: var(--space-xl) var(--space-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, border-color var(--duration-normal), transform var(--duration-normal) var(--ease-spring), box-shadow var(--duration-normal);
+    }
+    .value-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .value-card:hover {
+      border-color: rgba(233, 69, 96, 0.35);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+    .value-card.highlight {
+      background: linear-gradient(135deg, rgba(233, 69, 96, 0.08), rgba(15, 52, 96, 0.12));
+      border-color: rgba(233, 69, 96, 0.2);
+    }
+    .value-card.highlight:hover {
+      border-color: rgba(233, 69, 96, 0.4);
+    }
+    .value-icon {
+      font-size: 40px;
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+    .value-card h3 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      margin-bottom: var(--space-2xs);
+    }
+    .value-price {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+    }
+    .value-highlight-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(0, 230, 118, 0.12);
+      border: 1px solid rgba(0, 230, 118, 0.2);
+      color: var(--success);
+      margin-bottom: var(--space-sm);
+    }
+    .value-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .value-features {
+      list-style: none;
+      margin-top: var(--space-md);
+      text-align: left;
+    }
+    .value-features li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .value-features li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── Categories ── */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: var(--space-md);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .category-card {
+      padding: var(--space-xl) var(--space-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease, border-color var(--duration-normal), transform var(--duration-normal) var(--ease-spring), box-shadow var(--duration-normal);
+    }
+    .category-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .category-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: var(--shadow-glow);
+    }
+    .category-icon {
+      font-size: 36px;
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+    .category-card .name {
+      font-size: var(--text-base);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .category-card .count {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── CTA ── */
+    .dir-cta-section {
+      padding: var(--space-3xl) 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .dir-cta-section h2 {
+      font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: var(--space-sm);
+    }
+    .dir-cta-section p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin: 0 auto var(--space-xl);
+      line-height: 1.6;
+    }
+    .dir-cta-grid {
+      display: flex;
+      gap: var(--space-lg);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .dir-cta-card {
+      flex: 1;
+      min-width: 260px;
+      max-width: 380px;
+      padding: var(--space-xl);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, border-color var(--duration-normal);
+    }
+    .dir-cta-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dir-cta-card:hover {
+      border-color: var(--border-hover);
+    }
+    .dir-cta-card .cta-icon {
+      font-size: 42px;
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+    .dir-cta-card h3 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+    }
+    .dir-cta-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ── Loading skeleton ── */
+    .skeleton {
+      background: linear-gradient(90deg, var(--dir-card-bg) 25%, rgba(255,255,255,0.06) 50%, var(--dir-card-bg) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+      border-radius: var(--radius-sm);
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .dir-hero { min-height: auto; padding: calc(var(--nav-height) + var(--space-3xl)) var(--space-md) var(--space-xl); }
+      .dir-hero .hero-title { font-size: var(--text-4xl); }
+      .dir-hero .hero-search { flex-direction: column; }
+      .value-props { grid-template-columns: 1fr; }
+      .listings-grid { grid-template-columns: 1fr; }
+      .categories-grid { grid-template-columns: repeat(3, 1fr); }
+      .dir-cta-grid { flex-direction: column; align-items: center; }
+      .dir-hero .hero-stats { gap: var(--space-lg); }
+      .filter-bar { gap: 6px; }
+      .filter-btn { padding: 6px 12px; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      .categories-grid { grid-template-columns: repeat(2, 1fr); }
+      .dir-hero .hero-stats { flex-direction: column; gap: var(--space-md); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full">
+        <img src="/images/cc3po-crypto-56px.png" alt="CC3PO" class="nav-logo-img nav-logo-icon">
+        <span>CC3PO</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="#listings">Businesses</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#value-props">Pricing</a></li>
+        <li><a href="#list-cta">List Your Business</a></li>
+      </ul>
+      <a href="#list-cta" class="nav-cta">List Your Business</a>
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay" id="drawer-overlay"></div>
+  <div class="mobile-drawer" id="mobile-drawer">
+    <nav class="mobile-drawer-nav">
+      <a href="/">Home</a>
+      <a href="#listings">Businesses</a>
+      <a href="#categories">Categories</a>
+      <a href="#value-props">Pricing</a>
+      <a href="#list-cta">List Your Business</a>
+    </nav>
+    <a href="#list-cta" class="mobile-drawer-cta">List Your Business</a>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section class="dir-hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="dir-nerd-badge reveal">
+        <span class="pulse-dot"></span>
+        Central Valley · Verified · Free &amp; Pro Listings
+      </div>
+      <h1 class="hero-title reveal">
+        Central Valley<br>
+        <span class="typed-gradient">Business Directory</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Find trusted local service providers vetted for quality and compliance.<br>
+        List your business for free — upgrade to Pro and stand out.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="hero-search reveal">
+        <input type="text" id="search-input" placeholder="Search by name, category, or city…" aria-label="Search the directory">
+        <a href="#listings" class="btn btn-primary btn-glow" style="white-space:nowrap; min-height:52px; padding:14px 24px;" id="search-btn">
+          <span style="font-size:15px;">🔍</span> Search
+        </a>
+      </div>
+
+      <!-- Stats (will be updated by JS) -->
+      <div class="hero-stats reveal" id="hero-stats">
+        <div class="hero-stat-item">
+          <div class="num" id="stat-businesses">—</div>
+          <div class="label">Listed Businesses</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="num" id="stat-categories">—</div>
+          <div class="label">Service Categories</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="num">Free</div>
+          <div class="label">To List Your Business</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CATEGORY FILTER BAR ── -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Browse</div>
+        <h2 class="section-title">Find What You Need</h2>
+        <p class="section-desc">Filter by category or search to discover businesses across the Central Valley.</p>
+      </div>
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-vertical="all">All <span class="count" id="count-all">—</span></button>
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BUSINESS LISTINGS ── -->
+  <section class="listings-section" id="listings">
+    <div class="container">
+      <div class="results-count" id="results-count"></div>
+      <div class="listings-grid" id="listings-grid">
+        <!-- Business cards populated by JS -->
+      </div>
+      <div class="no-results" id="no-results" style="display:none;">
+        <span class="emoji">🔍</span>
+        <h3>No businesses found</h3>
+        <p>Try a different search term or category filter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── VALUE PROPS / PRICING ── -->
+  <section class="section" id="value-props" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Pricing</div>
+        <h2 class="section-title">Two Ways to Be Found</h2>
+        <p class="section-desc">Free listing gets you discovered. Pro listing puts you front and center with compliance verification and an AI-optimized profile.</p>
+      </div>
+
+      <div class="value-props">
+        <!-- Free -->
+        <div class="value-card reveal">
+          <span class="value-icon">📋</span>
+          <h3>Free Listing</h3>
+          <div class="value-price">$0 — forever</div>
+          <p>Get your business in the directory. Basic profile with contact info, hours, and category.</p>
+          <ul class="value-features">
+            <li>Basic business profile</li>
+            <li>Contact info &amp; hours</li>
+            <li>Category listing</li>
+            <li>Customer reviews enabled</li>
+          </ul>
+        </div>
+
+        <!-- Pro (Highlighted) -->
+        <div class="value-card highlight reveal" style="transition-delay:0.1s;">
+          <span class="value-icon">⭐</span>
+          <div class="value-highlight-tag">Best Value</div>
+          <h3>Pro Listing</h3>
+          <div class="value-price">$29 / month</div>
+          <p>Priority placement, compliance badge, and an AI-optimized profile that gets you found first.</p>
+          <ul class="value-features">
+            <li>Priority placement in search results</li>
+            <li>✅ Compliance Verified badge</li>
+            <li>AI-optimized business profile</li>
+            <li>Photo gallery &amp; media uploads</li>
+            <li>Analytics — views, clicks, leads</li>
+            <li>Featured on home page rotation</li>
+          </ul>
+        </div>
+
+        <!-- Search & Discover -->
+        <div class="value-card reveal" style="transition-delay:0.2s;">
+          <span class="value-icon">🔎</span>
+          <h3>Search &amp; Discover</h3>
+          <div class="value-price">Free for everyone</div>
+          <p>Customers browse, search, and discover businesses across the Central Valley — no account needed.</p>
+          <ul class="value-features">
+            <li>Browse by category or location</li>
+            <li>Read customer reviews</li>
+            <li>Contact businesses directly</li>
+            <li>No sign-up required</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA SECTION ─── -->
+  <section class="dir-cta-section" id="list-cta">
+    <div class="container">
+      <div class="reveal">
+        <h2>Ready to Be Found?</h2>
+        <p>List your business for free, or go Pro and get priority placement, a compliance badge, and an AI-optimized profile.</p>
+      </div>
+      <div class="dir-cta-grid">
+        <div class="dir-cta-card reveal">
+          <span class="cta-icon">📋</span>
+          <h3>List Your Business</h3>
+          <p>Free listing in minutes. Start getting discovered by Central Valley customers today.</p>
+          <a href="https://buy.stripe.com/dRmfZg33M3EX1z6c0s1B61g" class="btn btn-primary btn-glow" target="_blank" rel="noopener">
+            <span class="btn-icon">🚀</span> List for Free
+          </a>
+        </div>
+        <div class="dir-cta-card reveal" style="transition-delay:0.1s;">
+          <span class="cta-icon">⭐</span>
+          <h3>Go Pro — $29/mo</h3>
+          <p>Priority placement, ✅ Compliance Verified badge, AI-optimized profile, analytics, and more.</p>
+          <a href="https://buy.stripe.com/dRmfZg33M3EX1z6c0s1B61g" class="btn btn-primary btn-glow" target="_blank" rel="noopener">
+            <span class="btn-icon">⭐</span> Upgrade to Pro
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
+          <p>The AI Village that handles your business — 29 specialists, 3 partners, 1 mission. Central Valley Business Directory by CC3PO.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Directory</div>
+          <div class="footer-col-links">
+            <a href="#listings">Browse Businesses</a>
+            <a href="#categories">Categories</a>
+            <a href="#value-props">Pricing</a>
+            <a href="#list-cta">List Your Business</a>
+            <a href="/">CC3PO Home</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <div class="footer-col-links">
+            <a href="/privacy/">Privacy Policy</a>
+            <a href="/terms/">Terms of Service</a>
+            <a href="https://cc3po.io/strategy-call" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 CC3PO LLC. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── BUSINESS DATA + INTERACTIVE JS ─── -->
+  <script>
+    // ── Category config ──
+    const CATEGORIES = {
+      'HVAC':       { icon: '❄️', label: 'HVAC' },
+      'Plumbing':   { icon: '🔧', label: 'Plumbing' },
+      'Dental':     { icon: '🦷', label: 'Dental' },
+      'Roofing':    { icon: '🏠', label: 'Roofing' },
+      'Electrical': { icon: '⚡', label: 'Electrical' },
+      'Legal':      { icon: '⚖️', label: 'Legal' },
+      'Restaurant': { icon: '🍽️', label: 'Restaurants' },
+      'Retail':     { icon: '🛒', label: 'Retail' },
+    };
+
+    // ── Business data (injected from Supabase at build time) ──
+    const BUSINESSES = [
+      { name: "Wally Falke's Heating & Air Conditioning", vertical: "HVAC", phone: "209-632-7596", email: "contact@wallyfalkes.com", website: "https://wallyfalkes.com", market: "Turlock, CA" },
+      { name: "Noble Plumbing", vertical: "Plumbing", phone: "(209) 566-5420", email: "booking@nobleplumbers.com", website: "https://nobleplumbers.com/", market: "Central Valley, CA" },
+      { name: "Diablo Vista Dental Care", vertical: "Dental", phone: "(925) 481-5349", email: "appointments@lanapmarketing.com", website: "https://www.dvdental.com/", market: "San Ramon, CA" },
+      { name: "Western Dental", vertical: "Dental", phone: "(209) 241-5905", email: "customercare@westerndental.com", website: "https://www.westerndental.com", market: "Central Valley, CA" },
+      { name: "LakeFront Smiles - Stockton", vertical: "Dental", phone: "(209) 952-1212", email: "admin@lakefrontsmiles.com", website: "https://lakefrontsmiles.com", market: "Stockton, CA" },
+      { name: "Dutchman Drains", vertical: "Plumbing", phone: "(209) 683-3881", email: "info@dutchmandrains.com", website: "https://www.dutchmandrains.com", market: "Stockton, CA" },
+      { name: "Four Seasons Heating and Air Conditioning", vertical: "HVAC", phone: "(209) 366-3222", email: "f4seasons.hvac@gmail.com", website: "https://fourseasonsheatingandairconditioning.com", market: "Central Valley, CA" },
+      { name: "Can Do Crew Plumbing Heating & AC", vertical: "HVAC", phone: "661-588-6444", email: "info@callcandocrew.com", website: "https://www.callcandocrew.com/", market: "Central Valley, CA" },
+      { name: "Aire Serv", vertical: "HVAC", phone: "(209) 242-8894", email: null, website: "https://www.aireserv.com/stockton/", market: "Stockton, CA" },
+      { name: "Inland Mechanical Services", vertical: "HVAC", phone: "(951) 412-3046", email: null, website: "https://www.inlandmechanicalservices.com/commercial-hvac-services/", market: "SoCal, CA" },
+      { name: "Pacific Breeze Air Systems", vertical: "HVAC", phone: "209-656-7123", email: "pacbreezecal@gmail.com", website: "https://pacificbreezeairsystems.net", market: "Central Valley, CA" },
+      { name: "McLaughlin Air Conditioning Co.", vertical: "HVAC", phone: "(209) 465-4800", email: "beverlyleal@mclaughlinac.com", website: "https://www.mclaughlin-air.com", market: "Central Valley, CA" },
+      { name: "JC Melton Air Conditioning", vertical: "HVAC", phone: "(559) 268-6286", email: null, website: "https://jcmeltonair.com/", market: "Fresno, CA" },
+      { name: "Fresno Heating and Cooling Inc", vertical: "HVAC", phone: "(559) 512-7097", email: null, website: "https://www.fresnosheatingandcooling.com/", market: "Fresno, CA" },
+      { name: "PRO Plumbers of Merced", vertical: "Plumbing", phone: "(209) 395-1699", email: null, website: "https://proplumbermerced.com/", market: "Merced, CA" },
+      { name: "Central Valley Plumbing Repair Service", vertical: "Plumbing", phone: "(559) 669-7644", email: "info@centralvalleysewer.com", website: "https://centralvalleysewer.com/", market: "Central Valley, CA" },
+      { name: "Nicholas Poblete DDS", vertical: "Dental", phone: "(209) 521-6822", email: "contact@pobletedental.com", website: "https://www.pobletedental.com", market: "Central Valley, CA" },
+      { name: "123iSmile", vertical: "Dental", phone: "(209) 916-1700", email: "123ismile@cheemadental.com", website: "https://123ismile.com", market: "Central Valley, CA" },
+      { name: "Delta Family Dentistry", vertical: "Dental", phone: "(925) 625-2616", email: "dfdfrontoffice@att.net", website: "https://deltafamilydentistry.com/", market: "Central Valley, CA" },
+      { name: "Pelandale Dental Care", vertical: "Dental", phone: "(209) 545-9282", email: "pelandaledental@yahoo.com", website: "https://www.pelandaledental.com", market: "Modesto, CA" },
+      { name: "Dental Studio (Cali Dental Studio)", vertical: "Dental", phone: "(209) 490-4098", email: "info@dentalstudioca.com", website: "https://dentalstudioca.com/", market: "Central Valley, CA" },
+      { name: "Awesome Smiles", vertical: "Dental", phone: "(925) 724-2422", email: "contactus@awesomesmilesdental.com", website: "https://awesomesmilesdental.com", market: "Central Valley, CA" },
+      { name: "United Dental", vertical: "Dental", phone: "(650) 367-4300", email: "Uniteddentalteam@gmail.com", website: "https://unitedentaloffice.com", market: "Central Valley, CA" },
+      { name: "Comfort Dental", vertical: "Dental", phone: "(855) 526-6524", email: "info@comfortdental.com", website: "https://comfortdental.com", market: "Central Valley, CA" },
+      { name: "Melgosa Dental", vertical: "Dental", phone: "(209) 850-9229", email: "frontdesk@melgosadental.com", website: "https://www.melgosadental.com", market: "Central Valley, CA" },
+      { name: "Sycamore Family Dentistry", vertical: "Dental", phone: "(925) 940-7770", email: "info@sycamorefamilydentistry.com", website: "https://www.sycamorefamilydentistry.com/", market: "Central Valley, CA" },
+      { name: "Granada Dental", vertical: "Dental", phone: "(925) 447-0324", email: "general@granadadental.com", website: "https://granadadental.com/", market: "Central Valley, CA" },
+      { name: "Turlock Dental Arts", vertical: "Dental", phone: "209-634-5858", email: "tdamanager@gmail.com", website: "https://www.turlockdental.com/", market: "Turlock, CA" },
+      { name: "Hoybjerg Family Orthodontics", vertical: "Dental", phone: "(209) 238-9700", email: "info@hoybjergortho.com", website: "https://www.hfamilybraces.com/locations/modesto-office/", market: "Modesto, CA" },
+      { name: "DENTALSource of California - Stockton", vertical: "Dental", phone: "(209) 952-1641", email: "frontdesk@dentalsourceofca.com", website: "https://www.dentalsourceofca.com/stockton/", market: "Stockton, CA" },
+      { name: "Shinkawa Dental", vertical: "Dental", phone: "(559) 226-5656", email: null, website: "https://www.shinkawadental.com/", market: "Fresno, CA" },
+      { name: "My Kid's Dentist", vertical: "Dental", phone: "(925) 301-4286", email: null, website: "https://www.mykidsdentistanaheimhills.com", market: "Central Valley, CA" },
+      { name: "Foothill Dental", vertical: "Dental", phone: "(925) 961-5484", email: null, website: "https://www.mylivermoredentist.com", market: "Livermore, CA" },
+      { name: "Mint Dental", vertical: "Dental", phone: "(714) 577-0980", email: "mint@mintdentaloc.com", website: "https://mintdentaloc.com", market: "Central Valley, CA" },
+      { name: "Olive Crush Farms", vertical: "Retail", phone: "(209) 400-7953", email: "olivecrushfarms@gmail.com", website: "https://olivecrushfarms.com/", market: "Lodi, CA" },
+      { name: "Williams Brodersen Pritchett and Ruiz LLP", vertical: "Legal", phone: "(559) 735-1900", email: "info@visalialawyers.com", website: "https://www.visalialawyers.com", market: "Visalia, CA" },
+      { name: "Stoneridge Roofing", vertical: "Roofing", phone: "(209) 808-4621", email: "stoneridgeroofing.cvalley@gmail.com", website: "https://www.stoneridgeroofingcv.com/", market: "Central Valley, CA" },
+      { name: "Econo Roofing", vertical: "Roofing", phone: "(209) 668-6222", email: "econoroofing209@gmail.com", website: "https://econo-roofing.com/", market: "Central Valley, CA" },
+    ];
+
+    // ── State ──
+    let activeFilter = 'all';
+    let searchQuery = '';
+
+    // ── Render ──
+    function getVerticalClass(v) {
+      return v.toLowerCase().replace(/[^a-z]/g, '');
+    }
+
+    function formatPhone(phone) {
+      if (!phone) return '';
+      // Already formatted
+      if (phone.match(/^\(\d{3}\)/)) return phone;
+      // Strip non-digits
+      const digits = phone.replace(/\D/g, '');
+      if (digits.length === 10) return `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+      if (digits.length === 11) return `(${digits.slice(1,4)}) ${digits.slice(4,7)}-${digits.slice(7)}`;
+      return phone;
+    }
+
+    function getFilteredBusinesses() {
+      let results = BUSINESSES;
+      if (activeFilter !== 'all') {
+        results = results.filter(b => b.vertical === activeFilter);
+      }
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        results = results.filter(b =>
+          b.name.toLowerCase().includes(q) ||
+          b.vertical.toLowerCase().includes(q) ||
+          (b.market && b.market.toLowerCase().includes(q)) ||
+          (b.phone && b.phone.includes(q))
+        );
+      }
+      return results;
+    }
+
+    function renderBusinesses() {
+      const grid = document.getElementById('listings-grid');
+      const noResults = document.getElementById('no-results');
+      const resultsCount = document.getElementById('results-count');
+      const businesses = getFilteredBusinesses();
+
+      if (businesses.length === 0) {
+        grid.innerHTML = '';
+        noResults.style.display = 'block';
+        resultsCount.innerHTML = '';
+        return;
+      }
+      noResults.style.display = 'none';
+      resultsCount.innerHTML = `Showing <strong>${businesses.length}</strong> business${businesses.length !== 1 ? 'es' : ''}${activeFilter !== 'all' ? ` in ${activeFilter}` : ''}${searchQuery ? ` matching "${searchQuery}"` : ''}`;
+
+      grid.innerHTML = businesses.map(b => {
+        const cat = CATEGORIES[b.vertical] || { icon: '🏢', label: b.vertical };
+        const vClass = getVerticalClass(b.vertical);
+        return `
+          <div class="biz-card" data-vertical="${b.vertical}">
+            <div class="biz-card-header">
+              <div class="biz-icon">${cat.icon}</div>
+              <div>
+                <h3 class="biz-card-title">${b.website ? `<a href="${b.website}" target="_blank" rel="noopener">${b.name}</a>` : b.name}</h3>
+                <span class="biz-vertical ${vClass}">${cat.label}</span>
+              </div>
+            </div>
+            ${b.market ? `<div class="biz-location">📍 ${b.market}</div>` : ''}
+            <div class="biz-contact">
+              ${b.phone ? `<a href="tel:${b.phone.replace(/\D/g,'')}" class="biz-contact-item"><span class="icon">📞</span> ${formatPhone(b.phone)}</a>` : ''}
+              ${b.website ? `<a href="${b.website}" target="_blank" rel="noopener" class="biz-contact-item"><span class="icon">🌐</span> ${b.website.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a>` : ''}
+              ${b.email ? `<a href="mailto:${b.email}" class="biz-contact-item"><span class="icon">✉️</span> ${b.email}</a>` : ''}
+            </div>
+            <div class="biz-card-footer">
+              ${b.website ? `<a href="${b.website}" target="_blank" rel="noopener" class="biz-btn biz-btn-primary">Visit Website →</a>` : ''}
+              ${b.phone ? `<a href="tel:${b.phone.replace(/\D/g,'')}" class="biz-btn biz-btn-secondary">Call Now</a>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderFilters() {
+      const bar = document.getElementById('filter-bar');
+      // Count per category
+      const counts = {};
+      BUSINESSES.forEach(b => {
+        counts[b.vertical] = (counts[b.vertical] || 0) + 1;
+      });
+
+      const allCount = document.getElementById('count-all');
+      allCount.textContent = BUSINESSES.length;
+
+      // Update hero stats
+      document.getElementById('stat-businesses').textContent = BUSINESSES.length;
+      document.getElementById('stat-categories').textContent = Object.keys(CATEGORIES).filter(k => counts[k]).length;
+
+      // Build filter buttons for categories that have businesses
+      const sortedCats = Object.keys(CATEGORIES).filter(k => counts[k]).sort((a, b) => (counts[b] || 0) - (counts[a] || 0));
+
+      bar.innerHTML = `<button class="filter-btn${activeFilter === 'all' ? ' active' : ''}" data-vertical="all" onclick="setFilter('all')">All <span class="count">${BUSINESSES.length}</span></button>` +
+        sortedCats.map(v => {
+          const cat = CATEGORIES[v];
+          return `<button class="filter-btn${activeFilter === v ? ' active' : ''}" data-vertical="${v}" onclick="setFilter('${v}')">${cat.icon} ${cat.label} <span class="count">${counts[v]}</span></button>`;
+        }).join('');
+    }
+
+    function setFilter(vertical) {
+      activeFilter = vertical;
+      renderFilters();
+      renderBusinesses();
+    }
+
+    // ── Search ──
+    const searchInput = document.getElementById('search-input');
+    const searchBtn = document.getElementById('search-btn');
+    let searchTimeout;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        searchQuery = searchInput.value.trim();
+        renderBusinesses();
+      }, 200);
+    });
+    searchBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      searchQuery = searchInput.value.trim();
+      renderBusinesses();
+      document.getElementById('listings').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        searchQuery = searchInput.value.trim();
+        renderBusinesses();
+        document.getElementById('listings').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    // ── Init ──
+    renderFilters();
+    renderBusinesses();
+
+    // ===== MOBILE DRAWER =====
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    function openDrawer() {
+      drawer.classList.add('active');
+      overlay.style.display = 'block';
+      requestAnimationFrame(() => overlay.classList.add('active'));
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawer.classList.remove('active');
+      overlay.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setTimeout(() => overlay.style.display = 'none', 300);
+    }
+    if (menuBtn && drawer && overlay) {
+      menuBtn.addEventListener('click', () => {
+        if (drawer.classList.contains('active')) closeDrawer();
+        else openDrawer();
+      });
+      overlay.addEventListener('click', closeDrawer);
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+    }
+
+    // ===== SMOOTH SCROLL OFFSET =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 64;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ===== HERO CANVAS: Constellation Network =====
+    const canvas = document.getElementById('hero-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let w, h, particles = [], mouse = { x: -1000, y: -1000 };
+
+      function resize() {
+        w = canvas.width = canvas.offsetWidth;
+        h = canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * w;
+          this.y = Math.random() * h;
+          this.vx = (Math.random() - 0.5) * 0.3;
+          this.vy = (Math.random() - 0.5) * 0.3;
+          this.r = Math.random() * 1.5 + 0.5;
+          this.color = ['#e94560','#0f3460','#4fc3f7','#ffd700','#00e676'][Math.floor(Math.random()*5)];
+        }
+        update() {
+          this.x += this.vx; this.y += this.vy;
+          if (this.x < 0 || this.x > w) this.vx *= -1;
+          if (this.y < 0 || this.y > h) this.vy *= -1;
+          const dx = this.x - mouse.x, dy = this.y - mouse.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 120) { this.x += dx * 0.01; this.y += dy * 0.01; }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = 0.6;
+          ctx.fill();
+        }
+      }
+
+      const count = Math.min(80, Math.floor(w * h / 12000));
+      for (let i = 0; i < count; i++) particles.push(new Particle());
+
+      function animate() {
+        ctx.clearRect(0, 0, w, h);
+        particles.forEach(p => { p.update(); p.draw(); });
+        ctx.globalAlpha = 0.08;
+        ctx.strokeStyle = '#e94560';
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const d = dx*dx + dy*dy;
+            if (d < 15000) {
+              ctx.globalAlpha = 0.06 * (1 - d/15000);
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(animate);
+      }
+      animate();
+    }
+
+    // ===== SCROLL REVEAL =====
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ===== NAV SCROLL EFFECT =====
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+    });
+  </script>
+
+</body>
+</html>

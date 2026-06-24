@@ -1,0 +1,62 @@
+---
+export interface Props {
+  type?: "landing" | "product";
+  badge?: string;
+  title: string;
+  subtitle?: string;
+  ctaPrimary?: { label: string; href: string };
+  ctaSecondary?: { label: string; href: string };
+  icon?: string; // SVG path data
+}
+
+const { type = "landing", badge, title, subtitle, ctaPrimary, ctaSecondary, icon } = Astro.props;
+---
+
+{
+  type === "product" ? (
+    <section class="hero-product" id="main-content">
+      <div class="container" style="position:relative;">
+        {icon && (
+          <div class="product-icon">
+            <svg viewBox="0 0 24 24"><path d={icon} /></svg>
+          </div>
+        )}
+        <div class="hero-content">
+          {badge && (
+            <div class="hero-badge reveal">
+              <span class="pulse-dot"></span>
+              {badge}
+            </div>
+          )}
+          <h1 class="hero-title reveal">{title}</h1>
+          {subtitle && <p class="hero-sub reveal">{subtitle}</p>}
+          {(ctaPrimary || ctaSecondary) && (
+            <div class="hero-buttons reveal">
+              {ctaPrimary && <a href={ctaPrimary.href} class="btn btn-primary btn-glow">{ctaPrimary.label}</a>}
+              {ctaSecondary && <a href={ctaSecondary.href} class="btn btn-secondary">{ctaSecondary.label}</a>}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section class="hero" id="main-content">
+      <div class="hero-content">
+        {badge && (
+          <div class="hero-badge reveal">
+            <span class="pulse-dot"></span>
+            {badge}
+          </div>
+        )}
+        <h1 class="hero-title reveal" set:html={title} />
+        {subtitle && <p class="hero-sub reveal">{subtitle}</p>}
+        {(ctaPrimary || ctaSecondary) && (
+          <div class="hero-buttons reveal">
+            {ctaPrimary && <a href={ctaPrimary.href} class="btn btn-primary btn-glow">{ctaPrimary.label}</a>}
+            {ctaSecondary && <a href={ctaSecondary.href} class="btn btn-secondary">{ctaSecondary.label}</a>}
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}

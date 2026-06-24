@@ -1,0 +1,26 @@
+---
+export interface Props {
+  name: string;
+  price: string;
+  period: string;
+  description?: string;
+  features: string[];
+  cta: { label: string; href: string };
+  popular?: boolean;
+}
+
+const { name, price, period, description, features, cta, popular } = Astro.props;
+---
+
+<div class={`pricing-card ${popular ? 'pricing-card-popular' : ''}`}>
+  <p class="pricing-amount">{price}<span class="pricing-period">{period}</span></p>
+  {description && <p class="pricing-note">{description}</p>}
+  <ul class="pricing-features">
+    {features.map((f) => (
+      <li>{f}</li>
+    ))}
+  </ul>
+  <a href={cta.href} class={`btn ${popular ? 'btn-primary btn-glow' : 'btn-secondary'}`} style="width:100%;justify-content:center;">
+    {cta.label}
+  </a>
+</div>

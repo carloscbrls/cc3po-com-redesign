@@ -1,0 +1,29 @@
+---
+export interface Feature {
+  icon: string; // SVG path data
+  title: string;
+  description: string;
+}
+
+export interface Props {
+  features: Feature[];
+  columns?: 2 | 3 | 4;
+}
+
+const { features, columns = 3 } = Astro.props;
+const gridClass = columns === 2 ? "feature-grid feature-grid-2" :
+  columns === 4 ? "feature-grid feature-grid-4" :
+  "feature-grid";
+---
+
+<div class={gridClass}>
+  {features.map((f) => (
+    <div class="feature-card">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24"><path d={f.icon} /></svg>
+      </div>
+      <h3 class="feature-title">{f.title}</h3>
+      <p class="feature-desc">{f.description}</p>
+    </div>
+  ))}
+</div>
