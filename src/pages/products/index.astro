@@ -1,16 +1,290 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const products = [
+  {
+    title: "Compliance Shield",
+    tagline: "Always-on ADA/WCAG monitoring",
+    price: "$97/mo",
+    description: "Continuous compliance monitoring, instant violation alerts, weekly PDF reports. Protect your business from $4K+ ADA lawsuits.",
+    href: "/products/shield/",
+    icon: "🛡️",
+    color: "#00e676",
+    featured: true
+  },
+  {
+    title: "Compliance Badge",
+    tagline: "Show the world you're compliant",
+    price: "Free – $99/mo",
+    description: "Embed a live compliance badge on your site. Shows your score, updates automatically. Every badge is a billboard for CC3PO.",
+    href: "https://badge.cc3po.com",
+    icon: "🏷️",
+    color: "#7c4dff",
+    external: true
+  },
+  {
+    title: "Quote Generator",
+    tagline: "Turn services into quotes in 60 seconds",
+    price: "Free – $49/mo",
+    description: "HVAC, plumbing, electrical trades — paste your service list, get a professional quote page with Stripe payment links.",
+    href: "https://quote.cc3po.com",
+    icon: "📋",
+    color: "#ff6d00",
+    external: true
+  },
+  {
+    title: "Partner Program",
+    tagline: "Earn 20% recurring commission",
+    price: "Free to join",
+    description: "Web agencies, marketing firms, SaaS platforms — refer clients to CC3PO and earn 20% recurring on every sale.",
+    href: "https://partners.cc3po.com",
+    icon: "🤝",
+    color: "#00bcd4",
+    external: true
+  },
+  {
+    title: "Compliance Pack",
+    tagline: "One-time compliance setup",
+    price: "$199",
+    description: "Privacy policy, terms of service, accessibility statement, cookie consent — all the pages your site needs to be legally compliant.",
+    href: "https://checkout.cc3po.com/b/5kQ8wO47Q3EXfpW4y01B61u",
+    icon: "📦",
+    color: "#ff9100",
+    external: true
+  },
+  {
+    title: "Compliance Shield Pro",
+    tagline: "Monitoring + active fixes",
+    price: "$199/mo",
+    description: "Everything in Shield plus active issue remediation, priority support, and monthly compliance reports.",
+    href: "https://checkout.cc3po.com/b/aFadR833Mcbt0v2ggI1B61t",
+    icon: "🔒",
+    color: "#d500f9",
+    external: true
+  },
+  {
+    title: "Free Business Scan",
+    tagline: "See where you stand",
+    price: "Free",
+    description: "30-second scan. No credit card. Get a full compliance report with actionable fixes.",
+    href: "/audit/",
+    icon: "🔍",
+    color: "#00e5ff",
+    featured: true
+  }
+];
 ---
 
-<Layout title="Products — CC3PO">
-  <meta http-equiv="refresh" content="0;url=/ai-compliance/" />
-  <script is:inline>
-    window.location.href = '/ai-compliance/';
-  </script>
-  <div style="display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:40px;">
-    <div>
-      <h1>Our Products</h1>
-      <p>If you are not redirected, <a href="/ai-compliance/" style="color:var(--accent);text-decoration:underline;">click here to see our compliance suite</a>.</p>
+<Layout title="Products — CC3PO" description="CC3PO's full product suite — compliance monitoring, website badges, quote generators, and partner programs for small businesses.">
+
+  <!-- Hero -->
+  <section class="products-hero">
+    <div class="container">
+      <div class="products-hero-content">
+        <span class="products-badge">Our Products</span>
+        <h1>Everything you need to <span class="gradient-text">protect and grow</span> your business.</h1>
+        <p class="products-subtitle">Compliance monitoring, website tools, and partner programs — all built for small businesses in California.</p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="products-grid-section">
+    <div class="container">
+      <div class="products-grid">
+        {products.map(product => (
+          <a href={product.href} class="product-card" style={`--card-accent: ${product.color}`} target={product.external ? '_blank' : undefined} rel={product.external ? 'noopener noreferrer' : undefined}>
+            <div class="product-card-icon">{product.icon}</div>
+            <div class="product-card-body">
+              <div class="product-card-header">
+                <h2>{product.title}</h2>
+                <span class="product-card-price">{product.price}</span>
+              </div>
+              <p class="product-card-tagline">{product.tagline}</p>
+              <p class="product-card-desc">{product.description}</p>
+            </div>
+            <div class="product-card-footer">
+              <span class="product-card-cta">
+                {product.external ? 'Open →' : 'Learn More →'}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="products-cta">
+    <div class="container">
+      <div class="products-cta-card">
+        <h2>Not sure what you need?</h2>
+        <p>Start with a free business scan. We'll tell you exactly what's missing and recommend the right products.</p>
+        <div class="products-cta-actions">
+          <a href="/audit/" class="btn btn-primary btn-glow">🔍 Scan My Business — Free</a>
+          <a href="tel:+12097011137" class="btn btn-secondary">📞 Talk to Carlos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Layout>
+
+<style is:global>
+  .products-hero {
+    padding: 120px 0 60px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .products-hero-content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .products-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(0, 230, 118, 0.1);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 230, 118, 0.2);
+  }
+  .products-hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, var(--accent), #7c4dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .products-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .products-grid-section {
+    padding: 60px 0;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--card-accent, var(--accent));
+    opacity: 0.7;
+  }
+  .product-card:hover {
+    border-color: var(--card-accent, var(--accent));
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  }
+  .product-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+  .product-card-body {
+    flex: 1;
+  }
+  .product-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .product-card-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+  }
+  .product-card-price {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(0, 230, 118, 0.1);
+    padding: 4px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .product-card-tagline {
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .product-card-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .product-card-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .product-card-cta {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--card-accent, var(--accent));
+  }
+  .products-cta {
+    padding: 60px 0 100px;
+  }
+  .products-cta-card {
+    background: linear-gradient(135deg, rgba(0, 230, 118, 0.08), rgba(124, 77, 255, 0.05));
+    border: 1px solid rgba(0, 230, 118, 0.2);
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .products-cta-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  .products-cta-card p {
+    color: var(--text-muted);
+    margin-bottom: 28px;
+    font-size: 1.05rem;
+  }
+  .products-cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    .products-hero h1 { font-size: 2rem; }
+    .products-grid { grid-template-columns: 1fr; }
+    .products-cta-card { padding: 32px 20px; }
+  }
+</style>
