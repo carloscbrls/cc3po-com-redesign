@@ -153,6 +153,6 @@ const styles = styleMatch ? styleMatch.join('\n') : '';
   </style>
 
   <div class="agency-content">
-    {mainContent}
+    <Fragment set:html={mainContent} />
   </div>
 </Layout>
