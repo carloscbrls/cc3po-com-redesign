@@ -1,40 +1,57 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Fetch the agency page content from insights subdomain
+const response = await fetch('https://insights.cc3po.com/agency/');
+const html = await response.text();
+
+// Extract just the main content section (between <main> and </main>)
+const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+const mainContent = mainMatch ? mainMatch[1] : '<p>Content unavailable</p>';
+
+// Extract ALL styles from the insights page (both <style> tags and inline)
+const styleRegex = /<style[^>]*>[\s\S]*?<\/style>/gi;
+const allStyles: string[] = [];
+let styleMatch;
+while ((styleMatch = styleRegex.exec(html)) !== null) {
+  allStyles.push(styleMatch[0]);
+}
+const styles = allStyles.join('\n');
 ---
 
 <Layout title="CC3PO Agency — Websites, Domains & Automation">
+  <!-- Inject the insights page styles scoped to the agency content -->
   <style>
-    .agency-iframe {
-      width: 100%;
-      border: none;
-      display: block;
+    /* Base reset for agency content */
+    .agency-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
     }
+    .agency-content a { color: #10b981; text-decoration: underline; text-underline-offset: 2px; }
+    .agency-content a:hover { color: #34d399; }
+    .agency-content input[type="text"] {
+      background: #1a1a2e; border: 1px solid #374151; border-radius: 0.5rem;
+      padding: 0.75rem 1rem; color: #fff; width: 100%;
+    }
+    .agency-content input[type="text"]:focus { outline: none; border-color: #10b981; }
+    .agency-content .btn-primary {
+      display: inline-block; text-align: center;
+      background: #10b981; color: #000 !important; font-weight: 600;
+      padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none !important;
+      transition: background 0.2s;
+    }
+    .agency-content .btn-primary:hover { background: #34d399; }
+    .agency-content .btn-secondary {
+      display: inline-block; text-align: center;
+      border: 1px solid #4b5563; color: #fff !important; font-weight: 600;
+      padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none !important;
+      transition: border-color 0.2s;
+    }
+    .agency-content .btn-secondary:hover { border-color: #10b981; }
   </style>
 
-  <iframe src="https://insights.cc3po.com/agency/" class="agency-iframe" id="agency-frame" title="CC3PO Agency Services" loading="eager"></iframe>
-
-  <script>
-    // Auto-resize iframe to fit content
-    function resizeIframe() {
-      const frame = document.getElementById('agency-frame');
-      if (!frame) return;
-      
-      try {
-        // Try to get the iframe's content height
-        const height = frame.contentWindow.document.documentElement.scrollHeight;
-        frame.style.height = height + 'px';
-      } catch(e) {
-        // Cross-origin restrictions - use a fixed large height as fallback
-        frame.style.height = '6000px';
-      }
-    }
-
-    // Try to resize after load
-    frame.addEventListener('load', () => {
-      setTimeout(resizeIframe, 1000);
-    });
-
-    // Fallback: set a large height immediately
-    frame.style.height = '6000px';
-  </script>
+  <div class="agency-content">
+    <Fragment set:html={mainContent} />
+  </div>
 </Layout>
