@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Fetch the agency page content from insights subdomain
+const response = await fetch('https://insights.cc3po.com/agency/');
+const html = await response.text();
+
+// Extract just the main content section (between <main> and </main>)
+const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+const mainContent = mainMatch ? mainMatch[1] : '<p>Content unavailable</p>';
+
+// Extract ALL <style> tags from the insights page (includes Tailwind output)
+const styleRegex = /<style[^>]*>[\s\S]*?<\/style>/gi;
+const allStyles: string[] = [];
+let styleMatch;
+while ((styleMatch = styleRegex.exec(html)) !== null) {
+  allStyles.push(styleMatch[0]);
+}
+const styles = allStyles.join('\n');
+---
+
+<Layout title="CC3PO Agency — Websites, Domains & Automation">
+  <!-- Inject the insights page styles -->
+  <Fragment set:html={styles} />
+
+  <div class="agency-content">
+    <Fragment set:html={mainContent} />
+  </div>
+</Layout>
