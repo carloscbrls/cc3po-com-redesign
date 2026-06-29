@@ -3,3 +3,14 @@
   publish = "dist/"
 
 # SPA catch-all removed — Astro generates real pages; this redirect was breaking /pricing and other routes
+
+# Proxy /agency to insights subdomain
+[[redirects]]
+  from = "/agency/*"
+  to = "https://insights.cc3po.com/agency/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/agency"
+  to = "https://insights.cc3po.com/agency/"
+  status = 200
