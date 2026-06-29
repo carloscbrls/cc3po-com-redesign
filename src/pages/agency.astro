@@ -1,158 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-// Fetch the agency page content from insights subdomain
-const response = await fetch('https://insights.cc3po.com/agency/');
-const html = await response.text();
-
-// Extract just the main content section (between <main> and </main>)
-// This strips the insights site's nav, footer, and layout
-const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
-const mainContent = mainMatch ? mainMatch[1] : '<p>Content unavailable</p>';
-
-// Also extract the styles from the insights page
-const styleMatch = html.match(/<style[^>]*>[\s\S]*?<\/style>/gi);
-const styles = styleMatch ? styleMatch.join('\n') : '';
 ---
 
 <Layout title="CC3PO Agency — Websites, Domains & Automation">
   <style>
-    /* Agency page styles - scoped to the content section */
-    .agency-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-    .agency-content h1 { font-size: 2.5rem; font-weight: 800; }
-    .agency-content h2 { font-size: 1.75rem; font-weight: 700; margin-top: 3rem; }
-    .agency-content h3 { font-size: 1.25rem; font-weight: 600; }
-    .agency-content a { color: #10b981; text-decoration: underline; text-underline-offset: 2px; }
-    .agency-content a:hover { color: #34d399; }
-    .agency-content input[type="text"] {
-      background: #1a1a2e; border: 1px solid #374151; border-radius: 0.5rem;
-      padding: 0.75rem 1rem; color: #fff; width: 100%;
-    }
-    .agency-content input[type="text"]:focus { outline: none; border-color: #10b981; }
-    .agency-content .stats-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 3rem 0;
-    }
-    .agency-content .stat-card {
-      background: #0f0f1a; border: 1px solid #1f2937; border-radius: 0.75rem;
-      padding: 1.25rem; text-align: center;
-    }
-    .agency-content .stat-card p:first-child { font-size: 1.5rem; font-weight: 700; color: #fff; }
-    .agency-content .stat-card p:last-child { font-size: 0.875rem; color: #6b7280; }
-    .agency-content .step-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; position: relative;
-    }
-    .agency-content .step { text-align: center; }
-    .agency-content .step-icon {
-      width: 6rem; height: 6rem; margin: 0 auto 1rem;
-      background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05));
-      border: 1px solid rgba(16,185,129,0.2); border-radius: 1rem;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .agency-content .step-label { color: #10b981; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-    .agency-content .step h3 { color: #fff; font-weight: 600; margin: 0.25rem 0; }
-    .agency-content .step p { color: #6b7280; font-size: 0.875rem; }
-    .agency-content .pricing-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-    }
-    .agency-content .pricing-card {
-      background: #0f0f1a; border: 1px solid #1f2937; border-radius: 1rem;
-      padding: 1.5rem; display: flex; flex-direction: column;
-    }
-    .agency-content .pricing-card.featured {
-      background: linear-gradient(135deg, #0f0f1a, #0a0a14);
-      border: 2px solid rgba(16,185,129,0.3);
-    }
-    .agency-content .pricing-card h3 { font-size: 1.25rem; font-weight: 700; color: #fff; }
-    .agency-content .pricing-card .price { font-size: 1.875rem; font-weight: 700; color: #fff; }
-    .agency-content .pricing-card .price span { font-size: 0.875rem; color: #6b7280; font-weight: 400; }
-    .agency-content .pricing-card ul { list-style: none; padding: 0; margin: 1.5rem 0; flex: 1; }
-    .agency-content .pricing-card ul li {
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      color: #9ca3af; font-size: 0.875rem; margin-bottom: 0.75rem;
-    }
-    .agency-content .btn-primary {
-      display: block; text-align: center;
-      background: #10b981; color: #000 !important; font-weight: 600;
-      padding: 0.75rem; border-radius: 0.5rem; text-decoration: none !important;
-      transition: background 0.2s;
-    }
-    .agency-content .btn-primary:hover { background: #34d399; }
-    .agency-content .btn-secondary {
-      display: block; text-align: center;
-      border: 1px solid #4b5563; color: #fff !important; font-weight: 600;
-      padding: 0.75rem; border-radius: 0.5rem; text-decoration: none !important;
-      transition: border-color 0.2s;
-    }
-    .agency-content .btn-secondary:hover { border-color: #10b981; }
-    .agency-content .addon-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-    }
-    .agency-content .addon-card {
-      background: #0f0f1a; border: 1px solid #1f2937; border-radius: 0.75rem;
-      padding: 1.25rem; text-decoration: none !important; transition: border-color 0.2s;
-    }
-    .agency-content .addon-card:hover { border-color: rgba(16,185,129,0.5); }
-    .agency-content .addon-card h3 { color: #fff; font-weight: 600; font-size: 1rem; }
-    .agency-content .addon-card p { color: #6b7280; font-size: 0.875rem; }
-    .agency-content .faq-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-    }
-    .agency-content .faq-item h3 { color: #fff; font-weight: 600; margin-bottom: 0.5rem; }
-    .agency-content .faq-item p { color: #6b7280; font-size: 0.875rem; }
-    .agency-content .cta-section {
-      background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.05));
-      border: 1px solid rgba(16,185,129,0.2); border-radius: 1rem;
-      padding: 3rem; text-align: center; margin: 3rem 0;
-    }
-    .agency-content .cta-section h2 { margin-top: 0; }
-    .agency-content .badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2);
-      border-radius: 9999px; padding: 0.375rem 1rem; margin-bottom: 1.5rem;
-    }
-    .agency-content .badge span {
-      width: 0.5rem; height: 0.5rem; background: #34d399;
-      border-radius: 50%; animation: pulse 2s infinite;
-    }
-    .agency-content .badge-text { color: #10b981; font-size: 0.875rem; font-weight: 500; }
-    .agency-content .domain-section {
-      background: linear-gradient(135deg, #0f0f1a, #0a0a14);
-      border: 1px solid #1f2937; border-radius: 1rem; padding: 2.5rem; margin: 3rem 0;
-    }
-    .agency-content .path-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-    .agency-content .bolt-section {
-      background: linear-gradient(135deg, #0f0f1a, #0a0a14);
-      border: 1px solid #1f2937; border-radius: 1rem; padding: 2.5rem; margin: 3rem 0;
-    }
-    .agency-content .bolt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .agency-content .bolt-card {
-      background: #08080d; border: 1px solid #1f2937; border-radius: 0.75rem; padding: 1.5rem;
-    }
-    .agency-content .bolt-card h3 { color: #fff; font-weight: 600; margin-bottom: 0.5rem; }
-    .agency-content .bolt-card p { color: #6b7280; font-size: 0.875rem; }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    @media (max-width: 768px) {
-      .agency-content .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .agency-content .step-grid { grid-template-columns: repeat(2, 1fr); }
-      .agency-content .pricing-grid { grid-template-columns: 1fr; }
-      .agency-content .path-grid { grid-template-columns: 1fr; }
-      .agency-content .addon-grid { grid-template-columns: 1fr; }
-      .agency-content .faq-grid { grid-template-columns: 1fr; }
-      .agency-content .bolt-grid { grid-template-columns: 1fr; }
-      .agency-content .cta-section { padding: 2rem 1rem; }
+    .agency-iframe {
+      width: 100%;
+      border: none;
+      display: block;
     }
   </style>
 
-  <div class="agency-content">
-    <Fragment set:html={mainContent} />
-  </div>
+  <iframe src="https://insights.cc3po.com/agency/" class="agency-iframe" id="agency-frame" title="CC3PO Agency Services" loading="eager"></iframe>
+
+  <script>
+    // Auto-resize iframe to fit content
+    function resizeIframe() {
+      const frame = document.getElementById('agency-frame');
+      if (!frame) return;
+      
+      try {
+        // Try to get the iframe's content height
+        const height = frame.contentWindow.document.documentElement.scrollHeight;
+        frame.style.height = height + 'px';
+      } catch(e) {
+        // Cross-origin restrictions - use a fixed large height as fallback
+        frame.style.height = '6000px';
+      }
+    }
+
+    // Try to resize after load
+    frame.addEventListener('load', () => {
+      setTimeout(resizeIframe, 1000);
+    });
+
+    // Fallback: set a large height immediately
+    frame.style.height = '6000px';
+  </script>
 </Layout>
