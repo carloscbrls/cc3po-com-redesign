@@ -1,0 +1,282 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CC3PO Grant Writing — Find, Apply & Win Grants",
+  "description": "Expert grant writing services for nonprofits, community organizations, and small businesses. We've helped organizations grow from 3 locations to 16. Starting at $497/mo.",
+  "provider": {
+    "@type": "Organization",
+    "name": "CC3PO",
+    "url": "https://cc3po.com"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "California"
+  },
+  "serviceType": "Grant Writing"
+};
+---
+
+<Layout title="Grant Writing Services — Find, Apply & Win Grants | CC3PO" description="Expert grant writing for nonprofits and small businesses. We've helped youth programs grow from 3 to 16 locations. City, federal, and private grants — we handle it all. CA Certified Small Business.">
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <section style="padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(16,185,129,0.12) 0%,transparent 60%);pointer-events:none;"></div>
+    <div class="container" style="position:relative;">
+      <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.25);display:flex;align-items:center;justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      </div>
+      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Grant Writing</p>
+      <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">Find Grants. Write Them. Win Them.</h1>
+      <p style="font-size:1.15rem;color:var(--text-secondary);max-width:600px;margin:0 auto 20px;line-height:1.6;">Most people know grants exist. Very few understand how to find them, apply for them, or win them. We do — because we've done it.</p>
+      <p style="font-size:0.95rem;color:var(--text-muted);max-width:560px;margin:0 auto 36px;">City grants · Federal grants · Private foundations · TechSoup · AI-assisted writing</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/#cta" class="btn btn-primary btn-glow">Get Started →</a>
+        <a href="https://cc3po.io/strategy-call" class="btn btn-secondary" target="_blank" rel="noopener">📞 Talk to Carlos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Feature -->
+  <section style="padding:60px 0;background:var(--bg-secondary);">
+    <div class="container">
+      <div style="max-width:800px;margin:0 auto;text-align:center;">
+        <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Featured On</p>
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:24px;">From Youth Programs to Mental Health Grants — Carlos' Story</h2>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid var(--border);margin-bottom:20px;">
+          <iframe src="https://www.youtube.com/embed/AB-j3Fa5KYg" title="From Youth Programs to Mental Health Grants — Carlos' Story on Fantasy Turf War" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;max-width:640px;margin:0 auto;">Carlos started at 20 years old, helping a youth technology program grow from 3 locations to 16 — serving over 150 students with free computers and tech education. Now he helps nonprofits, community programs, and small businesses access the grant funding they didn't know existed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <section style="padding:80px 0;">
+    <div class="container">
+      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Proven Results</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">We've walked the walk.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">3 → 16</div>
+          <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">Youth program locations grown</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">150+</div>
+          <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">Students served with free tech</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">58</div>
+          <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">CA counties served</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">10+</div>
+          <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">Years of grant writing experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Cover -->
+  <section style="padding:80px 0;background:var(--bg-secondary);" id="services">
+    <div class="container">
+      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">What We Handle</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Grant writing — end to end.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">🔍</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Grant Discovery</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We search GrantWatch, government databases, and private foundations to find grants that match your organization and mission. No more guessing.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">✍️</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Application Writing</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">Compelling narratives, accurate budgets, and complete packages. We write applications that stand out — and we use AI responsibly to strengthen every submission.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">📋</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">Compliance Documentation</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">501c3 paperwork, budgets, letters of support, and everything else grant funders require. If it's missing, we catch it before submission.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">🏛️</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">City, Federal & Private Grants</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We know the difference between a CDBG, a CAL FIRE grant, and a private foundation RFP. Each one has its own rules — and we've navigated them all.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">🤖</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">AI-Assisted Research</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We use AI tools to find opportunities faster, draft stronger narratives, and cross-check requirements — but every application is reviewed and finalized by a human.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <div style="font-size:1.5rem;margin-bottom:12px;">💻</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">TechSoup & Tech Access</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We help you register for TechSoup, access discounted software and hardware, and connect technology grant programs to your organization's needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section style="padding:80px 0;">
+    <div class="container">
+      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Who We Serve</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Built for organizations that serve communities.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🧒 Youth Programs</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">After-school programs, sports leagues, technology education, mentorship. We've grown these from 3 to 16 locations.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🤝 Community Nonprofits</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Organizations serving families, immigrants, veterans, and underserved communities across California.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🧠 Mental Health & Wellness</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Programs centered on music, art, and creative expression as pathways to healing. This one's personal.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🏪 Small Businesses</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">SB/DVBE certification, technology grants, and business development funding you may not know exists.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">⚾ Sports & Recreation</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Little Leagues, bowling associations, community sports programs — we've helped them secure funding.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🏛️ Government & Municipal</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">City departments, public agencies, and government programs needing grant writing support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grant Types -->
+  <section style="padding:80px 0;background:var(--bg-secondary);">
+    <div class="container" style="max-width:800px;">
+      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Types of Grants</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:32px;">The funding landscape is bigger than you think.</h2>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:1.8rem;flex-shrink:0;">🏛️</span>
+          <div>
+            <h3 style="font-weight:700;margin-bottom:4px;">City & County Grants</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">CDBG, community development, public safety, parks & rec — local governments have billions in annual allocations.</p>
+          </div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:1.8rem;flex-shrink:0;">🇺🇸</span>
+          <div>
+            <h3 style="font-weight:700;margin-bottom:4px;">Federal Grants</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">SAM.gov registrations, DUNS numbers, and navigating Grants.gov — we handle the federal bureaucracy so you don't have to.</p>
+          </div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:1.8rem;flex-shrink:0;">🏛️</span>
+          <div>
+            <h3 style="font-weight:700;margin-bottom:4px;">Private Foundations</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Family foundations, corporate giving programs, and community foundations — the hidden gems that most organizations miss.</p>
+          </div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-size:1.8rem;flex-shrink:0;">💻</span>
+          <div>
+            <h3 style="font-weight:700;margin-bottom:4px;">Technology Access Programs</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">TechSoup registrations, hardware grants, software donations, and digital inclusion programs — we connect you to resources you didn't know existed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why CC3PO -->
+  <section style="padding:80px 0;">
+    <div class="container" style="max-width:900px;">
+      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Why CC3PO</p>
+      <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">We're not just writers. We're navigators.</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:#ef4444;">❌ Most Grant Writers</h3>
+          <ul style="list-style:none;padding:0;margin:0;color:var(--text-secondary);font-size:0.95rem;line-height:2;">
+            <li>❌ Write and submit, then disappear</li>
+            <li>❌ Don't help you find the right grants</li>
+            <li>❌ No follow-up after submission</li>
+            <li>❌ Charge per grant, no relationship</li>
+            <li>❌ No connection to compliance or technology</li>
+          </ul>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:#10b981;">✅ CC3PO Grant Writing</h3>
+          <ul style="list-style:none;padding:0;margin:0;color:var(--text-secondary);font-size:0.95rem;line-height:2;">
+            <li>✅ Find → Write → Submit → Follow up</li>
+            <li>✅ Match grants to YOUR mission specifically</li>
+            <li>✅ AI-powered discovery + human review</li>
+            <li>✅ Ongoing relationship, not one-and-done</li>
+            <li>✅ Compliance + tech + grants = full circle</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance Connection -->
+  <section style="padding:80px 0;background:linear-gradient(135deg,rgba(16,185,129,0.08) 0%,rgba(37,99,235,0.05) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container" style="max-width:800px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">🛡️ + 📋</div>
+      <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:16px;">Grant Writing + Compliance = Full Protection</h2>
+      <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:32px;">Here's the connection most businesses miss: <strong style="color:#fff;">ADA compliance violations can cost $4,000+ per violation.</strong> But many grants exist specifically to help organizations become accessible. We help you <em>get funded</em> to <em>get compliant</em>.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="/products/shield/" class="btn btn-primary btn-glow">🛡️ Add Compliance Shield</a>
+        <a href="/nonprofit/" class="btn btn-secondary">→ Nonprofit Page</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding:80px 0;text-align:center;">
+    <div class="container">
+      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Get Started</p>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:16px;">Ready to find funding you didn't know existed?</h2>
+      <p style="color:var(--text-secondary);font-size:1.1rem;max-width:560px;margin:0 auto 32px;line-height:1.6;">Book a free strategy call. We'll assess your organization, identify grant opportunities, and show you exactly what's available.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://cc3po.io/strategy-call" class="btn btn-primary btn-glow" target="_blank" rel="noopener">📞 Book Strategy Call</a>
+        <a href="/#cta" class="btn btn-secondary">🔍 Free Business Scan</a>
+      </div>
+      <div style="margin-top:32px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:1.2rem;">🏛️</span>
+          <span style="color:var(--text-secondary);font-size:0.85rem;">CA Certified Small Business</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:1.2rem;">🌎</span>
+          <span style="color:var(--text-secondary);font-size:0.85rem;">Latino-Owned</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:1.2rem;">🛡️</span>
+          <span style="color:var(--text-secondary);font-size:0.85rem;">SB/DVBE Eligible</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:1.2rem;">🌐</span>
+          <span style="color:var(--text-secondary);font-size:0.85rem;">Se habla español</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style is:global>
+  .grant-hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .grant-hero { padding: 100px 0 60px; }
+  }
+</style>
