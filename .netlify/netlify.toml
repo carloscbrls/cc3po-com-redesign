@@ -5,7 +5,7 @@ plugins = []
 [functions."*"]
 
 [build]
-publish = "/private/tmp/cc3po-com-redesign/dist"
+publish = "/Users/cc3po/Sites/cc3po-com-redesign/dist"
 publishOrigin = "config"
 commandOrigin = "config"
 command = "npm run build"
