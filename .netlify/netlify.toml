@@ -6,7 +6,6 @@ plugins = []
 
 [build]
 publish = "/Users/cc3po/.openclaw/workspace/cc3po-com-redesign/dist"
-publish = "/Users/cc3po/.openclaw/workspace/cc3po-com-redesign/dist"
 publishOrigin = "config"
 commandOrigin = "config"
 command = "npm run build"
@@ -29,12 +28,12 @@ command = "npm run build"
 for = "/*"
 
 [headers.values]
-X-Frame-Options = "DENY"
+X-Frame-Options = "SAMEORIGIN"
 X-Content-Type-Options = "nosniff"
 X-XSS-Protection = "1; mode=block"
 Referrer-Policy = "strict-origin-when-cross-origin"
 Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://challenges.cloudflare.com https://analytics.cc3po.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.stripe.com https://analytics.cc3po.com https://cdrcgmdvepxwsbqaifxv.supabase.co https://formspree.io https://scanner.cc3po.com; frame-src https://js.stripe.com https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self' https://scanner.cc3po.com https://formspree.io;"
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com https://challenges.cloudflare.com https://analytics.cc3po.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com; connect-src 'self' https://api.stripe.com https://analytics.cc3po.com https://cdrcgmdvepxwsbqaifxv.supabase.co https://formspree.io https://scanner.cc3po.com; frame-src https://js.stripe.com https://challenges.cloudflare.com https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self' https://scanner.cc3po.com https://formspree.io;"
 Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
 
 [[redirects]]
@@ -160,6 +159,18 @@ force = true
 [[redirects]]
 from = "podcast.cc3po.com/*"
 to = "/podcast/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/is-your-site-legal/*"
+to = "/audit/:splat"
 status = 301.0
 force = true
 
