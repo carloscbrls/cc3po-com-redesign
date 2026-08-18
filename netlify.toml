@@ -3,3 +3,9 @@
   publish = "dist/"
 
 # SPA catch-all removed — Astro generates real pages; this redirect was breaking /pricing and other routes
+
+[[redirects]]
+  from = "/is-your-site-legal/*"
+  to = "/audit/:splat"
+  status = 301
+  force = true
