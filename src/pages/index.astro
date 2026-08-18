@@ -215,14 +215,40 @@ import Layout from '../layouts/Layout.astro';
   <section class="section" id="featured-video">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">Featured On</div>
+        <div class="section-label">Watch Carlos' Story</div>
         <h2 class="section-title">From Youth Programs to Mental Health Grants</h2>
-        <p class="section-desc">Carlos sat down with Fantasy Turf War to share how he grew a youth tech program from 3 locations to 16 — and how that experience became CC3PO's grant writing service.</p>
+        <p class="section-desc">Carlos sat down with Fantasy Turf War to share the story behind CC3PO — how a 20-year-old grew a youth tech program from 3 locations to 16, and turned that into a grant writing service that funds the organizations that need it most.</p>
       </div>
+
       <div class="reveal" style="max-width:800px;margin:0 auto;">
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid var(--border);margin-bottom:24px;">
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid var(--border);margin-bottom:28px;">
           <iframe src="https://www.youtube.com/embed/AB-j3Fa5KYg" title="From Youth Programs to Mental Health Grants — Carlos' Story on Fantasy Turf War" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
         </div>
+
+        <!-- Key takeaways from the video -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px;">
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;">
+            <div style="font-size:2rem;font-weight:800;color:var(--lux-emerald,#10b981);">20</div>
+            <div style="color:var(--text-muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">Years old when he started</div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;">
+            <div style="font-size:2rem;font-weight:800;color:var(--lux-gold,#d4af37);">3 → 16</div>
+            <div style="color:var(--text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Youth program locations</div>
+          </div>
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;">
+            <div style="font-size:2rem;font-weight:800;color:var(--gold,#10b981);">150+</div>
+            <div style="color:var(--text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Students served</div>
+          </div>
+        </div>
+
+        <div style="background:linear-gradient(160deg,rgba(16,185,129,0.06),rgba(212,175,55,0.05));border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:24px;">
+          <div style="font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold,#d4af37);margin-bottom:12px;">What you'll hear in the video</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">• How a 20-year-old helped a youth tech program grow 3 → 16 locations<br/>• Giving 150+ students free computers &amp; tech education</div>
+            <div style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">• Why that experience became CC3PO's grant writing service<br/>• How nonprofits fund mental health &amp; community programs</div>
+          </div>
+        </div>
+
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
           <a href="/products/grant-writing/" class="btn btn-primary btn-glow">📋 Grant Writing Services →</a>
           <a href="/about/" class="btn btn-secondary">About Carlos →</a>
