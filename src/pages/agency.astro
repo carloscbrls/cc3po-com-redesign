@@ -11,9 +11,9 @@ import Layout from '../layouts/Layout.astro';
         <span class="badge-dot"></span>
         Built with AI — Delivered in 48 hours
       </div>
-      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter mb-5" style="color: #fff;">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter mb-5" style="color: #fff; font-family: var(--lux-serif); font-weight: 700; letter-spacing: -1.5px;">
         Professional Websites,<br>
-        <span style="background: linear-gradient(135deg, #ffffff 0%, #10b981 40%, #6ee7b7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Built Fast</span>
+        <span style="background: linear-gradient(135deg, #ffffff 0%, #d4af37 40%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Built Fast</span>
       </h1>
       <p class="text-base sm:text-lg mb-8" style="color: rgba(255,255,255,0.78); max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7;">
         One place to buy your domain, build your site, and manage everything.
@@ -21,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
       </p>
       <div class="flex flex-wrap justify-center gap-3">
         <a href="#pricing" class="btn-primary">See Plans</a>
-        <a href="tel:+15102741655" class="btn-secondary">Call (510) 274-1655</a>
+        <a href="tel:+12092321265" class="btn-secondary">Call (209) 232-1265</a>
         <a href="#domain" class="btn-secondary" style="font-size: 14px;">Buy a Domain</a>
       </div>
     </div>
@@ -465,7 +465,7 @@ import Layout from '../layouts/Layout.astro';
         "@type": "Organization",
         "name": "CC3PO LLC",
         "url": "https://cc3po.com",
-        "telephone": "+1-510-274-1655"
+        "telephone": "+1-209-232-1265"
       },
       "areaServed": {
         "@type": "State",
@@ -541,12 +541,22 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  /* ===== LUXURY DESIGN SYSTEM (matches landing page) ===== */
+  :root {
+    --lux-gold: #d4af37;
+    --lux-gold-soft: rgba(212,175,55,0.12);
+    --lux-emerald: #10b981;
+    --lux-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --lux-line: rgba(212,175,55,0.18);
+    --lux-card: rgba(255,255,255,0.03);
+  }
+
   /* Badge dot with pulse animation */
   .badge-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #10b981;
+    background: var(--lux-emerald);
     position: relative;
     flex-shrink: 0;
   }
@@ -564,15 +574,15 @@ import Layout from '../layouts/Layout.astro';
     100% { transform: scale(2.2); opacity: 0; }
   }
 
-  /* Buttons */
+  /* Buttons — luxury gold/emerald */
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: #10b981;
+    background: linear-gradient(135deg, #10b981, #059669);
     color: #000 !important;
-    border-radius: 8px;
+    border-radius: 10px;
     font-size: 15px;
     font-weight: 600;
     min-height: 44px;
@@ -583,7 +593,7 @@ import Layout from '../layouts/Layout.astro';
   .btn-primary:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 6px 30px rgba(16, 185, 129, 0.45);
-    background: #34d399;
+    background: linear-gradient(135deg, #34d399, #10b981);
     color: #000 !important;
   }
   .btn-secondary {
@@ -593,8 +603,8 @@ import Layout from '../layouts/Layout.astro';
     padding: 12px 28px;
     background: rgba(255, 255, 255, 0.06);
     color: #fff !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
     font-size: 15px;
     font-weight: 600;
     min-height: 44px;
@@ -603,7 +613,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .btn-secondary:hover {
     background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(16, 185, 129, 0.4);
+    border-color: var(--lux-gold);
     color: #fff !important;
   }
 
@@ -618,20 +628,22 @@ import Layout from '../layouts/Layout.astro';
   .stat-card {
     text-align: center;
     padding: 24px 16px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--lux-card);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, transform 0.3s;
   }
   .stat-card:hover {
-    border-color: rgba(16, 185, 129, 0.25);
+    border-color: var(--lux-line);
+    transform: translateY(-3px);
   }
   .stat-number {
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 800;
-    color: #10b981;
+    color: var(--lux-emerald);
     line-height: 1;
     margin-bottom: 4px;
+    font-family: var(--lux-serif);
   }
   .stat-unit {
     font-size: 1rem;
@@ -649,11 +661,12 @@ import Layout from '../layouts/Layout.astro';
   }
   .section-title {
     font-size: clamp(1.5rem, 3vw, 2.25rem);
-    font-weight: 800;
+    font-weight: 700;
     color: #fff;
     text-align: center;
     margin-bottom: 8px;
     letter-spacing: -1px;
+    font-family: var(--lux-serif);
   }
   .section-desc {
     color: rgba(255, 255, 255, 0.6);
@@ -672,21 +685,23 @@ import Layout from '../layouts/Layout.astro';
   }
   .step-card {
     padding: 32px 24px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--lux-card);
     border: 1px solid rgba(255, 255, 255, 0.06);
     text-align: center;
     position: relative;
+    transition: border-color 0.3s, transform 0.3s;
   }
   .step-card:not(:last-child) {
     border-right: none;
   }
   .step-card:hover {
-    border-color: rgba(16, 185, 129, 0.25);
+    border-color: var(--lux-line);
+    transform: translateY(-3px);
   }
   .step-icon {
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
     border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 14px;
     display: flex;
@@ -697,13 +712,13 @@ import Layout from '../layouts/Layout.astro';
   .step-icon svg {
     width: 24px;
     height: 24px;
-    color: #10b981;
+    color: var(--lux-emerald);
   }
   .step-number {
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #10b981;
+    color: var(--lux-gold);
     margin-bottom: 8px;
     font-family: 'JetBrains Mono', monospace;
   }
@@ -712,6 +727,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
     color: #fff;
     margin-bottom: 6px;
+    font-family: var(--lux-serif);
   }
   .step-desc {
     font-size: 13px;
@@ -721,11 +737,13 @@ import Layout from '../layouts/Layout.astro';
 
   /* Domain */
   .domain-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(10, 10, 18, 0.5));
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(10, 10, 18, 0.5));
+    border: 1px solid var(--lux-line);
+    border-radius: 20px;
     padding: 40px;
     margin-bottom: 80px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
   }
   .domain-header {
     display: flex;
@@ -736,9 +754,9 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 24px;
   }
   .price-badge {
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 8px;
+    background: var(--lux-gold-soft);
+    border: 1px solid var(--lux-line);
+    border-radius: 10px;
     padding: 8px 16px;
     text-align: center;
     flex-shrink: 0;
@@ -751,8 +769,9 @@ import Layout from '../layouts/Layout.astro';
   .price-badge-amount {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #10b981;
+    color: var(--lux-gold);
     margin: 0;
+    font-family: var(--lux-serif);
   }
   .price-badge-unit {
     font-size: 0.875rem;
@@ -781,7 +800,7 @@ import Layout from '../layouts/Layout.astro';
     width: 100%;
     background: rgba(26, 26, 46, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 12px 16px 12px 40px;
     color: #fff;
     font-size: 15px;
@@ -790,7 +809,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .search-input:focus {
     outline: none;
-    border-color: #10b981;
+    border-color: var(--lux-emerald);
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
   }
   .search-input::placeholder {
@@ -819,30 +838,30 @@ import Layout from '../layouts/Layout.astro';
     gap: 20px;
   }
   .path-card {
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--lux-card);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 32px;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s, box-shadow 0.3s;
   }
   .path-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(16, 185, 129, 0.3);
-    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.08);
+    border-color: var(--lux-line);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
   }
   .path-card-highlight {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(15, 52, 96, 0.08));
+    background: linear-gradient(160deg, rgba(16, 185, 129, 0.08), rgba(212, 175, 55, 0.06));
     border: 2px solid rgba(16, 185, 129, 0.3);
     position: relative;
   }
   .path-card-highlight:hover {
-    border-color: rgba(16, 185, 129, 0.5);
+    border-color: var(--lux-gold);
   }
   .popular-badge {
     position: absolute;
     top: -12px;
     left: 24px;
-    background: #10b981;
+    background: linear-gradient(135deg, #10b981, #059669);
     color: #000;
     font-size: 11px;
     font-weight: 700;
@@ -858,7 +877,7 @@ import Layout from '../layouts/Layout.astro';
   .path-icon {
     width: 40px;
     height: 40px;
-    background: rgba(16, 185, 129, 0.15);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
     border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 12px;
     display: flex;
@@ -867,13 +886,14 @@ import Layout from '../layouts/Layout.astro';
     flex-shrink: 0;
   }
   .path-icon svg {
-    color: #10b981;
+    color: var(--lux-emerald);
   }
   .path-name {
     font-size: 1.25rem;
     font-weight: 700;
     color: #fff;
     margin: 0;
+    font-family: var(--lux-serif);
   }
   .path-sub {
     font-size: 12px;
@@ -913,29 +933,30 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     flex-direction: column;
     padding: 32px 24px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--lux-card);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    border-radius: 20px;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s, box-shadow 0.3s;
   }
   .price-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(16, 185, 129, 0.3);
-    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.08);
+    border-color: var(--lux-line);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
   }
   .price-card-highlight {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(15, 52, 96, 0.08));
+    background: linear-gradient(160deg, rgba(16, 185, 129, 0.08), rgba(212, 175, 55, 0.06));
     border: 2px solid rgba(16, 185, 129, 0.3);
     position: relative;
   }
   .price-card-highlight:hover {
-    border-color: rgba(16, 185, 129, 0.5);
+    border-color: var(--lux-gold);
   }
   .price-name {
     font-size: 20px;
     font-weight: 700;
     color: #fff;
     margin-bottom: 4px;
+    font-family: var(--lux-serif);
   }
   .price-desc {
     font-size: 13px;
@@ -947,6 +968,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 800;
     color: #fff;
     margin-bottom: 2px;
+    font-family: var(--lux-serif);
   }
   .price-amount span {
     font-size: 0.875rem;
@@ -975,15 +997,17 @@ import Layout from '../layouts/Layout.astro';
 
   /* Bolt.new */
   .bolt-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(10, 10, 18, 0.5));
+    border: 1px solid var(--lux-line);
+    border-radius: 20px;
     padding: 40px;
     margin-bottom: 80px;
     transition: border-color 0.3s;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
   }
   .bolt-card:hover {
-    border-color: rgba(16, 185, 129, 0.3);
+    border-color: var(--lux-gold);
   }
   .bolt-header {
     display: flex;
@@ -994,7 +1018,7 @@ import Layout from '../layouts/Layout.astro';
   .bolt-icon {
     width: 40px;
     height: 40px;
-    background: rgba(16, 185, 129, 0.1);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
     border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 12px;
     display: flex;
@@ -1003,13 +1027,14 @@ import Layout from '../layouts/Layout.astro';
     flex-shrink: 0;
   }
   .bolt-icon svg {
-    color: #10b981;
+    color: var(--lux-emerald);
   }
   .bolt-title {
     font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
     margin: 0;
+    font-family: var(--lux-serif);
   }
   .bolt-desc {
     font-size: 15px;
@@ -1025,27 +1050,32 @@ import Layout from '../layouts/Layout.astro';
   .bolt-feature-card {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 24px;
+    transition: border-color 0.3s;
+  }
+  .bolt-feature-card:hover {
+    border-color: var(--lux-line);
   }
   .bolt-feature-icon {
     width: 36px;
     height: 36px;
-    background: rgba(16, 185, 129, 0.1);
-    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 12px;
   }
   .bolt-feature-icon svg {
-    color: #10b981;
+    color: var(--lux-emerald);
   }
   .bolt-feature-title {
     font-size: 14px;
     font-weight: 600;
     color: #fff;
     margin-bottom: 6px;
+    font-family: var(--lux-serif);
   }
   .bolt-feature-desc {
     font-size: 14px;
@@ -1074,15 +1104,15 @@ import Layout from '../layouts/Layout.astro';
   }
   .addon-card {
     padding: 20px;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--lux-card);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
+    border-radius: 14px;
     transition: all 0.2s;
     text-decoration: none;
     display: block;
   }
   .addon-card:hover {
-    border-color: rgba(16, 185, 129, 0.4);
+    border-color: var(--lux-line);
     transform: translateY(-2px);
   }
   .addon-card-header {
@@ -1094,7 +1124,7 @@ import Layout from '../layouts/Layout.astro';
   .addon-icon {
     width: 32px;
     height: 32px;
-    background: rgba(16, 185, 129, 0.1);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
     border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 8px;
     display: flex;
@@ -1103,7 +1133,7 @@ import Layout from '../layouts/Layout.astro';
     flex-shrink: 0;
   }
   .addon-icon svg {
-    color: #10b981;
+    color: var(--lux-emerald);
   }
   .addon-name {
     font-size: 15px;
@@ -1111,9 +1141,10 @@ import Layout from '../layouts/Layout.astro';
     color: #fff;
     margin: 0;
     transition: color 0.2s;
+    font-family: var(--lux-serif);
   }
   .addon-card:hover .addon-name {
-    color: #10b981;
+    color: var(--lux-gold);
   }
   .addon-desc {
     font-size: 13px;
@@ -1123,12 +1154,14 @@ import Layout from '../layouts/Layout.astro';
 
   /* CTA */
   .cta-section {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(15, 52, 96, 0.08));
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: 16px;
+    background: linear-gradient(160deg, rgba(16, 185, 129, 0.08), rgba(212, 175, 55, 0.06));
+    border: 1px solid var(--lux-line);
+    border-radius: 20px;
     padding: 48px;
     text-align: center;
     margin-bottom: 80px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
   }
   .cta-buttons {
     display: flex;
@@ -1139,9 +1172,9 @@ import Layout from '../layouts/Layout.astro';
 
   /* FAQ */
   .faq-card {
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--lux-card);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 40px;
   }
   .faq-title {
@@ -1149,6 +1182,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
     color: #fff;
     margin-bottom: 32px;
+    font-family: var(--lux-serif);
   }
   .faq-grid {
     display: grid;
@@ -1160,6 +1194,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 600;
     color: #fff;
     margin-bottom: 6px;
+    font-family: var(--lux-serif);
   }
   .faq-item p {
     font-size: 14px;
@@ -1168,12 +1203,12 @@ import Layout from '../layouts/Layout.astro';
     margin: 0;
   }
   .emerald-link {
-    color: #10b981;
+    color: var(--lux-emerald);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
   .emerald-link:hover {
-    color: #34d399;
+    color: var(--lux-gold);
   }
 
   /* Mobile Responsive */
