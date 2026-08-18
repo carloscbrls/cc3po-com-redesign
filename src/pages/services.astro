@@ -4,278 +4,339 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Services — Compliance, Web, IT, AI & Phone Systems | CC3PO" description="CC3PO services — compliance monitoring, website design, IT support, AI automation, and phone systems for small businesses. When services connect, they multiply.">
 
-  <section class="hero" id="main-content">
-    <div class="container">
-      <h1>Compliance Leads.<br>Full Stack Delivers.</h1>
+  <!-- Hero Section with animated gradient -->
+  <section class="services-hero" id="main-content">
+    <div class="hero-particles" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">Full Stack Services</div>
+      <h1>Compliance Leads.<br><span class="hero-accent">Full Stack Delivers.</span></h1>
       <p class="hero-sub">ADA compliance gets you in the door. Web development, IT support, AI automation, and phone systems keep you growing. Every service compounds — one improvement lifts everything.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Services</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">9.2+</span>
+          <span class="stat-label">Avg LINC Score</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">1</span>
+          <span class="stat-label">System</span>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="/intelligence-audit" class="btn btn-primary">Get Your Intelligence Audit →</a>
+        <a href="#stacks" class="btn btn-ghost">Explore Stacks ↓</a>
+      </div>
     </div>
   </section>
 
-  <section class="linc-intro">
+  <!-- Trust Bar -->
+  <section class="trust-bar">
     <div class="container">
-      <div class="linc-badge">Full Stack</div>
-      <h2 class="linc-headline">Five Services. One System.</h2>
-      <p class="linc-desc">Compliance is the spear. Tech stack is the shaft. Most agencies sell you one thing — we build systems where every piece makes the next piece stronger. <strong>Compliance monitoring</strong> identifies what's broken. <strong>Web development</strong> builds what you need. <strong>IT support</strong> keeps it running. <strong>AI automation</strong> makes it smart. <strong>Phone systems</strong> connect you to customers. That's CC3PO.</p>
+      <div class="trust-items">
+        <div class="trust-item">
+          <span class="trust-icon">🛡️</span>
+          <span>ADA/WCAG Compliant</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🏛️</span>
+          <span>CA Certified Small Business</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🌎</span>
+          <span>Latino-Owned</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🔒</span>
+          <span>SB/DVBE Eligible</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="stacks-section">
+  <!-- Stacks Section -->
+  <section class="stacks-section" id="stacks">
     <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Service Stacks</span>
+        <h2>Five Services. <span class="gold">One System.</span></h2>
+        <p>Compliance is the spear. Tech stack is the shaft. Most agencies sell you one thing — we build systems where every piece makes the next piece stronger.</p>
+      </div>
 
-      <!-- COMPLIANCE + AUTOMATION STACK -->
+      <!-- COMPLIANCE + TECH STACK -->
       <div class="stack">
+        <div class="stack-glow" aria-hidden="true"></div>
         <div class="stack-header">
-          <span class="stack-icon">🛡️</span>
-          <div>
+          <div class="stack-icon-wrap">
+            <span class="stack-icon">🛡️</span>
+          </div>
+          <div class="stack-header-text">
             <h3 class="stack-title">Compliance + Tech Stack</h3>
             <p class="stack-tagline">WCAG auditing + automated monitoring + IT support = continuous compliance, not one-and-done</p>
           </div>
-          <span class="stack-linc-score">LINC Score: 9.2</span>
+          <span class="stack-linc-score"><span class="linc-label">LINC</span> 9.2</span>
         </div>
-        <div class="stack-compound">
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+        <div class="stack-flow">
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>Compliance identifies the gaps</strong>
               <span>ADA, WCAG & HIPAA audits reveal what's broken</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>Web dev & IT fix them</strong>
               <span>Website fixes, IT support, and monitoring keeps them from coming back</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot compound-dot--end"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot flow-dot--gold"></div>
+            <div class="flow-content">
               <strong>Result: Compliance that compounds</strong>
               <span>Every audit makes the tech stack smarter. Every fix prevents the next finding.</span>
             </div>
           </div>
         </div>
         <div class="stack-services">
-          <a href="/products/shield/" class="stack-service-card">
-            <div class="ss-icon">🛡️</div>
+          <a href="/products/shield/" class="service-card featured">
+            <div class="service-card-shine" aria-hidden="true"></div>
+            <div class="sc-icon-wrap sc-icon-wrap--shield"><span>🛡️</span></div>
             <h4>Compliance Monitoring</h4>
             <p>ADA, WCAG & HIPAA scanning. Continuous protection from $4K+ lawsuits.</p>
-            <span class="ss-price">From $97/mo</span>
+            <span class="sc-price">From $97/mo</span>
           </a>
-          <a href="/services/" class="stack-service-card">
-            <div class="ss-icon">🌐</div>
+          <a href="/services/" class="service-card">
+            <div class="sc-icon-wrap sc-icon-wrap--web"><span>🌐</span></div>
             <h4>Website Design</h4>
             <p>Modern, fast, mobile-first websites. ADA-compliant. Built for conversion.</p>
-            <span class="ss-price">From $2,500</span>
+            <span class="sc-price">From $2,500</span>
           </a>
-          <a href="/services/" class="stack-service-card">
-            <div class="ss-icon">🔧</div>
+          <a href="/services/" class="service-card">
+            <div class="sc-icon-wrap sc-icon-wrap--it"><span>🔧</span></div>
             <h4>IT Support</h4>
             <p>Proactive IT, security patching, backups, and monitoring. Your tech stack, handled.</p>
-            <span class="ss-price">From $197/mo</span>
+            <span class="sc-price">From $197/mo</span>
           </a>
         </div>
       </div>
 
       <!-- LOCAL BUSINESS + AI STACK -->
       <div class="stack">
+        <div class="stack-glow stack-glow--blue" aria-hidden="true"></div>
         <div class="stack-header">
-          <span class="stack-icon">📞</span>
-          <div>
+          <div class="stack-icon-wrap stack-icon-wrap--blue">
+            <span class="stack-icon">📞</span>
+          </div>
+          <div class="stack-header-text">
             <h3 class="stack-title">Local Business + AI Stack</h3>
             <p class="stack-tagline">Website + AI phone answering + automation = no lead left behind</p>
           </div>
-          <span class="stack-linc-score">LINC Score: 9.4</span>
+          <span class="stack-linc-score stack-linc-score--blue"><span class="linc-label">LINC</span> 9.4</span>
         </div>
-        <div class="stack-compound">
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+        <div class="stack-flow">
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>Website captures every lead</strong>
               <span>Modern, fast, conversion-optimized design</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>AI answers calls 24/7</strong>
               <span>Callie — our AI receptionist — answers, qualifies, and transfers live</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot compound-dot--end"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot flow-dot--blue"></div>
+            <div class="flow-content">
               <strong>Result: Revenue that compounds</strong>
-              <span>More captured leads → more data → smarter AI → more conversions. Every call answered.</span>
+              <span>More captured leads → more data → smarter AI → more conversions</span>
             </div>
           </div>
         </div>
         <div class="stack-services">
-          <a href="/services/" class="stack-service-card">
-            <div class="ss-icon">🌐</div>
+          <a href="/services/" class="service-card">
+            <div class="sc-icon-wrap sc-icon-wrap--web"><span>🌐</span></div>
             <h4>Website Design</h4>
             <p>Modern, fast, mobile-first websites built for conversion. ADA-compliant.</p>
-            <span class="ss-price">From $2,500</span>
+            <span class="sc-price">From $2,500</span>
           </a>
-          <a href="/ai-voice-agent/" class="stack-service-card featured">
-            <div class="ss-icon">📞</div>
+          <a href="/ai-voice-agent/" class="service-card featured featured--blue">
+            <div class="service-card-shine" aria-hidden="true"></div>
+            <div class="sc-icon-wrap sc-icon-wrap--callie"><span>📞</span></div>
             <h4>AI Phone Answering (Callie)</h4>
             <p>Never miss a call again. Callie answers, qualifies, and transfers — 24/7.</p>
-            <span class="ss-price">From $497/mo</span>
+            <span class="sc-price">From $497/mo</span>
           </a>
-          <a href="/ai-workflow-audit/" class="stack-service-card">
-            <div class="ss-icon">🤖</div>
+          <a href="/ai-workflow-audit/" class="service-card">
+            <div class="sc-icon-wrap sc-icon-wrap--ai"><span>🤖</span></div>
             <h4>AI Workflow Audit</h4>
             <p>Find where AI can save you 10+ hours/week. Automate the boring stuff.</p>
-            <span class="ss-price">From $497/mo</span>
+            <span class="sc-price">From $497/mo</span>
           </a>
         </div>
       </div>
 
       <!-- CONTENT + RESEARCH STACK -->
       <div class="stack">
+        <div class="stack-glow stack-glow--purple" aria-hidden="true"></div>
         <div class="stack-header">
-          <span class="stack-icon">📝</span>
-          <div>
+          <div class="stack-icon-wrap stack-icon-wrap--purple">
+            <span class="stack-icon">📝</span>
+          </div>
+          <div class="stack-header-text">
             <h3 class="stack-title">Content + Research Stack</h3>
             <p class="stack-tagline">Blog + social + research = compounding authority</p>
           </div>
-          <span class="stack-linc-score">LINC Score: 8.7</span>
+          <span class="stack-linc-score stack-linc-score--purple"><span class="linc-label">LINC</span> 8.7</span>
         </div>
-        <div class="stack-compound">
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+        <div class="stack-flow">
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>Research feeds content</strong>
               <span>AI-driven insights become blog posts, social posts, newsletters</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>Content builds authority</strong>
               <span>Published consistently, optimizing for search and engagement</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot compound-dot--end"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot flow-dot--purple"></div>
+            <div class="flow-content">
               <strong>Result: Authority that compounds</strong>
-              <span>Every post strengthens SEO. Every insight makes the next post better. Content becomes an asset, not an expense.</span>
+              <span>Every post strengthens SEO. Content becomes an asset, not an expense.</span>
             </div>
           </div>
         </div>
         <div class="stack-services">
-          <a href="/services/" class="stack-service-card">
-            <div class="ss-icon">📝</div>
+          <a href="/services/" class="service-card">
+            <div class="sc-icon-wrap sc-icon-wrap--content"><span>📝</span></div>
             <h4>Daily Content</h4>
-            <p>AI-written blog posts, social media, and newsletters published on autopilot. Your brand, your voice, every day.</p>
-            <span class="ss-price">From $297/mo</span>
+            <p>AI-written blog posts, social media, and newsletters on autopilot. Your brand, every day.</p>
+            <span class="sc-price">From $297/mo</span>
           </a>
-          <a href="/pricing/" class="stack-service-card">
-            <div class="ss-icon">💰</div>
+          <a href="/pricing/" class="service-card">
+            <div class="sc-icon-wrap sc-icon-wrap--care"><span>💰</span></div>
             <h4>Care Plans</h4>
-            <p>IT support that grows with you. Proactive monitoring, priority response, and monthly health checks.</p>
-            <span class="ss-price">From $97/mo</span>
+            <p>IT support that grows with you. Proactive monitoring, priority response, monthly health checks.</p>
+            <span class="sc-price">From $97/mo</span>
           </a>
         </div>
       </div>
 
-      <!-- NEW: AUTOMATED SERVICES STACK -->
+      <!-- AUTOMATED SERVICES STACK -->
       <div class="stack">
+        <div class="stack-glow stack-glow--emerald" aria-hidden="true"></div>
         <div class="stack-header">
-          <span class="stack-icon">🤖</span>
-          <div>
+          <div class="stack-icon-wrap stack-icon-wrap--emerald">
+            <span class="stack-icon">🤖</span>
+          </div>
+          <div class="stack-header-text">
             <h3 class="stack-title">Automated Services Stack</h3>
             <p class="stack-tagline">AI-powered monitoring, backup, security, and optimization — all automated</p>
           </div>
-          <span class="stack-linc-score">LINC Score: 8.5</span>
+          <span class="stack-linc-score stack-linc-score--emerald"><span class="linc-label">LINC</span> 8.5</span>
         </div>
-        <div class="stack-compound">
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+        <div class="stack-flow">
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>AI monitors everything</strong>
               <span>Chatbot compliance, AI visibility, SSL certs, uptime — all checked daily</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot"></div>
+            <div class="flow-content">
               <strong>Automated fixes & backups</strong>
               <span>Auto-fix disclosures, auto-renew SSL, daily M365/Workspace backups</span>
             </div>
           </div>
-          <div class="compound-connector"></div>
-          <div class="compound-step">
-            <div class="compound-dot compound-dot--end"></div>
-            <div class="compound-content">
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="flow-dot flow-dot--emerald"></div>
+            <div class="flow-content">
               <strong>Result: Zero-touch operations</strong>
               <span>Daily Telegram one-liners, monthly PDFs, 30-day TTL auto-cancel. Set it and forget it.</span>
             </div>
           </div>
         </div>
-        <div class="stack-services">
-          <a href="https://insights.cc3po.com/products/disclose-shield/" class="stack-service-card featured">
-            <div class="ss-icon">🛡️</div>
+        <div class="stack-services stack-services--grid">
+          <a href="https://insights.cc3po.com/products/disclose-shield/" class="service-card featured featured--emerald">
+            <div class="service-card-shine" aria-hidden="true"></div>
+            <div class="sc-icon-wrap sc-icon-wrap--shield"><span>🛡️</span></div>
             <h4>DiscloseShield</h4>
-            <p>Automated AI chatbot disclosure monitoring for EU AI Act compliance. Daily scans, alerts, and auto-fixes.</p>
-            <span class="ss-price">From $67/mo</span>
+            <p>Automated AI chatbot disclosure monitoring for EU AI Act compliance.</p>
+            <span class="sc-price">From $67/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/visible-ai/" class="stack-service-card">
-            <div class="ss-icon">👁️</div>
+          <a href="https://insights.cc3po.com/products/visible-ai/" class="service-card">
+            <div class="sc-icon-wrap"><span>👁️</span></div>
             <h4>VisibleAI</h4>
-            <p>Monitor what AI search engines say about your business. Perplexity, ChatGPT, Gemini, Claude.</p>
-            <span class="ss-price">From $79/mo</span>
+            <p>Monitor what AI search engines say about your business.</p>
+            <span class="sc-price">From $79/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/backup-shield/" class="stack-service-card">
-            <div class="ss-icon">💾</div>
+          <a href="https://insights.cc3po.com/products/backup-shield/" class="service-card">
+            <div class="sc-icon-wrap"><span>💾</span></div>
             <h4>BackupShield</h4>
-            <p>Automated backup for Microsoft 365 and Google Workspace. Daily backups, restore drills.</p>
-            <span class="ss-price">From $97/mo</span>
+            <p>Automated backup for Microsoft 365 and Google Workspace.</p>
+            <span class="sc-price">From $97/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/secure-stack/" class="stack-service-card">
-            <div class="ss-icon">🔒</div>
+          <a href="https://insights.cc3po.com/products/secure-stack/" class="service-card">
+            <div class="sc-icon-wrap"><span>🔒</span></div>
             <h4>SecureStack</h4>
-            <p>EDR, DNS filtering, and password manager for SMBs. Cyber insurance compliant.</p>
-            <span class="ss-price">From $37/user/mo</span>
+            <p>EDR, DNS filtering, password manager. Cyber insurance compliant.</p>
+            <span class="sc-price">From $37/user/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/resena/" class="stack-service-card">
-            <div class="ss-icon">⭐</div>
+          <a href="https://insights.cc3po.com/products/resena/" class="service-card">
+            <div class="sc-icon-wrap"><span>⭐</span></div>
             <h4>Reseña</h4>
-            <p>Bilingual Google Business Profile review management. AI replies in English or Spanish.</p>
-            <span class="ss-price">From $97/mo</span>
+            <p>Bilingual Google Business Profile review management. AI replies.</p>
+            <span class="sc-price">From $97/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/pixel-diet/" class="stack-service-card">
-            <div class="ss-icon">🖼️</div>
+          <a href="https://insights.cc3po.com/products/pixel-diet/" class="service-card">
+            <div class="sc-icon-wrap"><span>🖼️</span></div>
             <h4>PixelDiet</h4>
-            <p>Automated image optimization and CDN delivery. WebP/AVIF conversion.</p>
-            <span class="ss-price">From $39/mo</span>
+            <p>Automated image optimization and CDN delivery. WebP/AVIF.</p>
+            <span class="sc-price">From $39/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/cert-guard/" class="stack-service-card">
-            <div class="ss-icon">🔐</div>
+          <a href="https://insights.cc3po.com/products/cert-guard/" class="service-card">
+            <div class="sc-icon-wrap"><span>🔐</span></div>
             <h4>CertGuard</h4>
-            <p>SSL certificate monitoring and auto-renewal. Never let a cert expire.</p>
-            <span class="ss-price">From $19/mo</span>
+            <p>SSL certificate monitoring and auto-renewal.</p>
+            <span class="sc-price">From $19/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/site-health/" class="stack-service-card">
-            <div class="ss-icon">📊</div>
+          <a href="https://insights.cc3po.com/products/site-health/" class="service-card">
+            <div class="sc-icon-wrap"><span>📊</span></div>
             <h4>SiteHealth</h4>
-            <p>Uptime, Core Web Vitals, and error monitoring with public status pages.</p>
-            <span class="ss-price">From $49/mo</span>
+            <p>Uptime, Core Web Vitals, error monitoring with status pages.</p>
+            <span class="sc-price">From $49/mo</span>
           </a>
-          <a href="https://insights.cc3po.com/products/inbox-concierge/" class="stack-service-card">
-            <div class="ss-icon">📬</div>
+          <a href="https://insights.cc3po.com/products/inbox-concierge/" class="service-card">
+            <div class="sc-icon-wrap"><span>📬</span></div>
             <h4>InboxConcierge</h4>
-            <p>Bilingual AI inbox triage. AI sorts emails, drafts replies, sends daily digest.</p>
-            <span class="ss-price">From $97/mo</span>
+            <p>Bilingual AI inbox triage. Sorts emails, drafts replies.</p>
+            <span class="sc-price">From $97/mo</span>
           </a>
         </div>
       </div>
@@ -283,22 +344,27 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <section class="uncarved-section">
+  <!-- Uncarved Block Philosophy -->
+  <section class="philosophy-section">
     <div class="container">
-      <div class="uncarved-card">
-        <span class="uncarved-icon">◻️</span>
-        <h2>We're Not a Specialist Tool.<br>We're the Uncarved Block.</h2>
-        <p>Most agencies do one thing well. We do many things that <em>connect</em> well. The uncarved block — 多 朴 — represents unlimited potential before it's shaped into something limited. We stay multi-domain, adaptive, compounding. That's why stacks outperform standalone services.</p>
-        <div class="uncarved-principles">
-          <div class="uncarved-principle">
+      <div class="philosophy-card">
+        <div class="philosophy-glow" aria-hidden="true"></div>
+        <span class="philosophy-icon">◻️</span>
+        <h2>We're Not a Specialist Tool.<br>We're the <span class="gold">Uncarved Block.</span></h2>
+        <p>Most agencies do one thing well. We do many things that <em>connect</em> well. The uncarved block — 樸 — represents unlimited potential before it's shaped into something limited. We stay multi-domain, adaptive, compounding. That's why stacks outperform standalone services.</p>
+        <div class="philosophy-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">◇</div>
             <strong>Multi-domain</strong>
             <span>Compliance, IT, content, AI — not siloed, connected</span>
           </div>
-          <div class="uncarved-principle">
+          <div class="pillar">
+            <div class="pillar-icon">◈</div>
             <strong>Adaptive</strong>
             <span>Stacks flex as your business evolves</span>
           </div>
-          <div class="uncarved-principle">
+          <div class="pillar">
+            <div class="pillar-icon">◆</div>
             <strong>Compounding</strong>
             <span>Every improvement lifts the whole system</span>
           </div>
@@ -307,109 +373,283 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
+      <div class="cta-glow" aria-hidden="true"></div>
       <h2>Find Out Which Stack Fits Your Business</h2>
       <p>Our Intelligence Architecture Audit maps your current systems and shows you exactly which stack will compound fastest for your business.</p>
-      <a href="https://insights.cc3po.com/products/" class="btn btn-primary">Browse All Products →</a>
-      <a href="/intelligence-audit" class="btn btn-secondary">Get Your Intelligence Audit</a>
+      <div class="cta-buttons">
+        <a href="https://insights.cc3po.com/products/" class="btn btn-primary">Browse All Products →</a>
+        <a href="/intelligence-audit" class="btn btn-outline">Get Your Intelligence Audit</a>
+      </div>
     </div>
   </section>
 
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(135deg, #050508 0%, #1a0a2e 50%, #050508 100%);
-    text-align: center;
-    padding: 120px 24px 80px;
-  }
-  .hero h1 {
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 800;
-    background: linear-gradient(135deg, #fff, #a78bfa, #4fc3f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-    line-height: 1.15;
-  }
-  .hero-sub {
-    font-size: 18px;
-    color: #a1a1aa;
-    max-width: 620px;
-    margin: 0 auto;
-    line-height: 1.7;
+  /* ===== LUXURY VARIABLES ===== */
+  :root {
+    --gold: #d4a853;
+    --gold-light: #f0d78c;
+    --gold-dark: #a67c2e;
+    --navy: #0a0e1a;
+    --navy-light: #111827;
+    --navy-mid: #1a2035;
+    --blue-accent: #4fc3f7;
+    --emerald: #00e676;
+    --purple: #a78bfa;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-hover: rgba(255, 255, 255, 0.06);
   }
 
-  /* LINC Intro Section */
-  .linc-intro {
-    padding: 80px 0 40px;
-    background: var(--bg-primary);
+  /* ===== HERO ===== */
+  .services-hero {
+    position: relative;
+    background: linear-gradient(135deg, #050510 0%, #0d1b2a 30%, #1a0a2e 60%, #050510 100%);
+    padding: 140px 24px 100px;
     text-align: center;
+    overflow: hidden;
   }
-  .linc-badge {
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(212,168,83,0.3) 50%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, rgba(212,168,83,0.2) 50%, transparent 100%),
+      radial-gradient(1px 1px at 50% 10%, rgba(79,195,247,0.3) 50%, transparent 100%),
+      radial-gradient(1px 1px at 70% 80%, rgba(167,139,250,0.2) 50%, transparent 100%),
+      radial-gradient(1px 1px at 90% 40%, rgba(212,168,83,0.25) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 25% 85%, rgba(255,255,255,0.15) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 75% 15%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(212,168,83,0.08) 0%, rgba(79,195,247,0.04) 40%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-badge {
     display: inline-block;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--accent);
-    padding: 6px 16px;
-    border: 1px solid rgba(233,69,96,0.25);
+    color: var(--gold);
+    padding: 6px 20px;
+    border: 1px solid rgba(212,168,83,0.3);
     border-radius: 100px;
-    background: rgba(233,69,96,0.06);
-    margin-bottom: 20px;
+    background: rgba(212,168,83,0.06);
+    margin-bottom: 28px;
   }
-  .linc-headline {
+  .services-hero h1 {
+    font-size: clamp(36px, 5.5vw, 64px);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -2px;
+  }
+  .hero-accent {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--blue-accent));
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 600px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-number {
+    display: block;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: -1px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ===== TRUST BAR ===== */
+  .trust-bar {
+    background: var(--navy);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 20px 0;
+  }
+  .trust-items {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+  }
+  .trust-icon {
+    font-size: 18px;
+  }
+
+  /* ===== SECTION HEADER ===== */
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .section-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 6px 16px;
+    border: 1px solid rgba(212,168,83,0.25);
+    border-radius: 100px;
+    background: rgba(212,168,83,0.06);
+    margin-bottom: 16px;
+  }
+  .section-header h2 {
     font-size: clamp(28px, 4vw, 44px);
     font-weight: 800;
     color: #fff;
     margin-bottom: 16px;
     letter-spacing: -1px;
   }
-  .linc-desc {
+  .gold {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  }
+  .section-header p {
     font-size: 17px;
-    color: var(--text-secondary);
-    max-width: 680px;
+    color: rgba(255,255,255,0.6);
+    max-width: 600px;
     margin: 0 auto;
     line-height: 1.7;
   }
-  .linc-desc strong {
-    color: #fff;
-  }
-  .linc-desc em {
-    color: var(--accent);
-    font-style: normal;
-  }
 
-  /* Stacks Section */
+  /* ===== STACKS ===== */
   .stacks-section {
-    padding: 60px 0 80px;
-    background: var(--bg-primary);
+    padding: 80px 0;
+    background: var(--navy);
   }
   .stack {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 36px 32px;
-    margin-bottom: 32px;
-    transition: border-color 0.3s;
+    position: relative;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px 36px;
+    margin-bottom: 36px;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.4s, box-shadow 0.4s;
+    overflow: hidden;
   }
   .stack:hover {
-    border-color: rgba(233,69,96,0.2);
+    border-color: rgba(212,168,83,0.2);
+    box-shadow: 0 0 60px rgba(212,168,83,0.05);
   }
+  .stack-glow {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(212,168,83,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .stack-glow--blue {
+    background: radial-gradient(ellipse, rgba(79,195,247,0.06) 0%, transparent 70%);
+  }
+  .stack-glow--purple {
+    background: radial-gradient(ellipse, rgba(167,139,250,0.06) 0%, transparent 70%);
+  }
+  .stack-glow--emerald {
+    background: radial-gradient(ellipse, rgba(0,230,118,0.06) 0%, transparent 70%);
+  }
+
   .stack-header {
     display: flex;
     align-items: flex-start;
     gap: 16px;
     margin-bottom: 28px;
   }
-  .stack-icon {
-    font-size: 36px;
+  .stack-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(212,168,83,0.15), rgba(212,168,83,0.05));
+    border: 1px solid rgba(212,168,83,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    font-size: 28px;
+  }
+  .stack-icon-wrap--blue {
+    background: linear-gradient(135deg, rgba(79,195,247,0.15), rgba(79,195,247,0.05));
+    border-color: rgba(79,195,247,0.2);
+  }
+  .stack-icon-wrap--purple {
+    background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05));
+    border-color: rgba(167,139,250,0.2);
+  }
+  .stack-icon-wrap--emerald {
+    background: linear-gradient(135deg, rgba(0,230,118,0.15), rgba(0,230,118,0.05));
+    border-color: rgba(0,230,118,0.2);
+  }
+  .stack-icon {
+    font-size: 28px;
+  }
+  .stack-header-text {
+    flex: 1;
   }
   .stack-title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
     color: #fff;
     margin-bottom: 4px;
@@ -417,266 +657,414 @@ import Layout from '../layouts/Layout.astro';
   }
   .stack-tagline {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: rgba(255,255,255,0.55);
     line-height: 1.5;
   }
   .stack-linc-score {
     margin-left: auto;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.5px;
-    color: var(--success);
-    background: rgba(0,230,118,0.08);
-    border: 1px solid rgba(0,230,118,0.15);
-    padding: 6px 14px;
+    color: var(--gold);
+    background: rgba(212,168,83,0.08);
+    border: 1px solid rgba(212,168,83,0.2);
+    padding: 8px 16px;
     border-radius: 100px;
     white-space: nowrap;
     flex-shrink: 0;
   }
+  .stack-linc-score--blue {
+    color: var(--blue-accent);
+    background: rgba(79,195,247,0.08);
+    border-color: rgba(79,195,247,0.2);
+  }
+  .stack-linc-score--purple {
+    color: var(--purple);
+    background: rgba(167,139,250,0.08);
+    border-color: rgba(167,139,250,0.2);
+  }
+  .stack-linc-score--emerald {
+    color: var(--emerald);
+    background: rgba(0,230,118,0.08);
+    border-color: rgba(0,230,118,0.2);
+  }
+  .linc-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin-right: 4px;
+  }
 
-  /* Compound Flow */
-  .stack-compound {
+  /* ===== FLOW STEPS ===== */
+  .stack-flow {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     gap: 0;
     margin-bottom: 28px;
-    padding: 20px;
+    padding: 24px;
     background: rgba(0,0,0,0.3);
-    border-radius: 12px;
-    border: 1px solid var(--border);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
   }
-  .compound-step {
+  .flow-step {
     flex: 1;
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    padding: 12px 8px;
+    padding: 8px;
   }
-  .compound-dot {
+  .flow-dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--gold);
     flex-shrink: 0;
-    margin-top: 4px;
-    box-shadow: 0 0 12px rgba(233,69,96,0.4);
+    margin-top: 5px;
+    box-shadow: 0 0 16px rgba(212,168,83,0.4);
   }
-  .compound-dot--end {
-    background: var(--success);
-    box-shadow: 0 0 12px rgba(0,230,118,0.4);
+  .flow-dot--gold {
+    background: var(--gold);
+    box-shadow: 0 0 16px rgba(212,168,83,0.5);
   }
-  .compound-content strong {
+  .flow-dot--blue {
+    background: var(--blue-accent);
+    box-shadow: 0 0 16px rgba(79,195,247,0.5);
+  }
+  .flow-dot--purple {
+    background: var(--purple);
+    box-shadow: 0 0 16px rgba(167,139,250,0.5);
+  }
+  .flow-dot--emerald {
+    background: var(--emerald);
+    box-shadow: 0 0 16px rgba(0,230,118,0.5);
+  }
+  .flow-content strong {
     display: block;
     font-size: 14px;
     font-weight: 700;
     color: #fff;
     margin-bottom: 2px;
   }
-  .compound-content span {
+  .flow-content span {
     font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.4;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.45;
     display: block;
   }
-  .compound-connector {
-    width: 32px;
+  .flow-arrow {
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.5;
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+
+  /* ===== SERVICE CARDS ===== */
+  .stack-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .stack-services--grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .service-card {
+    position: relative;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212,168,83,0.3);
+    box-shadow: 0 12px 40px rgba(212,168,83,0.08);
+  }
+  .service-card.featured {
+    border-color: rgba(212,168,83,0.3);
+    background: linear-gradient(135deg, rgba(212,168,83,0.04), rgba(212,168,83,0.01));
+  }
+  .service-card.featured--blue {
+    border-color: rgba(79,195,247,0.3);
+    background: linear-gradient(135deg, rgba(79,195,247,0.04), rgba(79,195,247,0.01));
+  }
+  .service-card.featured--blue:hover {
+    border-color: rgba(79,195,247,0.4);
+    box-shadow: 0 12px 40px rgba(79,195,247,0.08);
+  }
+  .service-card.featured--emerald {
+    border-color: rgba(0,230,118,0.3);
+    background: linear-gradient(135deg, rgba(0,230,118,0.04), rgba(0,230,118,0.01));
+  }
+  .service-card.featured--emerald:hover {
+    border-color: rgba(0,230,118,0.4);
+    box-shadow: 0 12px 40px rgba(0,230,118,0.08);
+  }
+  .service-card-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+  }
+  .service-card:hover .service-card-shine {
+    left: 100%;
+  }
+  .sc-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    font-size: 22px;
+    margin-bottom: 14px;
   }
-  .compound-connector::after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--success));
-    opacity: 0.5;
+  .sc-icon-wrap--shield {
+    background: linear-gradient(135deg, rgba(212,168,83,0.15), rgba(212,168,83,0.05));
   }
-
-  /* Stack Service Cards */
-  .stack-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
+  .sc-icon-wrap--web {
+    background: linear-gradient(135deg, rgba(79,195,247,0.15), rgba(79,195,247,0.05));
   }
-  .stack-service-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px 20px;
-    text-decoration: none;
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
+  .sc-icon-wrap--it {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
   }
-  .stack-service-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent);
-    box-shadow: 0 8px 24px rgba(233,69,96,0.15);
+  .sc-icon-wrap--callie {
+    background: linear-gradient(135deg, rgba(79,195,247,0.2), rgba(79,195,247,0.05));
   }
-  .stack-service-card.featured {
-    border-color: var(--blue);
-    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(79,195,247,0.05));
+  .sc-icon-wrap--ai {
+    background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05));
   }
-  .stack-service-card.featured:hover {
-    border-color: var(--blue);
-    box-shadow: 0 8px 24px rgba(79,195,247,0.15);
+  .sc-icon-wrap--content {
+    background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05));
   }
-  .ss-icon {
-    font-size: 28px;
-    margin-bottom: 10px;
+  .sc-icon-wrap--care {
+    background: linear-gradient(135deg, rgba(212,168,83,0.15), rgba(212,168,83,0.05));
   }
-  .stack-service-card h4 {
+  .service-card h4 {
     color: #fff;
     font-size: 17px;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
   }
-  .stack-service-card p {
-    color: var(--text-secondary);
+  .service-card p {
+    color: rgba(255,255,255,0.55);
     font-size: 13px;
     line-height: 1.55;
     flex: 1;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
-  .ss-price {
-    color: var(--blue);
+  .sc-price {
+    color: var(--gold);
     font-weight: 700;
     font-size: 14px;
+    letter-spacing: -0.2px;
   }
-  .stack-service-card.featured .ss-price {
-    color: var(--success);
+  .service-card.featured--blue .sc-price {
+    color: var(--blue-accent);
+  }
+  .service-card.featured--emerald .sc-price {
+    color: var(--emerald);
   }
 
-  /* Uncarved Block Section */
-  .uncarved-section {
+  /* ===== PHILOSOPHY ===== */
+  .philosophy-section {
     padding: 80px 0;
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, var(--navy), var(--navy-light));
   }
-  .uncarved-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 48px 40px;
+  .philosophy-card {
+    position: relative;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 56px 48px;
     text-align: center;
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
+    backdrop-filter: blur(12px);
+    overflow: hidden;
   }
-  .uncarved-icon {
-    font-size: 40px;
+  .philosophy-glow {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(212,168,83,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .philosophy-icon {
+    font-size: 44px;
     display: block;
     margin-bottom: 20px;
   }
-  .uncarved-card h2 {
-    font-size: clamp(22px, 3vw, 32px);
+  .philosophy-card h2 {
+    font-size: clamp(24px, 3.5vw, 36px);
     font-weight: 800;
     color: #fff;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-    line-height: 1.3;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    line-height: 1.25;
   }
-  .uncarved-card p {
+  .philosophy-card p {
     font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 560px;
-    margin: 0 auto 28px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    max-width: 580px;
+    margin: 0 auto 36px;
   }
-  .uncarved-card em {
-    color: var(--accent);
+  .philosophy-card em {
+    color: var(--gold);
     font-style: normal;
   }
-  .uncarved-principles {
+  .philosophy-pillars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 20px;
   }
-  .uncarved-principle {
+  .pillar {
     background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 16px;
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 24px 16px;
+    transition: border-color 0.3s, transform 0.3s;
   }
-  .uncarved-principle strong {
+  .pillar:hover {
+    border-color: rgba(212,168,83,0.2);
+    transform: translateY(-2px);
+  }
+  .pillar-icon {
+    font-size: 24px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .pillar strong {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
     color: #fff;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
-  .uncarved-principle span {
+  .pillar span {
     font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.4;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.45;
   }
 
-  /* CTA Section */
+  /* ===== CTA SECTION ===== */
   .cta-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #0d0d0f, #1a0a2e);
+    position: relative;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #050510, #1a0a2e, #050510);
     text-align: center;
+    overflow: hidden;
+  }
+  .cta-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(212,168,83,0.1) 0%, transparent 70%);
+    pointer-events: none;
   }
   .cta-section h2 {
     color: #fff;
-    font-size: clamp(24px, 3.5vw, 36px);
+    font-size: clamp(28px, 4vw, 40px);
     font-weight: 800;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     letter-spacing: -1px;
+    position: relative;
   }
   .cta-section p {
-    color: #a1a1aa;
+    color: rgba(255,255,255,0.6);
     font-size: 17px;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
     max-width: 560px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    position: relative;
   }
-  .btn-primary {
-    background: linear-gradient(135deg, #e94560, #4fc3f7);
-    color: #fff;
-    padding: 14px 32px;
-    border: none;
-    border-radius: 8px;
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 12px;
     font-size: 16px;
     font-weight: 700;
-    cursor: pointer;
     text-decoration: none;
-    display: inline-block;
-    margin: 0 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.3s;
+    letter-spacing: -0.2px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+    color: #0a0e1a;
+    box-shadow: 0 4px 24px rgba(212,168,83,0.25);
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(233,69,96,0.35);
+    box-shadow: 0 8px 32px rgba(212,168,83,0.35);
   }
-  .btn-secondary {
+  .btn-outline {
     background: transparent;
-    color: #4fc3f7;
-    border: 2px solid #4fc3f7;
-    padding: 14px 32px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    margin: 0 8px;
-    transition: background 0.2s;
+    color: var(--gold);
+    border: 2px solid rgba(212,168,83,0.4);
   }
-  .btn-secondary:hover {
-    background: rgba(79,195,247,0.1);
+  .btn-outline:hover {
+    background: rgba(212,168,83,0.08);
+    border-color: var(--gold);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.3);
+    color: #fff;
   }
 
-  /* Responsive */
+  /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
-    .hero {
-      padding: 100px 20px 60px;
+    .services-hero {
+      padding: 110px 20px 70px;
     }
-    .hero h1 {
-      font-size: 28px;
+    .services-hero h1 {
+      font-size: 32px;
+      letter-spacing: -1px;
     }
     .hero-sub {
       font-size: 16px;
+    }
+    .hero-stats {
+      gap: 16px;
+    }
+    .stat-number {
+      font-size: 24px;
+    }
+    .stat-divider {
+      height: 30px;
     }
     .stack-header {
       flex-direction: column;
@@ -685,42 +1073,39 @@ import Layout from '../layouts/Layout.astro';
     .stack-linc-score {
       align-self: flex-start;
     }
-    .stack-compound {
+    .stack-flow {
       flex-direction: column;
       gap: 0;
       padding: 16px;
     }
-    .compound-connector {
-      width: auto;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .flow-arrow {
+      transform: rotate(90deg);
+      padding: 4px 0;
     }
-    .compound-connector::after {
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--accent), var(--success));
-    }
-    .compound-step {
+    .flow-step {
       padding: 8px;
-    }
-    .stack-services {
-      grid-template-columns: 1fr;
-    }
-    .uncarved-principles {
-      grid-template-columns: 1fr;
-    }
-    .uncarved-card {
-      padding: 32px 20px;
     }
     .stack {
       padding: 24px 16px;
     }
+    .stack-services,
+    .stack-services--grid {
+      grid-template-columns: 1fr;
+    }
+    .philosophy-pillars {
+      grid-template-columns: 1fr;
+    }
+    .philosophy-card {
+      padding: 32px 20px;
+    }
+    .trust-items {
+      gap: 20px;
+    }
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    .stack-services {
+    .stack-services,
+    .stack-services--grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
