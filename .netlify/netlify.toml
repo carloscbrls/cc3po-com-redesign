@@ -1,3 +1,4 @@
+redirectsOrigin = "config"
 plugins = []
 
 [functions]
@@ -159,6 +160,18 @@ force = true
 [[redirects]]
 from = "podcast.cc3po.com/*"
 to = "/podcast/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/is-your-site-legal/*"
+to = "/audit/:splat"
 status = 301.0
 force = true
 
