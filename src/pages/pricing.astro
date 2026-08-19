@@ -38,12 +38,12 @@ const schema = {
     <div class="container">
       <div style="background:linear-gradient(135deg,rgba(232,80,107,0.10),rgba(255,255,255,0.03));border:1px solid rgba(232,80,107,0.35);border-radius:24px;padding:48px;position:relative;overflow:hidden;">
         <div style="position:absolute;top:24px;right:24px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:0.05em;text-transform:uppercase;">Most Popular</div>
-        <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;">
+        <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;" class="village-grid">
           <div>
             <p style="color:var(--accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">The Village</p>
             <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.15;margin-bottom:16px;">Your whole business team. <br>One price.</h2>
             <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.6;margin-bottom:24px;">A full village of 24 specialized AI agents handling your website, social, reviews, compliance, email, content, lead handling, and morning reports. Build once. Run forever.</p>
-            <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0;margin:0 0 28px;">
+            <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0;margin:0 0 28px;" class="village-features">
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Website management</li>
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Daily content & social</li>
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Compliance monitoring</li>
@@ -194,3 +194,30 @@ const schema = {
   </section>
 
 </Layout>
+
+<style is:global>
+  /* Responsive: collapse the Village flagship 2-column layout to 1 column on mobile */
+  @media (max-width: 768px) {
+    #village .village-grid {
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+    #village .village-features {
+      grid-template-columns: 1fr !important;
+      gap: 10px !important;
+    }
+    /* Reduce the flagship card's generous desktop padding on small screens */
+    #village > .container > div {
+      padding: 32px 20px !important;
+    }
+    /* Bring the price card's bottom CTA fully into view after the stack */
+    #village .village-grid > div:last-child {
+      padding: 24px 16px !important;
+    }
+  }
+  @media (max-width: 400px) {
+    #village > .container > div {
+      padding: 24px 16px !important;
+    }
+  }
+</style>
