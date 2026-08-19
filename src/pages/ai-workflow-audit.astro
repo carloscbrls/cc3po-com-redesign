@@ -13,7 +13,7 @@ const schema = {
   },
   "offers": {
     "@type": "Offer",
-    "price": "2000",
+    "price": "1200",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "url": "https://cc3po.com/ai-workflow-audit/"
@@ -21,7 +21,7 @@ const schema = {
 };
 ---
 
-<Layout title="AI Workflow Audit — Find Your Automation Gold | CC3PO" description="Expert audit of your business workflows: identify automation opportunities, reduce manual work, and get an actionable implementation roadmap. Starting at $2,000.">
+<Layout title="AI Workflow Audit — Find Your Automation Gold | CC3PO" description="Expert audit of your business workflows: identify automation opportunities, reduce manual work, and get an actionable implementation roadmap. Starting at $1,200.">
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
@@ -111,7 +111,7 @@ const schema = {
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:800px;margin:0 auto;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:left;">
           <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#10b981;">Essential Audit</h3>
-          <p style="font-size:2.5rem;font-weight:800;margin-bottom:4px;">$2,000</p>
+          <p style="font-size:2.5rem;font-weight:800;margin-bottom:4px;">$1,200</p>
           <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:20px;">One-time · 2-week delivery</p>
           <div style="margin-bottom:24px;">
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Workflow discovery & mapping</p>
@@ -172,6 +172,21 @@ const schema = {
             <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">Build (Optional)</h3>
             <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;">We can build the automations for you — or your team can use the roadmap to do it themselves.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ladder upsell -->
+  <section style="padding:0 0 80px;text-align:center;">
+    <div class="container" style="max-width:720px;">
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
+        <p style="color:#10b981;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Go Deeper</p>
+        <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:12px;">Ready for the full intelligence system?</h3>
+        <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;margin-bottom:20px;">The Workflow Audit finds your automation gold. The <a href="/intelligence-audit/" style="color:#10b981;text-decoration:underline;">Intelligence Architecture Audit</a> ($2,000) builds your complete 4-floor AI system — or go all-in with <a href="/pricing/#village" style="color:#10b981;text-decoration:underline;">The Village</a> ($497/mo) and let 24 agents run it for you.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="/intelligence-audit/" style="background:transparent;border:1px solid #10b981;color:#10b981;padding:12px 24px;border-radius:10px;font-weight:600;text-decoration:none;">Intelligence Audit →</a>
+          <a href="/pricing/#village" style="background:#10b981;color:#0a0a0a;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;">The Village →</a>
         </div>
       </div>
     </div>
