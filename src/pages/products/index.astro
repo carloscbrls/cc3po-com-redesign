@@ -1,22 +1,57 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const products = [
+// THE FUNNEL PATH — lead with the guided route (Scan → Shield → Village)
+const funnelSteps = [
   {
+    step: "01",
+    title: "Free Business Scan",
+    tagline: "See where you stand",
+    price: "Free · 30 seconds",
+    description: "Get a full compliance report with actionable fixes. No credit card. This is where every business starts.",
+    href: "/audit/",
+    icon: "🔍",
+    color: "#00e5ff"
+  },
+  {
+    step: "02",
     title: "Compliance Shield",
     tagline: "Always-on ADA/WCAG monitoring",
     price: "$97/mo",
     description: "Continuous compliance monitoring, instant violation alerts, weekly PDF reports. Protect your business from $4K+ ADA lawsuits.",
     href: "/products/shield/",
     icon: "🛡️",
-    color: "#00e676",
-    featured: true
+    color: "#00e676"
   },
+  {
+    step: "03",
+    title: "Shield Pro",
+    tagline: "Monitoring + active fixes",
+    price: "$199/mo",
+    description: "Everything in Shield plus active issue remediation, priority support, and monthly compliance reports. Same protection, now doing the work.",
+    href: "/pricing/#tools",
+    icon: "🔒",
+    color: "#d500f9"
+  },
+  {
+    step: "04",
+    title: "The Village",
+    tagline: "One team. 24/7. One price.",
+    price: "$497/mo",
+    description: "Web, IT, compliance, AI, and phone — a full team of specialists for less than one employee. The destination for growing businesses.",
+    href: "/pricing/#village",
+    icon: "🏘️",
+    color: "#10b981"
+  }
+];
+
+// A-LA-CARTE TOOLS — demoted to a secondary catalog row (keep in catalog, off the funnel path)
+const toolProducts = [
   {
     title: "Compliance Badge",
     tagline: "Show the world you're compliant",
     price: "Free – $99/mo",
-    description: "Embed a live compliance badge on your site. Shows your score, updates automatically. Every badge is a billboard for CC3PO.",
+    description: "Embed a live compliance badge on your site. Shows your score, updates automatically.",
     href: "https://badge.cc3po.com",
     icon: "🏷️",
     color: "#7c4dff",
@@ -26,61 +61,40 @@ const products = [
     title: "Quote Generator",
     tagline: "Turn services into quotes in 60 seconds",
     price: "Free – $49/mo",
-    description: "HVAC, plumbing, electrical trades — paste your service list, get a professional quote page with Stripe payment links.",
+    description: "HVAC, plumbing, electrical trades — paste your service list, get a professional quote page.",
     href: "https://quote.cc3po.com",
     icon: "📋",
     color: "#ff6d00",
     external: true
   },
   {
-    title: "Partner Program",
-    tagline: "Earn 20% recurring commission",
-    price: "Free to join",
-    description: "Web agencies, marketing firms, SaaS platforms — refer clients to CC3PO and earn 20% recurring on every sale.",
-    href: "https://partners.cc3po.com",
-    icon: "🤝",
-    color: "#00bcd4",
-    external: true
-  },
-  {
     title: "Compliance Pack",
     tagline: "One-time compliance setup",
     price: "$199",
-    description: "Privacy policy, terms of service, accessibility statement, cookie consent — all the pages your site needs to be legally compliant.",
+    description: "Privacy policy, terms, accessibility statement, cookie consent — all the pages your site needs to be compliant.",
     href: "https://checkout.cc3po.com/b/5kQ8wO47Q3EXfpW4y01B61u",
     icon: "📦",
     color: "#ff9100",
     external: true
   },
   {
-    title: "Compliance Shield Pro",
-    tagline: "Monitoring + active fixes",
-    price: "$199/mo",
-    description: "Everything in Shield plus active issue remediation, priority support, and monthly compliance reports.",
-    href: "https://checkout.cc3po.com/b/aFadR833Mcbt0v2ggI1B61t",
-    icon: "🔒",
-    color: "#d500f9",
-    external: true
-  },
-  {
     title: "Grant Writing",
     tagline: "Find, apply & win grants",
     price: "$497/mo",
-    description: "City, federal, and private grants — we handle discovery, writing, submission, and follow-up. We've grown programs from 3 to 16 locations. CA Certified Small Business.",
+    description: "City, federal, and private grants — we handle discovery, writing, submission, and follow-up. CA Certified Small Business.",
     href: "/products/grant-writing/",
     icon: "📋",
-    color: "#10b981",
-    featured: true
+    color: "#10b981"
   },
   {
-    title: "Free Business Scan",
-    tagline: "See where you stand",
-    price: "Free",
-    description: "30-second scan. No credit card. Get a full compliance report with actionable fixes.",
-    href: "/audit/",
-    icon: "🔍",
-    color: "#00e5ff",
-    featured: true
+    title: "Partner Program",
+    tagline: "Earn 20% recurring commission",
+    price: "Free to join",
+    description: "Web agencies, marketing firms, SaaS platforms — refer clients and earn 20% recurring on every sale.",
+    href: "https://partners.cc3po.com",
+    icon: "🤝",
+    color: "#00bcd4",
+    external: true
   }
 ];
 ---
@@ -98,11 +112,46 @@ const products = [
     </div>
   </section>
 
-  <!-- Product Grid -->
+  <!-- The Funnel Path — the guided route: Scan → Shield → Village -->
   <section class="products-grid-section">
     <div class="container">
+      <div style="text-align:center;margin-bottom:40px;">
+        <span class="products-badge">The Path</span>
+        <h2 style="font-size:2rem;font-weight:800;margin-bottom:12px;">One route. Start free, grow to your full team.</h2>
+        <p style="color:var(--text-muted);font-size:1.05rem;max-width:600px;margin:0 auto;line-height:1.6;">Scan your business for free. Protect it with Shield. Then let the whole Village run web, IT, AI, and phone — one team, one price.</p>
+      </div>
+      <div class="products-path">
+        {funnelSteps.map(step => (
+          <a href={step.href} class="product-card path-card" style={`--card-accent: ${step.color}`}>
+            <div class="path-step">{step.step}</div>
+            <div class="product-card-icon">{step.icon}</div>
+            <div class="product-card-body">
+              <div class="product-card-header">
+                <h2>{step.title}</h2>
+                <span class="product-card-price">{step.price}</span>
+              </div>
+              <p class="product-card-tagline">{step.tagline}</p>
+              <p class="product-card-desc">{step.description}</p>
+            </div>
+            <div class="product-card-footer">
+              <span class="product-card-cta">Start Here →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- More Tools — the demoted a-la-carte catalog (kept in catalog, off the funnel path) -->
+  <section class="products-grid-section" style="padding-top:0;background:var(--bg-secondary);border-top:1px solid var(--border);">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:32px;">
+        <span class="products-badge">More Tools</span>
+        <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:8px;">Add-ons & standalone tools</h2>
+        <p style="color:var(--text-muted);font-size:1rem;">Already covered? These slot alongside your plan — or into the full catalog.</p>
+      </div>
       <div class="products-grid">
-        {products.map(product => (
+        {toolProducts.map(product => (
           <a href={product.href} class="product-card" style={`--card-accent: ${product.color}`} target={product.external ? '_blank' : undefined} rel={product.external ? 'noopener noreferrer' : undefined}>
             <div class="product-card-icon">{product.icon}</div>
             <div class="product-card-body">
@@ -192,6 +241,30 @@ const products = [
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 24px;
+  }
+  .products-path {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .path-card {
+    position: relative;
+  }
+  .path-step {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--card-accent, var(--accent));
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--card-accent, var(--accent));
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 560px) {
+    .products-path { grid-template-columns: 1fr; }
   }
   .product-card {
     display: flex;
