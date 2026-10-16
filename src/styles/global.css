@@ -221,7 +221,12 @@ a:focus-visible, button:focus-visible {
   min-height: 44px; /* accessibility */
 }
 .nav-logo svg { border-radius: var(--radius-sm); flex-shrink: 0; }
-.nav-links { display: flex; gap: var(--space-2xl); }
+.nav-links { display: flex; gap: var(--space-lg); }
+@media (min-width: 769px) and (max-width: 1150px) {
+  .nav-links { gap: var(--space-md); }
+  .nav-links a { font-size: 13px; }
+  .nav-phone { padding: 10px 10px; }
+}
 .nav-links a {
   font-size: 14px; font-weight: 500;
   color: var(--text-secondary);
