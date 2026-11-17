@@ -9,13 +9,15 @@ const schema = {
     { "@type": "Offer", "position": 1, "name": "The Village", "price": "497", "priceCurrency": "USD" },
     { "@type": "Offer", "position": 2, "name": "Compliance Shield", "price": "97", "priceCurrency": "USD" },
     { "@type": "Offer", "position": 3, "name": "Compliance Fortress", "price": "247", "priceCurrency": "USD" },
-    { "@type": "Offer", "position": 4, "name": "Compliance Citadel", "price": "497", "priceCurrency": "USD" },
-    { "@type": "Offer", "position": 5, "name": "Compliance Pack", "price": "199", "priceCurrency": "USD" }
+    { "@type": "Offer", "position": 4, "name": "Compliance Citadel", "description": "Custom pricing, from $597/mo", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "597", "priceCurrency": "USD" } },
+    { "@type": "Offer", "position": 5, "name": "Compliance Pack", "price": "199", "priceCurrency": "USD" },
+    { "@type": "Offer", "position": 6, "name": "Fix Sprint", "price": "495", "priceCurrency": "USD" },
+    { "@type": "Offer", "position": 7, "name": "Tech Strategy Call", "price": "100", "priceCurrency": "USD" }
   ]
 };
 ---
 
-<Layout title="Pricing — CC3PO | One Team. 24/7. One Price." description="Simple, transparent pricing. The Village — a full business team of 29 AI agents for one price. Compliance monitoring from $97/mo. No contracts, cancel anytime.">
+<Layout title="Pricing — CC3PO | One Team. 24/7. One Price." description="Simple, transparent pricing. The Village — your whole business team, run by a team of AI agents ($497/mo, by consultation). Compliance monitoring from $97/mo. No contracts, cancel anytime.">
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
@@ -42,7 +44,7 @@ const schema = {
           <div>
             <p style="color:var(--accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">The Village</p>
             <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;line-height:1.15;margin-bottom:16px;">Your whole business team. <br>One price.</h2>
-            <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.6;margin-bottom:24px;">A full village of 24 specialized AI agents handling your website, social, reviews, compliance, email, content, lead handling, and morning reports. Build once. Run forever.</p>
+            <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.6;margin-bottom:24px;">A team of AI agents handling your website, social, reviews, compliance, email, content, lead handling, and morning reports. Build once. Run forever.</p>
             <ul style="list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0;margin:0 0 28px;" class="village-features">
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Website management</li>
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Daily content & social</li>
@@ -51,12 +53,12 @@ const schema = {
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Review management</li>
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Daily morning reports</li>
             </ul>
-            <a href="/#cta" style="display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,80,107,0.3);transition:all 0.2s;">Start the Village →</a>
+            <a href="https://scanner.cc3po.com/" style="display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,80,107,0.3);transition:all 0.2s;">Get a free scan →</a>
           </div>
           <div style="text-align:center;padding:32px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;">
-            <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:8px;">Starting at</div>
+            <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:8px;">By consultation</div>
             <div style="font-size:4rem;font-weight:800;color:#fff;line-height:1;">$497<span style="font-size:1.25rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
-            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">No long-term contract</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">$497/mo · by consultation · no long-term contract</div>
             <a href="https://cc3po.io/strategy-call" style="display:block;margin-top:24px;background:transparent;color:var(--accent);padding:12px;border-radius:10px;font-weight:600;border:1px solid rgba(232,80,107,0.4);text-decoration:none;">Book a Strategy Call</a>
           </div>
         </div>
@@ -69,7 +71,7 @@ const schema = {
     <div class="container">
       <p style="color:var(--accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Compliance Ladder</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:16px;">Always-on Compliance Monitoring</h2>
-      <p style="color:var(--text-secondary);text-align:center;max-width:560px;margin:0 auto 48px;font-size:1rem;">Pick the depth of protection. Every tier includes continuous ADA/WCAG scanning and lawsuit protection.</p>
+      <p style="color:var(--text-secondary);text-align:center;max-width:560px;margin:0 auto 48px;font-size:1rem;">Pick the depth of coverage. Every tier includes continuous WCAG 2.2 AA monitoring and documentation that helps you reduce legal risk.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
         <!-- Shield -->
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
@@ -78,13 +80,14 @@ const schema = {
           <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">For growing businesses</div>
           <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;">$97<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
           <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;flex:1;">
-            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Weekly WCAG 2.2 AA scans</li>
+            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Monthly WCAG 2.2 AA scans</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Instant violation alerts</li>
-            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Weekly PDF reports</li>
+            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Monthly PDF reports</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Compliance Shield badge</li>
           </ul>
+          <a href="https://buy.stripe.com/8x2dR8gr9djF3cj2WHdjO01" style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Shield — $97/mo</a>
           <a href="/products/shield/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn More</a>
-          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Monitoring catches it. <a href="/pricing/#tools" style="color:#60a5fa;text-decoration:underline;">Pro fixes it</a> — same protection, now doing the work.</div>
+          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Monitoring catches it. <a href="/products/fortress/" style="color:#60a5fa;text-decoration:underline;">Fortress fixes it.</a></div>
         </div>
         <!-- Fortress -->
         <div style="background:linear-gradient(180deg,rgba(37,99,235,0.08),var(--bg-card));border:1px solid rgba(37,99,235,0.3);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
@@ -94,11 +97,13 @@ const schema = {
           <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;">$247<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
           <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;flex:1;">
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Everything in Shield</li>
+            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Active fixes for issues found</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Manual expert audits</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ HIPAA & privacy checks</li>
-            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Remediation guidance</li>
+            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Priority support</li>
           </ul>
-          <a href="/products/fortress/" style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn Fortress</a>
+          <a href="https://buy.stripe.com/6oU4gyb6PgvR5kr0OzdjO04" style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Fortress — $247/mo</a>
+          <a href="/products/fortress/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn Fortress</a>
           <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Grow further: <a href="/pricing/#village" style="color:#60a5fa;text-decoration:underline;">The Village</a> runs your whole business</div>
         </div>
         <!-- Citadel -->
@@ -106,13 +111,14 @@ const schema = {
           <div style="font-size:2rem;margin-bottom:12px;">🏯</div>
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:4px;">Citadel</h3>
           <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">For high-risk / regulated</div>
-          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;">$497<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
+          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;"><span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">Custom, from </span>$597<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
           <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;flex:1;">
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Everything in Fortress</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Priority 1-on-1 support</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Full WCAG remediation</li>
-            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Legal-ready documentation</li>
+            <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Audit-ready documentation</li>
           </ul>
+          <a href="https://scheduler.zoom.us/carlos-cabrales-iii/compliance-consultation" style="display:block;text-align:center;background:#f59e0b;color:#0a0a0a;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Get a quote — book a call</a>
           <a href="/products/citadel/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn Citadel</a>
           <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Go all-in: <a href="/pricing/#village" style="color:#60a5fa;text-decoration:underline;">The Village</a> makes compliance one service of eight</div>
         </div>
@@ -127,29 +133,34 @@ const schema = {
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Everything Else, A La Carte</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
-          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Compliance Pack</h3>
-          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">The 4 essential compliance pages — fixed once, done right.</p>
-          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$199<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> one-time</span></div>
-          <a href="https://checkout.cc3po.com/b/5kQ8wO47Q3EXfpW4y01B61u" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Buy Pack</a>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">1-on-1 Tech Strategy Call</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">A focused session on your website, tech setup, or compliance plan. Start with a free 15-minute intro.</p>
+          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$100<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> per call</span></div>
+          <a href="https://buy.stripe.com/14AfZg0sb5Rd14b0OzdjO00" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the $100 call</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
-          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Compliance Shield Pro</h3>
-          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">Premium monitoring with priority response.</p>
-          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$199<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
-          <a href="https://checkout.cc3po.com/b/aFadR833Mcbt0v2ggI1B61t" style="display:block;text-align:center;background:transparent;border:1px solid var(--accent);color:var(--accent);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Buy Shield Pro</a>
-          <div style="margin-top:12px;text-align:center;font-size:0.78rem;color:var(--text-muted);">Paying for compliance? <a href="/pricing/#village" style="color:var(--accent);text-decoration:underline;">The Village</a> runs web, IT, AI &amp; phone for 2.5x.</div>
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Fix Sprint</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">A bilingual, fixed-price repair of the top issues your free scan finds, plus a before/after report and a 30-day re-scan. Had a paid strategy call? Your $100 is credited for 14 days.</p>
+          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$495<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> one-time</span></div>
+          <a href="https://buy.stripe.com/5kQ7sKa2L0wT6ovdBldjO03" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the Fix Sprint →</a>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Compliance Pack</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">Privacy policy, terms, accessibility statement, and cookie consent, set up once.</p>
+          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$199<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> one-time</span></div>
+          <a href="https://buy.stripe.com/fZu4gy8YHdjF28fbtddjO05" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Buy Pack</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Grant Writing</h3>
-          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">Professional grant writing and submissions.</p>
-          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$497<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
-          <a href="/products/grant-writing/" style="display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--text-primary);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Learn More</a>
+          <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">Professional grant writing and submissions. Quote after a free strategy call.</p>
+          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$1,500–$3,500<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> per proposal</span></div>
+          <a href="https://scheduler.zoom.us/carlos-cabrales-iii/compliance-consultation" style="display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--text-primary);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Get a quote</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Free Business Scan</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">30-second compliance & health scan. No credit card.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;color:var(--success, #22c55e);">Free</div>
-          <a href="/audit/" style="display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--text-primary);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Get Free Scan</a>
+          <a href="https://scanner.cc3po.com/" style="display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--text-primary);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Get a free scan</a>
         </div>
       </div>
       <p style="text-align:center;margin-top:32px;color:var(--text-secondary);font-size:0.95rem;">
@@ -161,6 +172,10 @@ const schema = {
   <!-- FAQ -->
   <section style="padding:0 0 80px;" id="faq">
     <div class="container" style="max-width:760px;">
+      <div class="legal-note" role="note" style="max-width:760px;margin:0 auto 32px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:16px 20px;font-size:0.85rem;line-height:1.6;color:var(--text-secondary);">
+        <p style="margin:0 0 8px;"><strong>Not legal advice.</strong> CC3PO is not a law firm and does not provide legal advice. Our monitoring, fixes, and reports help reduce accessibility and privacy risk, but no service can guarantee compliance or prevent a claim. If you've received a demand letter, talk to a licensed attorney.</p>
+        <p lang="es" style="margin:0;"><strong>No es asesoría legal.</strong> CC3PO no es un bufete de abogados y no ofrece asesoría legal. Nuestro monitoreo, correcciones e informes ayudan a reducir riesgos, pero ningún servicio puede garantizar el cumplimiento ni evitar un reclamo. Si recibió una carta de demanda, consulte a un abogado.</p>
+      </div>
       <h2 style="font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:32px;">Pricing FAQ</h2>
       <div style="display:flex;flex-direction:column;gap:16px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
@@ -169,15 +184,19 @@ const schema = {
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">What's the difference between Citadel and The Village?</h3>
-          <p style="color:var(--text-secondary);font-size:0.95rem;">Citadel ($497/mo) is a compliance-only tier — deep ADA/WCAG monitoring and remediation for regulated businesses. The Village ($497/mo) is the full business team: website, social, content, email, compliance, and lead handling all in one.</p>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Citadel (custom, from $597/mo) is a compliance-only tier — deep ADA/WCAG monitoring and remediation for regulated businesses. The Village ($497/mo, by consultation) is the full business team: website, social, content, email, compliance, and lead handling all in one.</p>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">Do you offer discounts or bundles?</h3>
           <p style="color:var(--text-secondary);font-size:0.95rem;">Yes — bundle multiple services and save. Check the <a href="https://insights.cc3po.com/products/" style="color:var(--accent);">full catalog</a> for Local Business, IT Owner, and Digital Growth bundles.</p>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
+          <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">What's the $100 strategy call credit?</h3>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">If you book a paid strategy call, we send you a one-time code worth $100 off the Fix Sprint, good for 14 days.</p>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">Is my data safe?</h3>
-          <p style="color:var(--text-secondary);font-size:0.95rem;">Yes. We don't sell, share, or train on your data. CCPA compliant, with a full audit log of every action.</p>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Yes. We don't sell, share, or train on your data. We follow CCPA requirements, with a full audit log of every action.</p>
         </div>
       </div>
     </div>
