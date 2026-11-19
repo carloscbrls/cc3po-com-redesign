@@ -9,3 +9,17 @@
   to = "/audit/:splat"
   status = 301
   force = true
+
+# audit.cc3po.com currently serves the homepage on this same Netlify site.
+# Send the apex and root to the working scan page. Leave /audit/ as-is.
+[[redirects]]
+  from = "https://audit.cc3po.com"
+  to = "https://cc3po.com/audit/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://audit.cc3po.com/"
+  to = "https://cc3po.com/audit/"
+  status = 301
+  force = true
