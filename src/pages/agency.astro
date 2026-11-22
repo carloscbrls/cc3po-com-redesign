@@ -496,7 +496,7 @@ import Layout from '../layouts/Layout.astro';
           service_interest: formData.get('industry') || '',
           message: formData.get('needs') || '',
           source: 'cc3po.com-agency',
-          lead_type: 'agency'
+          lead_type: 'contact'
         };
         try {
           const resp = await fetch('https://cdrcgmdvepxwsbqaifxv.supabase.co/rest/v1/leads', {
