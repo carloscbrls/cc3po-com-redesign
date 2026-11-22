@@ -281,10 +281,29 @@ import Layout from '../layouts/Layout.astro';
         msg.className = 'form-message';
 
         try {
-          const res = await fetch('https://formspree.io/f/xpwdjqdl', {
+          const formData = new FormData(form);
+          const challenge = formData.get('challenge') || '';
+          const teamSize = formData.get('team_size') || '';
+          const message = [
+            challenge,
+            teamSize ? `Team size: ${teamSize}` : '',
+            'Consent to contact: yes'
+          ].filter(Boolean).join('\n');
+          const res = await fetch('https://cdrcgmdvepxwsbqaifxv.supabase.co/rest/v1/leads', {
             method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkcmNnbWR2ZXB4d3NicWFpZnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MDY4MDksImV4cCI6MjA4OTA4MjgwOX0.pKWLWvsSimTOMkpaXKKrLJESrQEMUayUU1c9ANzr1Dc',
+              'Prefer': 'return=minimal'
+            },
+            body: JSON.stringify({
+              name: formData.get('name'),
+              email: formData.get('email'),
+              company: formData.get('company') || '',
+              message,
+              source: 'cc3po.com-intelligence-audit',
+              lead_type: 'intelligence-audit'
+            })
           });
           if (res.ok) {
             msg.textContent = '✓ Request submitted! We\'ll be in touch within 24 hours.';

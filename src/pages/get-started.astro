@@ -573,11 +573,24 @@ form?.addEventListener('submit', async (e) => {
     const website = formData.get('website');
     const service = formData.get('service_interest');
 
-    // Store as lead in CC3PO system
-    const res = await fetch('https://scanner.cc3po.com/api/newsletter-subscribe', {
+    // Store the full intake as a lead in Supabase (same pipeline as the contact form)
+    const res = await fetch('https://cdrcgmdvepxwsbqaifxv.supabase.co/rest/v1/leads', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, name: name || undefined, source: 'get-started' })
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkcmNnbWR2ZXB4d3NicWFpZnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MDY4MDksImV4cCI6MjA4OTA4MjgwOX0.pKWLWvsSimTOMkpaXKKrLJESrQEMUayUU1c9ANzr1Dc',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone: phone || '',
+        company: company || '',
+        website: website || '',
+        service_interest: service || '',
+        source: 'cc3po.com-get-started',
+        lead_type: 'intake'
+      })
     });
 
     // Also scan the website if provided

@@ -448,6 +448,11 @@ import Layout from '../layouts/Layout.astro';
         <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 8px;">Thanks, we got your info!</h3>
         <p style="color: rgba(255,255,255,0.6); font-size: 14px;">We'll reach out within 24 hours to get started on your site.</p>
       </div>
+      <div id="form-error" style="display:none; text-align: center; padding: 32px 0;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">⚠️</div>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 8px;">Something went wrong</h3>
+        <p style="color: rgba(255,255,255,0.6); font-size: 14px;">Please try again, or email us at <a href="mailto:hello@cc3po.com" style="color: #4fc3f7;">hello@cc3po.com</a>.</p>
+      </div>
     </div>
 
     <script>
@@ -475,33 +480,42 @@ import Layout from '../layouts/Layout.astro';
         });
       }
 
-      // Lead form submission
+      // Lead form submission — inserts into Supabase leads (same pipeline as the contact form)
       document.getElementById('agency-lead-form')?.addEventListener('submit', async function(e) {
         e.preventDefault();
         const form = e.target;
+        const successEl = document.getElementById('form-success');
+        const errorEl = document.getElementById('form-error');
+        if (errorEl) errorEl.style.display = 'none';
+        const formData = new FormData(form);
         const data = {
-          name: form.name.value,
-          business: form.business.value,
-          phone: form.phone.value,
-          email: form.email.value,
-          industry: form.industry.value,
-          needs: form.needs.value,
-          source: 'agency-page',
-          timestamp: new Date().toISOString()
+          name: formData.get('name'),
+          email: formData.get('email') || '',
+          phone: formData.get('phone') || '',
+          company: formData.get('business') || '',
+          service_interest: formData.get('industry') || '',
+          message: formData.get('needs') || '',
+          source: 'cc3po.com-agency',
+          lead_type: 'agency'
         };
         try {
-          const resp = await fetch('https://cc3po.com/api/agency-lead', {
+          const resp = await fetch('https://cdrcgmdvepxwsbqaifxv.supabase.co/rest/v1/leads', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkcmNnbWR2ZXB4d3NicWFpZnh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM1MDY4MDksImV4cCI6MjA4OTA4MjgwOX0.pKWLWvsSimTOMkpaXKKrLJESrQEMUayUU1c9ANzr1Dc',
+              'Prefer': 'return=minimal'
+            },
             body: JSON.stringify(data)
           });
           if (resp.ok) {
             form.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
+            successEl.style.display = 'block';
+          } else {
+            throw new Error('Submission failed');
           }
-        } catch(e) {
-          form.style.display = 'none';
-          document.getElementById('form-success').style.display = 'block';
+        } catch(err) {
+          if (errorEl) errorEl.style.display = 'block';
         }
       });
     </script>
