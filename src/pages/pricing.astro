@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CaptureStrip from '../components/CaptureStrip.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -86,7 +87,7 @@ const schema = {
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Compliance Shield badge</li>
           </ul>
           <a href="https://buy.stripe.com/bJecN53MFfiNfM5brH5os00" style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Shield — $297/mo</a>
-          <a href="/products/shield/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn More</a>
+          <a href="/products/shield/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Shield</a>
           <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Monitoring catches it. <a href="/products/fortress/" style="color:#60a5fa;text-decoration:underline;">Fortress fixes it.</a></div>
         </div>
         <!-- Fortress -->
@@ -103,7 +104,7 @@ const schema = {
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Priority support</li>
           </ul>
           <a href="https://buy.stripe.com/5kQ7sL5UNeeJ0RbgM15os01" style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Fortress — $447/mo</a>
-          <a href="/products/fortress/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn Fortress</a>
+          <a href="/products/fortress/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Fortress</a>
           <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Grow further: <a href="/pricing/#village" style="color:#60a5fa;text-decoration:underline;">The Village</a> runs your whole business</div>
         </div>
         <!-- Citadel -->
@@ -119,7 +120,7 @@ const schema = {
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Audit-ready documentation</li>
           </ul>
           <a href="https://scheduler.zoom.us/carlos-cabrales-iii/compliance-consultation" style="display:block;text-align:center;background:#f59e0b;color:#0a0a0a;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Get a quote — book a call</a>
-          <a href="/products/citadel/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn Citadel</a>
+          <a href="/products/citadel/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Citadel</a>
           <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Go all-in: <a href="/pricing/#village" style="color:#60a5fa;text-decoration:underline;">The Village</a> makes compliance one service of eight</div>
         </div>
       </div>
@@ -166,11 +167,11 @@ const schema = {
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Team AI Workshop</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">A hands-on working session for your whole team — the step between our free talks and a full agent setup. Priced per team (up to 15 people), or per seat in a scheduled cohort.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$2,500–$3,500<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> per team · $197–$297/seat</span></div>
-          <a href="/contact/" style="display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--text-primary);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book a workshop</a>
+          <a href="/get-started/" style="display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--text-primary);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book a workshop</a>
         </div>
       </div>
       <p style="text-align:center;margin-top:32px;color:var(--text-secondary);font-size:0.95rem;">
-        Looking for more tools? <a href="https://insights.cc3po.com/products/" style="color:var(--accent);text-decoration:underline;">Browse all 16+ products & tools →</a>
+        Looking for more tools? <a href="https://offers.cc3po.com/" style="color:var(--accent);text-decoration:underline;">Browse all 16+ products & tools in the offers catalog →</a>
       </p>
     </div>
   </section>
@@ -194,7 +195,7 @@ const schema = {
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">Do you offer discounts or bundles?</h3>
-          <p style="color:var(--text-secondary);font-size:0.95rem;">Yes — bundle multiple services and save. Check the <a href="https://insights.cc3po.com/products/" style="color:var(--accent);">full catalog</a> for Local Business, IT Owner, and Digital Growth bundles.</p>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Yes — bundle multiple services and save. Check the <a href="https://offers.cc3po.com/" style="color:var(--accent);">full catalog on offers.cc3po.com</a> for Local Business, IT Owner, and Digital Growth bundles.</p>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">What's the $100 strategy call credit?</h3>
@@ -207,6 +208,8 @@ const schema = {
       </div>
     </div>
   </section>
+
+  <CaptureStrip source="pricing" />
 
   <!-- CTA -->
   <section class="cta">

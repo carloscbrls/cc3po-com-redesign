@@ -13,6 +13,7 @@ const { title, description = 'CC3PO — A team of AI agents working together to 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 import '../styles/global.css';
+import nap from '../data/nap.json';
 ---
 
 <!doctype html>
@@ -108,18 +109,20 @@ import '../styles/global.css';
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "CC3PO LLC",
+      "name": nap.name,
       "url": "https://cc3po.com",
       "image": "https://cc3po.com/images/og-image.png",
       "description": "Compliance monitoring, web development, IT support, AI automation, and phone systems for small businesses. 24/7 protection and automation.",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Lathrop",
-        "addressRegion": "CA",
-        "postalCode": "95330",
-        "addressCountry": "US"
+        "streetAddress": nap.streetAddress,
+        "addressLocality": nap.city,
+        "addressRegion": nap.state,
+        "postalCode": nap.postalCode,
+        "addressCountry": nap.country
       },
-      "telephone": "+1-209-701-1137",
+      "email": nap.email,
+      "telephone": nap.phoneE164,
       "areaServed": [
         {"@type": "State", "name": "California"},
         {"@type": "AdministrativeArea", "name": "San Joaquin County"}
@@ -158,7 +161,9 @@ import '../styles/global.css';
         <a href="/audit/" class="mobile-drawer-cta">Free Business Scan</a>
       </nav>
     </div>
+    <header>
     <SiteNav />
+    </header>
     <main id="main-content">
     <slot />
     </main>

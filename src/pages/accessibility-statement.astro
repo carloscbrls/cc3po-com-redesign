@@ -6,19 +6,23 @@ import Layout from '../layouts/Layout.astro';
   <section class="section legal-page" id="main-content" style="padding-top:120px;">
     <div class="container" style="max-width:800px;">
       <h1>Accessibility Statement</h1>
-      <p class="legal-updated">Last updated: May 14, 2026</p>
+      <p class="legal-updated">Last updated: November 24, 2026</p>
 
       <h2>Our Commitment to Accessibility</h2>
       <p>CC3PO LLC is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards.</p>
       <p>This website is designed to conform to <strong>WCAG 2.1 Level AA</strong> (with ongoing improvements toward WCAG 2.2 AA), in alignment with the Americans with Disabilities Act (ADA), Section 508 of the Rehabilitation Act, and California Government Code § 11135.</p>
       <p><strong>We sell compliance services — and we hold ourselves to the same standard.</strong> Accessibility isn't just a service we offer; it's a principle we live by.</p>
 
+      <h2>How We Test — and the Honest Limits of Automated Tools</h2>
+      <p>We test this site with automated scanning (axe-core, run against the WCAG 2.2 AA rule set), manual keyboard navigation checks, and assistive-technology spot checks. Automated tools are only one part of that picture: research reconciles their coverage at roughly <strong>13–31% of WCAG criteria</strong>, catching around <strong>30–57% of issues by volume</strong>. That is why we never claim any site — ours or a client's — is "100% compliant" or "lawsuit-proof" based on a scan alone, and why our scanning services pair automated checks with manual review.</p>
+      <p><strong>Latest scan snapshot (November 24, 2026):</strong> our automated axe-core scan of this site's primary templates (home, pricing, products, agency, get-started), run against the WCAG 2.2 AA rule set, found no automated violations on the home and get-started templates, and a small number of color-contrast findings on the pricing, products, and agency templates. Those findings are in remediation. We publish the snapshot because a scan is a point-in-time check, not a certification — and we would rather show our work than claim a clean bill of health we have not fully earned yet.</p>
+
       <h2>What We're Doing</h2>
       <ul>
         <li><strong>Regular Audits:</strong> We conduct periodic accessibility audits using both automated tools and manual testing with assistive technologies</li>
         <li><strong>Keyboard Navigation:</strong> All interactive elements are reachable and operable via keyboard alone, with visible focus indicators</li>
         <li><strong>Screen Reader Support:</strong> Semantic HTML structure, ARIA labels, and proper heading hierarchy ensure compatibility with leading screen readers (JAWS, NVDA, VoiceOver)</li>
-        <li><strong>Color Contrast:</strong> All text meets WCAG AA minimum contrast ratios (4.5:1 for normal text, 3:1 for large text)</li>
+        <li><strong>Color Contrast:</strong> We design to WCAG AA minimum contrast ratios (4.5:1 for normal text, 3:1 for large text); our November 24, 2026 scan found a small number of contrast findings on three templates, listed above, which are being remediated</li>
         <li><strong>Responsive Design:</strong> Content reflows properly at 320px width and 200% zoom without loss of functionality</li>
         <li><strong>Form Accessibility:</strong> All forms include proper labels, error messaging, and are navigable by assistive technology</li>
         <li><strong>Motion & Animation:</strong> No content relies solely on animation or motion; respects <code>prefers-reduced-motion</code></li>
@@ -38,6 +42,7 @@ import Layout from '../layouts/Layout.astro';
       <h2>Known Limitations</h2>
       <p>Despite our best efforts, some accessibility limitations may exist:</p>
       <ul>
+        <li><strong>Color Contrast (in remediation):</strong> A small number of text elements on the pricing, products, and agency templates do not yet meet AA contrast ratios (scan of November 24, 2026). Fixes are in progress.</li>
         <li><strong>Third-Party Content:</strong> Embedded content from third-party services (analytics, form providers, chat widgets) may have accessibility characteristics outside our direct control. We actively evaluate these services and advocate for accessibility improvements.</li>
         <li><strong>Legacy Documents:</strong> Some archived PDFs or documents may not be fully accessible. Contact us for accessible alternatives.</li>
         <li><strong>Continuous Improvement:</strong> Accessibility is an ongoing effort. We prioritize fixes based on user impact and regulatory requirements.</li>
@@ -60,7 +65,7 @@ import Layout from '../layouts/Layout.astro';
       <div style="background:var(--bg-card);border-radius:var(--radius);padding:24px;margin-top:16px;">
         <p style="margin-bottom:8px;"><strong>CC3PO LLC</strong></p>
         <p style="margin-bottom:8px;">16299 Adobe Way, Lathrop, CA 95330</p>
-        <p style="margin-bottom:8px;">📧 <a href="mailto:accessibility@cc3po.com">accessibility@cc3po.com</a></p>
+        <p style="margin-bottom:8px;">📧 <a href="mailto:accessibility@cc3po.com">accessibility@cc3po.com</a> · <a href="mailto:info@cc3po.com">info@cc3po.com</a></p>
         <p style="margin-bottom:8px;">📞 <a href="tel:+12097011137">(209) 701-1137</a></p>
       </div>
       <p style="margin-top:16px;">We aim to respond to accessibility feedback within <strong>2 business days</strong> and to propose a solution within <strong>10 business days</strong>.</p>

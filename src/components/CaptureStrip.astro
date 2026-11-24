@@ -1,0 +1,45 @@
+---
+// CaptureStrip — "Get the Signal" email capture.
+// Reuses the homepage newsletter mechanism: POST { email, source }
+// to https://scanner.cc3po.com/api/newsletter-subscribe
+export interface Props {
+  source: string;
+}
+const { source } = Astro.props;
+const formId = `capture-form-${source}`;
+const msgId = `capture-message-${source}`;
+const emailId = `capture-email-${source}`;
+---
+
+<section class="section section-alt" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto;">
+      <div class="section-label">Stay in the loop</div>
+      <h2 class="section-title" style="font-size:clamp(1.5rem,3vw,2rem);">Get the Signal. Free business insights, every week.</h2>
+      <p style="color:var(--text-secondary);margin-bottom:24px;">AI automation strategies, compliance updates, and tips from the village for growing your business. No spam. Unsubscribe anytime.</p>
+      <form class="capture-form" id={formId} data-source={source} style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <label for={emailId} style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Email address</label>
+        <input type="email" id={emailId} name="email" placeholder="Your email address" required style="flex:1;min-width:240px;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:#fff;font-size:1rem;font-family:var(--font);">
+        <button type="submit" class="btn btn-primary btn-glow">Get the Signal →</button>
+      </form>
+      <p id={msgId} class="capture-message" style="margin-top:12px;font-size:0.85rem;color:var(--accent);display:none;"></p>
+      <p style="margin-top:8px;font-size:0.8rem;color:var(--text-secondary);">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.capture-form').forEach((form) => {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = this.querySelector('[name="email"]').value.trim();
+      const msg = this.parentElement.querySelector('.capture-message');
+      if (!email || !msg) return;
+      try {
+        const res = await fetch('https://scanner.cc3po.com/api/newsletter-subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: this.dataset.source }) });
+        if (res.ok) { msg.textContent = "✓ You're in! Check your inbox for the Signal."; msg.style.display = 'block'; msg.style.color = 'var(--green)'; this.reset(); }
+        else { msg.textContent = 'Something went wrong. Please try again.'; msg.style.display = 'block'; msg.style.color = 'var(--primary)'; }
+      } catch (err) { msg.textContent = 'Network error. Please try again.'; msg.style.display = 'block'; msg.style.color = 'var(--primary)'; }
+    });
+  });
+</script>
