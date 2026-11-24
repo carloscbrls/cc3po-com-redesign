@@ -1,5 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { catalogHelpers, fmt } from '../../lib/catalog';
+
+// Path + setup prices render from the published pricing catalog
+// (offers-cc3po-astro pricing.json -> /catalog/pricing-v1.json), with the
+// committed snapshot in src/data/catalog-snapshot.json as fallback.
+const { ladderTier, setupOffer } = await catalogHelpers();
+const shieldTier = ladderTier('shield');
+const fortressTier = ladderTier('fortress');
+const citadelTier = ladderTier('citadel');
+const villageTier = ladderTier('village');
+const agentLaunch = setupOffer('agent-launch');
+const customBuild = setupOffer('custom-agent-build');
 
 // THE FUNNEL PATH — lead with the guided route (Scan → Shield → Village)
 const funnelSteps = [
@@ -27,7 +39,7 @@ const funnelSteps = [
     step: "03",
     title: "Compliance Shield",
     tagline: "Always-on ADA/WCAG monitoring",
-    price: "$297/mo",
+    price: `${fmt(shieldTier.monthlyPrice!)}/mo`,
     description: "Continuous WCAG 2.2 AA monitoring, instant violation alerts, and monthly PDF reports that document your progress and help reduce legal risk.",
     href: "/products/shield/",
     icon: "🛡️",
@@ -37,7 +49,7 @@ const funnelSteps = [
     step: "04",
     title: "Fortress",
     tagline: "Monitoring + active fixes",
-    price: "$447/mo",
+    price: `${fmt(fortressTier.monthlyPrice!)}/mo`,
     description: "Everything in Shield plus active fixes, manual expert audits, priority support, and monthly reports.",
     href: "/products/fortress/",
     icon: "🔒",
@@ -47,7 +59,7 @@ const funnelSteps = [
     step: "05",
     title: "Citadel",
     tagline: "Deep monitoring + full remediation",
-    price: "From $897/mo",
+    price: `From ${fmt(citadelTier.monthlyPrice!)}/mo`,
     description: "Everything in Fortress plus full WCAG remediation, priority 1-on-1 support, and audit-ready documentation for high-risk and regulated businesses.",
     href: "/products/citadel/",
     icon: "🏯",
@@ -57,7 +69,7 @@ const funnelSteps = [
     step: "06",
     title: "The Village",
     tagline: "One team. 24/7. By consultation.",
-    price: "$497/mo · by consultation",
+    price: `${fmt(villageTier.monthlyPrice!)}/mo · by consultation`,
     description: "Web, IT, compliance, AI, and phone — a team of AI agents for less than one employee. Start with a free scan or a strategy call.",
     href: "/pricing/#village",
     icon: "🏘️",
@@ -206,7 +218,7 @@ const toolProducts = [
           <div class="product-card-body">
             <div class="product-card-header">
               <h2>Agent Launch</h2>
-              <span class="product-card-price">$1,997</span>
+              <span class="product-card-price">{fmt(agentLaunch.setupPrice!)}</span>
             </div>
             <p class="product-card-tagline">Templated, productized agent setup</p>
             <p class="product-card-desc">A ready-to-run AI agent set up for your business — configured, connected, and handed over with training.</p>
@@ -220,7 +232,7 @@ const toolProducts = [
           <div class="product-card-body">
             <div class="product-card-header">
               <h2>Custom Agent Build</h2>
-              <span class="product-card-price">From $6,000</span>
+              <span class="product-card-price">From {fmt(customBuild.setupPrice!)}</span>
             </div>
             <p class="product-card-tagline">Bespoke agent build, scoped to you</p>
             <p class="product-card-desc">A custom-designed agent system built around your workflows, tools, and team — scoped and quoted after a discovery call.</p>

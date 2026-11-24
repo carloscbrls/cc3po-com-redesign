@@ -1,16 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CaptureStrip from '../components/CaptureStrip.astro';
+import { catalogHelpers, fmt } from '../lib/catalog';
+
+// Ladder figures + Product JSON-LD render from the published pricing
+// catalog (see src/lib/catalog.ts). A-la-carte figures below (Strategy
+// Call, Fix Sprint, Compliance Pack, grants, workshops) are NOT in the
+// offers catalog yet (agency merge map §1) and stay literal until they are.
+const { ladderTier } = await catalogHelpers();
+const shieldTier = ladderTier('shield');
+const fortressTier = ladderTier('fortress');
+const villageTier = ladderTier('village');
+const citadelTier = ladderTier('citadel');
 
 const schema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "CC3PO Pricing — Plans & Tiers",
   "itemListElement": [
-    { "@type": "Offer", "position": 1, "name": "The Village", "price": "497", "priceCurrency": "USD" },
-    { "@type": "Offer", "position": 2, "name": "Compliance Shield", "price": "297", "priceCurrency": "USD" },
-    { "@type": "Offer", "position": 3, "name": "Compliance Fortress", "price": "447", "priceCurrency": "USD" },
-    { "@type": "Offer", "position": 4, "name": "Compliance Citadel", "description": "Custom pricing, from $897/mo", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "897", "priceCurrency": "USD" } },
+    { "@type": "Offer", "position": 1, "name": "The Village", "price": String(villageTier.monthlyPrice), "priceCurrency": "USD" },
+    { "@type": "Offer", "position": 2, "name": "Compliance Shield", "price": String(shieldTier.monthlyPrice), "priceCurrency": "USD" },
+    { "@type": "Offer", "position": 3, "name": "Compliance Fortress", "price": String(fortressTier.monthlyPrice), "priceCurrency": "USD" },
+    { "@type": "Offer", "position": 4, "name": "Compliance Citadel", "description": `Custom pricing, from ${fmt(citadelTier.monthlyPrice!)}/mo`, "priceSpecification": { "@type": "PriceSpecification", "minPrice": String(citadelTier.monthlyPrice), "priceCurrency": "USD" } },
     { "@type": "Offer", "position": 5, "name": "Compliance Pack", "price": "199", "priceCurrency": "USD" },
     { "@type": "Offer", "position": 6, "name": "Fix Sprint", "price": "495", "priceCurrency": "USD" },
     { "@type": "Offer", "position": 7, "name": "Tech Strategy Call", "price": "100", "priceCurrency": "USD" }
@@ -18,7 +29,7 @@ const schema = {
 };
 ---
 
-<Layout title="Pricing — CC3PO | One Team. 24/7. One Price." description="Simple, transparent pricing. The Village — your whole business team, run by a team of AI agents ($497/mo, by consultation). Compliance monitoring from $297/mo. No contracts, cancel anytime.">
+<Layout title="Pricing — CC3PO | One Team. 24/7. One Price." description={`Simple, transparent pricing. The Village — your whole business team, run by a team of AI agents (${fmt(villageTier.monthlyPrice!)}/mo, by consultation). Compliance monitoring from ${fmt(shieldTier.monthlyPrice!)}/mo. No contracts, cancel anytime.`}>
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
@@ -58,8 +69,8 @@ const schema = {
           </div>
           <div style="text-align:center;padding:32px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;">
             <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:8px;">By consultation</div>
-            <div style="font-size:4rem;font-weight:800;color:#fff;line-height:1;">$497<span style="font-size:1.25rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
-            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">$497/mo · by consultation · no long-term contract</div>
+            <div style="font-size:4rem;font-weight:800;color:#fff;line-height:1;">{fmt(villageTier.monthlyPrice!)}<span style="font-size:1.25rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
+            <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">{fmt(villageTier.monthlyPrice!)}/mo · by consultation · no long-term contract</div>
             <a href="https://cc3po.io/strategy-call" style="display:block;margin-top:24px;background:transparent;color:var(--accent);padding:12px;border-radius:10px;font-weight:600;border:1px solid rgba(232,80,107,0.4);text-decoration:none;">Book a Strategy Call</a>
           </div>
         </div>
@@ -79,14 +90,14 @@ const schema = {
           <div style="font-size:2rem;margin-bottom:12px;">🛡️</div>
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:4px;">Shield</h3>
           <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">For growing businesses</div>
-          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;">$297<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
+          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;">{fmt(shieldTier.monthlyPrice!)}<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
           <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;flex:1;">
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Monthly WCAG 2.2 AA scans</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Instant violation alerts</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Monthly PDF reports</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Compliance Shield badge</li>
           </ul>
-          <a href="https://buy.stripe.com/bJecN53MFfiNfM5brH5os00" style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Shield — $297/mo</a>
+          <a href={shieldTier.stripeLink} style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Shield — {fmt(shieldTier.monthlyPrice!)}/mo</a>
           <a href="/products/shield/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Shield</a>
           <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Monitoring catches it. <a href="/products/fortress/" style="color:#60a5fa;text-decoration:underline;">Fortress fixes it.</a></div>
         </div>
@@ -95,7 +106,7 @@ const schema = {
           <div style="font-size:2rem;margin-bottom:12px;">🏰</div>
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:4px;">Fortress</h3>
           <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">For established businesses</div>
-          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;">$447<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
+          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;">{fmt(fortressTier.monthlyPrice!)}<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
           <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;flex:1;">
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Everything in Shield</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Active fixes for issues found</li>
@@ -103,7 +114,7 @@ const schema = {
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ HIPAA & privacy checks</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Priority support</li>
           </ul>
-          <a href="https://buy.stripe.com/5kQ7sL5UNeeJ0RbgM15os01" style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Fortress — $447/mo</a>
+          <a href={fortressTier.stripeLink} style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Fortress — {fmt(fortressTier.monthlyPrice!)}/mo</a>
           <a href="/products/fortress/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Fortress</a>
           <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Grow further: <a href="/pricing/#village" style="color:#60a5fa;text-decoration:underline;">The Village</a> runs your whole business</div>
         </div>
@@ -112,7 +123,7 @@ const schema = {
           <div style="font-size:2rem;margin-bottom:12px;">🏯</div>
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:4px;">Citadel</h3>
           <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">For high-risk / regulated</div>
-          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;"><span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">Custom, from </span>$897<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
+          <div style="font-size:2.5rem;font-weight:800;margin-bottom:24px;"><span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">Custom, from </span>{fmt(citadelTier.monthlyPrice!)}<span style="font-size:1rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
           <ul style="list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:10px;flex:1;">
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Everything in Fortress</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Priority 1-on-1 support</li>
@@ -191,7 +202,7 @@ const schema = {
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">What's the difference between Citadel and The Village?</h3>
-          <p style="color:var(--text-secondary);font-size:0.95rem;">Citadel (custom, from $897/mo) is a compliance-only tier — deep ADA/WCAG monitoring and remediation for regulated businesses. The Village ($497/mo, by consultation) is the full business team: website, social, content, email, compliance, and lead handling all in one.</p>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Citadel (custom, from {fmt(citadelTier.monthlyPrice!)}/mo) is a compliance-only tier — deep ADA/WCAG monitoring and remediation for regulated businesses. The Village ({fmt(villageTier.monthlyPrice!)}/mo, by consultation) is the full business team: website, social, content, email, compliance, and lead handling all in one.</p>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">Do you offer discounts or bundles?</h3>

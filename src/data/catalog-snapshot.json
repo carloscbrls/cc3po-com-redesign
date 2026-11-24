@@ -1,0 +1,645 @@
+{
+  "catalogVersion": "2026-11-24.1",
+  "version": 1,
+  "publishedAt": "2026-11-24",
+  "source": "carloscbrls/offers-cc3po-astro — src/data/pricing.json",
+  "canonicalUrl": "https://offers.cc3po.com/catalog/pricing-v1.json",
+  "latestUrl": "https://offers.cc3po.com/catalog.json",
+  "meta": {
+    "basis": "Rate card ratified 2026-11-22 (market-researched ladder). Non-ladder product prices are the canonical figures already published on offers.cc3po.com/pricing as of the 2026-11-23 drift audit.",
+    "currency": "USD",
+    "internalRatesIncluded": false,
+    "name": "CC3PO Pricing Catalog",
+    "purpose": "Single source of truth for public CC3PO pricing. Pilot surfaces on offers.cc3po.com (homepage cards, /pricing, /agent-system, /care-plans) render from this file instead of hardcoded numbers.",
+    "ratifiedBy": "Carlos Cabrales III",
+    "ratifiedDate": "2026-11-22",
+    "source": "ratified-2026-11-22"
+  },
+  "ladder": [
+    {
+      "annualPrepayMonthlyPrice": 249,
+      "billingNotes": "$297/mo billed monthly, or $249/mo on annual prepay. Up to 10–15 staff.",
+      "displayName": "Compliance Monitoring",
+      "id": "shield",
+      "monthlyPrice": 297,
+      "name": "Compliance Shield",
+      "pricePrefix": null,
+      "source": "ratified-2026-11-22",
+      "stripeLink": "https://buy.stripe.com/bJecN53MFfiNfM5brH5os00",
+      "tagline": "Compliance posture, policy tracking, and AI data-policy governance for small teams."
+    },
+    {
+      "annualPrepayMonthlyPrice": null,
+      "billingNotes": "Billed monthly.",
+      "displayName": "Fortress",
+      "id": "fortress",
+      "monthlyPrice": 447,
+      "name": "Fortress",
+      "pricePrefix": null,
+      "source": "ratified-2026-11-22",
+      "stripeLink": "https://buy.stripe.com/5kQ7sL5UNeeJ0RbgM15os01",
+      "tagline": "Everything in Shield plus security and AI guardrails with active fixes."
+    },
+    {
+      "annualPrepayMonthlyPrice": null,
+      "billingNotes": "By consultation.",
+      "displayName": "The Village",
+      "id": "village",
+      "monthlyPrice": 497,
+      "name": "The Village",
+      "pricePrefix": null,
+      "source": "ratified-2026-11-22",
+      "stripeLink": null,
+      "tagline": "The full managed tier. Sold by consultation."
+    },
+    {
+      "annualPrepayMonthlyPrice": null,
+      "billingNotes": "From $897/mo, custom-quoted.",
+      "displayName": "Citadel",
+      "id": "citadel",
+      "monthlyPrice": 897,
+      "name": "Citadel",
+      "pricePrefix": "from",
+      "source": "ratified-2026-11-22",
+      "stripeLink": null,
+      "tagline": "Flagship compliance tier, custom-quoted."
+    }
+  ],
+  "setupOffers": [
+    {
+      "billingNotes": "One-time setup fee. Templated single-workflow builds on modern APIs only. Legacy integrations (PMS / ServiceTitan / Tekmetric / EHR) are scoped separately under a Custom Agent Build.",
+      "displayName": "Agent Launch",
+      "id": "agent-launch",
+      "monthlyPrice": null,
+      "name": "Agent Launch",
+      "pricePrefix": null,
+      "setupPrice": 1997,
+      "source": "ratified-2026-11-22",
+      "stripeLink": null,
+      "tagline": "The templated, productized setup: one agent workflow, built on modern APIs, installed and handed over with documentation."
+    },
+    {
+      "billingNotes": "From $6,000, scoped per engagement.",
+      "displayName": "Custom Agent Build",
+      "id": "custom-agent-build",
+      "monthlyPrice": null,
+      "name": "Custom Agent Build",
+      "pricePrefix": "from",
+      "setupPrice": 6000,
+      "source": "ratified-2026-11-22",
+      "stripeLink": null,
+      "tagline": "The bespoke engagement: your own machine, custom instruction architecture, partner configuration, on-site work."
+    }
+  ],
+  "bundles": [
+    {
+      "billingNotes": "Billed monthly.",
+      "id": "starter-bundle",
+      "monthlyPrice": 497,
+      "name": "Starter Bundle",
+      "pricePrefix": null,
+      "savingsNote": "Save $194/mo",
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "id": "growth-bundle",
+      "monthlyPrice": 997,
+      "name": "Growth Bundle",
+      "pricePrefix": null,
+      "savingsNote": "Save $488/mo",
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly. Distinct from the one-time Agent Launch setup fee.",
+      "id": "enterprise-bundle",
+      "monthlyPrice": 1997,
+      "name": "Scale Bundle",
+      "pricePrefix": null,
+      "savingsNote": "Save $1,000+/mo",
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    }
+  ],
+  "products": [
+    {
+      "billingNotes": "From $2,500 per project.",
+      "href": "/website-design",
+      "id": "website-design",
+      "monthlyPrice": null,
+      "name": "Website Design",
+      "plans": [],
+      "pricePrefix": "from",
+      "setupPrice": 2500,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/website-hosting",
+      "id": "website-hosting",
+      "monthlyPrice": null,
+      "name": "Website Hosting",
+      "plans": [
+        {
+          "monthlyPrice": 97,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Essential"
+        },
+        {
+          "monthlyPrice": 197,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Professional"
+        },
+        {
+          "monthlyPrice": 397,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Business"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/it-consulting",
+      "id": "it-consulting",
+      "monthlyPrice": null,
+      "name": "IT Consulting",
+      "plans": [
+        {
+          "monthlyPrice": 499,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Starter"
+        },
+        {
+          "monthlyPrice": 999,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Professional"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "displayName": "AI Phone Answering (Callie)",
+      "href": "/ai-phone-answering",
+      "id": "ai-phone-answering",
+      "monthlyPrice": null,
+      "name": "AI Phone Answering",
+      "plans": [
+        {
+          "monthlyPrice": 297,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Starter"
+        },
+        {
+          "monthlyPrice": 399,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Professional"
+        },
+        {
+          "monthlyPrice": null,
+          "popular": false,
+          "priceLabel": "Custom",
+          "tier": "Enterprise"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "From $497/mo.",
+      "href": "/ai-business-assistant",
+      "id": "ai-business-assistant",
+      "monthlyPrice": 497,
+      "name": "AI Business Assistant",
+      "plans": [],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "From $497/mo.",
+      "href": "/ai-workflow-audit",
+      "id": "ai-workflow-audit",
+      "monthlyPrice": 497,
+      "name": "AI Workflow Audit",
+      "plans": [],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/daily-content",
+      "id": "daily-content",
+      "monthlyPrice": null,
+      "name": "Daily Content",
+      "plans": [
+        {
+          "monthlyPrice": 497,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Starter"
+        },
+        {
+          "monthlyPrice": 997,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Growth"
+        },
+        {
+          "monthlyPrice": 1497,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Full Service"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/sms-marketing",
+      "id": "sms-marketing",
+      "monthlyPrice": null,
+      "name": "SMS Marketing",
+      "plans": [
+        {
+          "monthlyPrice": 297,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Starter"
+        },
+        {
+          "monthlyPrice": 497,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Growth"
+        },
+        {
+          "monthlyPrice": 897,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Pro"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Free.",
+      "entryLabel": "Free",
+      "href": "/gbp-audit",
+      "id": "gbp-audit",
+      "monthlyPrice": null,
+      "name": "GBP Audit",
+      "plans": [],
+      "pricePrefix": null,
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Initial scan free; ongoing compliance monitoring billed monthly.",
+      "entryLabel": "Free scan",
+      "href": "/health-scanner",
+      "id": "hipaa-scanner",
+      "monthlyPrice": null,
+      "name": "HIPAA Health Scanner",
+      "plans": [
+        {
+          "monthlyPrice": null,
+          "popular": false,
+          "priceLabel": "Free",
+          "tier": "Free Scan"
+        },
+        {
+          "monthlyPrice": 397,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Compliance"
+        },
+        {
+          "monthlyPrice": null,
+          "popular": false,
+          "priceLabel": "Custom",
+          "tier": "Enterprise"
+        }
+      ],
+      "pricePrefix": null,
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/dental-it",
+      "id": "dental-it",
+      "monthlyPrice": null,
+      "name": "Dental IT Support",
+      "plans": [
+        {
+          "monthlyPrice": 297,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Essential"
+        },
+        {
+          "monthlyPrice": 497,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Professional"
+        },
+        {
+          "monthlyPrice": 897,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Enterprise"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/gym-marketing",
+      "id": "gym-marketing",
+      "monthlyPrice": null,
+      "name": "Gym Marketing",
+      "plans": [
+        {
+          "monthlyPrice": 497,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Starter"
+        },
+        {
+          "monthlyPrice": 897,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Growth"
+        },
+        {
+          "monthlyPrice": 1497,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Pro"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/weave",
+      "id": "weave",
+      "monthlyPrice": null,
+      "name": "Weave",
+      "plans": [
+        {
+          "monthlyPrice": 249,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Starter"
+        },
+        {
+          "monthlyPrice": 449,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Professional"
+        },
+        {
+          "monthlyPrice": null,
+          "popular": false,
+          "priceLabel": "Custom",
+          "tier": "Enterprise"
+        }
+      ],
+      "pricePrefix": null,
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/insurance-verification",
+      "id": "insurance-verification",
+      "monthlyPrice": null,
+      "name": "Insurance Verification",
+      "plans": [
+        {
+          "monthlyPrice": 97,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Eligibility Check"
+        },
+        {
+          "monthlyPrice": 147,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Prior Auth"
+        },
+        {
+          "monthlyPrice": null,
+          "popular": false,
+          "priceLabel": "Custom",
+          "tier": "Full Suite"
+        }
+      ],
+      "pricePrefix": null,
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly, or annually at 10 months' price (2 months free).",
+      "href": "/care-plans",
+      "id": "care-plans",
+      "monthlyPrice": null,
+      "name": "Care Plans",
+      "plans": [
+        {
+          "annualPrice": 970,
+          "monthlyPrice": 97,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Essential"
+        },
+        {
+          "annualPrice": 1970,
+          "monthlyPrice": 197,
+          "popular": true,
+          "priceLabel": null,
+          "tier": "Professional"
+        },
+        {
+          "annualPrice": 3970,
+          "monthlyPrice": 397,
+          "popular": false,
+          "priceLabel": null,
+          "tier": "Enterprise"
+        }
+      ],
+      "pricePrefix": "from",
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/contact",
+      "id": "smartbill",
+      "monthlyPrice": 749,
+      "name": "SmartBill (AI Billing)",
+      "plans": [],
+      "pricePrefix": null,
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/contact",
+      "id": "noshow-guard",
+      "monthlyPrice": 247,
+      "name": "NoShow Guard",
+      "plans": [],
+      "pricePrefix": null,
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "$599 one-time or $97/mo.",
+      "href": "/contact",
+      "id": "scanner-2",
+      "monthlyPrice": 97,
+      "name": "Scanner 2.0",
+      "plans": [],
+      "pricePrefix": null,
+      "setupPrice": 599,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "href": "/contact",
+      "id": "sales-engine",
+      "monthlyPrice": 499,
+      "name": "Sales Engine (Lead Gen)",
+      "plans": [],
+      "pricePrefix": null,
+      "setupPrice": null,
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    }
+  ],
+  "agentSystemAddons": [
+    {
+      "billingNotes": "One-time. Setup in 24–48 hours instead of the standard 5–7 business days.",
+      "id": "priority-setup",
+      "monthlyPrice": null,
+      "name": "Priority Setup",
+      "setupPrice": 299,
+      "source": "ratified-2026-11-24",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "One-time. Additional 2 hours of personalized training.",
+      "id": "extended-training",
+      "monthlyPrice": null,
+      "name": "Extended Training",
+      "setupPrice": 199,
+      "source": "ratified-2026-11-24",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "From $499 per integration, scoped before work starts.",
+      "id": "custom-integration",
+      "monthlyPrice": null,
+      "name": "Custom Integration",
+      "setupPrice": 499,
+      "source": "ratified-2026-11-24",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Billed monthly.",
+      "id": "analytics-dashboard",
+      "monthlyPrice": 149,
+      "name": "Analytics Dashboard",
+      "setupPrice": null,
+      "source": "ratified-2026-11-24",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "One-time. 100 pre-qualified leads in your target market.",
+      "id": "lead-package",
+      "monthlyPrice": null,
+      "name": "Lead Package",
+      "setupPrice": 399,
+      "source": "ratified-2026-11-24",
+      "stripeLink": null
+    },
+    {
+      "billingNotes": "Included with every setup.",
+      "entryLabel": "FREE",
+      "id": "documentation-access",
+      "monthlyPrice": null,
+      "name": "Documentation Access",
+      "setupPrice": 0,
+      "source": "site-published-pre-pilot-unratified",
+      "stripeLink": null
+    }
+  ],
+  "agentSystemPassThrough": {
+    "managedHosting": {
+      "annualPrice": 588,
+      "billingNotes": "$49/month or $588/year for managed DigitalOcean hosting, or self-host. Client pays providers directly.",
+      "id": "managed-hosting",
+      "monthlyPrice": 49,
+      "name": "Managed Hosting (pass-through)",
+      "source": "site-published-pre-pilot",
+      "stripeLink": null
+    }
+  },
+  "workshops": {
+    "billingNotes": "$2,500–$3,500 per team (up to 15) or $197–$297 per seat.",
+    "displayName": "Team AI Workshop",
+    "id": "team-ai-workshop",
+    "name": "Team AI Workshop",
+    "seatPriceMax": 297,
+    "seatPriceMin": 197,
+    "source": "ratified-2026-11-22",
+    "stripeLink": null,
+    "teamPriceMax": 3500,
+    "teamPriceMin": 2500
+  }
+}

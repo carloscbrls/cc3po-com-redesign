@@ -1,5 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { catalogHelpers } from '../../lib/catalog';
+
+// JSON-LD Product offer price renders from the pricing catalog so
+// structured data can never drift from the catalog (merge map step 4).
+const { ladderTier } = await catalogHelpers();
+const fortressTier = ladderTier('fortress');
 
 const schema = {
   "@context": "https://schema.org",
@@ -9,7 +15,7 @@ const schema = {
   "brand": { "@type": "Brand", "name": "CC3PO" },
   "offers": {
     "@type": "Offer",
-    "price": "447",
+    "price": String(fortressTier.monthlyPrice),
     "priceCurrency": "USD",
     "priceValidUntil": "2027-12-31",
     "availability": "https://schema.org/InStock",

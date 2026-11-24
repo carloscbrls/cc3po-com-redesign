@@ -1,5 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { catalogHelpers } from '../../lib/catalog';
+
+// JSON-LD Product offer minPrice renders from the pricing catalog so
+// structured data can never drift from the catalog (merge map step 4).
+const { ladderTier } = await catalogHelpers();
+const citadelTier = ladderTier('citadel');
 
 const schema = {
   "@context": "https://schema.org",
@@ -9,7 +15,7 @@ const schema = {
   "brand": { "@type": "Brand", "name": "CC3PO" },
   "offers": {
     "@type": "Offer",
-    "priceSpecification": { "@type": "PriceSpecification", "minPrice": "897", "priceCurrency": "USD" },
+    "priceSpecification": { "@type": "PriceSpecification", "minPrice": String(citadelTier.monthlyPrice), "priceCurrency": "USD" },
     "priceCurrency": "USD",
     "priceValidUntil": "2027-12-31",
     "availability": "https://schema.org/InStock",
