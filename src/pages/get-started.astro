@@ -197,7 +197,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
         </div>
         <div class="gs-faq-item">
           <h3>Is the compliance scan really free?</h3>
-          <p>Yes. Every plan — even before you commit — includes a free scan of your website for HIPAA compliance, security, speed, and accessibility issues.</p>
+          <p>Yes. Every plan — even before you commit — includes a free scan of your website for security, speed, and accessibility issues — plus HIPAA-related technical checks (like unencrypted patient forms) for healthcare sites.</p>
         </div>
         <div class="gs-faq-item">
           <h3>Can I cancel anytime?</h3>
@@ -205,7 +205,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
         </div>
         <div class="gs-faq-item">
           <h3>Do you work with dental and medical offices?</h3>
-          <p>Yes — healthcare compliance is our specialty. We handle HIPAA-compliant websites, AI phone answering, automated reviews, and billing automation.</p>
+          <p>Yes — healthcare is our specialty. We build and manage websites for HIPAA-covered practices, alongside AI phone answering, automated reviews, and billing automation.</p>
         </div>
       </div>
     </div>
@@ -549,6 +549,10 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     color: #a1a1aa;
     font-size: 15px;
     line-height: 1.6;
+  }
+  /* Mobile QA (2026-11-24): form fields at 16px stop iOS zoom-on-focus */
+  @media (max-width: 768px) {
+    .gs-form input, .gs-form select, .gs-form textarea { font-size: 16px !important; }
   }
 </style>
 

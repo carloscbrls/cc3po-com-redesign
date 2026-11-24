@@ -317,7 +317,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
             </div>
             <h3 class="addon-name">Accessibly</h3>
           </div>
-          <p class="addon-desc">ADA/WCAG accessibility widget &amp; compliance.</p>
+          <p class="addon-desc">ADA/WCAG accessibility widget.</p>
         </a>
         <a href="https://customgpt.ai/?fpr=carlos83" target="_blank" rel="noopener" class="addon-card">
           <div class="addon-card-header">
@@ -1318,5 +1318,9 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     .bolt-card {
       padding: 24px;
     }
+  }
+  /* Mobile QA (2026-11-24): form fields at 16px stop iOS zoom-on-focus */
+  @media (max-width: 768px) {
+    #agency-lead-form input, #agency-lead-form select, #agency-lead-form textarea, #domain-search-input { font-size: 16px !important; }
   }
 </style>

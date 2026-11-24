@@ -106,15 +106,15 @@ import Layout from '../layouts/Layout.astro';
       <div class="faq-grid">
         <div class="faq-item">
           <h3>How much does it cost?</h3>
-          <p>Plans start at $297/month for our Daily Content plan. Our AI Village handles everything — writing, posting, monitoring — so you don't need to hire anyone.</p>
+          <p>Plans start at $297/month for Shield monitoring. Our AI Village handles everything — writing, posting, monitoring — so you don't need to hire anyone.</p>
         </div>
         <div class="faq-item">
           <h3>Do you work with dental offices?</h3>
-          <p>Yes. Dental practices are our specialty. We handle HIPAA-compliant websites, AI phone answering, automated reviews, and billing automation.</p>
+          <p>Yes. Dental practices are our specialty. We build and manage websites for HIPAA-covered practices, alongside AI phone answering, automated reviews, and billing automation.</p>
         </div>
         <div class="faq-item">
           <h3>What's included in the free audit?</h3>
-          <p>A full scan of your website covering speed, security, SEO, mobile experience, accessibility, and HIPAA compliance. You get a detailed report with specific fixes.</p>
+          <p>A full scan of your website covering speed, security, SEO, mobile experience, and accessibility — plus HIPAA-related technical checks for healthcare sites. You get a detailed report with specific fixes.</p>
         </div>
         <div class="faq-item">
           <h3>Can I cancel anytime?</h3>
@@ -203,6 +203,8 @@ import Layout from '../layouts/Layout.astro';
   .faq-item { background: #141418; border: 1px solid #2a2a3a; border-radius: 12px; padding: 24px; }
   .faq-item h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
   .faq-item p { color: #a1a1aa; font-size: 15px; line-height: 1.6; }
+  /* Mobile QA (2026-11-24): form fields at 16px stop iOS zoom-on-focus */
+  @media (max-width: 768px) { .contact-form input, .contact-form select, .contact-form textarea { font-size: 16px !important; } }
 </style>
 
 <script>

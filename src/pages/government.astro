@@ -101,7 +101,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="product-card reveal" style="--accent-color:var(--accent);">
           <div class="product-icon-wrap"><span>🌐</span></div>
           <div class="product-name">Website & Digital Services</div>
-          <div class="product-desc">Modern, accessible government websites built on Astro + Netlify. Fast, secure, WCAG 2.1 AA compliant by default. AB 434 certification-ready. Includes hosting, SSL, monitoring, and ongoing maintenance.</div>
+          <div class="product-desc">Modern, accessible government websites built on Astro + Netlify. Fast, secure, designed and audited against WCAG 2.1 AA — the ADA Title II standard. AB 434 certification-ready. Includes hosting, SSL, monitoring, and ongoing maintenance.</div>
           <div class="product-badge">AB 434 Ready</div>
           <div class="product-bar"><div class="product-bar-fill" style="--fill:100%;"></div></div>
         </div>
@@ -138,7 +138,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="section-title">Commodity Classifications</h2>
         <p class="section-desc">Our services map to the following UNSPSC codes for procurement systems.</p>
       </div>
-      <div class="reveal" style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm);max-width:800px;margin:0 auto;">
+      <div class="reveal codes-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm);max-width:800px;margin:0 auto;">
         <div class="unspsc-row" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-sm) var(--space-md);background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);">
           <code style="font-family:var(--font-mono);font-size:var(--text-caption);color:var(--accent);">81112101</code>
           <span style="font-size:14px;color:var(--text-secondary);">Computer programming services</span>
@@ -294,6 +294,14 @@ import Layout from '../layouts/Layout.astro';
       "IT Infrastructure"
     ]
   })} />
+
+  <style>
+    /* Mobile QA (2026-11-24): inline multi-column grids collapse on phones */
+    @media (max-width: 768px) {
+      .trust-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .products-grid, .testimonials-grid, .codes-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
 
   <script is:inline>
     // Mobile Drawer
