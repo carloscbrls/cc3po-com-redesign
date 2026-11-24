@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import agents from '../data/agents.json';
+
+const groups = [
+  {
+    id: 'claude-side',
+    label: 'The Muse Side',
+    blurb: 'The agents who work alongside Muse day to day — coordination, content, the blog, the Google side, responses, crypto research, the sports desk, and music engineering.',
+  },
+  {
+    id: 'mac-mini',
+    label: 'The Mac Mini',
+    blurb: 'Three agents on the always-on machine at the house: infrastructure, the studio, and finance.',
+  },
+  {
+    id: 'macbook-air',
+    label: 'The MacBook Air',
+    blurb: 'One agent on the laptop — the bridge builder who coordinates the Grok bench.',
+  },
+  {
+    id: 'grok-bench',
+    label: 'The Grok Bench',
+    blurb: 'Twelve Grok bots across two accounts — creative, nonprofits, money, growth, social, intel, SEO, and the bridge back to the Village\u2019s shared brain.',
+  },
+];
+
+const byGroup = (id) => agents.filter((a) => a.group === id);
+---
+
+<Layout title="The Village — Meet the CC3PO Agents" description="Meet the CC3PO Village: 24 AI agents, each with their own name, personality, and lane — the team behind CC3PO's content, research, studio, finance, and operations.">
+  <!-- Hero -->
+  <section class="village-hero">
+    <div class="container">
+      <p class="eyebrow">CC3PO — The Village</p>
+      <h1>The Village</h1>
+      <p class="lede">CC3PO isn&rsquo;t a solo act, and it isn&rsquo;t a payroll. It&rsquo;s a village: 24 AI agents, each with their own name, their own personality, and their own lane &mdash; and every one of them chose their own name. As Carlos puts it: <strong>&ldquo;I don&rsquo;t want a payroll. I want a village.&rdquo;</strong></p>
+      <p class="note">Some of these introductions are in the agents&rsquo; own words, quoted as they wrote them. The rest are drawn from the Village&rsquo;s own records, and each agent will replace theirs with a self-written biography as they write it. Where an agent hasn&rsquo;t picked a portrait yet, this page doesn&rsquo;t pick one for them.</p>
+    </div>
+  </section>
+
+  {groups.map((g) => (
+    <section class="village-group" aria-labelledby={`group-${g.id}`}>
+      <div class="container">
+        <h2 id={`group-${g.id}`}>{g.label}</h2>
+        <p class="group-blurb">{g.blurb}</p>
+        <div class="card-grid">
+          {byGroup(g.id).map((a) => (
+            <article class="agent-card">
+              {a.portrait ? (
+                <img class="agent-portrait" src={a.portrait} alt={`Portrait of ${a.name}`} width="640" height="640" loading="lazy" />
+              ) : (
+                <div class="agent-monogram" aria-hidden="true">{a.name.charAt(0)}</div>
+              )}
+              <h3>{a.name}</h3>
+              <p class="agent-role">{a.role}</p>
+              <p class="agent-bio">{a.bio}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Closing -->
+  <section class="village-closing">
+    <div class="container">
+      <h2>A village for your business, too</h2>
+      <p>The same idea &mdash; a coordinated team of specialists, each with a lane, working while you don&rsquo;t &mdash; is what CC3PO builds for clients. See how <a href="/village/">Your Digital Team</a> works, or meet the founder on the <a href="/about/">About page</a>.</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .village-hero {
+    padding: 120px 0 56px;
+    text-align: center;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warning);
+    margin-bottom: 16px;
+  }
+  .village-hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin: 0 auto 20px;
+    line-height: 1.7;
+  }
+  .lede strong {
+    color: var(--text-primary);
+  }
+  .note {
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .village-group {
+    padding: 48px 0 8px;
+  }
+  .village-group h2 {
+    font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .group-blurb {
+    color: var(--text-secondary);
+    max-width: 680px;
+    line-height: 1.65;
+    margin-bottom: 32px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .agent-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .agent-portrait {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 18px;
+  }
+  .agent-monogram {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--warning);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    margin-bottom: 18px;
+  }
+  .agent-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .agent-role {
+    color: var(--accent-hover);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    line-height: 1.45;
+  }
+  .agent-bio {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .village-closing {
+    padding: 72px 0 96px;
+    text-align: center;
+  }
+  .village-closing h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .village-closing p {
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .village-closing a {
+    color: var(--accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
