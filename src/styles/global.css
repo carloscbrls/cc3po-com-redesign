@@ -274,10 +274,20 @@ a:focus-visible, button:focus-visible {
 }
 .nav-logo svg { border-radius: var(--radius-sm); flex-shrink: 0; }
 .nav-links { display: flex; gap: var(--space-lg); }
-@media (min-width: 769px) and (max-width: 1150px) {
+@media (min-width: 769px) and (max-width: 1279px) {
   .nav-links { gap: var(--space-md); }
   .nav-links a { font-size: 13px; }
   .nav-phone { padding: 10px 10px; }
+}
+@media (min-width: 1280px) {
+  /* Command Center frame A header intent (Figma Design System file,
+     frame 9:2): the bar spans the full 1440px frame with spacing/2xl
+     (48px) insets, and the menu sits as its own cluster with open space
+     after the logo (frame: logo cluster ends x=136, first menu item at
+     x=470). Widen the bar to the frame width, inset by the 2xl token,
+     floor the inter-cluster gap at spacing/xl, and never wrap a label. */
+  .nav-inner { max-width: 1440px; padding: 0 var(--space-2xl); gap: var(--space-xl); }
+  .nav-links a { white-space: nowrap; }
 }
 .nav-links a {
   font-size: 14px; font-weight: 500;
