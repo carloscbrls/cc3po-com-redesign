@@ -5,27 +5,27 @@ import CaptureStrip from '../components/CaptureStrip.astro';
 
 <Layout title="CC3PO Agency — Professional Websites Built Fast" description="Get a professional website built with AI in 48 hours. Hosting and SSL included, quoted after a free call. Accessibility monitoring from $297/mo.">
   <!-- Hero -->
-  <section class="relative min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 pt-24 pb-16 overflow-hidden" style="background: #0a0a12;">
-    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 0%, rgba(16,185,129,0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(16,185,129,0.04) 0%, transparent 50%);"></div>
+  <section class="relative min-h-[80vh] flex items-center justify-center text-center px-4 sm:px-6 pt-24 pb-16 overflow-hidden" style="background: var(--brand-night);">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--semantic-success) 8%, transparent) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, color-mix(in srgb, var(--semantic-success) 4%, transparent) 0%, transparent 50%);"></div>
     <div class="relative z-10" style="max-width: 800px;">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-6" style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); color: #34d399;">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide mb-6" style="background: color-mix(in srgb, var(--semantic-success) 10%, transparent); border: 1px solid color-mix(in srgb, var(--semantic-success) 25%, transparent); color: var(--semantic-success);">
         <span class="badge-dot"></span>
         Built with AI — Delivered in 48 hours
       </div>
-      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter mb-5" style="color: #fff; font-family: var(--lux-serif); font-weight: 700; letter-spacing: -1.5px;">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter mb-5" style="color: var(--brand-paper); font-family: var(--lux-serif); font-weight: 700; letter-spacing: -1.5px;">
         Professional Websites,<br>
-        <span style="background: linear-gradient(135deg, #ffffff 0%, #d4af37 40%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Built Fast</span>
+        <span style="background: linear-gradient(135deg, var(--brand-paper) 0%, var(--brand-gold) 40%, var(--semantic-success) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Built Fast</span>
       </h1>
-      <p class="text-base sm:text-lg mb-8" style="color: rgba(255,255,255,0.78); max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+      <p class="text-base sm:text-lg mb-8" style="color: var(--semantic-muted); max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7;">
         One place to buy your domain, build your site, and manage everything.
         No tech skills needed. No multiple vendors. No hidden fees.
       </p>
       <div class="flex flex-wrap justify-center gap-3" style="align-items:center;">
         <a href="#pricing" class="btn-primary">See Plans</a>
       </div>
-      <p style="margin-top:16px;font-size:0.95rem;color:rgba(255,255,255,0.78);">
-        Prefer to talk first? <a href="tel:+12097011137" style="color:#34d399;text-decoration:underline;">Call (209) 701-1137</a>
-        · Starting from scratch? <a href="#domain" style="color:#34d399;text-decoration:underline;">Buy a domain</a>
+      <p style="margin-top:16px;font-size:0.95rem;color:var(--semantic-muted);">
+        Prefer to talk first? <a href="tel:+12097011137" style="color:var(--semantic-success);text-decoration:underline;">Call (209) 701-1137</a>
+        · Starting from scratch? <a href="#domain" style="color:var(--semantic-success);text-decoration:underline;">Buy a domain</a>
       </p>
     </div>
   </section>
@@ -54,15 +54,15 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     <!-- Proof — named client testimonial + recent work -->
     <div class="section" style="margin-top:16px;">
       <h2 class="section-title">What a Client Says</h2>
-      <figure style="max-width:760px;margin:0 auto;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px;">
-        <div aria-label="5 out of 5 stars" style="color:#d4af37;font-size:1.1rem;margin-bottom:12px;">★★★★★</div>
-        <blockquote style="margin:0;font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.88);">
+      <figure style="max-width:760px;margin:0 auto;background:color-mix(in srgb, var(--brand-paper) 3%, transparent);border:1px solid color-mix(in srgb, var(--brand-paper) 8%, transparent);border-radius:16px;padding:32px;">
+        <div aria-label="5 out of 5 stars" style="color:var(--brand-gold);font-size:1.1rem;margin-bottom:12px;">★★★★★</div>
+        <blockquote style="margin:0;font-size:1.05rem;line-height:1.7;color:color-mix(in srgb, var(--brand-paper) 88%, transparent);">
           <p style="margin:0;">"I used to spend 3 hours a day managing reviews and social media. Now I wake up and the village has done it all. My Business Health Score went from 52 to 87 in two months."</p>
         </blockquote>
-        <figcaption style="margin-top:16px;color:rgba(255,255,255,0.65);font-size:0.95rem;">
-          <strong style="color:#fff;">Dr. Alan Lee</strong> — Alan Lee DDS, Manteca CA
+        <figcaption style="margin-top:16px;color:color-mix(in srgb, var(--brand-paper) 65%, transparent);font-size:0.95rem;">
+          <strong style="color:var(--brand-paper);">Dr. Alan Lee</strong> — Alan Lee DDS, Manteca CA
         </figcaption>
-        <p style="margin-top:12px;color:rgba(255,255,255,0.65);font-size:0.95rem;">Recent work: for Alan Lee DDS in Manteca, the Village handles the practice's reviews and social media and runs its compliance monitoring — the work behind the score above.</p>
+        <p style="margin-top:12px;color:color-mix(in srgb, var(--brand-paper) 65%, transparent);font-size:0.95rem;">Recent work: for Alan Lee DDS in Manteca, the Village handles the practice's reviews and social media and runs its compliance monitoring — the work behind the score above.</p>
       </figure>
     </div>
 
@@ -127,15 +127,15 @@ import CaptureStrip from '../components/CaptureStrip.astro';
       </div>
       <div class="domain-features">
         <div class="domain-feature">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
           <span><strong>$10-15/year</strong> for .com through SiteGround. No markup.</span>
         </div>
         <div class="domain-feature">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
           <span><strong>Already have a domain?</strong> We'll point it to your new site.</span>
         </div>
         <div class="domain-feature">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
           <span><strong>Buy through our link</strong> and we earn a commission that keeps prices low.</span>
         </div>
       </div>
@@ -160,10 +160,10 @@ import CaptureStrip from '../components/CaptureStrip.astro';
           </div>
           <p class="path-desc">Tell us what you need. We use AI to build your site fast. You review, we refine, you go live.</p>
           <ul class="path-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Built in <strong>24-48 hours</strong></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>You review and request changes</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>We handle domain setup, SSL, everything</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Ongoing support and edits</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Built in <strong>24-48 hours</strong></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>You review and request changes</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>We handle domain setup, SSL, everything</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Ongoing support and edits</li>
           </ul>
           <a href="#pricing" class="btn-primary" style="display: block; text-align: center; width: 100%;">See Plans →</a>
         </div>
@@ -180,10 +180,10 @@ import CaptureStrip from '../components/CaptureStrip.astro';
           </div>
           <p class="path-desc">You tell us what you need — your business type, what pages you want, your colors, your logo. Our AI village takes that info and builds your entire site on a modern, hand-crafted stack. You just review and approve.</p>
           <ul class="path-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>You give us <strong>basic info</strong> — business name, what you do, your preferences</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Our AI village builds it — <strong>you don't touch the tool</strong></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>You review, we refine — <strong>done in 24-48 hours</strong></li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>We handle <strong>everything</strong> — domain, hosting, deployment</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>You give us <strong>basic info</strong> — business name, what you do, your preferences</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Our AI village builds it — <strong>you don't touch the tool</strong></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>You review, we refine — <strong>done in 24-48 hours</strong></li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>We handle <strong>everything</strong> — domain, hosting, deployment</li>
           </ul>
           <a href="#pricing" class="btn-primary" style="display: block; text-align: center; width: 100%;">Get Started →</a>
         </div>
@@ -202,9 +202,9 @@ import CaptureStrip from '../components/CaptureStrip.astro';
           <div class="price-amount">$297<span>/mo</span></div>
           <p class="price-note">Per website · cancel anytime</p>
           <ul class="price-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Monthly WCAG 2.2 AA scans</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Instant violation alerts</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Monthly PDF reports</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Monthly WCAG 2.2 AA scans</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Instant violation alerts</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Monthly PDF reports</li>
           </ul>
           <a href="https://buy.stripe.com/bJecN53MFfiNfM5brH5os00" class="btn-primary" style="display: block; text-align: center; width: 100%;">Start Shield</a>
         </div>
@@ -216,10 +216,10 @@ import CaptureStrip from '../components/CaptureStrip.astro';
           <div class="price-amount">$447<span>/mo</span></div>
           <p class="price-note">Per website · cancel anytime</p>
           <ul class="price-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Everything in Shield</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Daily scans + active fixes</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Manual expert audits</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Priority support</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Everything in Shield</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Daily scans + active fixes</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Manual expert audits</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Priority support</li>
           </ul>
           <a href="https://buy.stripe.com/5kQ7sL5UNeeJ0RbgM15os01" class="btn-primary" style="display: block; text-align: center; width: 100%;">Start Fortress</a>
         </div>
@@ -230,10 +230,10 @@ import CaptureStrip from '../components/CaptureStrip.astro';
           <div class="price-amount"><span style="font-size:1rem;font-weight:500;">from </span>$897<span>/mo</span></div>
           <p class="price-note">Custom pricing · quoted after a call</p>
           <ul class="price-features">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Everything in Fortress</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Dedicated account manager</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Multi-site management</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #10b981; flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Audit-ready documentation</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Everything in Fortress</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Dedicated account manager</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Multi-site management</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--semantic-success); flex-shrink: 0;"><path d="M5 13l4 4L19 7"/></svg>Audit-ready documentation</li>
           </ul>
           <a href="https://scheduler.zoom.us/carlos-cabrales-iii/compliance-consultation" class="btn-primary" style="display: block; text-align: center; width: 100%;">Get a quote</a>
         </div>
@@ -374,8 +374,8 @@ import CaptureStrip from '../components/CaptureStrip.astro';
         </a>
         <a href="/products/" class="addon-card">
           <div class="addon-card-header">
-            <div class="addon-icon" style="background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #f59e0b;"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <div class="addon-icon" style="background: color-mix(in srgb, var(--brand-gold) 10%, transparent); border-color: color-mix(in srgb, var(--brand-gold) 20%, transparent);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--brand-gold);"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             </div>
             <h3 class="addon-name">DiscloseShield</h3>
           </div>
@@ -405,33 +405,33 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     </div>
 
     <!-- Lead Capture Form -->
-    <div id="get-started" class="cta-section" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(15, 52, 96, 0.08)); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 16px; padding: 48px; margin-bottom: 80px;">
+    <div id="get-started" class="cta-section" style="background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 8%, transparent), color-mix(in srgb, var(--brand-navy) 8%, transparent)); border: 1px solid color-mix(in srgb, var(--semantic-success) 20%, transparent); border-radius: 16px; padding: 48px; margin-bottom: 80px;">
       <h2 class="section-title">Tell Us About Your Business</h2>
       <p class="section-desc" style="max-width: 560px;">Fill this out and we'll build your site. We'll reach out within 24 hours.</p>
       <form id="agency-lead-form" style="max-width: 600px; margin: 0 auto;">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
           <div>
-            <label for="form-name" style="display: block; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Your Name *</label>
-            <input type="text" id="form-name" name="name" required style="width: 100%; background: rgba(26,26,46,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 14px; box-sizing: border-box;" placeholder="John Doe" />
+            <label for="form-name" style="display: block; font-size: 14px; font-weight: 500; color: color-mix(in srgb, var(--brand-paper) 60%, transparent); margin-bottom: 4px;">Your Name *</label>
+            <input type="text" id="form-name" name="name" required style="width: 100%; background: color-mix(in srgb, var(--brand-surface-dark) 80%, transparent); border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent); border-radius: 8px; padding: 12px 16px; color: var(--brand-paper); font-size: 14px; box-sizing: border-box;" placeholder="John Doe" />
           </div>
           <div>
-            <label for="form-business" style="display: block; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Business Name *</label>
-            <input type="text" id="form-business" name="business" required style="width: 100%; background: rgba(26,26,46,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 14px; box-sizing: border-box;" placeholder="Joe's Plumbing" />
+            <label for="form-business" style="display: block; font-size: 14px; font-weight: 500; color: color-mix(in srgb, var(--brand-paper) 60%, transparent); margin-bottom: 4px;">Business Name *</label>
+            <input type="text" id="form-business" name="business" required style="width: 100%; background: color-mix(in srgb, var(--brand-surface-dark) 80%, transparent); border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent); border-radius: 8px; padding: 12px 16px; color: var(--brand-paper); font-size: 14px; box-sizing: border-box;" placeholder="Joe's Plumbing" />
           </div>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
           <div>
-            <label for="form-phone" style="display: block; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Phone *</label>
-            <input type="tel" id="form-phone" name="phone" required style="width: 100%; background: rgba(26,26,46,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 14px; box-sizing: border-box;" placeholder="(209) 555-0100" />
+            <label for="form-phone" style="display: block; font-size: 14px; font-weight: 500; color: color-mix(in srgb, var(--brand-paper) 60%, transparent); margin-bottom: 4px;">Phone *</label>
+            <input type="tel" id="form-phone" name="phone" required style="width: 100%; background: color-mix(in srgb, var(--brand-surface-dark) 80%, transparent); border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent); border-radius: 8px; padding: 12px 16px; color: var(--brand-paper); font-size: 14px; box-sizing: border-box;" placeholder="(209) 555-0100" />
           </div>
           <div>
-            <label for="form-email" style="display: block; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Email</label>
-            <input type="email" id="form-email" name="email" style="width: 100%; background: rgba(26,26,46,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 14px; box-sizing: border-box;" placeholder="john@joesplumbing.com" />
+            <label for="form-email" style="display: block; font-size: 14px; font-weight: 500; color: color-mix(in srgb, var(--brand-paper) 60%, transparent); margin-bottom: 4px;">Email</label>
+            <input type="email" id="form-email" name="email" style="width: 100%; background: color-mix(in srgb, var(--brand-surface-dark) 80%, transparent); border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent); border-radius: 8px; padding: 12px 16px; color: var(--brand-paper); font-size: 14px; box-sizing: border-box;" placeholder="john@joesplumbing.com" />
           </div>
         </div>
         <div style="margin-bottom: 16px;">
-          <label for="form-industry" style="display: block; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 4px;">Industry</label>
-          <select id="form-industry" name="industry" style="width: 100%; background: rgba(26,26,46,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 14px; box-sizing: border-box;">
+          <label for="form-industry" style="display: block; font-size: 14px; font-weight: 500; color: color-mix(in srgb, var(--brand-paper) 60%, transparent); margin-bottom: 4px;">Industry</label>
+          <select id="form-industry" name="industry" style="width: 100%; background: color-mix(in srgb, var(--brand-surface-dark) 80%, transparent); border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent); border-radius: 8px; padding: 12px 16px; color: var(--brand-paper); font-size: 14px; box-sizing: border-box;">
             <option value="">Select your industry</option>
             <option value="HVAC">HVAC</option>
             <option value="Plumbing">Plumbing</option>
@@ -446,21 +446,21 @@ import CaptureStrip from '../components/CaptureStrip.astro';
           </select>
         </div>
         <div style="margin-bottom: 20px;">
-          <label for="form-needs" style="display: block; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); margin-bottom: 4px;">What do you need?</label>
-          <textarea id="form-needs" name="needs" rows="3" style="width: 100%; background: rgba(26,26,46,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; color: #fff; font-size: 14px; box-sizing: border-box;" placeholder="Tell us about your business and what kind of site you want..."></textarea>
+          <label for="form-needs" style="display: block; font-size: 14px; font-weight: 500; color: color-mix(in srgb, var(--brand-paper) 60%, transparent); margin-bottom: 4px;">What do you need?</label>
+          <textarea id="form-needs" name="needs" rows="3" style="width: 100%; background: color-mix(in srgb, var(--brand-surface-dark) 80%, transparent); border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent); border-radius: 8px; padding: 12px 16px; color: var(--brand-paper); font-size: 14px; box-sizing: border-box;" placeholder="Tell us about your business and what kind of site you want..."></textarea>
         </div>
         <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; font-size: 16px;">Get My Website →</button>
-        <p style="font-size: 12px; color: rgba(255,255,255,0.4); text-align: center; margin-top: 8px;">We'll reach out within 24 hours. No obligation, no spam.</p>
+        <p style="font-size: 12px; color: color-mix(in srgb, var(--brand-paper) 40%, transparent); text-align: center; margin-top: 8px;">We'll reach out within 24 hours. No obligation, no spam.</p>
       </form>
       <div id="form-success" style="display:none; text-align: center; padding: 32px 0;">
         <div style="font-size: 2.5rem; margin-bottom: 12px;">✅</div>
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 8px;">Thanks, we got your info!</h3>
-        <p style="color: rgba(255,255,255,0.6); font-size: 14px;">We'll reach out within 24 hours to get started on your site.</p>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--brand-paper); margin-bottom: 8px;">Thanks, we got your info!</h3>
+        <p style="color: color-mix(in srgb, var(--brand-paper) 60%, transparent); font-size: 14px;">We'll reach out within 24 hours to get started on your site.</p>
       </div>
       <div id="form-error" style="display:none; text-align: center; padding: 32px 0;">
         <div style="font-size: 2.5rem; margin-bottom: 12px;">⚠️</div>
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 8px;">Something went wrong</h3>
-        <p style="color: rgba(255,255,255,0.6); font-size: 14px;">Please try again, or email us at <a href="mailto:hello@cc3po.com" style="color: #4fc3f7;">hello@cc3po.com</a>.</p>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--brand-paper); margin-bottom: 8px;">Something went wrong</h3>
+        <p style="color: color-mix(in srgb, var(--brand-paper) 60%, transparent); font-size: 14px;">Please try again, or email us at <a href="mailto:hello@cc3po.com" style="color: var(--semantic-info);">hello@cc3po.com</a>.</p>
       </div>
     </div>
 
@@ -596,12 +596,12 @@ import CaptureStrip from '../components/CaptureStrip.astro';
 <style>
   /* ===== LUXURY DESIGN SYSTEM (matches landing page) ===== */
   :root {
-    --lux-gold: #d4af37;
-    --lux-gold-soft: rgba(212,175,55,0.12);
-    --lux-emerald: #10b981;
+    --lux-gold: var(--brand-gold);
+    --lux-gold-soft: color-mix(in srgb, var(--brand-gold) 12%, transparent);
+    --lux-emerald: var(--semantic-success);
     --lux-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
-    --lux-line: rgba(212,175,55,0.18);
-    --lux-card: rgba(255,255,255,0.03);
+    --lux-line: color-mix(in srgb, var(--brand-gold) 18%, transparent);
+    --lux-card: color-mix(in srgb, var(--brand-paper) 3%, transparent);
   }
 
   /* Badge dot with pulse animation */
@@ -619,7 +619,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     top: -3px; left: -3px;
     width: 14px; height: 14px;
     border-radius: 50%;
-    background: rgba(16, 185, 129, 0.25);
+    background: color-mix(in srgb, var(--semantic-success) 25%, transparent);
     animation: pulseRing 2s ease-out infinite;
   }
   @keyframes pulseRing {
@@ -633,30 +633,30 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: #000 !important;
+    background: linear-gradient(135deg, var(--semantic-success), var(--semantic-success));
+    color: var(--brand-night) !important;
     border-radius: 10px;
     font-size: 15px;
     font-weight: 600;
     min-height: 44px;
     transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
-    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--semantic-success) 30%, transparent);
     text-decoration: none;
   }
   .btn-primary:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 30px rgba(16, 185, 129, 0.45);
-    background: linear-gradient(135deg, #34d399, #10b981);
-    color: #000 !important;
+    box-shadow: 0 6px 30px color-mix(in srgb, var(--semantic-success) 45%, transparent);
+    background: linear-gradient(135deg, var(--semantic-success), var(--semantic-success));
+    color: var(--brand-night) !important;
   }
   .btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff !important;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: color-mix(in srgb, var(--brand-paper) 6%, transparent);
+    color: var(--brand-paper) !important;
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 12%, transparent);
     border-radius: 10px;
     font-size: 15px;
     font-weight: 600;
@@ -665,9 +665,9 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     text-decoration: none;
   }
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: color-mix(in srgb, var(--brand-paper) 12%, transparent);
     border-color: var(--lux-gold);
-    color: #fff !important;
+    color: var(--brand-paper) !important;
   }
 
   /* Stats */
@@ -682,7 +682,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     text-align: center;
     padding: 24px 16px;
     background: var(--lux-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     border-radius: 16px;
     transition: border-color 0.3s, transform 0.3s;
   }
@@ -705,7 +705,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   }
   .stat-label {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
   }
 
   /* Sections */
@@ -715,14 +715,14 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .section-title {
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     font-weight: 700;
-    color: #fff;
+    color: var(--brand-paper);
     text-align: center;
     margin-bottom: 8px;
     letter-spacing: -1px;
     font-family: var(--lux-serif);
   }
   .section-desc {
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     text-align: center;
     max-width: 560px;
     margin: 0 auto 48px;
@@ -739,7 +739,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .step-card {
     padding: 32px 24px;
     background: var(--lux-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     text-align: center;
     position: relative;
     transition: border-color 0.3s, transform 0.3s;
@@ -754,8 +754,8 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .step-icon {
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 15%, transparent), color-mix(in srgb, var(--brand-gold) 8%, transparent));
+    border: 1px solid color-mix(in srgb, var(--semantic-success) 20%, transparent);
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -778,25 +778,25 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .step-title {
     font-size: 15px;
     font-weight: 700;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 6px;
     font-family: var(--lux-serif);
   }
   .step-desc {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     line-height: 1.5;
   }
 
   /* Domain */
   .domain-card {
-    background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(10, 10, 18, 0.5));
+    background: linear-gradient(160deg, color-mix(in srgb, var(--brand-paper) 5%, transparent), color-mix(in srgb, var(--brand-night) 50%, transparent));
     border: 1px solid var(--lux-line);
     border-radius: 20px;
     padding: 40px;
     margin-bottom: 80px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 60px color-mix(in srgb, var(--brand-night) 30%, transparent);
   }
   .domain-header {
     display: flex;
@@ -816,7 +816,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   }
   .price-badge-label {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     margin: 0;
   }
   .price-badge-amount {
@@ -828,7 +828,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   }
   .price-badge-unit {
     font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: color-mix(in srgb, var(--brand-paper) 40%, transparent);
     font-weight: 400;
   }
   .domain-search-row {
@@ -847,15 +847,15 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 0.4);
+    color: color-mix(in srgb, var(--brand-paper) 40%, transparent);
   }
   .search-input {
     width: 100%;
-    background: rgba(26, 26, 46, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: color-mix(in srgb, var(--brand-surface-dark) 80%, transparent);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent);
     border-radius: 10px;
     padding: 12px 16px 12px 40px;
-    color: #fff;
+    color: var(--brand-paper);
     font-size: 15px;
     transition: border-color 0.2s;
     box-sizing: border-box;
@@ -863,10 +863,10 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .search-input:focus {
     outline: none;
     border-color: var(--lux-emerald);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--semantic-success) 10%, transparent);
   }
   .search-input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: color-mix(in srgb, var(--brand-paper) 30%, transparent);
   }
   .domain-features {
     display: grid;
@@ -878,10 +878,10 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     align-items: flex-start;
     gap: 8px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
   }
   .domain-feature strong {
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
   }
 
   /* Paths */
@@ -892,7 +892,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   }
   .path-card {
     background: var(--lux-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     border-radius: 20px;
     padding: 32px;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s, box-shadow 0.3s;
@@ -900,11 +900,11 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .path-card:hover {
     transform: translateY(-4px);
     border-color: var(--lux-line);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--brand-night) 35%, transparent);
   }
   .path-card-highlight {
-    background: linear-gradient(160deg, rgba(16, 185, 129, 0.08), rgba(212, 175, 55, 0.06));
-    border: 2px solid rgba(16, 185, 129, 0.3);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--semantic-success) 8%, transparent), color-mix(in srgb, var(--brand-gold) 6%, transparent));
+    border: 2px solid color-mix(in srgb, var(--semantic-success) 30%, transparent);
     position: relative;
   }
   .path-card-highlight:hover {
@@ -914,8 +914,8 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     position: absolute;
     top: -12px;
     left: 24px;
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: #000;
+    background: linear-gradient(135deg, var(--semantic-success), var(--semantic-success));
+    color: var(--brand-night);
     font-size: 11px;
     font-weight: 700;
     padding: 4px 14px;
@@ -930,8 +930,8 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .path-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 15%, transparent), color-mix(in srgb, var(--brand-gold) 8%, transparent));
+    border: 1px solid color-mix(in srgb, var(--semantic-success) 20%, transparent);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -944,18 +944,18 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .path-name {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--brand-paper);
     margin: 0;
     font-family: var(--lux-serif);
   }
   .path-sub {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     margin: 0;
   }
   .path-desc {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     line-height: 1.6;
     margin-bottom: 20px;
   }
@@ -969,11 +969,11 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     align-items: flex-start;
     gap: 10px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     padding: 6px 0;
   }
   .path-features li strong {
-    color: #fff;
+    color: var(--brand-paper);
   }
 
   /* Pricing */
@@ -987,18 +987,18 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     flex-direction: column;
     padding: 32px 24px;
     background: var(--lux-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     border-radius: 20px;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s, box-shadow 0.3s;
   }
   .price-card:hover {
     transform: translateY(-4px);
     border-color: var(--lux-line);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--brand-night) 35%, transparent);
   }
   .price-card-highlight {
-    background: linear-gradient(160deg, rgba(16, 185, 129, 0.08), rgba(212, 175, 55, 0.06));
-    border: 2px solid rgba(16, 185, 129, 0.3);
+    background: linear-gradient(160deg, color-mix(in srgb, var(--semantic-success) 8%, transparent), color-mix(in srgb, var(--brand-gold) 6%, transparent));
+    border: 2px solid color-mix(in srgb, var(--semantic-success) 30%, transparent);
     position: relative;
   }
   .price-card-highlight:hover {
@@ -1007,19 +1007,19 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .price-name {
     font-size: 20px;
     font-weight: 700;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 4px;
     font-family: var(--lux-serif);
   }
   .price-desc {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     margin-bottom: 16px;
   }
   .price-amount {
     font-size: 2.25rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 2px;
     font-family: var(--lux-serif);
   }
@@ -1044,20 +1044,20 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     align-items: flex-start;
     gap: 10px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     padding: 6px 0;
   }
 
   /* Village stack */
   .bolt-card {
-    background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(10, 10, 18, 0.5));
+    background: linear-gradient(160deg, color-mix(in srgb, var(--brand-paper) 5%, transparent), color-mix(in srgb, var(--brand-night) 50%, transparent));
     border: 1px solid var(--lux-line);
     border-radius: 20px;
     padding: 40px;
     margin-bottom: 80px;
     transition: border-color 0.3s;
     backdrop-filter: blur(10px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 60px color-mix(in srgb, var(--brand-night) 30%, transparent);
   }
   .bolt-card:hover {
     border-color: var(--lux-gold);
@@ -1071,8 +1071,8 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .bolt-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 15%, transparent), color-mix(in srgb, var(--brand-gold) 8%, transparent));
+    border: 1px solid color-mix(in srgb, var(--semantic-success) 20%, transparent);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -1085,13 +1085,13 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .bolt-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--brand-paper);
     margin: 0;
     font-family: var(--lux-serif);
   }
   .bolt-desc {
     font-size: 15px;
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     line-height: 1.6;
     margin-bottom: 32px;
   }
@@ -1101,8 +1101,8 @@ import CaptureStrip from '../components/CaptureStrip.astro';
     gap: 20px;
   }
   .bolt-feature-card {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: color-mix(in srgb, var(--brand-night) 30%, transparent);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     border-radius: 14px;
     padding: 24px;
     transition: border-color 0.3s;
@@ -1113,7 +1113,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .bolt-feature-icon {
     width: 36px;
     height: 36px;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 15%, transparent), color-mix(in srgb, var(--brand-gold) 8%, transparent));
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -1126,27 +1126,27 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .bolt-feature-title {
     font-size: 14px;
     font-weight: 600;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 6px;
     font-family: var(--lux-serif);
   }
   .bolt-feature-desc {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     line-height: 1.6;
   }
   .bolt-footer {
     margin-top: 24px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
   }
   .bolt-footer p {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     margin: 0;
   }
   .bolt-footer strong {
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
   }
 
   /* Add-ons */
@@ -1158,7 +1158,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .addon-card {
     padding: 20px;
     background: var(--lux-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     border-radius: 14px;
     transition: all 0.2s;
     text-decoration: none;
@@ -1177,8 +1177,8 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .addon-icon {
     width: 32px;
     height: 32px;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(212, 175, 55, 0.08));
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 15%, transparent), color-mix(in srgb, var(--brand-gold) 8%, transparent));
+    border: 1px solid color-mix(in srgb, var(--semantic-success) 20%, transparent);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -1191,7 +1191,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .addon-name {
     font-size: 15px;
     font-weight: 600;
-    color: #fff;
+    color: var(--brand-paper);
     margin: 0;
     transition: color 0.2s;
     font-family: var(--lux-serif);
@@ -1201,20 +1201,20 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   }
   .addon-desc {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     margin: 0;
   }
 
   /* CTA */
   .cta-section {
-    background: linear-gradient(160deg, rgba(16, 185, 129, 0.08), rgba(212, 175, 55, 0.06));
+    background: linear-gradient(160deg, color-mix(in srgb, var(--semantic-success) 8%, transparent), color-mix(in srgb, var(--brand-gold) 6%, transparent));
     border: 1px solid var(--lux-line);
     border-radius: 20px;
     padding: 48px;
     text-align: center;
     margin-bottom: 80px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 60px color-mix(in srgb, var(--brand-night) 30%, transparent);
   }
   .cta-buttons {
     display: flex;
@@ -1226,14 +1226,14 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   /* FAQ */
   .faq-card {
     background: var(--lux-card);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     border-radius: 20px;
     padding: 40px;
   }
   .faq-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 32px;
     font-family: var(--lux-serif);
   }
@@ -1245,13 +1245,13 @@ import CaptureStrip from '../components/CaptureStrip.astro';
   .faq-item h3 {
     font-size: 15px;
     font-weight: 600;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 6px;
     font-family: var(--lux-serif);
   }
   .faq-item p {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     line-height: 1.6;
     margin: 0;
   }
@@ -1277,7 +1277,7 @@ import CaptureStrip from '../components/CaptureStrip.astro';
       grid-template-columns: 1fr;
     }
     .step-card:not(:last-child) {
-      border-right: 1px solid rgba(255, 255, 255, 0.06);
+      border-right: 1px solid color-mix(in srgb, var(--brand-paper) 6%, transparent);
     }
     .pricing-grid {
       grid-template-columns: 1fr;

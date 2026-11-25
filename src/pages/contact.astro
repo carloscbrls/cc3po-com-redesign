@@ -128,26 +128,26 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #050508 0%, #1a0a2e 50%, #050508 100%);
+    background: linear-gradient(135deg, var(--brand-night) 0%, var(--brand-surface-dark) 50%, var(--brand-night) 100%);
     text-align: center;
     padding: 120px 24px 60px;
   }
   .hero h1 {
     font-size: clamp(36px, 5vw, 56px);
     font-weight: 800;
-    background: linear-gradient(135deg, #fff, #a78bfa, #4fc3f7);
+    background: linear-gradient(135deg, var(--brand-paper), var(--brand-accent), var(--semantic-info));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 16px;
   }
   .hero-sub {
     font-size: 18px;
-    color: #a1a1aa;
+    color: var(--semantic-muted);
     max-width: 580px;
     margin: 0 auto;
     line-height: 1.6;
   }
-  .contact-section { padding: 60px 0; background: #0a0a0b; }
+  .contact-section { padding: 60px 0; background: var(--brand-night); }
   .contact-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -155,54 +155,54 @@ import Layout from '../layouts/Layout.astro';
     align-items: start;
   }
   @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-form-wrapper h2 { color: #fff; font-size: 28px; margin-bottom: 24px; }
+  .contact-form-wrapper h2 { color: var(--brand-paper); font-size: 28px; margin-bottom: 24px; }
   .contact-form { display: flex; flex-direction: column; gap: 16px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
   .form-group { display: flex; flex-direction: column; gap: 6px; }
-  .form-group label { font-size: 14px; color: #a1a1aa; font-weight: 500; }
+  .form-group label { font-size: 14px; color: var(--semantic-muted); font-weight: 500; }
   .form-group input, .form-group select, .form-group textarea {
-    background: #141418; border: 1px solid #2a2a3a; border-radius: 8px;
-    padding: 12px 16px; color: #fff; font-size: 15px; transition: border-color 0.2s;
+    background: var(--brand-surface-dark); border: 1px solid var(--brand-surface-dark); border-radius: 8px;
+    padding: 12px 16px; color: var(--brand-paper); font-size: 15px; transition: border-color 0.2s;
   }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    outline: 2px solid #6b35ff; outline-offset: 2px; border-color: #6b35ff;
+    outline: 2px solid var(--brand-accent); outline-offset: 2px; border-color: var(--brand-accent);
   }
   .form-group textarea { resize: vertical; min-height: 120px; }
   .btn-primary {
-    background: linear-gradient(135deg, #6b35ff, #4fc3f7); color: #fff;
+    background: linear-gradient(135deg, var(--brand-accent), var(--semantic-info)); color: var(--brand-paper);
     padding: 14px 32px; border: none; border-radius: 8px; font-size: 16px;
     font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
   }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(107,53,255,0.4); }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 20px color-mix(in srgb, var(--brand-accent) 40%, transparent); }
   .success-icon, .error-icon {
     width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
     justify-content: center; font-size: 24px; margin: 0 auto 16px;
   }
-  .success-icon { background: #2e7d32; color: #fff; }
-  .error-icon { background: #c62828; color: #fff; }
+  .success-icon { background: var(--semantic-success); color: var(--brand-paper); }
+  .error-icon { background: var(--semantic-danger); color: var(--brand-paper); }
   .form-success, .form-error { text-align: center; padding: 32px; }
-  .form-success h3, .form-error h3 { color: #fff; font-size: 22px; margin-bottom: 8px; }
-  .form-success p, .form-error p { color: #a1a1aa; }
-  .form-error a { color: #4fc3f7; }
+  .form-success h3, .form-error h3 { color: var(--brand-paper); font-size: 22px; margin-bottom: 8px; }
+  .form-success p, .form-error p { color: var(--semantic-muted); }
+  .form-error a { color: var(--semantic-info); }
   .contact-info { display: flex; flex-direction: column; gap: 16px; }
   .info-card {
-    background: #141418; border: 1px solid #2a2a3a; border-radius: 12px;
+    background: var(--brand-surface-dark); border: 1px solid var(--brand-surface-dark); border-radius: 12px;
     padding: 24px; text-align: center; transition: border-color 0.2s;
   }
-  .info-card:hover { border-color: #6b35ff; }
+  .info-card:hover { border-color: var(--brand-accent); }
   .info-icon { font-size: 28px; margin-bottom: 8px; }
-  .info-card h3 { color: #fff; font-size: 16px; margin-bottom: 8px; }
-  .info-card a { color: #4fc3f7; text-decoration: none; font-size: 15px; }
+  .info-card h3 { color: var(--brand-paper); font-size: 16px; margin-bottom: 8px; }
+  .info-card a { color: var(--semantic-info); text-decoration: none; font-size: 15px; }
   .info-card a:hover { text-decoration: underline; }
-  .info-card p { color: #a1a1aa; font-size: 14px; line-height: 1.5; }
-  .faq-section { padding: 60px 0; background: #0d0d0f; }
-  .faq-section h2 { color: #fff; font-size: 32px; text-align: center; margin-bottom: 40px; }
+  .info-card p { color: var(--semantic-muted); font-size: 14px; line-height: 1.5; }
+  .faq-section { padding: 60px 0; background: var(--brand-night); }
+  .faq-section h2 { color: var(--brand-paper); font-size: 32px; text-align: center; margin-bottom: 40px; }
   .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   @media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
-  .faq-item { background: #141418; border: 1px solid #2a2a3a; border-radius: 12px; padding: 24px; }
-  .faq-item h3 { color: #fff; font-size: 17px; margin-bottom: 8px; }
-  .faq-item p { color: #a1a1aa; font-size: 15px; line-height: 1.6; }
+  .faq-item { background: var(--brand-surface-dark); border: 1px solid var(--brand-surface-dark); border-radius: 12px; padding: 24px; }
+  .faq-item h3 { color: var(--brand-paper); font-size: 17px; margin-bottom: 8px; }
+  .faq-item p { color: var(--semantic-muted); font-size: 15px; line-height: 1.6; }
   /* Mobile QA (2026-11-24): form fields at 16px stop iOS zoom-on-focus */
   @media (max-width: 768px) { .contact-form input, .contact-form select, .contact-form textarea { font-size: 16px !important; } }
 </style>

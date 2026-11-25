@@ -25,12 +25,12 @@ const schema = {
 
   <!-- Hero -->
   <section style="padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(16,185,129,0.12) 0%,transparent 60%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb, var(--semantic-success) 12%, transparent) 0%,transparent 60%);pointer-events:none;"></div>
     <div class="container" style="position:relative;">
-      <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.25);display:flex;align-items:center;justify-content:center;">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:color-mix(in srgb, var(--semantic-success) 12%, transparent);border:1px solid color-mix(in srgb, var(--semantic-success) 25%, transparent);display:flex;align-items:center;justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--semantic-success)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       </div>
-      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Grant Writing</p>
+      <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Grant Writing</p>
       <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">Find Grants. Write Them. Win Them.</h1>
       <p style="font-size:1.15rem;color:var(--text-secondary);max-width:600px;margin:0 auto 20px;line-height:1.6;">Most people know grants exist. Very few understand how to find them, apply for them, or win them. We do — because we've done it.</p>
       <p style="font-size:0.95rem;color:var(--text-muted);max-width:560px;margin:0 auto 36px;">City grants · Federal grants · Private foundations · TechSoup · AI-assisted writing</p>
@@ -45,7 +45,7 @@ const schema = {
   <section style="padding:60px 0;background:var(--bg-secondary);">
     <div class="container">
       <div style="max-width:800px;margin:0 auto;text-align:center;">
-        <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Watch Carlos' Story</p>
+        <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Watch Carlos' Story</p>
         <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:24px;">From Youth Programs to Mental Health Grants — Carlos' Story</h2>
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;border:1px solid var(--border);margin-bottom:20px;">
           <iframe src="https://www.youtube.com/embed/AB-j3Fa5KYg" title="From Youth Programs to Mental Health Grants — Carlos' Story on Fantasy Turf War" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
@@ -53,20 +53,20 @@ const schema = {
         <p style="color:var(--text-secondary);font-size:0.95rem;line-height:1.6;max-width:640px;margin:0 auto 24px;">Carlos started at 20 years old, helping a youth technology program grow from 3 locations to 16 — serving over 150 students with free computers and tech education. Now he helps nonprofits, community programs, and small businesses access the grant funding they didn't know existed.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:20px;text-align:left;">
           <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;">
-            <div style="font-size:1.8rem;font-weight:800;color:#10b981;">20</div>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--semantic-success);">20</div>
             <div style="color:var(--text-muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;">Years old when he started</div>
           </div>
           <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;">
-            <div style="font-size:1.8rem;font-weight:800;color:#d4af37;">3 → 16</div>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--brand-gold);">3 → 16</div>
             <div style="color:var(--text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Youth program locations</div>
           </div>
           <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;">
-            <div style="font-size:1.8rem;font-weight:800;color:#10b981;">150+</div>
+            <div style="font-size:1.8rem;font-weight:800;color:var(--semantic-success);">150+</div>
             <div style="color:var(--text-muted);font-size:0.85rem;text-transform:uppercase;letter-spacing:1px;">Students served</div>
           </div>
         </div>
-        <div style="background:linear-gradient(160deg,rgba(16,185,129,0.06),rgba(212,175,55,0.05));border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:24px;text-align:left;">
-          <div style="font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d4af37;margin-bottom:10px;">What you'll hear in the video</div>
+        <div style="background:linear-gradient(160deg,color-mix(in srgb, var(--semantic-success) 6%, transparent),color-mix(in srgb, var(--brand-gold) 5%, transparent));border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:24px;text-align:left;">
+          <div style="font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--brand-gold);margin-bottom:10px;">What you'll hear in the video</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;color:var(--text-secondary);font-size:0.92rem;line-height:1.6;">
             <div>• How a 20-year-old helped a youth tech program grow 3 → 16 locations<br/>• Giving 150+ students free computers &amp; tech education</div>
             <div>• Why that experience became CC3PO's grant writing service<br/>• How nonprofits fund mental health &amp; community programs</div>
@@ -79,23 +79,23 @@ const schema = {
   <!-- Results -->
   <section style="padding:80px 0;">
     <div class="container">
-      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Proven Results</p>
+      <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Proven Results</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">We've walked the walk.</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
-          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">3 → 16</div>
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--semantic-success),var(--semantic-success));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">3 → 16</div>
           <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">Youth program locations grown</div>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
-          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">150+</div>
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--semantic-success),var(--semantic-success));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">150+</div>
           <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">Students served with free tech</div>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
-          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">58</div>
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--semantic-success),var(--semantic-success));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">58</div>
           <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">CA counties served</div>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
-          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">10+</div>
+          <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--semantic-success),var(--semantic-success));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">10+</div>
           <div style="color:var(--text-secondary);font-size:0.95rem;margin-top:8px;">Years of grant writing experience</div>
         </div>
       </div>
@@ -105,7 +105,7 @@ const schema = {
   <!-- What We Cover -->
   <section style="padding:80px 0;background:var(--bg-secondary);" id="services">
     <div class="container">
-      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">What We Handle</p>
+      <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">What We Handle</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Grant writing — end to end.</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
@@ -145,30 +145,30 @@ const schema = {
   <!-- Who It's For -->
   <section style="padding:80px 0;">
     <div class="container">
-      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Who We Serve</p>
+      <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Who We Serve</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Built for organizations that serve communities.</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid var(--semantic-success);">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🧒 Youth Programs</h3>
           <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">After-school programs, sports leagues, technology education, mentorship. We've grown these from 3 to 16 locations.</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid var(--semantic-success);">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🤝 Community Nonprofits</h3>
           <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Organizations serving families, immigrants, veterans, and underserved communities across California.</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid var(--semantic-success);">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🧠 Mental Health & Wellness</h3>
           <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Programs centered on music, art, and creative expression as pathways to healing. This one's personal.</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid var(--semantic-success);">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🏪 Small Businesses</h3>
           <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">SB/DVBE certification, technology grants, and business development funding you may not know exists.</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid var(--semantic-success);">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">⚾ Sports & Recreation</h3>
           <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">Little Leagues, bowling associations, community sports programs — we've helped them secure funding.</p>
         </div>
-        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid #10b981;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;border-left:3px solid var(--semantic-success);">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;">🏛️ Government & Municipal</h3>
           <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;">City departments, public agencies, and government programs needing grant writing support.</p>
         </div>
@@ -179,7 +179,7 @@ const schema = {
   <!-- Grant Types -->
   <section style="padding:80px 0;background:var(--bg-secondary);">
     <div class="container" style="max-width:800px;">
-      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Types of Grants</p>
+      <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Types of Grants</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:32px;">The funding landscape is bigger than you think.</h2>
       <div style="display:flex;flex-direction:column;gap:20px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
@@ -217,11 +217,11 @@ const schema = {
   <!-- Why CC3PO -->
   <section style="padding:80px 0;">
     <div class="container" style="max-width:900px;">
-      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Why CC3PO</p>
+      <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Why CC3PO</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">We're not just writers. We're navigators.</h2>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:#ef4444;">❌ Most Grant Writers</h3>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:var(--semantic-danger-tint);">❌ Most Grant Writers</h3>
           <ul style="list-style:none;padding:0;margin:0;color:var(--text-secondary);font-size:0.95rem;line-height:2;">
             <li>❌ Write and submit, then disappear</li>
             <li>❌ Don't help you find the right grants</li>
@@ -231,7 +231,7 @@ const schema = {
           </ul>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:#10b981;">✅ CC3PO Grant Writing</h3>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;color:var(--semantic-success);">✅ CC3PO Grant Writing</h3>
           <ul style="list-style:none;padding:0;margin:0;color:var(--text-secondary);font-size:0.95rem;line-height:2;">
             <li>✅ Find → Write → Submit → Follow up</li>
             <li>✅ Match grants to YOUR mission specifically</li>
@@ -245,11 +245,11 @@ const schema = {
   </section>
 
   <!-- Compliance Connection -->
-  <section style="padding:80px 0;background:linear-gradient(135deg,rgba(16,185,129,0.08) 0%,rgba(37,99,235,0.05) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <section style="padding:80px 0;background:linear-gradient(135deg,color-mix(in srgb, var(--semantic-success) 8%, transparent) 0%,color-mix(in srgb, var(--semantic-info) 5%, transparent) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="container" style="max-width:800px;text-align:center;">
       <div style="font-size:3rem;margin-bottom:16px;">🛡️ + 📋</div>
       <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:16px;">Grant Writing + Compliance = Funding and Fewer Risks</h2>
-      <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:32px;">Here's the connection most businesses miss: <strong style="color:#fff;">ADA compliance violations can cost $4,000+ per violation.</strong> But many grants exist specifically to help organizations become accessible. We help you <em>get funded</em> to <em>get compliant</em>.</p>
+      <p style="color:var(--text-secondary);font-size:1.05rem;line-height:1.7;margin-bottom:32px;">Here's the connection most businesses miss: <strong style="color:var(--brand-paper);">ADA compliance violations can cost $4,000+ per violation.</strong> But many grants exist specifically to help organizations become accessible. We help you <em>get funded</em> to <em>get compliant</em>.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="/products/shield/" class="btn btn-primary btn-glow">🛡️ Add Compliance Shield</a>
         <a href="/nonprofit/" class="btn btn-secondary">→ Nonprofit Page</a>
@@ -260,14 +260,14 @@ const schema = {
   <!-- CTA -->
   <section style="padding:80px 0;text-align:center;">
     <div class="container">
-      <p style="color:#34d399;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Get Started</p>
+      <p style="color:var(--semantic-success);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Get Started</p>
       <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:16px;">Ready to find funding you didn't know existed?</h2>
       <p style="color:var(--text-secondary);font-size:1.1rem;max-width:560px;margin:0 auto 32px;line-height:1.6;">Book a free strategy call. We'll assess your organization, identify grant opportunities, and show you exactly what's available.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="https://cc3po.io/strategy-call" class="btn btn-primary btn-glow" target="_blank" rel="noopener">📞 Book Strategy Call</a>
         <a href="/#cta" class="btn btn-secondary">🔍 Free Business Scan</a>
       </div>
-      <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:20px;">Grants run on applications. Need a professional grant application form? <a href="https://www.jotform.com/?utm_source=cc3po&utm_campaign=jf1&utm_medium=&utm_term=cc3po-9PxNa1xzMs" target="_blank" rel="noopener" style="color:#34d399;font-weight:700;">Build one with JotForm</a> — via our affiliate link.</p>
+      <p style="color:var(--text-secondary);font-size:0.9rem;margin-top:20px;">Grants run on applications. Need a professional grant application form? <a href="https://www.jotform.com/?utm_source=cc3po&utm_campaign=jf1&utm_medium=&utm_term=cc3po-9PxNa1xzMs" target="_blank" rel="noopener" style="color:var(--semantic-success);font-weight:700;">Build one with JotForm</a> — via our affiliate link.</p>
       <div style="margin-top:32px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;">
         <div style="display:flex;align-items:center;gap:8px;">
           <span style="font-size:1.2rem;">🏛️</span>

@@ -35,7 +35,7 @@ const schema = {
 
   <!-- Hero -->
   <section style="padding:120px 0 64px;text-align:center;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(232,80,107,0.12) 0%,transparent 60%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb, var(--brand-accent) 12%, transparent) 0%,transparent 60%);pointer-events:none;"></div>
     <div class="container" style="position:relative;">
       <p style="color:var(--accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">Simple Pricing</p>
       <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">One Team. 24/7. One Price.</h1>
@@ -50,8 +50,8 @@ const schema = {
   <!-- Village flagship -->
   <section style="padding:0 0 80px;" id="village">
     <div class="container">
-      <div style="background:linear-gradient(135deg,rgba(232,80,107,0.10),rgba(255,255,255,0.03));border:1px solid rgba(232,80,107,0.35);border-radius:24px;padding:48px;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:24px;right:24px;background:var(--semantic-danger);color:#fff;font-size:0.75rem;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:0.05em;text-transform:uppercase;">Most Popular</div>
+      <div style="background:linear-gradient(135deg,color-mix(in srgb, var(--brand-accent) 10%, transparent),color-mix(in srgb, var(--brand-paper) 3%, transparent));border:1px solid color-mix(in srgb, var(--brand-accent) 35%, transparent);border-radius:24px;padding:48px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:24px;right:24px;background:var(--semantic-danger);color:var(--brand-paper);font-size:0.75rem;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:0.05em;text-transform:uppercase;">Most Popular</div>
         <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;" class="village-grid">
           <div>
             <p style="color:var(--accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">The Village</p>
@@ -65,13 +65,13 @@ const schema = {
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Review management</li>
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Daily morning reports</li>
             </ul>
-            <a href="https://scanner.cc3po.com/" style="display:inline-block;background:var(--semantic-danger);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,80,107,0.3);transition:all 0.2s;">Get a free scan →</a>
+            <a href="https://scanner.cc3po.com/" style="display:inline-block;background:var(--semantic-danger);color:var(--brand-paper);padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px color-mix(in srgb, var(--brand-accent) 30%, transparent);transition:all 0.2s;">Get a free scan →</a>
           </div>
-          <div style="text-align:center;padding:32px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;">
+          <div style="text-align:center;padding:32px;background:color-mix(in srgb, var(--brand-paper) 3%, transparent);border:1px solid var(--border);border-radius:16px;">
             <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:8px;">By consultation</div>
-            <div style="font-size:4rem;font-weight:800;color:#fff;line-height:1;">{fmt(villageTier.monthlyPrice!)}<span style="font-size:1.25rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
+            <div style="font-size:4rem;font-weight:800;color:var(--brand-paper);line-height:1;">{fmt(villageTier.monthlyPrice!)}<span style="font-size:1.25rem;font-weight:500;color:var(--text-secondary);">/mo</span></div>
             <div style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">{fmt(villageTier.monthlyPrice!)}/mo · by consultation · no long-term contract</div>
-            <a href="https://cc3po.io/strategy-call" style="display:block;margin-top:24px;background:transparent;color:var(--accent);padding:12px;border-radius:10px;font-weight:600;border:1px solid rgba(232,80,107,0.4);text-decoration:none;">Book a Strategy Call</a>
+            <a href="https://cc3po.io/strategy-call" style="display:block;margin-top:24px;background:transparent;color:var(--accent);padding:12px;border-radius:10px;font-weight:600;border:1px solid color-mix(in srgb, var(--brand-accent) 40%, transparent);text-decoration:none;">Book a Strategy Call</a>
           </div>
         </div>
       </div>
@@ -97,12 +97,12 @@ const schema = {
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Monthly PDF reports</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Compliance Shield badge</li>
           </ul>
-          <a href={shieldTier.stripeLink} style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Shield — {fmt(shieldTier.monthlyPrice!)}/mo</a>
-          <a href="/products/shield/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Shield</a>
-          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Monitoring catches it. <a href="/products/fortress/" style="color:#60a5fa;text-decoration:underline;">Fortress fixes it.</a></div>
+          <a href={shieldTier.stripeLink} style="display:block;text-align:center;background:var(--brand-navy);color:var(--brand-paper);padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Shield — {fmt(shieldTier.monthlyPrice!)}/mo</a>
+          <a href="/products/shield/" style="display:block;text-align:center;background:transparent;border:1px solid color-mix(in srgb, var(--semantic-info) 40%, transparent);color:var(--semantic-info);padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Shield</a>
+          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Monitoring catches it. <a href="/products/fortress/" style="color:var(--semantic-info);text-decoration:underline;">Fortress fixes it.</a></div>
         </div>
         <!-- Fortress -->
-        <div style="background:linear-gradient(180deg,rgba(37,99,235,0.08),var(--bg-card));border:1px solid rgba(37,99,235,0.3);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(180deg,color-mix(in srgb, var(--semantic-info) 8%, transparent),var(--bg-card));border:1px solid color-mix(in srgb, var(--semantic-info) 30%, transparent);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
           <div style="font-size:2rem;margin-bottom:12px;">🏰</div>
           <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:4px;">Fortress</h3>
           <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:20px;">For established businesses</div>
@@ -114,9 +114,9 @@ const schema = {
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ HIPAA & privacy checks</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Priority support</li>
           </ul>
-          <a href={fortressTier.stripeLink} style="display:block;text-align:center;background:#2563eb;color:#fff;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Fortress — {fmt(fortressTier.monthlyPrice!)}/mo</a>
-          <a href="/products/fortress/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Fortress</a>
-          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Grow further: <a href="/pricing/#village" style="color:#60a5fa;text-decoration:underline;">The Village</a> runs your whole business</div>
+          <a href={fortressTier.stripeLink} style="display:block;text-align:center;background:var(--brand-navy);color:var(--brand-paper);padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Start Fortress — {fmt(fortressTier.monthlyPrice!)}/mo</a>
+          <a href="/products/fortress/" style="display:block;text-align:center;background:transparent;border:1px solid color-mix(in srgb, var(--semantic-info) 40%, transparent);color:var(--semantic-info);padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Fortress</a>
+          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Grow further: <a href="/pricing/#village" style="color:var(--semantic-info);text-decoration:underline;">The Village</a> runs your whole business</div>
         </div>
         <!-- Citadel -->
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;">
@@ -130,9 +130,9 @@ const schema = {
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Full WCAG remediation</li>
             <li style="display:flex;gap:8px;font-size:0.92rem;">✅ Audit-ready documentation</li>
           </ul>
-          <a href="https://scheduler.zoom.us/carlos-cabrales-iii/compliance-consultation" style="display:block;text-align:center;background:#f59e0b;color:#0a0a0a;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Get a quote — book a call</a>
-          <a href="/products/citadel/" style="display:block;text-align:center;background:transparent;border:1px solid rgba(96,165,250,0.4);color:#60a5fa;padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Citadel</a>
-          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Go all-in: <a href="/pricing/#village" style="color:#60a5fa;text-decoration:underline;">The Village</a> makes compliance one service of eight</div>
+          <a href="https://scheduler.zoom.us/carlos-cabrales-iii/compliance-consultation" style="display:block;text-align:center;background:var(--brand-gold);color:var(--brand-night);padding:14px;border-radius:10px;font-weight:600;text-decoration:none;margin-bottom:10px;">Get a quote — book a call</a>
+          <a href="/products/citadel/" style="display:block;text-align:center;background:transparent;border:1px solid color-mix(in srgb, var(--semantic-info) 40%, transparent);color:var(--semantic-info);padding:14px;border-radius:10px;font-weight:600;text-decoration:none;">Learn more about Citadel</a>
+          <div style="margin-top:12px;text-align:center;font-size:0.8rem;color:var(--text-muted);">Go all-in: <a href="/pricing/#village" style="color:var(--semantic-info);text-decoration:underline;">The Village</a> makes compliance one service of eight</div>
         </div>
       </div>
     </div>
@@ -148,19 +148,19 @@ const schema = {
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">1-on-1 Tech Strategy Call</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">A focused session on your website, tech setup, or compliance plan. Start with a free 15-minute intro.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$100<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> per call</span></div>
-          <a href="https://buy.stripe.com/14AfZg0sb5Rd14b0OzdjO00" style="display:block;text-align:center;background:var(--semantic-danger);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the $100 call</a>
+          <a href="https://buy.stripe.com/14AfZg0sb5Rd14b0OzdjO00" style="display:block;text-align:center;background:var(--semantic-danger);color:var(--brand-paper);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the $100 call</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Fix Sprint</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">A bilingual, fixed-price repair of the top issues your free scan finds, plus a before/after report and a 30-day re-scan. Had a paid strategy call? Your $100 is credited for 14 days.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$495<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> one-time</span></div>
-          <a href="https://buy.stripe.com/5kQ7sKa2L0wT6ovdBldjO03" style="display:block;text-align:center;background:var(--semantic-danger);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the Fix Sprint →</a>
+          <a href="https://buy.stripe.com/5kQ7sKa2L0wT6ovdBldjO03" style="display:block;text-align:center;background:var(--semantic-danger);color:var(--brand-paper);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the Fix Sprint →</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Compliance Pack</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">Privacy policy, terms, accessibility statement, and cookie consent, set up once.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$199<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> one-time</span></div>
-          <a href="https://buy.stripe.com/fZu4gy8YHdjF28fbtddjO05" style="display:block;text-align:center;background:var(--semantic-danger);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Buy Pack</a>
+          <a href="https://buy.stripe.com/fZu4gy8YHdjF28fbtddjO05" style="display:block;text-align:center;background:var(--semantic-danger);color:var(--brand-paper);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Buy Pack</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Grant Writing</h3>
@@ -171,7 +171,7 @@ const schema = {
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Free Business Scan</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">30-second compliance & health scan. No credit card.</p>
-          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;color:var(--success, #22c55e);">Free</div>
+          <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;color:var(--success, var(--semantic-success));">Free</div>
           <a href="https://scanner.cc3po.com/" style="display:block;text-align:center;background:transparent;border:1px solid var(--border);color:var(--text-primary);padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Get a free scan</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
@@ -190,7 +190,7 @@ const schema = {
   <!-- FAQ -->
   <section style="padding:0 0 80px;" id="faq">
     <div class="container" style="max-width:760px;">
-      <div class="legal-note" role="note" style="max-width:760px;margin:0 auto 32px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:16px 20px;font-size:0.85rem;line-height:1.6;color:var(--text-secondary);">
+      <div class="legal-note" role="note" style="max-width:760px;margin:0 auto 32px;background:color-mix(in srgb, var(--brand-paper) 3%, transparent);border:1px solid var(--border);border-radius:12px;padding:16px 20px;font-size:0.85rem;line-height:1.6;color:var(--text-secondary);">
         <p style="margin:0 0 8px;"><strong>Not legal advice.</strong> CC3PO is not a law firm and does not provide legal advice. Our monitoring, fixes, and reports help reduce accessibility and privacy risk, but no service can guarantee compliance or prevent a claim. If you've received a demand letter, talk to a licensed attorney.</p>
         <p lang="es" style="margin:0;"><strong>No es asesoría legal.</strong> CC3PO no es un bufete de abogados y no ofrece asesoría legal. Nuestro monitoreo, correcciones e informes ayudan a reducir riesgos, pero ningún servicio puede garantizar el cumplimiento ni evitar un reclamo. Si recibió una carta de demanda, consulte a un abogado.</p>
       </div>
