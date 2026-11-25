@@ -9,8 +9,8 @@ const currentYear = new Date().getFullYear();
       <div class="footer-brand">
         <div style="font-size:17px;font-weight:800;margin-bottom:8px;">CC3PO</div>
         <p>Your whole business team. One price. 24/7.</p>
-        <p class="footer-tagline" style="margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.85);">Build once. Run forever. Evolve continuously.</p>
-        <div style="margin-top:16px;font-size:0.75rem;color:rgba(255,255,255,0.78);line-height:1.5;"><strong style="color:rgba(255,255,255,0.85);">Certifications:</strong> CA Certified Small Business — SB #2052063 · Latino-Owned Business · Se habla español · SB/DVBE Option · <a href="/certifications" style="color:#10b981;text-decoration:underline;text-underline-offset:3px;">View All →</a></div>
+        <p class="footer-tagline" style="margin-top:12px;font-size:0.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-secondary);">Build once. Run forever. Evolve continuously.</p>
+        <div style="margin-top:16px;font-size:0.75rem;color:var(--text-muted);line-height:1.5;"><strong style="color:var(--text-secondary);">Certifications:</strong> CA Certified Small Business — SB #2052063 · Latino-Owned Business · Se habla español · SB/DVBE Option · <a href="/certifications" style="color:var(--semantic-success);text-decoration:underline;text-underline-offset:3px;">View All →</a></div>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Services</div>
@@ -81,99 +81,102 @@ const currentYear = new Date().getFullYear();
 </footer>
 
 <style>
+  /* Footer chrome — colors/spacing from the fleet tokens (global.css :root) */
   .footer {
-    background: #0a0a0f;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 60px 0 24px;
-    margin-top: 80px;
+    background: var(--brand-night);
+    border-top: 1px solid var(--border);
+    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+    margin-top: var(--spacing-3xl);
   }
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--spacing-lg);
   }
   .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
   }
   .footer-brand p {
     font-size: 14px;
-    color: #a1a1aa;
+    color: var(--semantic-muted);
     line-height: 1.6;
   }
   .footer-col-title {
-    font-size: 13px;
+    font-size: var(--type-caption);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
-    margin-bottom: 16px;
+    color: var(--brand-paper);
+    margin-bottom: var(--spacing-md);
   }
   .footer-col-links {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--spacing-xs);
   }
   .footer-col-links a {
     font-size: 14px;
-    color: #a1a1aa;
+    color: var(--semantic-muted);
     text-decoration: none;
     transition: color 0.2s;
   }
   .footer-col-links a:hover {
-    color: #4fc3f7;
+    color: var(--semantic-info);
   }
   .footer-social {
     display: flex;
-    gap: 16px;
-    padding: 24px 0;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--spacing-lg);
   }
   .social-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.05);
-    color: #a1a1aa;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: color-mix(in srgb, var(--brand-paper) 5%, transparent);
+    color: var(--semantic-muted);
     transition: all 0.2s;
   }
   .social-link:hover {
-    background: rgba(107,53,255,0.15);
-    color: #fff;
+    background: color-mix(in srgb, var(--brand-accent) 15%, transparent);
+    color: var(--brand-paper);
   }
   .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 13px;
-    color: #a1a1aa;
+    font-size: var(--type-caption);
+    color: var(--semantic-muted);
   }
   .footer-legal {
     display: flex;
-    gap: 16px;
+    gap: var(--spacing-md);
   }
   .footer-legal a {
-    color: #a1a1aa;
+    color: var(--semantic-muted);
     text-decoration: none;
   }
   .footer-legal a:hover {
-    color: #e0e0e0;
+    color: var(--brand-paper);
   }
   @media (max-width: 768px) {
     .footer-grid {
       grid-template-columns: 1fr;
-      gap: 32px;
+      gap: var(--spacing-xl);
     }
     .footer-bottom {
       flex-direction: column;
-      gap: 12px;
+      gap: var(--spacing-sm);
       text-align: center;
     }
   }

@@ -48,11 +48,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #0f0f1a;
-    border-top: 2px solid #c5445a;
+    background: var(--brand-night);
+    border-top: 2px solid var(--semantic-danger);
     z-index: 9999;
     padding: 20px 24px;
-    box-shadow: 0 -4px 24px rgba(0,0,0,0.5);
+    box-shadow: 0 -4px 24px color-mix(in srgb, var(--brand-ink) 50%, transparent);
     font-family: 'Inter', system-ui, sans-serif;
   }
   .cookie-content {
@@ -70,17 +70,17 @@
   }
   .cookie-text p {
     font-size: 14px;
-    color: #d4d4d8;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
   }
   .cookie-text a {
-    color: #e8506b;
+    color: var(--brand-accent);
     text-decoration: underline;
     text-underline-offset: 2px;
   }
   .cookie-text a:hover {
-    color: #f0617a;
+    color: var(--brand-accent-hover);
   }
   .cookie-actions {
     display: flex;
@@ -91,56 +91,56 @@
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 13px;
     font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 8px;
+    padding: 13px 18px;
+    border-radius: var(--radius-sm);
     border: none;
     cursor: pointer;
     transition: all 0.2s;
   }
   .cookie-btn-accept {
-    background: #c5445a;
-    color: #fff;
+    background: var(--semantic-danger);
+    color: var(--brand-paper);
   }
   .cookie-btn-accept:hover {
-    background: #d45066;
+    background: var(--brand-accent-strong);
   }
   .cookie-btn-reject {
-    background: rgba(255,255,255,0.08);
-    color: #d4d4d8;
-    border: 1px solid rgba(255,255,255,0.12);
+    background: color-mix(in srgb, var(--brand-paper) 8%, transparent);
+    color: var(--text-secondary);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 12%, transparent);
   }
   .cookie-btn-reject:hover {
-    background: rgba(255,255,255,0.14);
-    color: #fff;
+    background: color-mix(in srgb, var(--brand-paper) 14%, transparent);
+    color: var(--brand-paper);
   }
   .cookie-btn-settings {
     background: transparent;
-    color: #d4d4d8;
-    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--text-secondary);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 12%, transparent);
   }
   .cookie-btn-settings:hover {
-    color: #fff;
-    border-color: rgba(255,255,255,0.3);
+    color: var(--brand-paper);
+    border-color: color-mix(in srgb, var(--brand-paper) 30%, transparent);
   }
   .cookie-settings {
     max-width: 1100px;
     margin: 16px auto 0;
     padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid color-mix(in srgb, var(--brand-paper) 8%, transparent);
   }
   .cookie-setting-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid color-mix(in srgb, var(--brand-paper) 5%, transparent);
   }
   .cookie-setting-row strong {
-    color: #fff;
+    color: var(--brand-paper);
     font-size: 14px;
   }
   .cookie-setting-row p {
-    color: #a1a1aa;
+    color: var(--semantic-muted);
     font-size: 12px;
     margin: 4px 0 0;
   }
@@ -164,7 +164,7 @@
     position: absolute;
     cursor: pointer;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255,255,255,0.1);
+    background: color-mix(in srgb, var(--brand-paper) 10%, transparent);
     border-radius: 24px;
     transition: 0.3s;
   }
@@ -175,18 +175,18 @@
     width: 18px;
     left: 3px;
     bottom: 3px;
-    background: #fff;
+    background: var(--brand-paper);
     border-radius: 50%;
     transition: 0.3s;
   }
   .cookie-toggle input:checked + .cookie-slider {
-    background: #e8506b;
+    background: var(--brand-accent);
   }
   .cookie-toggle input:checked + .cookie-slider::before {
     transform: translateX(20px);
   }
   .cookie-toggle input:focus + .cookie-slider {
-    box-shadow: 0 0 0 2px rgba(232,80,107,0.3);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--brand-accent) 30%, transparent);
   }
   @media (max-width: 640px) {
     .cookie-content {
