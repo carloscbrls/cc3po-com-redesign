@@ -249,27 +249,27 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* ===== CSS VARIABLES ===== */
   :root {
-    --bg-primary: #0a0a0b;
-    --bg-secondary: #111114;
-    --bg-card: #16161a;
-    --bg-card-hover: #1c1c22;
-    --purple-primary: #6b35ff;
-    --purple-glow: rgba(107, 53, 255, 0.4);
-    --purple-dim: rgba(107, 53, 255, 0.15);
-    --gold-primary: #FFD700;
-    --gold-glow: rgba(255, 215, 0, 0.4);
-    --gold-dim: rgba(255, 215, 0, 0.15);
-    --cyan-primary: #00d2ff;
-    --cyan-glow: rgba(0, 210, 255, 0.3);
-    --cyan-dim: rgba(0, 210, 255, 0.1);
-    --green-primary: #00ff88;
-    --green-glow: rgba(0, 255, 136, 0.3);
-    --green-dim: rgba(0, 255, 136, 0.1);
-    --text-primary: #e8e8ed;
-    --text-secondary: #8888a0;
-    --text-muted: #55556a;
-    --border-subtle: rgba(255, 255, 255, 0.06);
-    --border-glow: rgba(255, 255, 255, 0.12);
+    --bg-primary: var(--brand-night);
+    --bg-secondary: var(--brand-surface-dark);
+    --bg-card: var(--brand-surface-dark);
+    --bg-card-hover: var(--brand-surface-dark);
+    --purple-primary: var(--brand-accent);
+    --purple-glow: color-mix(in srgb, var(--brand-accent) 40%, transparent);
+    --purple-dim: color-mix(in srgb, var(--brand-accent) 15%, transparent);
+    --gold-primary: var(--semantic-warning);
+    --gold-glow: color-mix(in srgb, var(--semantic-warning) 40%, transparent);
+    --gold-dim: color-mix(in srgb, var(--semantic-warning) 15%, transparent);
+    --cyan-primary: var(--semantic-info);
+    --cyan-glow: color-mix(in srgb, var(--semantic-info) 30%, transparent);
+    --cyan-dim: color-mix(in srgb, var(--semantic-info) 10%, transparent);
+    --green-primary: var(--semantic-success);
+    --green-glow: color-mix(in srgb, var(--semantic-success) 30%, transparent);
+    --green-dim: color-mix(in srgb, var(--semantic-success) 10%, transparent);
+    --text-primary: var(--brand-paper);
+    --text-secondary: var(--brand-silver);
+    --text-muted: var(--brand-silver);
+    --border-subtle: color-mix(in srgb, var(--brand-paper) 6%, transparent);
+    --border-glow: color-mix(in srgb, var(--brand-paper) 12%, transparent);
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -295,8 +295,8 @@ import Layout from '../layouts/Layout.astro';
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      linear-gradient(color-mix(in srgb, var(--brand-paper) 2%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--brand-paper) 2%, transparent) 1px, transparent 1px);
     background-size: 60px 60px;
     z-index: 0;
     pointer-events: none;
@@ -316,7 +316,7 @@ import Layout from '../layouts/Layout.astro';
     z-index: 2;
     text-align: center;
     padding: 80px 24px 40px;
-    background: radial-gradient(ellipse at center top, rgba(107, 53, 255, 0.08) 0%, transparent 60%);
+    background: radial-gradient(ellipse at center top, color-mix(in srgb, var(--brand-accent) 8%, transparent) 0%, transparent 60%);
   }
 
   .village-title {
@@ -345,7 +345,7 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     gap: 12px;
     padding: 10px 24px;
-    background: rgba(255, 255, 255, 0.03);
+    background: color-mix(in srgb, var(--brand-paper) 3%, transparent);
     border: 1px solid var(--border-subtle);
     border-radius: 100px;
     font-size: 0.85rem;
@@ -355,11 +355,11 @@ import Layout from '../layouts/Layout.astro';
   .status-dot {
     width: 8px; height: 8px;
     border-radius: 50%;
-    background: #555;
+    background: var(--brand-silver);
   }
   .status-dot.active {
-    background: #00ff88;
-    box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+    background: var(--semantic-success);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--semantic-success) 50%, transparent);
     animation: pulse-dot 2s ease infinite;
   }
   .status-separator { color: var(--text-muted); }
@@ -547,12 +547,12 @@ import Layout from '../layouts/Layout.astro';
 
   .card-emoji {
     font-size: 1.8rem;
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.15));
+    filter: drop-shadow(0 0 6px color-mix(in srgb, var(--brand-paper) 15%, transparent));
     transition: filter var(--transition-base);
   }
 
   .role-card:hover .card-emoji {
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.35));
+    filter: drop-shadow(0 0 12px color-mix(in srgb, var(--brand-paper) 35%, transparent));
     animation: emoji-float 2s ease infinite;
   }
 
@@ -588,7 +588,7 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 12px;
     object-fit: cover;
     flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--brand-night) 40%, transparent);
     transition: transform var(--transition-base);
   }
 
@@ -631,8 +631,8 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    background: linear-gradient(135deg, var(--primary), #c7384f);
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary), var(--semantic-danger));
+    color: var(--brand-paper);
     border: none;
     border-radius: 12px;
     font-size: 1rem;
@@ -643,7 +643,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .workday-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(233,69,96,0.3);
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--brand-accent) 30%, transparent);
   }
   .workday-btn-icon {
     font-size: 1.2rem;
@@ -672,7 +672,7 @@ import Layout from '../layouts/Layout.astro';
     height: 44px;
     border-radius: 50%;
     background: var(--bg-card);
-    border: 2px solid rgba(107,53,255,0.3);
+    border: 2px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -682,7 +682,7 @@ import Layout from '../layouts/Layout.astro';
   .step-connector {
     width: 2px;
     height: 32px;
-    background: linear-gradient(180deg, rgba(107,53,255,0.3), rgba(0,210,255,0.1));
+    background: linear-gradient(180deg, color-mix(in srgb, var(--brand-accent) 30%, transparent), color-mix(in srgb, var(--semantic-info) 10%, transparent));
     margin: 4px 0 4px 21px;
   }
   .step-content {
@@ -699,7 +699,7 @@ import Layout from '../layouts/Layout.astro';
   .step-agent {
     font-weight: 700;
     font-size: 0.95rem;
-    color: #fff;
+    color: var(--brand-paper);
   }
   .step-role {
     font-size: 0.75rem;
@@ -710,10 +710,10 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.5;
-    background: rgba(255,255,255,0.02);
+    background: color-mix(in srgb, var(--brand-paper) 2%, transparent);
     padding: 10px 14px;
     border-radius: 8px;
-    border-left: 3px solid rgba(107,53,255,0.3);
+    border-left: 3px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);
   }
   .workday-note {
     color: var(--text-muted);
@@ -724,7 +724,7 @@ import Layout from '../layouts/Layout.astro';
     color: var(--accent);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(255,255,255,0.3);
+    text-decoration-color: color-mix(in srgb, var(--brand-paper) 30%, transparent);
   }
   .workday-note a:hover {
     text-decoration-color: var(--accent);
@@ -793,8 +793,8 @@ import Layout from '../layouts/Layout.astro';
     max-width: 600px;
     margin: 0 auto;
     padding: 48px 32px;
-    background: linear-gradient(135deg, rgba(107, 53, 255, 0.08) 0%, rgba(255, 215, 0, 0.08) 50%, rgba(0, 210, 255, 0.08) 100%);
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-accent) 8%, transparent) 0%, color-mix(in srgb, var(--semantic-warning) 8%, transparent) 50%, color-mix(in srgb, var(--semantic-info) 8%, transparent) 100%);
+    border: 1px solid color-mix(in srgb, var(--semantic-warning) 20%, transparent);
     border-radius: 20px;
     position: relative;
   }
@@ -804,7 +804,7 @@ import Layout from '../layouts/Layout.astro';
     position: absolute;
     inset: -1px;
     border-radius: 20px;
-    background: linear-gradient(135deg, rgba(107, 53, 255, 0.3), rgba(255, 215, 0, 0.3), rgba(0, 210, 255, 0.3));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-accent) 30%, transparent), color-mix(in srgb, var(--semantic-warning) 30%, transparent), color-mix(in srgb, var(--semantic-info) 30%, transparent));
     z-index: -1;
     filter: blur(1px);
   }
@@ -1009,7 +1009,7 @@ import Layout from '../layouts/Layout.astro';
         this.vy = (Math.random() - 0.5) * 0.3;
         this.r = Math.random() * 1.5 + 0.5;
         this.alpha = Math.random() * 0.25 + 0.08;
-        const colors = [[107,53,255],[0,210,255],[255,215,0]];
+        const colors = [[232,80,107],[79,195,247],[255,215,0]];
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
       update() {
@@ -1041,7 +1041,7 @@ import Layout from '../layouts/Layout.astro';
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 210, 255, ${0.06 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `rgba(79, 195, 247, ${0.06 * (1 - dist / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

@@ -542,17 +542,17 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
 
 <style>
   :root {
-    --bg-primary: #0a0a0b;
-    --bg-secondary: #111114;
-    --bg-card: #141418;
-    --bg-card-hover: #1c1c22;
+    --bg-primary: var(--brand-night);
+    --bg-secondary: var(--brand-surface-dark);
+    --bg-card: var(--brand-surface-dark);
+    --bg-card-hover: var(--brand-surface-dark);
     --primary: var(--accent);
-    --accent: #4fc3f7;
-    --text-primary: #e8e8ed;
-    --text-secondary: #8888a0;
-    --text-muted: #55556a;
-    --border-subtle: rgba(255, 255, 255, 0.06);
-    --border-glow: rgba(255, 255, 255, 0.12);
+    --accent: var(--semantic-info);
+    --text-primary: var(--brand-paper);
+    --text-secondary: var(--brand-silver);
+    --text-muted: var(--brand-silver);
+    --border-subtle: color-mix(in srgb, var(--brand-paper) 6%, transparent);
+    --border-glow: color-mix(in srgb, var(--brand-paper) 12%, transparent);
     --radius-md: 12px;
     --radius-lg: 16px;
     --transition-base: 0.3s ease;
@@ -572,8 +572,8 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
     position: fixed;
     inset: 0;
     background-image:
-      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      linear-gradient(color-mix(in srgb, var(--brand-paper) 2%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--brand-paper) 2%, transparent) 1px, transparent 1px);
     background-size: 60px 60px;
     z-index: 0;
     pointer-events: none;
@@ -585,7 +585,7 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
     z-index: 2;
     text-align: center;
     padding: 80px 24px 40px;
-    background: radial-gradient(ellipse at center top, rgba(233, 69, 96, 0.08) 0%, transparent 60%);
+    background: radial-gradient(ellipse at center top, color-mix(in srgb, var(--brand-accent) 8%, transparent) 0%, transparent 60%);
   }
 
   .back-link {
@@ -618,7 +618,7 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
     height: 160px;
     border-radius: 24px;
     object-fit: cover;
-    box-shadow: 0 8px 40px rgba(233, 69, 96, 0.2), 0 0 0 2px rgba(233, 69, 96, 0.3);
+    box-shadow: 0 8px 40px color-mix(in srgb, var(--brand-accent) 20%, transparent), 0 0 0 2px color-mix(in srgb, var(--brand-accent) 30%, transparent);
     transition: transform var(--transition-base);
   }
 
@@ -637,7 +637,7 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
     font-size: 2.5rem;
     display: block;
     margin-bottom: 8px;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.15));
+    filter: drop-shadow(0 0 12px color-mix(in srgb, var(--brand-paper) 15%, transparent));
   }
 
   .hero-name {
@@ -665,7 +665,7 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     padding: 4px 12px;
-    border: 1px solid rgba(79, 195, 247, 0.3);
+    border: 1px solid color-mix(in srgb, var(--semantic-info) 30%, transparent);
     border-radius: 100px;
     margin-top: 8px;
   }
@@ -826,13 +826,13 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
     font-size: 0.9rem;
     font-weight: 600;
     padding: 10px 24px;
-    border: 1px solid rgba(79, 195, 247, 0.3);
+    border: 1px solid color-mix(in srgb, var(--semantic-info) 30%, transparent);
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
   }
 
   .work-link:hover {
-    background: rgba(79, 195, 247, 0.1);
+    background: color-mix(in srgb, var(--semantic-info) 10%, transparent);
     border-color: var(--accent);
   }
 
@@ -846,8 +846,8 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
   }
 
   .cta-card {
-    background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(79, 195, 247, 0.05));
-    border: 1px solid rgba(233, 69, 96, 0.3);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-accent) 10%, transparent), color-mix(in srgb, var(--semantic-info) 5%, transparent));
+    border: 1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);
     border-radius: var(--radius-lg);
     padding: 40px 32px;
     text-align: center;
@@ -870,8 +870,8 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
 
   .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, var(--primary), #c7384f);
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary), var(--semantic-danger));
+    color: var(--brand-paper);
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
     font-weight: 700;
@@ -883,7 +883,7 @@ const blogUrl = `https://insights.cc3po.com/blog/tag/${author.id}/`;
 
   .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(233, 69, 96, 0.3);
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--brand-accent) 30%, transparent);
   }
 
   /* ===== RESPONSIVE ===== */
