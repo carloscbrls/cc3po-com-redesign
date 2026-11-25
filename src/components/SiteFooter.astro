@@ -70,6 +70,7 @@ const currentYear = new Date().getFullYear();
     </div>
     <div class="footer-bottom">
       <div class="footer-copy">© {currentYear} {nap.legalName}. All rights reserved. · {nap.addressOneLine} · <a href={nap.phoneHref} style="color:inherit;text-decoration:underline;">{nap.phoneDisplay}</a> · <a href={`mailto:${nap.email}`} style="color:inherit;text-decoration:underline;">{nap.email}</a></div>
+      <div class="footer-badge">Built on Nightshift</div>
       <div class="footer-legal">
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
@@ -156,12 +157,27 @@ const currentYear = new Date().getFullYear();
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-xl);
+    row-gap: var(--spacing-sm);
     font-size: var(--type-caption);
     color: var(--semantic-muted);
   }
+  .footer-badge {
+    font-family: var(--font-mono);
+    font-size: var(--type-caption);
+    letter-spacing: 1px;
+    color: var(--semantic-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
   .footer-legal {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-md);
+  }
+  .footer-legal a {
+    white-space: nowrap;
   }
   .footer-legal a {
     color: var(--semantic-muted);
