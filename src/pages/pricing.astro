@@ -29,7 +29,7 @@ const schema = {
 };
 ---
 
-<Layout title="Pricing — CC3PO | One Team. 24/7. One Price." description={`Simple, transparent pricing. The Village — your whole business team, run by a team of AI agents (${fmt(villageTier.monthlyPrice!)}/mo, by consultation). Compliance monitoring from ${fmt(shieldTier.monthlyPrice!)}/mo. No contracts, cancel anytime.`}>
+<Layout title="Pricing — CC3PO | One Team. 24/7. One Price." description={`CC3PO pricing: The Village — your whole business team, run by AI agents (${fmt(villageTier.monthlyPrice!)}/mo, by consultation). Compliance monitoring from ${fmt(shieldTier.monthlyPrice!)}/mo. No contracts, cancel anytime.`}>
 
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
@@ -51,7 +51,7 @@ const schema = {
   <section style="padding:0 0 80px;" id="village">
     <div class="container">
       <div style="background:linear-gradient(135deg,rgba(232,80,107,0.10),rgba(255,255,255,0.03));border:1px solid rgba(232,80,107,0.35);border-radius:24px;padding:48px;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:24px;right:24px;background:var(--accent);color:#fff;font-size:0.75rem;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:0.05em;text-transform:uppercase;">Most Popular</div>
+        <div style="position:absolute;top:24px;right:24px;background:var(--semantic-danger);color:#fff;font-size:0.75rem;font-weight:700;padding:6px 14px;border-radius:999px;letter-spacing:0.05em;text-transform:uppercase;">Most Popular</div>
         <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center;" class="village-grid">
           <div>
             <p style="color:var(--accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">The Village</p>
@@ -65,7 +65,7 @@ const schema = {
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Review management</li>
               <li style="display:flex;gap:8px;align-items:center;color:var(--text-primary);font-size:0.95rem;">✅ Daily morning reports</li>
             </ul>
-            <a href="https://scanner.cc3po.com/" style="display:inline-block;background:var(--accent);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,80,107,0.3);transition:all 0.2s;">Get a free scan →</a>
+            <a href="https://scanner.cc3po.com/" style="display:inline-block;background:var(--semantic-danger);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(232,80,107,0.3);transition:all 0.2s;">Get a free scan →</a>
           </div>
           <div style="text-align:center;padding:32px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:16px;">
             <div style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:8px;">By consultation</div>
@@ -148,19 +148,19 @@ const schema = {
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">1-on-1 Tech Strategy Call</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">A focused session on your website, tech setup, or compliance plan. Start with a free 15-minute intro.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$100<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> per call</span></div>
-          <a href="https://buy.stripe.com/14AfZg0sb5Rd14b0OzdjO00" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the $100 call</a>
+          <a href="https://buy.stripe.com/14AfZg0sb5Rd14b0OzdjO00" style="display:block;text-align:center;background:var(--semantic-danger);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the $100 call</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Fix Sprint</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">A bilingual, fixed-price repair of the top issues your free scan finds, plus a before/after report and a 30-day re-scan. Had a paid strategy call? Your $100 is credited for 14 days.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$495<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> one-time</span></div>
-          <a href="https://buy.stripe.com/5kQ7sKa2L0wT6ovdBldjO03" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the Fix Sprint →</a>
+          <a href="https://buy.stripe.com/5kQ7sKa2L0wT6ovdBldjO03" style="display:block;text-align:center;background:var(--semantic-danger);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Book the Fix Sprint →</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Compliance Pack</h3>
           <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:12px;">Privacy policy, terms, accessibility statement, and cookie consent, set up once.</p>
           <div style="font-size:1.5rem;font-weight:800;margin-bottom:14px;">$199<span style="font-size:0.85rem;font-weight:500;color:var(--text-secondary);"> one-time</span></div>
-          <a href="https://buy.stripe.com/fZu4gy8YHdjF28fbtddjO05" style="display:block;text-align:center;background:var(--accent);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Buy Pack</a>
+          <a href="https://buy.stripe.com/fZu4gy8YHdjF28fbtddjO05" style="display:block;text-align:center;background:var(--semantic-danger);color:#fff;padding:12px;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;">Buy Pack</a>
         </div>
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;">
           <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:6px;">Grant Writing</h3>
