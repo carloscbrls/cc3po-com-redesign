@@ -201,11 +201,5 @@ const schema = {
     </div>
   </section>
 
-  <!-- Plausible event tracking -->
-  <script is:inline>
-    document.querySelectorAll('.cta-audit-call, .cta-audit-scan').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'ai-workflow-audit', type: 'strategy_call' } }); });
-    });
-  </script>
 
 </Layout>

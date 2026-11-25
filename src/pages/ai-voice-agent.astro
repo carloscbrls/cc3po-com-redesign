@@ -175,11 +175,5 @@ const schema = {
     </div>
   </section>
 
-  <!-- Plausible event tracking -->
-  <script is:inline>
-    document.querySelectorAll('.cta-voice-call, .cta-voice-scan').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'ai-voice-agent', type: el.classList.contains('cta-voice-scan') ? 'free_scan' : 'strategy_call' } }); });
-    });
-  </script>
 
 </Layout>

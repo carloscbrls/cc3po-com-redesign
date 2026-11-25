@@ -124,14 +124,5 @@ const schema = {
     </div>
   </section>
 
-  <!-- Plausible event tracking -->
-  <script is:inline>
-    document.querySelectorAll('.cta-fortress-trial, .cta-fortress-checkout').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'fortress', type: 'checkout' } }); });
-    });
-    document.querySelectorAll('.cta-fortress-scan').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'fortress', type: 'free_scan' } }); });
-    });
-  </script>
 
 </Layout>

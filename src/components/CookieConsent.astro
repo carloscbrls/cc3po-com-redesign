@@ -223,14 +223,8 @@
   }
 
   function applyConsent(preferences) {
-    // Analytics (Plausible) — self-hosted, privacy-friendly, but still respect consent
-    if (preferences.analytics && window.plausible) {
-      // Plausible is already loaded; just note consent
-    } else if (!preferences.analytics) {
-      // Remove Plausible tracking
-      var scripts = document.querySelectorAll('script[src*="plausible"]');
-      scripts.forEach(function(s) { s.remove(); });
-    }
+    // Analytics — Cloudflare Web Analytics is cookieless and injected at the
+    // Cloudflare edge; there is no in-page analytics script to load or remove.
     // Marketing — we don't load any third-party marketing scripts yet
   }
 

@@ -124,14 +124,5 @@ const schema = {
     </div>
   </section>
 
-  <!-- Plausible event tracking -->
-  <script is:inline>
-    document.querySelectorAll('.cta-citadel-trial, .cta-citadel-checkout').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'citadel', type: 'checkout' } }); });
-    });
-    document.querySelectorAll('.cta-citadel-scan').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'citadel', type: 'free_scan' } }); });
-    });
-  </script>
 
 </Layout>

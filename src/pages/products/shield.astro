@@ -144,14 +144,5 @@ const schema = {
     </div>
   </section>
 
-  <!-- Plausible event tracking -->
-  <script is:inline>
-    document.querySelectorAll('.cta-shield-trial, .cta-shield-checkout').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'shield', type: 'checkout' } }); });
-    });
-    document.querySelectorAll('.cta-shield-scan').forEach(function(el) {
-      el.addEventListener('click', function() { plausible('cta_click', { props: { page: 'shield', type: 'free_scan' } }); });
-    });
-  </script>
 
 </Layout>
