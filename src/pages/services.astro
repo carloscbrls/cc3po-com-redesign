@@ -391,24 +391,24 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* ===== LUXURY VARIABLES ===== */
   :root {
-    --gold: #d4a853;
-    --gold-light: #f0d78c;
-    --gold-dark: #a67c2e;
-    --navy: #0a0e1a;
-    --navy-light: #111827;
-    --navy-mid: #1a2035;
-    --blue-accent: #4fc3f7;
-    --emerald: #00e676;
-    --purple: #a78bfa;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-hover: rgba(255, 255, 255, 0.06);
+    --gold: var(--brand-gold);
+    --gold-light: var(--brand-gold);
+    --gold-dark: var(--brand-gold);
+    --navy: var(--brand-night);
+    --navy-light: var(--brand-navy);
+    --navy-mid: var(--brand-navy);
+    --blue-accent: var(--semantic-info);
+    --emerald: var(--semantic-success);
+    --purple: var(--brand-accent);
+    --glass-bg: color-mix(in srgb, var(--brand-paper) 3%, transparent);
+    --glass-border: color-mix(in srgb, var(--brand-paper) 8%, transparent);
+    --glass-hover: color-mix(in srgb, var(--brand-paper) 6%, transparent);
   }
 
   /* ===== HERO ===== */
   .services-hero {
     position: relative;
-    background: linear-gradient(135deg, #050510 0%, #0d1b2a 30%, #1a0a2e 60%, #050510 100%);
+    background: linear-gradient(135deg, var(--brand-night) 0%, var(--brand-navy) 30%, var(--brand-surface-dark) 60%, var(--brand-night) 100%);
     padding: 140px 24px 100px;
     text-align: center;
     overflow: hidden;
@@ -417,13 +417,13 @@ import Layout from '../layouts/Layout.astro';
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(1px 1px at 10% 20%, rgba(212,168,83,0.3) 50%, transparent 100%),
-      radial-gradient(1px 1px at 30% 60%, rgba(212,168,83,0.2) 50%, transparent 100%),
-      radial-gradient(1px 1px at 50% 10%, rgba(79,195,247,0.3) 50%, transparent 100%),
-      radial-gradient(1px 1px at 70% 80%, rgba(167,139,250,0.2) 50%, transparent 100%),
-      radial-gradient(1px 1px at 90% 40%, rgba(212,168,83,0.25) 50%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 25% 85%, rgba(255,255,255,0.15) 50%, transparent 100%),
-      radial-gradient(1.5px 1.5px at 75% 15%, rgba(255,255,255,0.1) 50%, transparent 100%);
+      radial-gradient(1px 1px at 10% 20%, color-mix(in srgb, var(--brand-gold) 30%, transparent) 50%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, color-mix(in srgb, var(--brand-gold) 20%, transparent) 50%, transparent 100%),
+      radial-gradient(1px 1px at 50% 10%, color-mix(in srgb, var(--semantic-info) 30%, transparent) 50%, transparent 100%),
+      radial-gradient(1px 1px at 70% 80%, color-mix(in srgb, var(--brand-accent) 20%, transparent) 50%, transparent 100%),
+      radial-gradient(1px 1px at 90% 40%, color-mix(in srgb, var(--brand-gold) 25%, transparent) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 25% 85%, color-mix(in srgb, var(--brand-paper) 15%, transparent) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 75% 15%, color-mix(in srgb, var(--brand-paper) 10%, transparent) 50%, transparent 100%);
     pointer-events: none;
   }
   .hero-glow {
@@ -433,7 +433,7 @@ import Layout from '../layouts/Layout.astro';
     transform: translate(-50%, -50%);
     width: 800px;
     height: 400px;
-    background: radial-gradient(ellipse, rgba(212,168,83,0.08) 0%, rgba(79,195,247,0.04) 40%, transparent 70%);
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--brand-gold) 8%, transparent) 0%, color-mix(in srgb, var(--semantic-info) 4%, transparent) 40%, transparent 70%);
     pointer-events: none;
   }
   .hero-content {
@@ -448,15 +448,15 @@ import Layout from '../layouts/Layout.astro';
     text-transform: uppercase;
     color: var(--gold);
     padding: 6px 20px;
-    border: 1px solid rgba(212,168,83,0.3);
+    border: 1px solid color-mix(in srgb, var(--brand-gold) 30%, transparent);
     border-radius: 100px;
-    background: rgba(212,168,83,0.06);
+    background: color-mix(in srgb, var(--brand-gold) 6%, transparent);
     margin-bottom: 28px;
   }
   .services-hero h1 {
     font-size: clamp(36px, 5.5vw, 64px);
     font-weight: 800;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 20px;
     line-height: 1.1;
     letter-spacing: -2px;
@@ -469,7 +469,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .hero-sub {
     font-size: 18px;
-    color: rgba(255,255,255,0.65);
+    color: color-mix(in srgb, var(--brand-paper) 65%, transparent);
     max-width: 600px;
     margin: 0 auto 36px;
     line-height: 1.7;
@@ -493,14 +493,14 @@ import Layout from '../layouts/Layout.astro';
   }
   .stat-label {
     font-size: 12px;
-    color: rgba(255,255,255,0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
   .stat-divider {
     width: 1px;
     height: 40px;
-    background: rgba(255,255,255,0.15);
+    background: color-mix(in srgb, var(--brand-paper) 15%, transparent);
   }
   .hero-ctas {
     display: flex;
@@ -527,7 +527,7 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     gap: 8px;
     font-size: 13px;
-    color: rgba(255,255,255,0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     font-weight: 500;
   }
   .trust-icon {
@@ -547,15 +547,15 @@ import Layout from '../layouts/Layout.astro';
     text-transform: uppercase;
     color: var(--gold);
     padding: 6px 16px;
-    border: 1px solid rgba(212,168,83,0.25);
+    border: 1px solid color-mix(in srgb, var(--brand-gold) 25%, transparent);
     border-radius: 100px;
-    background: rgba(212,168,83,0.06);
+    background: color-mix(in srgb, var(--brand-gold) 6%, transparent);
     margin-bottom: 16px;
   }
   .section-header h2 {
     font-size: clamp(28px, 4vw, 44px);
     font-weight: 800;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 16px;
     letter-spacing: -1px;
   }
@@ -567,7 +567,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .section-header p {
     font-size: 17px;
-    color: rgba(255,255,255,0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.7;
@@ -590,8 +590,8 @@ import Layout from '../layouts/Layout.astro';
     overflow: hidden;
   }
   .stack:hover {
-    border-color: rgba(212,168,83,0.2);
-    box-shadow: 0 0 60px rgba(212,168,83,0.05);
+    border-color: color-mix(in srgb, var(--brand-gold) 20%, transparent);
+    box-shadow: 0 0 60px color-mix(in srgb, var(--brand-gold) 5%, transparent);
   }
   .stack-glow {
     position: absolute;
@@ -599,17 +599,17 @@ import Layout from '../layouts/Layout.astro';
     right: -20%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(ellipse, rgba(212,168,83,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--brand-gold) 6%, transparent) 0%, transparent 70%);
     pointer-events: none;
   }
   .stack-glow--blue {
-    background: radial-gradient(ellipse, rgba(79,195,247,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--semantic-info) 6%, transparent) 0%, transparent 70%);
   }
   .stack-glow--purple {
-    background: radial-gradient(ellipse, rgba(167,139,250,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--brand-accent) 6%, transparent) 0%, transparent 70%);
   }
   .stack-glow--emerald {
-    background: radial-gradient(ellipse, rgba(0,230,118,0.06) 0%, transparent 70%);
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--semantic-success) 6%, transparent) 0%, transparent 70%);
   }
 
   .stack-header {
@@ -622,8 +622,8 @@ import Layout from '../layouts/Layout.astro';
     width: 56px;
     height: 56px;
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(212,168,83,0.15), rgba(212,168,83,0.05));
-    border: 1px solid rgba(212,168,83,0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-gold) 15%, transparent), color-mix(in srgb, var(--brand-gold) 5%, transparent));
+    border: 1px solid color-mix(in srgb, var(--brand-gold) 20%, transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -631,16 +631,16 @@ import Layout from '../layouts/Layout.astro';
     font-size: 28px;
   }
   .stack-icon-wrap--blue {
-    background: linear-gradient(135deg, rgba(79,195,247,0.15), rgba(79,195,247,0.05));
-    border-color: rgba(79,195,247,0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-info) 15%, transparent), color-mix(in srgb, var(--semantic-info) 5%, transparent));
+    border-color: color-mix(in srgb, var(--semantic-info) 20%, transparent);
   }
   .stack-icon-wrap--purple {
-    background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05));
-    border-color: rgba(167,139,250,0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-accent) 15%, transparent), color-mix(in srgb, var(--brand-accent) 5%, transparent));
+    border-color: color-mix(in srgb, var(--brand-accent) 20%, transparent);
   }
   .stack-icon-wrap--emerald {
-    background: linear-gradient(135deg, rgba(0,230,118,0.15), rgba(0,230,118,0.05));
-    border-color: rgba(0,230,118,0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 15%, transparent), color-mix(in srgb, var(--semantic-success) 5%, transparent));
+    border-color: color-mix(in srgb, var(--semantic-success) 20%, transparent);
   }
   .stack-icon {
     font-size: 28px;
@@ -651,13 +651,13 @@ import Layout from '../layouts/Layout.astro';
   .stack-title {
     font-size: 24px;
     font-weight: 800;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 4px;
     letter-spacing: -0.5px;
   }
   .stack-tagline {
     font-size: 14px;
-    color: rgba(255,255,255,0.55);
+    color: color-mix(in srgb, var(--brand-paper) 55%, transparent);
     line-height: 1.5;
   }
   .stack-linc-score {
@@ -665,8 +665,8 @@ import Layout from '../layouts/Layout.astro';
     font-size: 13px;
     font-weight: 700;
     color: var(--gold);
-    background: rgba(212,168,83,0.08);
-    border: 1px solid rgba(212,168,83,0.2);
+    background: color-mix(in srgb, var(--brand-gold) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--brand-gold) 20%, transparent);
     padding: 8px 16px;
     border-radius: 100px;
     white-space: nowrap;
@@ -674,18 +674,18 @@ import Layout from '../layouts/Layout.astro';
   }
   .stack-linc-score--blue {
     color: var(--blue-accent);
-    background: rgba(79,195,247,0.08);
-    border-color: rgba(79,195,247,0.2);
+    background: color-mix(in srgb, var(--semantic-info) 8%, transparent);
+    border-color: color-mix(in srgb, var(--semantic-info) 20%, transparent);
   }
   .stack-linc-score--purple {
     color: var(--purple);
-    background: rgba(167,139,250,0.08);
-    border-color: rgba(167,139,250,0.2);
+    background: color-mix(in srgb, var(--brand-accent) 8%, transparent);
+    border-color: color-mix(in srgb, var(--brand-accent) 20%, transparent);
   }
   .stack-linc-score--emerald {
     color: var(--emerald);
-    background: rgba(0,230,118,0.08);
-    border-color: rgba(0,230,118,0.2);
+    background: color-mix(in srgb, var(--semantic-success) 8%, transparent);
+    border-color: color-mix(in srgb, var(--semantic-success) 20%, transparent);
   }
   .linc-label {
     font-size: 10px;
@@ -701,7 +701,7 @@ import Layout from '../layouts/Layout.astro';
     gap: 0;
     margin-bottom: 28px;
     padding: 24px;
-    background: rgba(0,0,0,0.3);
+    background: color-mix(in srgb, var(--brand-night) 30%, transparent);
     border-radius: 16px;
     border: 1px solid var(--glass-border);
   }
@@ -719,34 +719,34 @@ import Layout from '../layouts/Layout.astro';
     background: var(--gold);
     flex-shrink: 0;
     margin-top: 5px;
-    box-shadow: 0 0 16px rgba(212,168,83,0.4);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--brand-gold) 40%, transparent);
   }
   .flow-dot--gold {
     background: var(--gold);
-    box-shadow: 0 0 16px rgba(212,168,83,0.5);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--brand-gold) 50%, transparent);
   }
   .flow-dot--blue {
     background: var(--blue-accent);
-    box-shadow: 0 0 16px rgba(79,195,247,0.5);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--semantic-info) 50%, transparent);
   }
   .flow-dot--purple {
     background: var(--purple);
-    box-shadow: 0 0 16px rgba(167,139,250,0.5);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--brand-accent) 50%, transparent);
   }
   .flow-dot--emerald {
     background: var(--emerald);
-    box-shadow: 0 0 16px rgba(0,230,118,0.5);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--semantic-success) 50%, transparent);
   }
   .flow-content strong {
     display: block;
     font-size: 14px;
     font-weight: 700;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 2px;
   }
   .flow-content span {
     font-size: 13px;
-    color: rgba(255,255,255,0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     line-height: 1.45;
     display: block;
   }
@@ -770,7 +770,7 @@ import Layout from '../layouts/Layout.astro';
   }
   .service-card {
     position: relative;
-    background: rgba(255,255,255,0.02);
+    background: color-mix(in srgb, var(--brand-paper) 2%, transparent);
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 28px 24px;
@@ -782,28 +782,28 @@ import Layout from '../layouts/Layout.astro';
   }
   .service-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(212,168,83,0.3);
-    box-shadow: 0 12px 40px rgba(212,168,83,0.08);
+    border-color: color-mix(in srgb, var(--brand-gold) 30%, transparent);
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--brand-gold) 8%, transparent);
   }
   .service-card.featured {
-    border-color: rgba(212,168,83,0.3);
-    background: linear-gradient(135deg, rgba(212,168,83,0.04), rgba(212,168,83,0.01));
+    border-color: color-mix(in srgb, var(--brand-gold) 30%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-gold) 4%, transparent), color-mix(in srgb, var(--brand-gold) 1%, transparent));
   }
   .service-card.featured--blue {
-    border-color: rgba(79,195,247,0.3);
-    background: linear-gradient(135deg, rgba(79,195,247,0.04), rgba(79,195,247,0.01));
+    border-color: color-mix(in srgb, var(--semantic-info) 30%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-info) 4%, transparent), color-mix(in srgb, var(--semantic-info) 1%, transparent));
   }
   .service-card.featured--blue:hover {
-    border-color: rgba(79,195,247,0.4);
-    box-shadow: 0 12px 40px rgba(79,195,247,0.08);
+    border-color: color-mix(in srgb, var(--semantic-info) 40%, transparent);
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--semantic-info) 8%, transparent);
   }
   .service-card.featured--emerald {
-    border-color: rgba(0,230,118,0.3);
-    background: linear-gradient(135deg, rgba(0,230,118,0.04), rgba(0,230,118,0.01));
+    border-color: color-mix(in srgb, var(--semantic-success) 30%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-success) 4%, transparent), color-mix(in srgb, var(--semantic-success) 1%, transparent));
   }
   .service-card.featured--emerald:hover {
-    border-color: rgba(0,230,118,0.4);
-    box-shadow: 0 12px 40px rgba(0,230,118,0.08);
+    border-color: color-mix(in srgb, var(--semantic-success) 40%, transparent);
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--semantic-success) 8%, transparent);
   }
   .service-card-shine {
     position: absolute;
@@ -811,7 +811,7 @@ import Layout from '../layouts/Layout.astro';
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--brand-paper) 3%, transparent), transparent);
     transition: left 0.6s ease;
     pointer-events: none;
   }
@@ -822,7 +822,7 @@ import Layout from '../layouts/Layout.astro';
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(255,255,255,0.05);
+    background: color-mix(in srgb, var(--brand-paper) 5%, transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -830,35 +830,35 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 14px;
   }
   .sc-icon-wrap--shield {
-    background: linear-gradient(135deg, rgba(212,168,83,0.15), rgba(212,168,83,0.05));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-gold) 15%, transparent), color-mix(in srgb, var(--brand-gold) 5%, transparent));
   }
   .sc-icon-wrap--web {
-    background: linear-gradient(135deg, rgba(79,195,247,0.15), rgba(79,195,247,0.05));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-info) 15%, transparent), color-mix(in srgb, var(--semantic-info) 5%, transparent));
   }
   .sc-icon-wrap--it {
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-paper) 10%, transparent), color-mix(in srgb, var(--brand-paper) 3%, transparent));
   }
   .sc-icon-wrap--callie {
-    background: linear-gradient(135deg, rgba(79,195,247,0.2), rgba(79,195,247,0.05));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--semantic-info) 20%, transparent), color-mix(in srgb, var(--semantic-info) 5%, transparent));
   }
   .sc-icon-wrap--ai {
-    background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-accent) 15%, transparent), color-mix(in srgb, var(--brand-accent) 5%, transparent));
   }
   .sc-icon-wrap--content {
-    background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(167,139,250,0.05));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-accent) 15%, transparent), color-mix(in srgb, var(--brand-accent) 5%, transparent));
   }
   .sc-icon-wrap--care {
-    background: linear-gradient(135deg, rgba(212,168,83,0.15), rgba(212,168,83,0.05));
+    background: linear-gradient(135deg, color-mix(in srgb, var(--brand-gold) 15%, transparent), color-mix(in srgb, var(--brand-gold) 5%, transparent));
   }
   .service-card h4 {
-    color: #fff;
+    color: var(--brand-paper);
     font-size: 17px;
     font-weight: 700;
     margin-bottom: 8px;
     letter-spacing: -0.3px;
   }
   .service-card p {
-    color: rgba(255,255,255,0.55);
+    color: color-mix(in srgb, var(--brand-paper) 55%, transparent);
     font-size: 13px;
     line-height: 1.55;
     flex: 1;
@@ -901,7 +901,7 @@ import Layout from '../layouts/Layout.astro';
     transform: translateX(-50%);
     width: 500px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(212,168,83,0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--brand-gold) 8%, transparent) 0%, transparent 70%);
     pointer-events: none;
   }
   .philosophy-icon {
@@ -912,14 +912,14 @@ import Layout from '../layouts/Layout.astro';
   .philosophy-card h2 {
     font-size: clamp(24px, 3.5vw, 36px);
     font-weight: 800;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 20px;
     letter-spacing: -1px;
     line-height: 1.25;
   }
   .philosophy-card p {
     font-size: 16px;
-    color: rgba(255,255,255,0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     line-height: 1.75;
     max-width: 580px;
     margin: 0 auto 36px;
@@ -934,14 +934,14 @@ import Layout from '../layouts/Layout.astro';
     gap: 20px;
   }
   .pillar {
-    background: rgba(255,255,255,0.03);
+    background: color-mix(in srgb, var(--brand-paper) 3%, transparent);
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 24px 16px;
     transition: border-color 0.3s, transform 0.3s;
   }
   .pillar:hover {
-    border-color: rgba(212,168,83,0.2);
+    border-color: color-mix(in srgb, var(--brand-gold) 20%, transparent);
     transform: translateY(-2px);
   }
   .pillar-icon {
@@ -952,12 +952,12 @@ import Layout from '../layouts/Layout.astro';
   .pillar strong {
     display: block;
     font-size: 16px;
-    color: #fff;
+    color: var(--brand-paper);
     margin-bottom: 6px;
   }
   .pillar span {
     font-size: 13px;
-    color: rgba(255,255,255,0.5);
+    color: color-mix(in srgb, var(--brand-paper) 50%, transparent);
     line-height: 1.45;
   }
 
@@ -965,7 +965,7 @@ import Layout from '../layouts/Layout.astro';
   .cta-section {
     position: relative;
     padding: 100px 0;
-    background: linear-gradient(135deg, #050510, #1a0a2e, #050510);
+    background: linear-gradient(135deg, var(--brand-night), var(--brand-surface-dark), var(--brand-night));
     text-align: center;
     overflow: hidden;
   }
@@ -976,11 +976,11 @@ import Layout from '../layouts/Layout.astro';
     transform: translate(-50%, -50%);
     width: 600px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(212,168,83,0.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse, color-mix(in srgb, var(--brand-gold) 10%, transparent) 0%, transparent 70%);
     pointer-events: none;
   }
   .cta-section h2 {
-    color: #fff;
+    color: var(--brand-paper);
     font-size: clamp(28px, 4vw, 40px);
     font-weight: 800;
     margin-bottom: 16px;
@@ -988,7 +988,7 @@ import Layout from '../layouts/Layout.astro';
     position: relative;
   }
   .cta-section p {
-    color: rgba(255,255,255,0.6);
+    color: color-mix(in srgb, var(--brand-paper) 60%, transparent);
     font-size: 17px;
     margin-bottom: 36px;
     max-width: 560px;
@@ -1018,31 +1018,31 @@ import Layout from '../layouts/Layout.astro';
   }
   .btn-primary {
     background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
-    color: #0a0e1a;
-    box-shadow: 0 4px 24px rgba(212,168,83,0.25);
+    color: var(--brand-night);
+    box-shadow: 0 4px 24px color-mix(in srgb, var(--brand-gold) 25%, transparent);
   }
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(212,168,83,0.35);
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--brand-gold) 35%, transparent);
   }
   .btn-outline {
     background: transparent;
     color: var(--gold);
-    border: 2px solid rgba(212,168,83,0.4);
+    border: 2px solid color-mix(in srgb, var(--brand-gold) 40%, transparent);
   }
   .btn-outline:hover {
-    background: rgba(212,168,83,0.08);
+    background: color-mix(in srgb, var(--brand-gold) 8%, transparent);
     border-color: var(--gold);
   }
   .btn-ghost {
     background: transparent;
-    color: rgba(255,255,255,0.7);
-    border: 1px solid rgba(255,255,255,0.15);
+    color: color-mix(in srgb, var(--brand-paper) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--brand-paper) 15%, transparent);
   }
   .btn-ghost:hover {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.3);
-    color: #fff;
+    background: color-mix(in srgb, var(--brand-paper) 5%, transparent);
+    border-color: color-mix(in srgb, var(--brand-paper) 30%, transparent);
+    color: var(--brand-paper);
   }
 
   /* ===== RESPONSIVE ===== */
