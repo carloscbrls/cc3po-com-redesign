@@ -1,0 +1,61 @@
+---
+/**
+ * CTAClose — the closing block: scan form (primary, via the default slot)
+ * + trust row + newsletter (secondary, via the "newsletter" slot).
+ * Universal template pattern (Direction A). The slotted forms keep their
+ * markup, IDs and handlers; this component only styles the panel chrome.
+ */
+interface Props { heading: string; sub: string; trust: string[] }
+const { heading, sub, trust } = Astro.props as Props;
+---
+
+<section class="cta-close" id="cta">
+  <div class="container cta-close-content">
+    <div class="reveal">
+      <h2>{heading}</h2>
+      <p class="cta-close-sub">{sub}</p>
+      <slot />
+      <div class="cta-close-trust">
+        {trust.map((item) => <span>{item}</span>)}
+      </div>
+      <slot name="newsletter" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-close {
+    padding: var(--spacing-4xl) 0;
+    background: var(--brand-surface-dark);
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .cta-close-content h2 {
+    font-size: clamp(var(--type-3xl), 4vw, var(--type-5xl)); font-weight: 800;
+    letter-spacing: -1.5px; line-height: 1.1; color: var(--brand-paper);
+    margin-bottom: var(--spacing-md);
+  }
+  .cta-close-sub {
+    font-size: var(--type-lg); color: var(--text-secondary);
+    max-width: 520px; margin: 0 auto var(--spacing-xl); line-height: 1.6;
+  }
+  .cta-close :global(.bottom-cta-form) {
+    background: linear-gradient(160deg, color-mix(in srgb, var(--brand-navy) 18%, var(--brand-surface-dark)), var(--brand-surface-dark));
+    border: 1px solid color-mix(in srgb, var(--brand-navy) 70%, var(--brand-silver));
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+  }
+  .cta-close-trust {
+    display: flex; gap: var(--spacing-lg); justify-content: center; flex-wrap: wrap;
+    font-size: var(--type-caption); color: var(--text-muted); margin-top: var(--spacing-lg);
+  }
+  @media (max-width: 768px) {
+    .cta-close { padding: var(--spacing-3xl) 0; }
+    .cta-close-trust { flex-direction: column; gap: var(--spacing-xs); }
+    /* iOS zoom guard — the fleet 16px input rule (was in the old
+       homepage style block; carried here with the form's new home). */
+    .cta-close :global(.lead-form input),
+    .cta-close :global(.lead-form select),
+    .cta-close :global(.lead-form textarea) { font-size: 16px; }
+  }
+</style>

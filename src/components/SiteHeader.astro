@@ -1,0 +1,78 @@
+---
+// SiteHeader — Command Center chrome (Nightshift universal template):
+// night bar with a hairline, gold scan CTA. Link labels, phone and CTA
+// copy are the site's standing chrome copy — unchanged from SiteNav.
+---
+
+<!-- Desktop + Mobile Navigation -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/images/cc3po-crypto-enhanced.png" alt="CC3PO" class="nav-logo-img nav-logo-full" width="512" height="511">
+      <img src="/images/cc3po-crypto-56px.png" alt="CC3PO logo" class="nav-logo-img nav-logo-icon" width="56" height="56" loading="eager">
+      <span>CC3PO</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/morning-report/">Morning Report</a></li>
+      <li><a href="/how-it-works/">How It Works</a></li>
+      <li><a href="/agency/">Agency</a></li>
+      <li><a href="/pricing/">Pricing</a></li>
+      <li><a href="/products/">Products</a></li>
+      <li><a href="/about/">About</a></li>
+      <li><a href="/village/">Your Team</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <a href="tel:+12097011137" class="nav-phone">📞 (209) 701-1137</a>
+    <a href="/audit/" class="nav-cta">Free Business Scan</a>
+    <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<style>
+  /* Command Center header chrome — token colors only. The base .nav
+     layout lives in global.css; this layer gives the bar its night
+     surface and the gold CTA from frame A. */
+  .nav {
+    background: color-mix(in srgb, var(--brand-night) 92%, transparent);
+    backdrop-filter: blur(24px) saturate(1.6);
+    -webkit-backdrop-filter: blur(24px) saturate(1.6);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-cta {
+    background: var(--brand-gold);
+    color: var(--brand-ink);
+    box-shadow: 0 2px 12px color-mix(in srgb, var(--brand-gold) 25%, transparent);
+  }
+  .nav-cta:hover {
+    background: color-mix(in srgb, var(--brand-gold) 85%, var(--brand-paper));
+    color: var(--brand-ink);
+    box-shadow: 0 4px 20px color-mix(in srgb, var(--brand-gold) 40%, transparent);
+  }
+  .mobile-toggle { flex-shrink: 0; }
+  @media (max-width: 768px) {
+    .nav { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  }
+</style>
+
+<script>
+  // Nav scroll effect
+  function initNavScroll() {
+    const nav = document.getElementById('nav');
+    if (!nav) return;
+    const onScroll = () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 50);
+    };
+    window.removeEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavScroll);
+  } else {
+    initNavScroll();
+  }
+  document.addEventListener('astro:page-load', initNavScroll);
+</script>

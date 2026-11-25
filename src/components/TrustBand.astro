@@ -1,0 +1,40 @@
+---
+/**
+ * TrustBand — the credential band: mono, uppercase, letterspaced credentials
+ * in a single quiet row. Universal template pattern (Direction A).
+ */
+export interface ProofItem { strong: string; detail?: string }
+interface Props { items: ProofItem[] }
+const { items } = Astro.props;
+---
+
+<section class="proof-band" aria-label="Credentials">
+  <div class="container">
+    <ul class="proof-items">
+      {items.map((item) => (
+        <li class="proof-item"><strong>{item.strong}</strong>{item.detail && <span> {item.detail}</span>}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .proof-band {
+    background: var(--brand-night);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: var(--spacing-lg) 0;
+  }
+  .proof-items {
+    display: flex; align-items: center; justify-content: center;
+    gap: var(--spacing-2xl); flex-wrap: wrap; text-align: center;
+  }
+  .proof-item {
+    font-family: var(--font-mono); font-size: var(--type-caption);
+    letter-spacing: 2px; text-transform: uppercase; color: var(--brand-silver);
+  }
+  .proof-item strong { font-weight: 700; color: var(--brand-silver); }
+  @media (max-width: 768px) {
+    .proof-items { flex-direction: column; gap: var(--spacing-md); }
+  }
+</style>

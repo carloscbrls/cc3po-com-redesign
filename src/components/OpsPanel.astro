@@ -1,0 +1,130 @@
+---
+/**
+ * OpsPanel — the "Village Ops — Overnight Report" panel.
+ * Command Center template pattern: mono status labels, hairline rows,
+ * status chips. Part of the universal template (Direction A, 2026-11-24).
+ * Colors come only from the fleet tokens (global.css :root).
+ */
+export interface OpsRow {
+  time?: string;
+  name: string;
+  role: string;
+  message: string;
+  chip: string;
+  chipTone?: 'success' | 'gold';
+}
+interface Props {
+  score: number;
+  scoreMax?: string;
+  scoreLabel?: string;
+  changeLabel: string;
+  rows: OpsRow[];
+}
+const { score, scoreMax = '/100', scoreLabel = 'Business Health Score', changeLabel, rows } = Astro.props;
+---
+
+<aside class="ops-panel" aria-label="Village Ops — Overnight Report">
+  <div class="ops-head">
+    <span class="ops-title">Village Ops — Overnight Report</span>
+    <span class="ops-live"><span class="ops-live-dot" aria-hidden="true"></span>Live</span>
+  </div>
+  <div class="ops-score-label">{scoreLabel}</div>
+  <div class="ops-score-row">
+    <span class="ops-score">{score}<span class="ops-score-max">{scoreMax}</span></span>
+    <span class="ops-chip ops-chip-score">{changeLabel}</span>
+  </div>
+  <ul class="ops-feed">
+    {rows.map((row) => (
+      <li class="ops-row">
+        <span class="ops-time">{row.time ?? ''}</span>
+        <div class="ops-row-body">
+          <div class="ops-row-head">
+            <span class="ops-name">{row.name}</span>
+            <span class="ops-role">{row.role}</span>
+          </div>
+          <p class="ops-msg">{row.message}</p>
+        </div>
+        <span class:list={['ops-chip', row.chipTone === 'gold' && 'ops-chip-gold']}>{row.chip}</span>
+      </li>
+    ))}
+  </ul>
+</aside>
+
+<style>
+  .ops-panel {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--brand-navy) 20%, var(--brand-surface-dark)), var(--brand-surface-dark));
+    border: 1px solid color-mix(in srgb, var(--brand-navy) 70%, var(--brand-silver));
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    box-shadow: var(--shadow);
+    text-align: left;
+  }
+  .ops-head {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+  .ops-title {
+    font-family: var(--font-mono); font-size: var(--type-caption); font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--brand-silver);
+  }
+  .ops-live {
+    display: inline-flex; align-items: center; gap: var(--spacing-xs);
+    font-family: var(--font-mono); font-size: var(--type-caption); font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--semantic-success);
+  }
+  .ops-live-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--semantic-success);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--semantic-success) 50%, transparent);
+    animation: opsPulse 2s infinite;
+  }
+  @keyframes opsPulse {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--semantic-success) 50%, transparent); }
+    70% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--semantic-success) 0%, transparent); }
+    100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--semantic-success) 0%, transparent); }
+  }
+  .ops-score-label {
+    font-family: var(--font-mono); font-size: var(--type-caption);
+    letter-spacing: 2px; text-transform: uppercase; color: var(--brand-silver);
+    margin-bottom: var(--spacing-xs);
+  }
+  .ops-score-row {
+    display: flex; align-items: center; gap: var(--spacing-lg); flex-wrap: wrap;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid color-mix(in srgb, var(--brand-navy) 70%, var(--brand-silver));
+    margin-bottom: var(--spacing-xs);
+  }
+  .ops-score {
+    font-size: var(--type-6xl); font-weight: 800; line-height: 1;
+    letter-spacing: -2px; color: var(--brand-paper);
+  }
+  .ops-score-max { font-size: var(--type-2xl); font-weight: 700; color: var(--brand-silver); letter-spacing: 0; margin-left: var(--spacing-2xs); }
+  .ops-chip {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+    color: var(--semantic-success);
+    background: color-mix(in srgb, var(--brand-navy) 55%, transparent);
+    border-radius: 100px; padding: var(--spacing-2xs) var(--spacing-sm);
+  }
+  .ops-chip-gold { color: var(--brand-gold); }
+  .ops-chip-score { font-size: var(--type-caption); text-transform: none; letter-spacing: 0; }
+  .ops-feed { display: flex; flex-direction: column; }
+  .ops-row {
+    display: grid; grid-template-columns: 64px 1fr auto; gap: var(--spacing-md);
+    padding: var(--spacing-md) 0; align-items: start;
+  }
+  .ops-row + .ops-row { border-top: 1px solid var(--border); }
+  .ops-time {
+    font-family: var(--font-mono); font-size: var(--type-caption); font-weight: 700;
+    color: var(--brand-gold); padding-top: 2px; white-space: nowrap;
+  }
+  .ops-row-head { display: flex; align-items: baseline; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-2xs); }
+  .ops-name { font-weight: 700; color: var(--brand-paper); font-size: var(--type-base); }
+  .ops-role { font-size: var(--type-caption); color: var(--brand-gold); }
+  .ops-msg { font-size: var(--type-body); color: var(--text-secondary); line-height: 1.6; }
+  @media (max-width: 768px) {
+    .ops-panel { padding: var(--spacing-md) var(--spacing-lg); }
+    .ops-row { grid-template-columns: 1fr auto; }
+    .ops-time { display: none; }
+    .ops-score { font-size: var(--type-5xl); }
+  }
+</style>

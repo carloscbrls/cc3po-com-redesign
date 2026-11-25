@@ -1,0 +1,86 @@
+---
+/**
+ * PricingStrip — the comparison table as a Command Center panel:
+ * mono table head, hairline rows, gold total row. Universal template
+ * pattern (Direction A). Rows arrive verbatim via props; prices are
+ * never retyped here — the page passes the source-of-truth values.
+ */
+export interface PriceRow { label: string; cost: string; included: string }
+interface Props {
+  label: string;
+  title: string;
+  head: [string, string, string];
+  rows: PriceRow[];
+  total: PriceRow;
+}
+const { label, title, head, rows, total } = Astro.props as Props;
+---
+
+<section class="pricing-strip">
+  <div class="container">
+    <div class="cc-section-header reveal">
+      <div class="cc-label">{label}</div>
+      <h2 class="cc-title">{title}</h2>
+    </div>
+    <div class="pricing-panel reveal">
+      <table class="pricing-table">
+        <thead>
+          <tr><th scope="col">{head[0]}</th><th scope="col">{head[1]}</th><th scope="col">{head[2]}</th></tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr><td>{row.label}</td><td class="cost-cell">{row.cost}</td><td class="included-cell">{row.included}</td></tr>
+          ))}
+          <tr class="total-row">
+            <td><strong>{total.label}</strong></td>
+            <td class="cost-cell"><strong>{total.cost}</strong></td>
+            <td class="included-cell"><strong>{total.included}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-strip { padding: var(--spacing-4xl) 0; background: var(--brand-surface-dark); }
+  .cc-section-header { text-align: center; max-width: 640px; margin: 0 auto var(--spacing-2xl); }
+  .cc-label {
+    font-family: var(--font-mono); font-size: var(--type-caption); font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--brand-gold);
+    margin-bottom: var(--spacing-md);
+  }
+  .cc-title {
+    font-size: clamp(var(--type-3xl), 4vw, var(--type-5xl));
+    font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; color: var(--brand-paper);
+  }
+  .pricing-panel {
+    background: linear-gradient(170deg, color-mix(in srgb, var(--brand-navy) 14%, var(--brand-night)), var(--brand-night));
+    border: 1px solid var(--border); border-radius: var(--radius-md);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    overflow-x: auto;
+  }
+  .pricing-table { width: 100%; border-collapse: collapse; min-width: 520px; }
+  .pricing-table th {
+    font-family: var(--font-mono); font-size: var(--type-caption); font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--brand-silver);
+    text-align: left; padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid color-mix(in srgb, var(--brand-navy) 70%, var(--brand-silver));
+  }
+  .pricing-table td {
+    font-size: var(--type-body); color: var(--text-secondary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+  }
+  .pricing-table .cost-cell { color: var(--brand-silver); white-space: nowrap; }
+  .pricing-table .included-cell { color: var(--semantic-success); font-weight: 600; }
+  .pricing-table .total-row td {
+    border-bottom: none; border-top: 2px solid color-mix(in srgb, var(--brand-gold) 45%, transparent);
+    color: var(--brand-paper); font-size: var(--type-base);
+  }
+  .pricing-table .total-row .included-cell { color: var(--brand-gold); }
+  @media (max-width: 768px) {
+    .pricing-strip { padding: var(--spacing-3xl) 0; }
+    .pricing-panel { padding: var(--spacing-md); }
+  }
+</style>

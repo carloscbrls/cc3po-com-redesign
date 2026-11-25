@@ -1,0 +1,158 @@
+---
+/**
+ * VignetteFeed — "The Village at Work": agent story cards with real
+ * portraits and names (Direction B's portrait warmth inside Direction A's
+ * panel grammar), plus the Business Health Score strip. Universal
+ * template pattern (2026-11-24). Copy arrives verbatim via props.
+ */
+export interface Vignette {
+  time?: string;
+  portrait?: string;
+  alt?: string;
+  emoji?: string;
+  name: string;
+  role: string;
+  message: string;
+  tag: string;
+  tagTone?: 'success' | 'gold';
+  meta: string;
+  lead?: boolean;
+  conductor?: boolean;
+}
+interface Props {
+  label: string;
+  titleLead: string;
+  titleRest: string;
+  desc: string;
+  cards: Vignette[];
+  scoreLabel: string;
+  scoreValue: string;
+  scoreMax: string;
+  scoreChange: string;
+  moreHref: string;
+  moreText: string;
+}
+const p = Astro.props as Props;
+---
+
+<section class="vignette-feed" id="village-work">
+  <div class="container">
+    <div class="cc-section-header reveal">
+      <div class="cc-label">{p.label}</div>
+      <h2 class="cc-title">{p.titleLead}<br />{p.titleRest}</h2>
+      <p class="cc-desc">{p.desc}</p>
+    </div>
+
+    <div class="vignette-grid reveal">
+      {p.cards.map((card) => (
+        <article class:list={['vignette-card', card.lead && 'vignette-lead', card.conductor && 'vignette-conductor']}>
+          {card.time && <div class="vignette-time">{card.time}</div>}
+          <div class="vignette-head">
+            {card.portrait
+              ? <img src={card.portrait} alt={card.alt ?? card.name} width="44" height="44" loading="lazy" />
+              : <span class="vignette-emoji" aria-hidden="true">{card.emoji}</span>}
+            <div>
+              <div class="vignette-name">{card.name}</div>
+              <div class="vignette-role">{card.role}</div>
+            </div>
+          </div>
+          <p class="vignette-msg">{card.message}</p>
+          <div class="vignette-meta">
+            <span class:list={['vignette-tag', card.tagTone === 'gold' && 'vignette-tag-gold']}>{card.tag}</span>
+            <span>· {card.meta}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="score-strip reveal">
+      <span class="score-label">{p.scoreLabel}</span>
+      <span class="score-value">{p.scoreValue}<span class="score-max">{p.scoreMax}</span></span>
+      <span class="score-change">{p.scoreChange}</span>
+    </div>
+
+    <p class="vignette-more reveal"><a href={p.moreHref}>{p.moreText}</a></p>
+  </div>
+</section>
+
+<style>
+  .vignette-feed { padding: var(--spacing-4xl) 0; background: var(--brand-surface-dark); }
+  .cc-section-header { text-align: center; max-width: 640px; margin: 0 auto var(--spacing-2xl); }
+  .cc-label {
+    font-family: var(--font-mono); font-size: var(--type-caption); font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--brand-gold);
+    margin-bottom: var(--spacing-md);
+  }
+  .cc-title {
+    font-size: clamp(var(--type-3xl), 4vw, var(--type-5xl));
+    font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; color: var(--brand-paper);
+    margin-bottom: var(--spacing-md);
+  }
+  .cc-desc { font-size: var(--type-lg); color: var(--text-secondary); line-height: 1.65; }
+  .vignette-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg); margin-top: var(--spacing-2xl);
+  }
+  .vignette-card {
+    background: linear-gradient(170deg, color-mix(in srgb, var(--brand-navy) 14%, var(--brand-night)), var(--brand-night));
+    border: 1px solid var(--border); border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  .vignette-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--brand-gold) 35%, transparent);
+    box-shadow: var(--shadow-card-hover);
+  }
+  .vignette-lead { border-color: color-mix(in srgb, var(--brand-gold) 30%, transparent); }
+  .vignette-conductor { border-color: color-mix(in srgb, var(--brand-gold) 30%, transparent); }
+  .vignette-time {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; color: var(--brand-gold); margin-bottom: var(--spacing-sm);
+  }
+  .vignette-head { display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm); }
+  .vignette-head img {
+    border-radius: 50%; object-fit: cover; flex-shrink: 0;
+    border: 2px solid color-mix(in srgb, var(--brand-gold) 45%, transparent);
+  }
+  .vignette-emoji { font-size: 1.8rem; line-height: 1; }
+  .vignette-name { font-weight: 700; color: var(--brand-paper); font-size: var(--type-base); }
+  .vignette-role {
+    font-family: var(--font-mono); font-size: 11px; color: var(--brand-gold);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .vignette-msg { font-size: var(--type-body); color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--spacing-md); }
+  .vignette-meta {
+    font-size: var(--type-caption); color: var(--text-muted);
+    display: flex; align-items: center; gap: var(--spacing-xs);
+  }
+  .vignette-tag {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; border-radius: 100px;
+    padding: 3px 10px; color: var(--semantic-success);
+    background: color-mix(in srgb, var(--semantic-success) 12%, transparent);
+  }
+  .vignette-tag-gold {
+    color: var(--brand-gold); background: color-mix(in srgb, var(--brand-gold) 12%, transparent);
+  }
+  .score-strip {
+    display: flex; align-items: center; justify-content: center; gap: var(--spacing-md);
+    flex-wrap: wrap; max-width: 640px; margin: var(--spacing-xl) auto 0;
+    background: color-mix(in srgb, var(--brand-paper) 3%, transparent);
+    border: 1px solid color-mix(in srgb, var(--brand-gold) 25%, transparent);
+    border-radius: 100px; padding: var(--spacing-sm) var(--spacing-xl);
+  }
+  .score-label {
+    font-family: var(--font-mono); font-size: var(--type-caption); font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--text-secondary);
+  }
+  .score-value { font-size: var(--type-3xl); font-weight: 800; color: var(--brand-paper); line-height: 1; }
+  .score-max { font-size: var(--type-base); color: var(--text-secondary); }
+  .score-change { color: var(--semantic-success); font-weight: 600; font-size: var(--type-body); }
+  .vignette-more { text-align: center; margin-top: var(--spacing-xl); }
+  .vignette-more a { color: var(--brand-gold); font-weight: 600; }
+  @media (max-width: 768px) {
+    .vignette-grid { grid-template-columns: 1fr; }
+    .vignette-feed { padding: var(--spacing-3xl) 0; }
+  }
+</style>
