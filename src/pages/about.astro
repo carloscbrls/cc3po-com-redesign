@@ -5,17 +5,17 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="About CC3PO — Built by a Tesla AI Trainer, Designed for Small Business" description="Meet Carlos Cabrales — former Tesla Vision team member who built CC3PO to give small businesses the same AI power that enterprises have. Our story, mission, and the village behind it all.">
   <style>
     :root {
-      --bg: #0a0a0b;
-      --bg-secondary: #111114;
-      --bg-card: #141418;
-      --text: #fff;
-      --text-muted: #71717a;
-      --text-secondary: #a1a1aa;
+      --bg: var(--brand-night);
+      --bg-secondary: var(--brand-surface-dark);
+      --bg-card: var(--brand-surface-dark);
+      --text: var(--brand-paper);
+      --text-muted: var(--brand-silver);
+      --text-secondary: var(--semantic-muted);
       --primary: var(--accent);
-      --accent: #4fc3f7;
-      --green: #00e676;
-      --violet: #7c3aed;
-      --border: rgba(255,255,255,0.06);
+      --accent: var(--semantic-info);
+      --green: var(--semantic-success);
+      --violet: var(--brand-accent);
+      --border: color-mix(in srgb, var(--brand-paper) 6%, transparent);
       --font: 'Inter', system-ui, -apple-system, sans-serif;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,19 +23,19 @@ import Layout from '../layouts/Layout.astro';
     .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
 
     .hero { padding: 140px 24px 60px; text-align: center; }
-    .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(107,53,255,0.1); border: 1px solid rgba(107,53,255,0.3); border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: var(--accent); margin-bottom: 24px; }
+    .hero-badge { display: inline-block; padding: 6px 16px; background: color-mix(in srgb, var(--brand-accent) 10%, transparent); border: 1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent); border-radius: 100px; font-size: 0.8rem; font-weight: 600; color: var(--accent); margin-bottom: 24px; }
     .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
     .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 640px; margin: 0 auto 40px; }
 
     .story { padding: 60px 24px; }
     .story-section { margin-bottom: 48px; }
-    .story-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; color: #fff; }
+    .story-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; color: var(--brand-paper); }
     .story-section p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
-    .story-section p strong { color: #fff; }
+    .story-section p strong { color: var(--brand-paper); }
 
     .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; padding: 60px 24px; }
     .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; text-align: center; transition: transform 0.2s, border-color 0.2s; }
-    .stat-card:hover { transform: translateY(-4px); border-color: rgba(107,53,255,0.3); }
+    .stat-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--brand-accent) 30%, transparent); }
     .stat-number { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--violet)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
 
@@ -49,10 +49,10 @@ import Layout from '../layouts/Layout.astro';
     .cta { text-align: center; padding: 80px 24px; background: var(--bg-secondary); }
     .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 16px; }
     .cta p { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: linear-gradient(135deg, var(--primary), #c7384f); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(233,69,96,0.3); }
-    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; margin-left: 16px; transition: all 0.2s; }
-    .btn-secondary:hover { background: rgba(255,255,255,0.08); }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: linear-gradient(135deg, var(--primary), var(--semantic-danger)); color: var(--brand-paper); border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px color-mix(in srgb, var(--brand-accent) 30%, transparent); }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: color-mix(in srgb, var(--brand-paper) 5%, transparent); color: var(--brand-paper); border: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent); border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; margin-left: 16px; transition: all 0.2s; }
+    .btn-secondary:hover { background: color-mix(in srgb, var(--brand-paper) 8%, transparent); }
 
     @media (max-width: 640px) {
       .btn-secondary { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
@@ -192,7 +192,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- ====== LEARN FROM CARLOS / CLASSES ====== -->
   <section class="values container" style="border-top:1px solid var(--border);padding-top:60px;">
     <div style="text-align:center;margin-bottom:8px;">
-      <span style="display:inline-block;padding:6px 16px;background:rgba(107,53,255,0.1);border:1px solid rgba(107,53,255,0.3);border-radius:100px;font-size:0.8rem;font-weight:600;color:var(--accent);">Learn From Carlos</span>
+      <span style="display:inline-block;padding:6px 16px;background:color-mix(in srgb, var(--brand-accent) 10%, transparent);border:1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);border-radius:100px;font-size:0.8rem;font-weight:600;color:var(--accent);">Learn From Carlos</span>
     </div>
     <h2 style="text-align:center;font-size:1.5rem;font-weight:700;margin-bottom:12px;">Build your own AI village.</h2>
     <p style="text-align:center;color:var(--text-secondary);font-size:1rem;line-height:1.7;max-width:640px;margin:0 auto 40px;">I teach what I've actually built — not theory. From training AI at Tesla to running a village of AI agents for small businesses, I show you exactly how to build your own AI team that works while you sleep.</p>

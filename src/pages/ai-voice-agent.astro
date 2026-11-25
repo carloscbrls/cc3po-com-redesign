@@ -27,17 +27,17 @@ const schema = {
 
   <!-- Hero -->
   <section style="padding:120px 0 80px;text-align:center;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(219,39,119,0.15) 0%,transparent 60%);pointer-events:none;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb, var(--brand-accent) 15%, transparent) 0%,transparent 60%);pointer-events:none;"></div>
     <div class="container" style="position:relative;">
-      <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:rgba(219,39,119,0.12);border:1px solid rgba(219,39,119,0.25);display:flex;align-items:center;justify-content:center;">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <div style="margin:0 auto 24px;width:72px;height:72px;border-radius:18px;background:color-mix(in srgb, var(--brand-accent) 12%, transparent);border:1px solid color-mix(in srgb, var(--brand-accent) 25%, transparent);display:flex;align-items:center;justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--brand-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       </div>
-      <p style="color:#ec4899;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">AI Voice Agent</p>
+      <p style="color:var(--brand-accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">AI Voice Agent</p>
       <h1 style="font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px;">Never miss another call.</h1>
       <p style="font-size:1.15rem;color:var(--text-secondary);max-width:600px;margin:0 auto 36px;line-height:1.6;">Your AI receptionist answers every call, qualifies leads, and books appointments — even at 2 AM. Built for trades businesses that can't afford to miss a single customer.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://cc3po.io/strategy-call" class="cta-voice-call" style="background:#db2777;color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(219,39,119,0.3);transition:all 0.2s;">Get a Demo</a>
-        <a href="/audit/" class="cta-voice-scan" style="background:transparent;color:#ec4899;padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(219,39,119,0.3);">Free Business Scan</a>
+        <a href="https://cc3po.io/strategy-call" class="cta-voice-call" style="background:var(--semantic-danger);color:var(--brand-paper);padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px color-mix(in srgb, var(--brand-accent) 30%, transparent);transition:all 0.2s;">Get a Demo</a>
+        <a href="/audit/" class="cta-voice-scan" style="background:transparent;color:var(--brand-accent);padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);">Free Business Scan</a>
       </div>
     </div>
   </section>
@@ -45,18 +45,18 @@ const schema = {
   <!-- Problem -->
   <section style="padding:80px 0;background:var(--bg-secondary);" id="problem">
     <div class="container">
-      <p style="color:#ec4899;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">The Problem</p>
+      <p style="color:var(--brand-accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">The Problem</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">You're losing customers every time you miss a call.</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:0 auto;">
-        <div style="background:rgba(233,69,96,0.08);border:1px solid rgba(233,69,96,0.25);border-radius:var(--radius);padding:32px;text-align:center;">
+        <div style="background:color-mix(in srgb, var(--brand-accent) 8%, transparent);border:1px solid color-mix(in srgb, var(--brand-accent) 25%, transparent);border-radius:var(--radius);padding:32px;text-align:center;">
           <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:8px;">62%</div>
           <p style="color:var(--text-secondary);font-size:0.95rem;">of calls to trades businesses go unanswered during jobs</p>
         </div>
-        <div style="background:rgba(233,69,96,0.08);border:1px solid rgba(233,69,96,0.25);border-radius:var(--radius);padding:32px;text-align:center;">
+        <div style="background:color-mix(in srgb, var(--brand-accent) 8%, transparent);border:1px solid color-mix(in srgb, var(--brand-accent) 25%, transparent);border-radius:var(--radius);padding:32px;text-align:center;">
           <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:8px;">85%</div>
           <p style="color:var(--text-secondary);font-size:0.95rem;">of callers who reach voicemail hang up and call the next business</p>
         </div>
-        <div style="background:rgba(233,69,96,0.08);border:1px solid rgba(233,69,96,0.25);border-radius:var(--radius);padding:32px;text-align:center;">
+        <div style="background:color-mix(in srgb, var(--brand-accent) 8%, transparent);border:1px solid color-mix(in srgb, var(--brand-accent) 25%, transparent);border-radius:var(--radius);padding:32px;text-align:center;">
           <div style="font-size:2.5rem;font-weight:800;color:var(--accent);margin-bottom:8px;">$3,200</div>
           <p style="color:var(--text-secondary);font-size:0.95rem;">average revenue lost per missed call for HVAC/plumbing</p>
         </div>
@@ -67,7 +67,7 @@ const schema = {
   <!-- How It Works -->
   <section style="padding:80px 0;" id="features">
     <div class="container">
-      <p style="color:#ec4899;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">How It Works</p>
+      <p style="color:var(--brand-accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">How It Works</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Your AI answers. You close the job.</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;">
@@ -97,15 +97,15 @@ const schema = {
   <!-- Pricing -->
   <section style="padding:80px 0;background:var(--bg-secondary);" id="pricing">
     <div class="container" style="text-align:center;">
-      <p style="color:#ec4899;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Pricing</p>
+      <p style="color:var(--brand-accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;">Pricing</p>
       <h2 style="font-size:2rem;font-weight:800;margin-bottom:12px;">One missed call pays for a year.</h2>
       <p style="color:var(--text-secondary);margin-bottom:40px;">Setup + monthly retainer. No per-minute billing. No surprises.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:800px;margin:0 auto;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:left;">
-          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#ec4899;">Starter</h3>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:var(--brand-accent);">Starter</h3>
           <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">For single-location businesses</p>
           <p style="font-size:2.5rem;font-weight:800;margin-bottom:4px;">$3K<span style="font-size:0.9rem;color:var(--text-muted);font-weight:400;"> setup</span></p>
-          <p style="font-size:1.2rem;font-weight:700;color:#ec4899;margin-bottom:20px;">+ $500/mo</p>
+          <p style="font-size:1.2rem;font-weight:700;color:var(--brand-accent);margin-bottom:20px;">+ $500/mo</p>
           <div style="margin-bottom:24px;">
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ 24/7 call answering</p>
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Lead qualification</p>
@@ -113,14 +113,14 @@ const schema = {
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ SMS handling</p>
             <p style="color:var(--text-secondary);font-size:0.9rem;">✓ Up to 200 calls/mo</p>
           </div>
-          <a href="https://cc3po.io/strategy-call" style="display:block;background:#db2777;color:#fff;padding:12px;border-radius:8px;font-weight:700;text-decoration:none;text-align:center;">Get Started</a>
+          <a href="https://cc3po.io/strategy-call" style="display:block;background:var(--semantic-danger);color:var(--brand-paper);padding:12px;border-radius:8px;font-weight:700;text-decoration:none;text-align:center;">Get Started</a>
         </div>
-        <div style="background:var(--bg-card);border:2px solid rgba(219,39,119,0.4);border-radius:var(--radius);padding:32px;text-align:left;position:relative;">
-          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#db2777;color:#fff;font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px;">Best Value</div>
-          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#ec4899;">Professional</h3>
+        <div style="background:var(--bg-card);border:2px solid color-mix(in srgb, var(--brand-accent) 40%, transparent);border-radius:var(--radius);padding:32px;text-align:left;position:relative;">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--semantic-danger);color:var(--brand-paper);font-size:0.7rem;font-weight:700;padding:4px 12px;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px;">Best Value</div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:var(--brand-accent);">Professional</h3>
           <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:4px;">For multi-location or high-volume</p>
           <p style="font-size:2.5rem;font-weight:800;margin-bottom:4px;">$5K<span style="font-size:0.9rem;color:var(--text-muted);font-weight:400;"> setup</span></p>
-          <p style="font-size:1.2rem;font-weight:700;color:#ec4899;margin-bottom:20px;">+ $1K/mo</p>
+          <p style="font-size:1.2rem;font-weight:700;color:var(--brand-accent);margin-bottom:20px;">+ $1K/mo</p>
           <div style="margin-bottom:24px;">
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Everything in Starter</p>
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ Unlimited calls</p>
@@ -129,7 +129,7 @@ const schema = {
             <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:8px;">✓ CRM integration</p>
             <p style="color:var(--text-secondary);font-size:0.9rem;">✓ Priority support</p>
           </div>
-          <a href="https://cc3po.io/strategy-call" style="display:block;background:#db2777;color:#fff;padding:12px;border-radius:8px;font-weight:700;text-decoration:none;text-align:center;box-shadow:0 4px 20px rgba(219,39,119,0.3);">Get Started</a>
+          <a href="https://cc3po.io/strategy-call" style="display:block;background:var(--semantic-danger);color:var(--brand-paper);padding:12px;border-radius:8px;font-weight:700;text-decoration:none;text-align:center;box-shadow:0 4px 20px color-mix(in srgb, var(--brand-accent) 30%, transparent);">Get Started</a>
         </div>
       </div>
     </div>
@@ -138,7 +138,7 @@ const schema = {
   <!-- Industries -->
   <section style="padding:80px 0;" id="industries">
     <div class="container">
-      <p style="color:#ec4899;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Built For</p>
+      <p style="color:var(--brand-accent);font-size:0.85rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-align:center;margin-bottom:8px;">Built For</p>
       <h2 style="font-size:2rem;font-weight:800;text-align:center;margin-bottom:48px;">Trades businesses in Central Valley.</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:800px;margin:0 auto;">
         <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;">
@@ -170,8 +170,8 @@ const schema = {
     <div class="container">
       <h2 style="font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px;">How much is one missed call worth to you?</h2>
       <p style="color:var(--text-secondary);max-width:500px;margin:0 auto 32px;">If one missed HVAC call is worth $3,200, the math is simple. Let's talk.</p>
-      <a href="https://cc3po.io/strategy-call" style="background:#db2777;color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px rgba(219,39,119,0.3);">Get a Voice Agent Demo →</a>
-      <p style="color:var(--text-secondary);max-width:500px;margin:24px auto 0;font-size:0.9rem;">Prefer a text-based AI chatbot instead of voice? <a href="https://customgpt.ai/?fpr=carlos83" target="_blank" rel="noopener" style="color:#db2777;font-weight:700;">Build one with CustomGPT</a> — trained on your business, via our affiliate link.</p>
+      <a href="https://cc3po.io/strategy-call" style="background:var(--semantic-danger);color:var(--brand-paper);padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;box-shadow:0 4px 20px color-mix(in srgb, var(--brand-accent) 30%, transparent);">Get a Voice Agent Demo →</a>
+      <p style="color:var(--text-secondary);max-width:500px;margin:24px auto 0;font-size:0.9rem;">Prefer a text-based AI chatbot instead of voice? <a href="https://customgpt.ai/?fpr=carlos83" target="_blank" rel="noopener" style="color:var(--brand-accent);font-weight:700;">Build one with CustomGPT</a> — trained on your business, via our affiliate link.</p>
     </div>
   </section>
 

@@ -135,7 +135,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 600;
     color: var(--text-secondary);
     padding: 10px 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid color-mix(in srgb, var(--brand-paper) 10%, transparent);
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
@@ -143,10 +143,10 @@ import Layout from '../layouts/Layout.astro';
     font-size: 14px;
     color: var(--text-muted);
     padding: 10px 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid color-mix(in srgb, var(--brand-paper) 5%, transparent);
   }
   .cookie-table code {
-    background: rgba(255,255,255,0.06);
+    background: color-mix(in srgb, var(--brand-paper) 6%, transparent);
     padding: 2px 6px;
     border-radius: 4px;
     font-size: 13px;

@@ -27,8 +27,8 @@ const description = 'Discover which of your business interests actually multiply
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 20%, rgba(233,69,96,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 80%, rgba(79,195,247,0.05) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 50% 20%, color-mix(in srgb, var(--brand-accent) 8%, transparent) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, color-mix(in srgb, var(--semantic-info) 5%, transparent) 0%, transparent 50%);
     z-index: 0;
   }
 
@@ -44,8 +44,8 @@ const description = 'Discover which of your business interests actually multiply
     align-items: center;
     gap: 10px;
     padding: var(--space-xs) var(--space-md);
-    background: rgba(233,69,96,0.1);
-    border: 1px solid rgba(233,69,96,0.3);
+    background: color-mix(in srgb, var(--brand-accent) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent);
     border-radius: 100px;
     font-size: 12px;
     font-weight: 700;
@@ -104,7 +104,7 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .linc-step:hover {
-    border-color: rgba(233,69,96,0.3);
+    border-color: color-mix(in srgb, var(--brand-accent) 30%, transparent);
     transform: translateY(-4px);
     box-shadow: var(--shadow-glow);
   }
@@ -139,8 +139,8 @@ const description = 'Discover which of your business interests actually multiply
     font-size: 13px;
     color: var(--text-muted);
     padding: var(--space-sm) var(--space-md);
-    background: rgba(0,230,118,0.05);
-    border: 1px solid rgba(0,230,118,0.12);
+    background: color-mix(in srgb, var(--semantic-success) 5%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-success) 12%, transparent);
     border-radius: var(--radius-sm);
     line-height: 1.5;
   }
@@ -192,7 +192,7 @@ const description = 'Discover which of your business interests actually multiply
     width: 100%;
     padding: 14px var(--space-md);
     border-radius: var(--radius-sm);
-    background: rgba(255,255,255,0.04);
+    background: color-mix(in srgb, var(--brand-paper) 4%, transparent);
     border: 1px solid var(--border);
     color: var(--text-primary);
     font-size: var(--text-lg);
@@ -204,7 +204,7 @@ const description = 'Discover which of your business interests actually multiply
   .interest-input:focus {
     outline: 2px solid var(--accent); outline-offset: 2px;
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(233,69,96,0.12);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-accent) 12%, transparent);
   }
 
   .interest-input::placeholder {
@@ -229,16 +229,16 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .linc-question:hover {
-    border-color: rgba(255,255,255,0.1);
+    border-color: color-mix(in srgb, var(--brand-paper) 10%, transparent);
   }
 
   .linc-question.active {
-    border-color: rgba(233,69,96,0.3);
-    box-shadow: 0 0 30px rgba(233,69,96,0.08);
+    border-color: color-mix(in srgb, var(--brand-accent) 30%, transparent);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--brand-accent) 8%, transparent);
   }
 
   .linc-question.answered {
-    border-color: rgba(0,230,118,0.15);
+    border-color: color-mix(in srgb, var(--semantic-success) 15%, transparent);
   }
 
   .linc-question-header {
@@ -252,7 +252,7 @@ const description = 'Discover which of your business interests actually multiply
     width: 40px;
     height: 40px;
     border-radius: 10px;
-    background: rgba(233,69,96,0.1);
+    background: color-mix(in srgb, var(--brand-accent) 10%, transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -297,48 +297,48 @@ const description = 'Discover which of your business interests actually multiply
     cursor: pointer;
     min-height: 44px;
     transition: all var(--duration-fast);
-    background: rgba(255,255,255,0.04);
+    background: color-mix(in srgb, var(--brand-paper) 4%, transparent);
     border: 1px solid var(--border);
     color: var(--text-secondary);
   }
 
   .linc-toggle-btn:hover {
-    background: rgba(255,255,255,0.08);
+    background: color-mix(in srgb, var(--brand-paper) 8%, transparent);
     color: var(--text-primary);
   }
 
   .linc-toggle-btn.yes {
-    background: rgba(0,230,118,0.08);
-    border-color: rgba(0,230,118,0.25);
+    background: color-mix(in srgb, var(--semantic-success) 8%, transparent);
+    border-color: color-mix(in srgb, var(--semantic-success) 25%, transparent);
     color: var(--success);
   }
 
   .linc-toggle-btn.yes:hover {
-    background: rgba(0,230,118,0.15);
+    background: color-mix(in srgb, var(--semantic-success) 15%, transparent);
   }
 
   .linc-toggle-btn.yes.active {
-    background: rgba(0,230,118,0.15);
+    background: color-mix(in srgb, var(--semantic-success) 15%, transparent);
     border-color: var(--success);
     color: var(--success);
-    box-shadow: 0 0 16px rgba(0,230,118,0.15);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--semantic-success) 15%, transparent);
   }
 
   .linc-toggle-btn.no {
-    background: rgba(255,82,82,0.06);
-    border-color: rgba(255,82,82,0.2);
-    color: rgba(255,82,82,0.7);
+    background: color-mix(in srgb, var(--semantic-danger) 6%, transparent);
+    border-color: color-mix(in srgb, var(--semantic-danger) 20%, transparent);
+    color: var(--semantic-danger-tint);
   }
 
   .linc-toggle-btn.no:hover {
-    background: rgba(255,82,82,0.1);
+    background: color-mix(in srgb, var(--semantic-danger) 10%, transparent);
   }
 
   .linc-toggle-btn.no.active {
-    background: rgba(255,82,82,0.12);
-    border-color: rgba(255,82,82,0.5);
-    color: var(--red);
-    box-shadow: 0 0 16px rgba(255,82,82,0.1);
+    background: color-mix(in srgb, var(--semantic-danger) 12%, transparent);
+    border-color: color-mix(in srgb, var(--semantic-danger) 50%, transparent);
+    color: var(--semantic-danger-tint);
+    box-shadow: 0 0 16px color-mix(in srgb, var(--semantic-danger) 10%, transparent);
   }
 
   /* Results */
@@ -391,7 +391,7 @@ const description = 'Discover which of your business interests actually multiply
 
   .score-bar-bg {
     height: 12px;
-    background: rgba(255,255,255,0.06);
+    background: color-mix(in srgb, var(--brand-paper) 6%, transparent);
     border-radius: 6px;
     overflow: hidden;
     position: relative;
@@ -405,23 +405,23 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .score-bar-fill.compounding {
-    background: linear-gradient(90deg, #00e676, #00c853);
-    box-shadow: 0 0 20px rgba(0,230,118,0.3);
+    background: linear-gradient(90deg, var(--semantic-success), var(--semantic-success));
+    box-shadow: 0 0 20px color-mix(in srgb, var(--semantic-success) 30%, transparent);
   }
 
   .score-bar-fill.linked {
-    background: linear-gradient(90deg, #4fc3f7, #03a9f4);
-    box-shadow: 0 0 20px rgba(79,195,247,0.3);
+    background: linear-gradient(90deg, var(--semantic-info), var(--semantic-info));
+    box-shadow: 0 0 20px color-mix(in srgb, var(--semantic-info) 30%, transparent);
   }
 
   .score-bar-fill.adjacent {
-    background: linear-gradient(90deg, #ffd700, #ffab00);
-    box-shadow: 0 0 20px rgba(255,215,0,0.2);
+    background: linear-gradient(90deg, var(--semantic-warning), var(--brand-gold));
+    box-shadow: 0 0 20px color-mix(in srgb, var(--semantic-warning) 20%, transparent);
   }
 
   .score-bar-fill.competing {
-    background: linear-gradient(90deg, #ff5252, #d32f2f);
-    box-shadow: 0 0 20px rgba(255,82,82,0.3);
+    background: linear-gradient(90deg, var(--semantic-danger), var(--semantic-danger));
+    box-shadow: 0 0 20px color-mix(in srgb, var(--semantic-danger) 30%, transparent);
   }
 
   .score-labels {
@@ -476,26 +476,26 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .score-recommendation.compounding {
-    background: rgba(0,230,118,0.08);
-    border: 1px solid rgba(0,230,118,0.15);
+    background: color-mix(in srgb, var(--semantic-success) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-success) 15%, transparent);
     color: var(--success);
   }
 
   .score-recommendation.linked {
-    background: rgba(79,195,247,0.08);
-    border: 1px solid rgba(79,195,247,0.15);
+    background: color-mix(in srgb, var(--semantic-info) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-info) 15%, transparent);
     color: var(--blue);
   }
 
   .score-recommendation.adjacent {
-    background: rgba(255,215,0,0.08);
-    border: 1px solid rgba(255,215,0,0.15);
+    background: color-mix(in srgb, var(--semantic-warning) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-warning) 15%, transparent);
     color: var(--warning);
   }
 
   .score-recommendation.competing {
-    background: rgba(255,82,82,0.08);
-    border: 1px solid rgba(255,82,82,0.15);
+    background: color-mix(in srgb, var(--semantic-danger) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-danger) 15%, transparent);
     color: var(--red);
   }
 
@@ -512,7 +512,7 @@ const description = 'Discover which of your business interests actually multiply
   .breakdown-item {
     text-align: center;
     padding: var(--space-md);
-    background: rgba(255,255,255,0.02);
+    background: color-mix(in srgb, var(--brand-paper) 2%, transparent);
     border-radius: var(--radius-sm);
   }
 
@@ -524,7 +524,7 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .breakdown-letter.yes { color: var(--success); }
-  .breakdown-letter.no { color: rgba(255,255,255,0.55); }
+  .breakdown-letter.no { color: color-mix(in srgb, var(--brand-paper) 55%, transparent); }
 
   .breakdown-label {
     font-size: 12px;
@@ -541,7 +541,7 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .breakdown-value.yes { color: var(--success); }
-  .breakdown-value.no { color: rgba(255,255,255,0.6); }
+  .breakdown-value.no { color: color-mix(in srgb, var(--brand-paper) 60%, transparent); }
 
   /* ===== CC3PO CONTEXT ===== */
   .context-section {
@@ -565,7 +565,7 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .context-card:hover {
-    border-color: rgba(233,69,96,0.2);
+    border-color: color-mix(in srgb, var(--brand-accent) 20%, transparent);
     transform: translateY(-2px);
   }
 
@@ -593,20 +593,20 @@ const description = 'Discover which of your business interests actually multiply
   }
 
   .context-score.compounding {
-    background: rgba(0,230,118,0.1);
-    border: 1px solid rgba(0,230,118,0.2);
+    background: color-mix(in srgb, var(--semantic-success) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-success) 20%, transparent);
     color: var(--success);
   }
 
   .context-score.linked {
-    background: rgba(79,195,247,0.1);
-    border: 1px solid rgba(79,195,247,0.2);
+    background: color-mix(in srgb, var(--semantic-info) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-info) 20%, transparent);
     color: var(--blue);
   }
 
   .context-score.adjacent {
-    background: rgba(255,215,0,0.1);
-    border: 1px solid rgba(255,215,0,0.2);
+    background: color-mix(in srgb, var(--semantic-warning) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--semantic-warning) 20%, transparent);
     color: var(--warning);
   }
 
@@ -628,7 +628,7 @@ const description = 'Discover which of your business interests actually multiply
     margin: 0 auto;
     padding: var(--space-3xl) var(--space-xl);
     background: var(--bg-card);
-    border: 1px solid rgba(233,69,96,0.2);
+    border: 1px solid color-mix(in srgb, var(--brand-accent) 20%, transparent);
     border-radius: var(--radius);
     position: relative;
     overflow: hidden;
